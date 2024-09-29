@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Version>1.0.2</Version> <!-- Specify the version here -->
+        <ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile> <!-- Automatically includes the build configuration (e.g., Debug, Release) in the assembly's metadata -->
+    </PropertyGroup>
+
+	<!-- Debug configuration for .NET 9, using the latest C# version -->
+    <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+	    <TargetFramework>net9.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+	<!-- Release configuration for .NET 9, using the latest C# version -->
+    <PropertyGroup Condition="'$(Configuration)'=='Release'">
+	    <TargetFramework>net9.0</TargetFramework>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+
+</Project>

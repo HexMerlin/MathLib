@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35209.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib.DevConsole", "MathLib.DevConsole\MathLib.DevConsole.csproj", "{3A741AE9-8D99-4296-9C9E-C5CA024E3601}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C34C2F1-566E-43F2-91BC-E62B05E323F4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		CalcuilatePeriod.pdf = CalcuilatePeriod.pdf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib", "MathLib\MathLib.csproj", "{9CB75787-2355-4201-90FF-09DCFDA8004B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib.Tests", "MathLib.Tests\MathLib.Tests.csproj", "{00DF77EB-5807-42A0-A924-2D0272AEFDB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugStandard|Any CPU = DebugStandard|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseStandard|Any CPU = ReleaseStandard|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.DebugStandard|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.DebugStandard|Any CPU.Build.0 = Debug|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.ReleaseStandard|Any CPU.ActiveCfg = Release|Any CPU
+		{3A741AE9-8D99-4296-9C9E-C5CA024E3601}.ReleaseStandard|Any CPU.Build.0 = Release|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.DebugStandard|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.DebugStandard|Any CPU.Build.0 = Debug|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.ReleaseStandard|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB75787-2355-4201-90FF-09DCFDA8004B}.ReleaseStandard|Any CPU.Build.0 = Release|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.DebugStandard|Any CPU.ActiveCfg = Debug|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.DebugStandard|Any CPU.Build.0 = Debug|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.ReleaseStandard|Any CPU.ActiveCfg = Release|Any CPU
+		{00DF77EB-5807-42A0-A924-2D0272AEFDB0}.ReleaseStandard|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CA92E29-FEC7-44A8-991B-0316DF1BC975}
+	EndGlobalSection
+EndGlobal

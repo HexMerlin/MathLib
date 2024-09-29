@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<!-- Debug configuration for .NET 9, using the latest C# version -->
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Release configuration for .NET 9, using the latest C# version -->
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+
+	<!-- Debug configuration for .NET standard 2.1 -->
+	<PropertyGroup Condition="'$(Configuration)'=='DebugStandard'">
+		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+
+	<!-- Release configuration for .NET standard 2.1 -->
+	<PropertyGroup Condition="'$(Configuration)'=='ReleaseStandard'">
+		<TargetFramework>net9.0</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\MathLib\MathLib.csproj" />
+	</ItemGroup>
+
+</Project>
