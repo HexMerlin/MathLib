@@ -92,6 +92,11 @@ public partial class Qb
         return sb.ToString();
     }
 
+    public string ToStringCanonicalSigned(int coefficientCount = 16) 
+        => IsNegative
+            ? "-" + (-this).InBase(Base.IntValue).ToStringCanonical(coefficientCount)
+            : ToStringCanonical(coefficientCount);
+
     ///<summary>Returns the default string representation of the rational number</summary>
     public override string ToString() => $"{base.ToString()} = {ToStringCanonical()}";
 

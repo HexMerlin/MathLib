@@ -11,59 +11,15 @@ namespace MathLib.DevConsole;
 
 internal class Program
 {
-    public static string ToStringCanonical(Qb qb, int coefficientCount = 16)
-    {
-        if (qb.IsNaN) return nameof(Qb.NaN);
-        StringBuilder sb = new StringBuilder();
-        int exponent = qb.FirstExponent;
 
-        foreach (int coef in qb.Coefficients().Take(coefficientCount))
-        {
-            if (exponent == -1) sb.Append('.');
-            sb.Append(coef);
-            sb.Append(' ');
-            exponent--;
-        }
-        return sb.ToString();
-    }
-    public static BigInteger RemoveAllFactors(BigInteger integer, BigInteger factor)
-    {
-        ArgumentOutOfRangeException.ThrowIfLessThan(2, factor, nameof(factor));
-        while (integer % factor == 0) integer /= factor;
-        return integer;
-    }
-
-    private static SortedSet<Q> TestQs()
-    {
-        SortedSet<Q> qs = new();
-        for (int num = -8; num <= 8; num++)
-        {
-            if (num == 0) continue;
-            for (int den = 1; den <= 12; den++)
-            {
-                Q q = new Q(num, den);
-                qs.Add(q);
-            }            
-        }
-        return qs;
-    }
 
     static void Main()
     {                
         Console.OutputEncoding = Encoding.UTF8;
-        BigInteger result1 = new BigInteger(3).ModularInverse(7);  // 5
-        BigInteger result2 = new BigInteger(2).ModularInverse(11); // 6
+        Q qD = new Q(-1, 4);
+        Qb qbDec = qD.InBase(10);
         
-        //BigInteger result1 = new BigInteger(10).Mod(3);  //  1
-        //BigInteger result2 = new BigInteger(-10).Mod(3);  // 2
-        //BigInteger result3 = new BigInteger(10).Mod(-3); //  -2
-        //BigInteger result4 = new BigInteger(-10).Mod(-3); //  -1
-
-        Console.WriteLine(result1);
-        Console.WriteLine(result2); 
-        //Console.WriteLine(result3);
-        //Console.WriteLine(result4);
-
+        return;
         //Qb qb= new Qb(-1, 13, new Base(3)); 
         //works
         //Qb qb = new Qb(23, 3, 2);  //?
@@ -74,7 +30,7 @@ internal class Program
         //Console.WriteLine(x2);
         //return;
         //1011 110110110110  13 -16/3
-       
+
         return;
 
         Qp qp1 = new Qp(new Q(1, 1), new Base(2));
