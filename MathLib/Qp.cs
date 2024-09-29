@@ -255,30 +255,17 @@ public class Qp : Q
     public IEnumerable<int> Coefficients() => Generator.Coefficients();
 
     /// <summary>
-    /// Returns a string for the p-adic number in canonical form.
+    /// Returns a string for the p-adic number in expanded form.
     /// </summary>
     /// <param name="coefficientCount">The number of coefficients to include</param>
     /// <returns></returns>
-    public string ToStringCanonical(int coefficientCount = 16)
-    {
-        //TODO: fix this!
-        return Generator.ToStringCanonical(coefficientCount);
-        
-        //StringBuilder sb = new StringBuilder();
-        //int exponent = FirstExponent;
-        //foreach (int coeff in Coefficients().Take(coefficientCount))
-        //{
-        //    sb.Append(coeff);
-        //    if (exponent == -1) sb.Append('.');
-        //    exponent++;
-        //}
-        //sb.Append("…");
-        //return sb.ToString();
-    }
+    public string ToStringExpanded(int coefficientCount = 16) 
+        => Generator.ToStringExpanded(coefficientCount);
+    
     /// <summary>
     /// Default string representation of the p-adic number.
     /// </summary>
-    public override string ToString() => $"{base.ToStringSimple()} = {ToStringCanonical()}";
+    public override string ToString() => $"{base.ToStringSimple()} = {ToStringExpanded()}";
 
     /// <summary>
     /// Returns a p-adic number representing 0.

@@ -49,9 +49,6 @@ public class QTuple
         Qb revQb = (new Q(revInt) / (Base.Pow(Qb.Period) - 1)).InBase(Base);
         //BaseInt prefixInt0 = qb.PreperiodicPart;
 
-        //Console.WriteLine(revQb);
-        //Console.WriteLine("Rev Q: " +  revQb.ToStringCanonical(60));
-
         return revQb;
         //int firstExponent = 1 - qb.FirstExponent;
 

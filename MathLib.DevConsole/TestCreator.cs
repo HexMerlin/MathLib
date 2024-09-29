@@ -8,30 +8,30 @@ public class TestCreator
 {
     public static void CreateTests()
     {
-        CreateTestsQbToStringCanonicalAndFullInt();
+        CreateTestsQbToStringExpandedAndFullInt();
         //CreateTestsConstructorOnParts_FromQb();
     }
 
-    public static void CreateTestsQbToStringCanonicalAndFullInt()
+    public static void CreateTestsQbToStringExpandedAndFullInt()
     {
         string staticHelper =
-@"  private static void ToStringCanonicalAndFullInt_ForQb_IsCorrect(string expectedCanonical, Q q, int base_)
+@"  private static void ToStringExpandedAndFullInt_ForQb_IsCorrect(string expectedExpanded, Q q, int base_)
     {
         Qb qbActual = q.InBase(base_);
 
-        Assert.AreEqual(expectedCanonical, qbActual.ToStringCanonical());
-        string canonicalNoDot = expectedCanonical.Replace(""."", """");
+        Assert.AreEqual(expectedExpanded, qbActual.ToStringExpanded());
+        string expandedNoDot = expectedExpanded.Replace(""."", """");
 
         string fullIntString = qbActual.FullInteger.ToStringCoefficient();
-        if (fullIntString.Length < canonicalNoDot.Length)
-            StringAssert.StartsWith(canonicalNoDot, fullIntString);
+        if (fullIntString.Length < expandedNoDot.Length)
+            StringAssert.StartsWith(expandedNoDot, fullIntString);
         else
-            Assert.AreEqual(canonicalNoDot, fullIntString[..canonicalNoDot.Length]);
+            Assert.AreEqual(expandedNoDot, fullIntString[..expandedNoDot.Length]);
     }
 ";
-        Console.WriteLine($"#region ToStringCanonical and FullInt");
+        Console.WriteLine($"#region ToStringExpanded and FullInt");
         Console.WriteLine(staticHelper);
-        CreateTests(CreateTests_Qb_ToStringCanonicalAndFullInt);
+        CreateTests(CreateTests_Qb_ToStringExpandedAndFullInt);
         Console.WriteLine($"#endregion");
     }
 
@@ -77,7 +77,7 @@ public class TestCreator
         Console.WriteLine();
     }
 
-    private static void CreateTests_Qb_ToStringCanonicalAndFullInt(Q q, Base base_)
+    private static void CreateTests_Qb_ToStringExpandedAndFullInt(Q q, Base base_)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"[TestMethod()]");
@@ -85,11 +85,11 @@ public class TestCreator
         string numeratorString = q.Numerator >= 0 ? q.Numerator.ToString() : $"Neg{q.Numerator.Abs()}";
 
         string numString = q.IsInteger ? $"Int{numeratorString}" : $"Q{numeratorString}div{q.Denominator}";
-        sb.Append($"public void ToStringCanonicalAndFullInt_For{numString}_Base{(int) base_}_IsCorrect()");
+        sb.Append($"public void ToStringExpandedAndFullInt_For{numString}_Base{(int) base_}_IsCorrect()");
 
         Qb qb = new Qb(q, base_);
-        string expected = qb.ToStringCanonical();
-        sb.Append($"=> ToStringCanonicalAndFullInt_ForQb_IsCorrect(\"{expected}\", new Q({qb.Numerator}, {qb.Denominator}), {(int)base_});");
+        string expected = qb.ToStringExpanded();
+        sb.Append($"=> ToStringExpandedAndFullInt_ForQb_IsCorrect(\"{expected}\", new Q({qb.Numerator}, {qb.Denominator}), {(int)base_});");
 
         Console.WriteLine(sb.ToString());
         Console.WriteLine();

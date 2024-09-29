@@ -2265,11 +2265,11 @@ public class QpTests
 
     #region Qp From Q
 
-    private static void AssertQpFromQ_ReturnsCorrectQp(string expStringCanonical, BigInteger expNumerator, BigInteger expDenominator, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, int expFirstExponent, Qp actual)
+    private static void AssertQpFromQ_ReturnsCorrectQp(string expStringExpanded, BigInteger expNumerator, BigInteger expDenominator, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, int expFirstExponent, Qp actual)
     {
         Assert.AreEqual(expNumerator, actual.Numerator);
         Assert.AreEqual(expDenominator, actual.Denominator);
-        Assert.AreEqual(expStringCanonical, actual.ToStringCanonical(32));
+        Assert.AreEqual(expStringExpanded, actual.ToStringExpanded(32));
         Assert.AreEqual(expFirstExponent, actual.FirstExponent);
         Assert.AreEqual(expGeneratorNumerator, actual.Generator.Numerator);
         Assert.AreEqual(expectedGeneratorDenominator, actual.Generator.Denominator);
@@ -2418,12 +2418,12 @@ public class QpTests
 
     #region Qp From parts
 
-    private static void AssertQpFromParts_ReturnsCorrectQp(string expStringCanonical, BigInteger expNumerator, BigInteger expDenominator, int expFirstExponent, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, Qp actual)
+    private static void AssertQpFromParts_ReturnsCorrectQp(string expStringExpanded, BigInteger expNumerator, BigInteger expDenominator, int expFirstExponent, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, Qp actual)
     {
         Assert.Inconclusive("Not ready yet");
         Assert.AreEqual(expNumerator, actual.Numerator);
         Assert.AreEqual(expDenominator, actual.Denominator);
-        Assert.AreEqual(expStringCanonical, actual.ToStringCanonical(32));
+        Assert.AreEqual(expStringExpanded, actual.ToStringExpanded(32));
         Assert.AreEqual(expFirstExponent, actual.FirstExponent);
         Assert.AreEqual(expGeneratorNumerator, actual.Generator.Numerator);
         Assert.AreEqual(expectedGeneratorDenominator, actual.Generator.Denominator);
@@ -2598,7 +2598,7 @@ public class QpTests
     #region Reciprocal Coefficients
     //private static void Coefficients_ForReciprocal_ReturnsCorrectSequence(string expected, BigInteger integer, int base_)
     //{
-    //    string actual = new Qp(1, integer, base_).ToStringCanonical(coefficientCount: 32);
+    //    string actual = new Qp(1, integer, base_).ToStringExpanded(coefficientCount: 32);
     //    Assert.AreEqual(expected, actual);
     //}
 

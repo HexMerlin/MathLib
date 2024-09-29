@@ -5,12 +5,12 @@ public partial class Qb
 {
     /// <summary>
     /// Converts the current instance of <see cref="Qb"/> 
-    /// to its canonical string representation in the given base.
+    /// to its expanded string representation in the given base.
     /// </summary>
     /// <param name="coefficientCount">The number of coefficients to include, starting from the leftmost. (default=16)</param>
-    /// <returns>The canonical string representation of the current instance of <see cref="Qb"/>.</returns>
+    /// <returns>The expanded string representation of the current instance of <see cref="Qb"/>.</returns>
     /// <remarks>
-    /// The sign of a number is not encoded by (kept by) the canonical representation, since some Q and -Q can have the same string representation.
+    /// The sign of a number is not encoded by (kept by) the expanded representation, since some Q and -Q can have the same string representation.
     /// However, negative numbers, completes the generation, by enabling us to generate all ultimately periodic expansions, including those that are not covered by the positive rational numbers.
     /// </remarks>
     /// <example>
@@ -77,7 +77,7 @@ public partial class Qb
     ///   </item>
     /// </list>
     /// </example>
-    public string ToStringCanonical(int coefficientCount = 16)
+    public string ToStringExpanded(int coefficientCount = 16)
     {
         if (IsNaN) return nameof(NaN);
         StringBuilder sb = new StringBuilder();
@@ -92,12 +92,12 @@ public partial class Qb
         return sb.ToString();
     }
 
-    public string ToStringCanonicalSigned(int coefficientCount = 16) 
+    public string ToStringExpandedSigned(int coefficientCount = 16) 
         => IsNegative
-            ? "-" + (-this).InBase(Base.IntValue).ToStringCanonical(coefficientCount)
-            : ToStringCanonical(coefficientCount);
+            ? "-" + (-this).InBase(Base.IntValue).ToStringExpanded(coefficientCount)
+            : ToStringExpanded(coefficientCount);
 
     ///<summary>Returns the default string representation of the rational number</summary>
-    public override string ToString() => $"{base.ToString()} = {ToStringCanonical()}";
+    public override string ToString() => $"{base.ToString()} = {ToStringExpanded()}";
 
 }

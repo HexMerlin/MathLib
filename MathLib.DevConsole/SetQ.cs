@@ -34,7 +34,7 @@ public class SetQ
         {
             Qb qb = q.InBase(Base);
 
-            Console.WriteLine($"{qb.ToStringCanonical()}\t{qb.FullInteger} {qb.ToStringSimple()}\tPeriod:{qb.Period}\tLength:{qb.Length}");
+            Console.WriteLine($"{qb.ToStringExpanded()}\t{qb.FullInteger} {qb.ToStringSimple()}\tPeriod:{qb.Period}\tLength:{qb.Length}");
         }
     }
 }

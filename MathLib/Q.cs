@@ -128,7 +128,7 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     ///   </item>
     /// </list>
     /// </example>
-    /// <seealso cref="Qb.ToStringCanonical(int)"/>
+    /// <seealso cref="Qb.ToStringExpanded(int)"/>
     public BigInteger IntegralPart =>
         IsPositiveInteger
             ? (Numerator / Denominator) - 1
