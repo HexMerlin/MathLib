@@ -1,5 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Numerics;
+using System.Collections.Generic;
+using MathLib.Compatibility;
 
 namespace MathLib;
 
@@ -228,7 +231,7 @@ public class Qp : Q
     //PAdicPreperiodic(pAdicPreperiodic, firstExponent)
     //+ PAdicPeriodic(pAdicPeriodic, firstExponent + pAdicPreperiodic.Length))
     {
-        ArgumentOutOfRangeException.ThrowIfGreaterThan(firstExponent, 0, nameof(firstExponent));
+        ArgOutOfRangeException.ThrowIfGreaterThan(firstExponent, 0, nameof(firstExponent));
         _ = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic);
 
         //Q preQ = PAryPreperiodic(IsNegative, pAdicPreperiodic, -firstExponent - 1);

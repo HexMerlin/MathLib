@@ -1,6 +1,7 @@
 ﻿#nullable enable
+using MathLib.Compatibility;
+using System;
 using System.Numerics;
-using System.Runtime.CompilerServices;
 
 namespace MathLib;
 
@@ -98,8 +99,8 @@ public static class BigIntegerExtensions
     /// </exception>
     public static BigInteger LCM(this BigInteger first, BigInteger second)
     {
-        ArgumentOutOfRangeException.ThrowIfZero(first, nameof(first));
-        ArgumentOutOfRangeException.ThrowIfZero(second, nameof(second));
+        ArgOutOfRangeException.ThrowIfZero(first, nameof(first));
+        ArgOutOfRangeException.ThrowIfZero(second, nameof(second));
         return (first.Abs() / BigInteger.GreatestCommonDivisor(first, second)) * second.Abs();
     }
 
@@ -136,8 +137,8 @@ public static class BigIntegerExtensions
     /// <returns><see langword="true"/> <c>iff</c> the value is a power of the exponent.</returns>
     public static bool IsPowerOf(this BigInteger integer, int exponent)
     {
-        ArgumentOutOfRangeException.ThrowIfNegative(integer);
-        ArgumentOutOfRangeException.ThrowIfNegative(exponent);
+        ArgOutOfRangeException.ThrowIfNegative(integer, nameof(integer));
+        ArgOutOfRangeException.ThrowIfNegative(exponent, nameof(exponent));
 
         if (exponent == 0) return integer.IsOne;  // Only 1^0 = 1, no other number raised to 0 gives anything but 1.
         if (exponent == 1) return integer.IsOne;  // Only 1 is a power of 1.
@@ -185,8 +186,8 @@ public static class BigIntegerExtensions
     /// </exception>
     public static BigInteger ModularInverse(this BigInteger integer, BigInteger modulus)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(integer, 1, nameof(integer)); // Negative numbers and zero are not supported.
-        ArgumentOutOfRangeException.ThrowIfLessThan(modulus, 2, nameof(modulus)); // Inverse does not exist for modulus less than 2
+        ArgOutOfRangeException.ThrowIfLessThan(integer, 1, nameof(integer)); // Negative numbers and zero are not supported.
+        ArgOutOfRangeException.ThrowIfLessThan(modulus, 2, nameof(modulus)); // Inverse does not exist for modulus less than 2
 
         BigInteger remainder = modulus;
         (BigInteger x0, BigInteger x1) = (BigInteger.Zero, BigInteger.One);
@@ -254,4 +255,48 @@ public static class BigIntegerExtensions
         return (r0, s0, t0);
     }
 
+    /// <summary>
+    /// Parses the string representation of a number in the specified base to its <see cref="BigInteger"/> equivalent.
+    /// </summary>
+    /// <param name="input">The string representation of the number to parse. It may start with a '-' to indicate a negative number.</param>
+    /// <param name="fromBase">The base of the input number, ranging from 2 to 36.</param>
+    /// <returns>A <see cref="BigInteger"/> representation of the parsed value.</returns>
+    /// <example>
+    /// <code>
+    /// Console.WriteLine(Parse("-10.011", 2));  //outputs "-19/8"
+    /// </code>
+    /// </example>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="fromBase"/> is not within 2 to 36.</exception>
+    public static BigInteger Parse(string input, int fromBase)
+    {
+        if (fromBase is < 2 or > 36)
+            throw new ArgumentException($"Base must be between 2 and 36, but was {fromBase}.");
+       
+        bool isNegative = input.StartsWith('-');
+        int startIndex = isNegative ? 1 : 0; // Start after '-' if negative
+
+        BigInteger result = BigInteger.Zero;
+        BigInteger multiplier = BigInteger.One;
+
+        for (int i = input.Length - 1; i >= startIndex; i--)
+        {
+            char c = input[i];
+
+            int coeffValue = c switch
+            {
+                >= '0' and <= '9' => c - '0',
+                >= 'A' and <= 'Z' => c - 'A' + 10,
+                >= 'a' and <= 'z' => c - 'a' + 10,
+                _ => throw new ArgumentException($"Invalid character '{c}' in input string.")
+            };
+
+            if (coeffValue >= fromBase)
+                throw new ArgumentException($"Invalid character '{c}' for base {fromBase}.");
+            
+            result += coeffValue * multiplier;
+            multiplier *= fromBase;
+        }
+
+        return isNegative ? -result : result;
+    }
 }

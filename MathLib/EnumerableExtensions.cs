@@ -1,4 +1,5 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace MathLib;
 /// <summary>
 /// Provides extension methods for <see cref="IEnumerable{T}"/>.

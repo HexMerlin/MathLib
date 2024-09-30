@@ -13,14 +13,15 @@ internal class Program
 {
 
 
-    static void MainQp()
+    static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
 
-        Qp qp = new Qp(new Q(23, 3), new Base(2)); //.10111010101010101010
+        Qp qp = new Qp(new Q(2711, 200), new Base(10)); //.10111010101010101010
         Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
         Console.WriteLine(qp.Generator.ToStringExpanded(60));
+        return;
 
         ////Console.WriteLine("Cheat: " + new Qb(5, 6, qp.Base));
         Console.WriteLine($"Generator> {qp.Generator.ToStringCanonical()}");
@@ -32,9 +33,10 @@ internal class Program
 
     }
 
-    static void Main()
+    static void MainQ()
     {
         Console.OutputEncoding = Encoding.UTF8;
+
 
         //2102342102342102 4/9 base 5
         Qb qb1 = new Qb(3, 17, new Base(2)); 

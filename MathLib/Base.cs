@@ -1,6 +1,9 @@
-﻿using System.Numerics;
-namespace MathLib;
+﻿using System;
+using System.Numerics;
+using MathLib.Compatibility;
 
+
+namespace MathLib;
 
 /// <summary>
 /// Represents a base for number representation.
@@ -25,7 +28,7 @@ public readonly struct Base : IEquatable<Base>, IComparable<Base>
     /// <param name="base_">The base value.</param>
     public Base(int base_)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(base_, 2, nameof(base_));
+        ArgOutOfRangeException.ThrowIfLessThan(base_, 2, nameof(base_));
         this.IntValue = base_;
     }
 

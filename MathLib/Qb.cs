@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
 using System.Numerics;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MathLib;
 

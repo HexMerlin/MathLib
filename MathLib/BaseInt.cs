@@ -1,4 +1,7 @@
-﻿using System.Numerics;
+﻿using System;
+using System.Collections.Generic;
+using System.Numerics;
+using MathLib.Compatibility;
 
 namespace MathLib;
 
@@ -44,13 +47,13 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when an explicit <paramref name="length"/> is specified that is less than minimum required length of <paramref name="intValue"/> (in the given base).</exception>
     public BaseInt(Base base_, BigInteger intValue, int length = -1) : this(base_, intValue, base_.LengthOf(intValue), Unchecked.Yes) 
     { 
-        ArgumentOutOfRangeException.ThrowIfNegative(intValue, nameof(intValue)); // Negative numbers are not supported.
-        if (intValue.IsZero) ArgumentOutOfRangeException.ThrowIfGreaterThan(length, 0, nameof(length)); 
+        ArgOutOfRangeException.ThrowIfNegative(intValue, nameof(intValue)); // Negative numbers are not supported.
+        if (intValue.IsZero) ArgOutOfRangeException.ThrowIfGreaterThan(length, 0, nameof(length)); 
         //For clarity and robustness, this constructor does not allow BaseInt with value 0 to have a non-zero length. Use Zero() instead.                                                 
 
         if (length != -1) //override of default automatic length
         {
-            ArgumentOutOfRangeException.ThrowIfLessThan(length, Length, nameof(length));
+            ArgOutOfRangeException.ThrowIfLessThan(length, Length, nameof(length));
             Length = length;
         }
 
@@ -65,7 +68,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
 
     public static BaseInt Zero(Base base_, int zeroCount = 0)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(zeroCount, 0, nameof(zeroCount));
+        ArgOutOfRangeException.ThrowIfLessThan(zeroCount, 0, nameof(zeroCount));
         return new(base_, BigInteger.Zero, zeroCount, Unchecked.Yes);
 
     }

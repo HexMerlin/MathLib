@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<Configurations>Debug;Release</Configurations>
+		<Configurations>Debug;Release;Legacy</Configurations>
 	</PropertyGroup>
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->
@@ -16,6 +16,9 @@
 	<!-- Release configuration for .NET 9, using the latest C# version -->
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Legacy'">
+	  <TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
