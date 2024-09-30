@@ -265,7 +265,7 @@ public class Qp : Q
     /// <summary>
     /// Default string representation of the p-adic number.
     /// </summary>
-    public override string ToString() => $"{base.ToStringSimple()} = {ToStringExpanded()}";
+    public override string ToString() => $"{base.ToStringCanonical()} = {ToStringExpanded()}";
 
     /// <summary>
     /// Returns a p-adic number representing 0.

@@ -66,7 +66,7 @@ public class TestCreator
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"[TestMethod()]");
-        sb.AppendLine($" //{q.ToStringSimple()}, base {(int)base_}");
+        sb.AppendLine($" //{q.ToStringCanonical()}, base {(int)base_}");
         string numeratorString = q.Numerator >= 0 ? q.Numerator.ToString() : $"Neg{q.Numerator.Abs()}";
 
         string numString = q.IsInteger ? $"Int{numeratorString}" : $"Q{numeratorString}div{q.Denominator}";
@@ -81,7 +81,7 @@ public class TestCreator
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"[TestMethod()]");
-        sb.AppendLine($" //{q.ToStringSimple()}, base {(int)base_}");
+        sb.AppendLine($" //{q.ToStringCanonical()}, base {(int)base_}");
         string numeratorString = q.Numerator >= 0 ? q.Numerator.ToString() : $"Neg{q.Numerator.Abs()}";
 
         string numString = q.IsInteger ? $"Int{numeratorString}" : $"Q{numeratorString}div{q.Denominator}";

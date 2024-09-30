@@ -55,7 +55,7 @@ public partial class Q
         return (numerator, denominator);
     }
 
-    public partial string ToStringSimple()
+    public partial string ToStringCanonical()
         => IsNaN
             ? nameof(NaN)
             : Denominator.IsOne

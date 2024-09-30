@@ -13,17 +13,17 @@ internal class Program
 {
 
 
-    static void Main()
-    {                
+    static void MainQp()
+    {
         Console.OutputEncoding = Encoding.UTF8;
-  
+
 
         Qp qp = new Qp(new Q(23, 3), new Base(2)); //.10111010101010101010
         Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
         Console.WriteLine(qp.Generator.ToStringExpanded(60));
 
         ////Console.WriteLine("Cheat: " + new Qb(5, 6, qp.Base));
-        Console.WriteLine($"Generator> {qp.Generator.ToStringSimple()}");
+        Console.WriteLine($"Generator> {qp.Generator.ToStringCanonical()}");
         Console.WriteLine($"Generator> {nameof(qp.Generator.FirstExponent)}: {qp.Generator.FirstExponent}");
         Console.WriteLine($"Generator> {nameof(qp.Generator.PreperiodicPart)}: {qp.Generator.PreperiodicPart}");
         Console.WriteLine($"Generator> {nameof(qp.Generator.PeriodicPart)}: {qp.Generator.PeriodicPart}");
@@ -32,23 +32,24 @@ internal class Program
 
     }
 
-    static void MainQ()
+    static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
         //2102342102342102 4/9 base 5
-        Qb qb1 = new Qb(4, 9, new Base(5)); 
-        Console.WriteLine(qb1.ToStringExpanded(6));
-        Console.WriteLine(qb1.ShiftedFractions().Take(16).Str(", "));
-
-        Console.WriteLine($"Forward: {qb1}");
-        Console.WriteLine(qb1.Forwards(qb1.Base).Take(16).Str(", "));
-        Console.WriteLine(qb1.Forwards(qb1.Base).Select(f => f.Coeff(qb1.Base)).Take(16).Str(", "));
-        Console.WriteLine();
-        Qb qb2 = qb1;
-        Console.WriteLine($"Backward: {qb2} rev ");
-        Console.WriteLine(qb2.Backwards(qb2.Base).Take(16).Str(", "));
-        Console.WriteLine(qb2.Backwards(qb2.Base).Select(f => f.Coeff(qb2.Base)).Take(16).Str(", "));
+        Qb qb1 = new Qb(60, 13, new Base(2)); 
+        Console.WriteLine(qb1.ToStringExpanded(20));
+        //Console.WriteLine(qb1.ToStringFactorization());
+        Console.WriteLine(qb1.ToStringPeriodic());
+        Console.WriteLine(qb1.ToStringRepetend());
+        //Console.WriteLine($"Forward: {qb1}");
+        //Console.WriteLine(qb1.Forwards(qb1.Base).Take(16).Str(", "));
+        //Console.WriteLine(qb1.Forwards(qb1.Base).Select(f => f.Coeff(qb1.Base)).Take(16).Str(", "));
+        //Console.WriteLine();
+        //Qb qb2 = qb1;
+        //Console.WriteLine($"Backward: {qb2} rev ");
+        //Console.WriteLine(qb2.Backwards(qb2.Base).Take(16).Str(", "));
+        //Console.WriteLine(qb2.Backwards(qb2.Base).Select(f => f.Coeff(qb2.Base)).Take(16).Str(", "));
 
         return;
 
@@ -74,7 +75,7 @@ internal class Program
         }
         return;
 
-        Console.WriteLine(qb.ToStringSimple() + " = " + qb.ToStringExpanded() + " Fractions: " + qb.ShiftedFractions().Take(20).Str(", "));
+        Console.WriteLine(qb.ToStringCanonical() + " = " + qb.ToStringExpanded() + " Fractions: " + qb.ShiftedFractions().Take(20).Str(", "));
 
 
     

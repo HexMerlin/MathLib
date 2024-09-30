@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using System.Numerics;
+using MathLib.Prime;
 
 namespace MathLib;
 public partial class Qb 
@@ -92,10 +94,38 @@ public partial class Qb
         return sb.ToString();
     }
 
+    public string ToStringRepetend()
+        => PeriodicPart.ToStringCoefficient();
+    
+
+    public string ToStringPeriodic()
+        => ToStringPeriodic(FirstExponent);
+
+    internal string ToStringPeriodic(int firstExponent)
+    {
+        if (IsNaN) return nameof(NaN);
+        StringBuilder sb = new StringBuilder();
+        
+        int exponent = FirstExponent;
+        foreach ((BigInteger Integer, Q Fraction) in ShiftedFractions().Take(Length))
+        {
+            if (exponent == FirstPeriodicExponent) sb.Append('(');
+            sb.Append(Integer);
+            exponent--;
+        }
+
+        if (Period > 0) sb.Append(')');
+        sb.Append('_');
+        sb.Append(firstExponent);
+        return sb.ToString();
+    }
+
     public string ToStringExpandedSigned(int coefficientCount = 16) 
         => IsNegative
             ? "-" + (-this).InBase(Base.IntValue).ToStringExpanded(coefficientCount)
             : ToStringExpanded(coefficientCount);
+
+ 
 
     ///<summary>Returns the default string representation of the rational number</summary>
     public override string ToString() => $"{base.ToString()} = {ToStringExpanded()}";
