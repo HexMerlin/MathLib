@@ -1,0 +1,2 @@
+copy /Y C:\Dev\HexMerlin\MathLib\MathLib\bin\Legacy\netstandard2.1\MathLib.xml C:\Dev\UNITY\Rpn42\Assets\Plugins\
+copy /Y C:\Dev\HexMerlin\MathLib\MathLib\bin\Legacy\netstandard2.1\MathLib.dll C:\Dev\UNITY\Rpn42\Assets\Plugins\

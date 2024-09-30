@@ -18,7 +18,7 @@ internal class Program
         Console.OutputEncoding = Encoding.UTF8;
 
 
-        Qp qp = new Qp(new Q(2711, 200), new Base(10)); //.10111010101010101010
+        Qp qp = new Qp(new Q(1, 1), new Base(10)); //.10111010101010101010
         Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
         Console.WriteLine(qp.Generator.ToStringExpanded(60));
         return;
@@ -39,8 +39,8 @@ internal class Program
 
 
         //2102342102342102 4/9 base 5
-        Qb qb1 = new Qb(3, 17, new Base(2)); 
-        Console.WriteLine(qb1.ToStringExpanded(20));
+        Qb qb1 = new Qb(1, 1, new Base(10)); 
+        Console.WriteLine(qb1.ToStringExpandedSigned(20));
         Console.WriteLine(qb1.ToStringRotations());
         //Console.WriteLine(qb1.ToStringFactorization());
         Console.WriteLine(qb1.ToStringPeriodic());

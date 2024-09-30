@@ -125,9 +125,7 @@ public partial class Qb
     }
 
     public string ToStringExpandedSigned(int coefficientCount = 16) 
-        => IsNegative
-            ? "-" + (-this).InBase(Base.IntValue).ToStringExpanded(coefficientCount)
-            : ToStringExpanded(coefficientCount);
+        => (IsNegative ? "-" : string.Empty) + ToStringExpanded(coefficientCount);
 
 
     public string ToStringRotations()
