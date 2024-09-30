@@ -207,6 +207,29 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// <param name="q"></param>
     protected Q (Q q) : this(q.Numerator, q.Denominator, false) { }
 
+    /// <summary>
+    /// Initializes a rational number from its string representation.
+    /// The string can be an integer or a rational number in decimal form.
+    /// </summary>
+    /// <remarks>
+    /// Currently, the constructor does not support point notation.
+    /// </remarks>
+    /// <param name="input">The string representation of the rational number.</param>
+    public Q(string input)
+    {
+        Denominator = 1;
+
+        int pointIndex = input.IndexOf('.');
+        if (pointIndex != -1) // Currently not supporting point notation
+        {
+            Numerator = 0;
+            Denominator = 0;
+            return;
+        }
+
+        Numerator = BigInteger.Parse(input);
+    }
+
     #endregion Constructors
 
 }

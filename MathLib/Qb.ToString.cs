@@ -101,7 +101,7 @@ public partial class Qb
     public string ToStringPeriodic()
         => ToStringPeriodic(FirstExponent);
 
-    internal string ToStringPeriodic(int firstExponent)
+    internal string ToStringPeriodic(int firstExponentSuffix)
     {
         if (IsNaN) return nameof(NaN);
         StringBuilder sb = new StringBuilder();
@@ -116,7 +116,7 @@ public partial class Qb
 
         if (Period > 0) sb.Append(')');
         sb.Append('_');
-        sb.Append(firstExponent);
+        sb.Append(firstExponentSuffix);
         return sb.ToString();
     }
 
@@ -125,7 +125,24 @@ public partial class Qb
             ? "-" + (-this).InBase(Base.IntValue).ToStringExpanded(coefficientCount)
             : ToStringExpanded(coefficientCount);
 
- 
+
+    public string ToStringRotations()
+    {
+        StringBuilder sb = new StringBuilder();
+        int exponent = FirstExponent;
+        foreach ((BigInteger _, Q fraction) in ShiftedFractions().Take(Length))
+        {
+            if (exponent != FirstExponent) sb.Append(' ');
+            if (exponent == -1) sb.Append('.');
+
+            if (fraction.Denominator == this.Denominator)
+                sb.Append(fraction.Numerator + "/");
+            else
+                sb.Append(fraction.ToStringCanonical());
+            exponent--;
+        }
+        return sb.ToString();
+    }
 
     ///<summary>Returns the default string representation of the rational number</summary>
     public override string ToString() => $"{base.ToString()} = {ToStringExpanded()}";

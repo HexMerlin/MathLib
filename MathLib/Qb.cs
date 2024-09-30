@@ -294,6 +294,33 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <seealso cref="ShiftedFractions()"/>
     public static IEnumerable<int> Coefficients(Q q, Base base_) => ShiftedFractions(q, base_).Select(c => (int)c.Integer);
 
+    /// <summary>
+    /// Returns a new <see cref="Q"/> with a repetend (interpreted as an integer) that is base shifted 1 step to the left
+    /// compared to the original repetend (interpreted as an integer).
+    /// </summary>
+    /// <returns>A new <see cref="Q"/> instance with the base-shifted repetend.</returns>
+    public Q RepetendShiftLeft()
+    {
+        int period = Period;
+
+        Q num = Base.Pow(period) - 1;
+        Q den = Base.Pow(period - 1) - 1;
+        return this * num / den;
+    }
+
+    /// <summary>
+    /// Returns a new <see cref="Q"/> with a repetend (interpreted as an integer) that is base shifted 1 step to the right
+    /// compared to the original repetend (interpreted as an integer).
+    /// </summary>
+    /// <returns>A new <see cref="Q"/> instance with the base-shifted repetend.</returns>
+    public Q RepetendShiftRight()
+    {
+        int period = Period;
+        Q num = Base.Pow(period) - 1;
+        Q den = Base.Pow(period + 1) - 1;
+        return this * num / den;
+    }
+
     ///<inheritdoc/>
     public bool Equals(Qb? other) => other is not null && base.Equals(other) && Base.Equals(other.Base);
 

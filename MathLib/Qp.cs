@@ -369,6 +369,8 @@ public class Qp : Q
     private Qp AssertSameBaseAs(Qp other)
         => Base == other.Base ? this : throw new ArgumentException($"Bases must be equal: {Base} != {other.Base}");
 
+    public string ToStringPeriodic()
+        => Generator.ToStringPeriodic(FirstExponent);
 }
 
 //public enum QIsGenerator

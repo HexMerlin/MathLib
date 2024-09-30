@@ -37,8 +37,9 @@ internal class Program
         Console.OutputEncoding = Encoding.UTF8;
 
         //2102342102342102 4/9 base 5
-        Qb qb1 = new Qb(60, 13, new Base(2)); 
+        Qb qb1 = new Qb(3, 17, new Base(2)); 
         Console.WriteLine(qb1.ToStringExpanded(20));
+        Console.WriteLine(qb1.ToStringRotations());
         //Console.WriteLine(qb1.ToStringFactorization());
         Console.WriteLine(qb1.ToStringPeriodic());
         Console.WriteLine(qb1.ToStringRepetend());
