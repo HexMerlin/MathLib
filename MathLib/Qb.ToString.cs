@@ -100,9 +100,9 @@ public partial class Qb
     
 
     public string ToStringPeriodic()
-        => ToStringPeriodic(FirstExponent);
+        => ToStringPeriodic(FirstExponent == -1 ? "" : FirstExponent.ToString());
 
-    internal string ToStringPeriodic(int firstExponentSuffix)
+    internal string ToStringPeriodic(string firstExponentSuffix)
     {
         if (IsNaN) return nameof(NaN);
         StringBuilder sb = new StringBuilder();
@@ -116,8 +116,11 @@ public partial class Qb
         }
 
         if (Period > 0) sb.Append(')');
-        sb.Append('_');
-        sb.Append(firstExponentSuffix);
+        if (firstExponentSuffix.Length > 0)
+        {
+            sb.Append('_');
+            sb.Append(firstExponentSuffix);
+        }
         return sb.ToString();
     }
 

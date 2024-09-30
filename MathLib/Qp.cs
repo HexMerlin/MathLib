@@ -373,7 +373,7 @@ public class Qp : Q
         => Base == other.Base ? this : throw new ArgumentException($"Bases must be equal: {Base} != {other.Base}");
 
     public string ToStringPeriodic()
-        => Generator.ToStringPeriodic(FirstExponent);
+        => Generator.ToStringPeriodic(FirstExponent == 0 ? "" : FirstExponent.ToString());
 }
 
 //public enum QIsGenerator
