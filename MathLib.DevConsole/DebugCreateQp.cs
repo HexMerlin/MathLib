@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Numerics;
 namespace MathLib.DevConsole;
 
 public class DebugCreateQp
@@ -11,7 +6,7 @@ public class DebugCreateQp
     public static Qp CreateQp(Q q, int baseValue, int maxLen = 9)
     {
         Base base_ = new Base(baseValue);
-        int MinLen(int intValue) => base_.LengthOf(intValue);
+        int MinLen(int intValue) => new BigInteger(intValue).Length(baseValue);
 
         for (int len = 0; len <= maxLen; len++)
         {

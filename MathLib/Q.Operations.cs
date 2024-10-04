@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Numerics;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MathLib;
 
@@ -15,6 +16,40 @@ public partial class Q
     /// <param name="base_">The base to convert to.</param>
     /// <returns>A new <see cref="Qb"/> representing the current rational number in the specified base.</returns>
     public Qb InBase(Base base_) => new Qb(this, base_);
+
+    /// <summary>
+    /// Light version of <see cref="Qb.ShiftedFractions()"/> that takes a rational number and a base.
+    /// </summary>
+    /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
+    /// <param name="q">A rational number</param>
+    /// <param name="base_">The base</param>
+    /// <returns>An enumerable sequence of rational numbers representing the shifted fractional parts in base <paramref name="base_"/>.</returns>
+    /// <seealso cref="Qb.ShiftedFractions()"/>
+    public IEnumerable<(BigInteger Integer, Q Fraction)> ShiftedFractions(int base_)
+    {
+        Q q = this / BigInteger.Pow(base_, this.IntegralPart.Length(base_));
+
+        while (true)
+        {
+            Q f = q.FractionalPart;
+
+            q = q.FractionalPart * base_;
+            yield return (q.IntegralPart.Abs(), f);
+
+        }
+    }
+
+    /// <summary>
+    /// Light version of <see cref="Qb.Coefficients()"/> that takes a rational number and a base.
+    /// </summary>
+    /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
+    /// <param name="q">A rational number</param>
+    /// <param name="base_">The base</param>
+    /// <returns>An enumerable sequence of integers representing the coefficients of <paramref name="q"/> in base <paramref name="base_"/>.</returns>
+    /// <seealso cref = "Qb.Coefficients()" />
+    /// <seealso cref="Qb.ShiftedFractions()"/>
+    public IEnumerable<int> Coefficients(int base_) => ShiftedFractions(base_).Select(c => (int)c.Integer);
+
 
     public BigInteger Coeff(Base base_) => ((Numerator * base_.IntValue) / Denominator);
 

@@ -77,7 +77,7 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <para>Formula:</para>
     /// <para><see cref="IntegralLength"/> = <see cref="Q.IntegralPart"/>.Length(Base)</para>
     /// </remarks>
-    public int IntegralLength => Base.LengthOf(IntegralPart);
+    public int IntegralLength => IntegralPart.Length(Base.IntValue);
 
     /// <summary>
     /// Length of the fractional part (of the base B expansion).
@@ -153,6 +153,19 @@ public partial class Qb : Q, IEquatable<Qb>
        // Debug.Assert(new Qb(Numerator, Denominator, Base).Equals(this)); //Sanity check that we get the same result when running a complete costly period 
     }
 
+    /// <summary>
+    /// Returns a NaN Qb instance.
+    /// </summary>
+    public new static Qb NaN => new Qb();
+
+    /// <summary>
+    /// Constructor for a NaN Qb instance.
+    /// </summary>
+    private Qb() : base(Q.NaN) 
+    {
+        PreperiodicPart = BaseInt.Zero(new Base(2));
+        PeriodicPart = BaseInt.Zero(new Base(2));
+    }
 
     /// <summary>
     /// Extends a rational number to a Qb extension with the specific base <paramref name="base_"/>.
@@ -251,29 +264,6 @@ public partial class Qb : Q, IEquatable<Qb>
     }
 
     /// <summary>
-    /// Static version of <see cref="ShiftedFractions()"/> that takes a rational number and a base.
-    /// </summary>
-    /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
-    /// <param name="q">A rational number</param>
-    /// <param name="base_">The base</param>
-    /// <returns>An enumerable sequence of rational numbers representing the shifted fractional parts in base <paramref name="base_"/>.</returns>
-    /// <seealso cref="ShiftedFractions()"/>
-    public static IEnumerable<(BigInteger Integer, Q Fraction)> ShiftedFractions(Q q, Base base_)
-    {
-        q /= base_.Pow(base_.LengthOf(q.IntegralPart));
-
-        while (true)
-        {
-            Q f = q.FractionalPart;
-
-            q = q.FractionalPart * base_.IntValue;
-            yield return (q.IntegralPart.Abs(), f);
-
-        }
-    }
-
-
-    /// <summary>
     /// Returns the coefficient (or digit) expansion of a rational number in the specified base, expressed as a sequence of integers (modulo b). 
     /// </summary>
     /// <remarks>
@@ -285,16 +275,6 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <returns>An enumerable sequence of integers representing the coefficients in base <see cref="Base"/>.</returns>
 
     public IEnumerable<int> Coefficients() => ShiftedFractions().Select(c => (int)c.Integer);
-
-    /// <summary>
-    /// Static version of <see cref="Coefficients()"/> that takes a rational number and a base.
-    /// </summary>
-    /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
-    /// <param name="q">A rational number</param>
-    /// <param name="base_">The base</param>
-    /// <returns>An enumerable sequence of integers representing the coefficients of <paramref name="q"/> in base <paramref name="base_"/>.</returns>
-    /// <seealso cref="ShiftedFractions()"/>
-    public static IEnumerable<int> Coefficients(Q q, Base base_) => ShiftedFractions(q, base_).Select(c => (int)c.Integer);
 
     /// <summary>
     /// Returns a new <see cref="Q"/> with a repetend (interpreted as an integer) that is base shifted 1 step to the left

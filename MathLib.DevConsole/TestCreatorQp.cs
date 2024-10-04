@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Numerics;
+using System.Text;
 
 namespace MathLib.DevConsole;
 
@@ -43,7 +44,7 @@ $@"   [TestMethod()] public void QpFromQ_For{qpDescr}_Base{base_}_IsCorrect() =>
     public static Qp[] TestSetQp(int baseValue = 2)
     {
         Base base_ = new Base(baseValue);
-        int MinLen(int intValue) => base_.LengthOf(intValue);
+        int MinLen(int intValue) => new BigInteger(intValue).Length(baseValue);
 
         HashSet<Qp> qps = new HashSet<Qp>();
 

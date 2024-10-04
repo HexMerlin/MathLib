@@ -51,13 +51,6 @@ public readonly struct Base : IEquatable<Base>, IComparable<Base>
         _ => Q.One,
     };
 
-    /// <summary>
-    /// Gets the length of the given integer in the current base.
-    /// </summary>
-    /// <param name="integer">The integer.</param>
-    /// <returns>The length of the integer in the current base.</returns>
-    public int LengthOf(BigInteger integer) => integer.Length(IntValue);
-
     /// <inheritdoc/>
     public override bool Equals(object? obj) => obj is Base base_ && Equals(base_);
 

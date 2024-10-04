@@ -32,6 +32,16 @@ namespace MathLib;
 /// </example>
 public class Qp : Q 
 {
+
+    #region Data
+
+    /// <summary>
+    /// A reverse generator that can be used to generate the coefficients of the p-adic number, in reverse order (least significant digit first).
+    /// </summary>
+    public Qb Generator { get; }
+
+    #endregion Data
+
     /// <summary>
     /// Returns the prime base of this p-adic number.
     /// </summary>
@@ -39,11 +49,7 @@ public class Qp : Q
 
     public int FirstExponent => -Generator.IntegralLength;
 
-    /// <summary>
-    /// A reverse generator that can be used to generate the coefficients of the p-adic number, in reverse order (least significant digit first).
-    /// </summary>
-    public Qb Generator { get; }
-
+   
     /// <summary>
     /// Decomposes a rational number <paramref name="q"/> into an integer part <c>k</c> and a fractional remainder based on the specified modulus.
     /// </summary>
@@ -111,12 +117,26 @@ public class Qp : Q
     }
 
 
+    /// <summary>
+    /// Returns a NaN Qp instance.
+    /// </summary>
+    public new static Qp NaN => new Qp();
+
+    public static Qp CreateNaN => new Qp();
+
+    /// <summary>
+    /// Constructor for a NaN Qp instance.
+    /// </summary>
+    private Qp() : base(Q.NaN)
+    {
+        Generator = Qb.NaN;
+    }
 
     public Qp(BigInteger Numerator, BigInteger Denominator, Base base_) : this(new Q(Numerator, Denominator), base_) {}
 
     public Qp(Q q, Base base_) : base(q)
     {
-
+        
         int firstExponent = -1;
 
         BigInteger d = q.Denominator;
@@ -373,7 +393,7 @@ public class Qp : Q
         => Base == other.Base ? this : throw new ArgumentException($"Bases must be equal: {Base} != {other.Base}");
 
     public string ToStringPeriodic()
-        => Generator.ToStringPeriodic(FirstExponent == 0 ? "" : FirstExponent.ToString());
+        => IsNaN ? nameof(NaN) : Generator.ToStringPeriodic(FirstExponent == 0 ? "" : FirstExponent.ToString());
 }
 
 //public enum QIsGenerator

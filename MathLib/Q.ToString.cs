@@ -1,4 +1,8 @@
 ﻿using MathLib.Prime;
+using System.Numerics;
+using System.Text;
+using System;
+using System.Linq;
 
 namespace MathLib;
 
@@ -40,4 +44,30 @@ public partial class Q
         return str;
     }
 
+    public string ToStringFinite(int base_)
+    {
+        if (IsNaN) return nameof(NaN);
+        if (IsZero) return "0";
+                
+        StringBuilder sb = new StringBuilder();
+        if (IsNegative) sb.Append('-');
+
+        var qFIO = -(this.Abs);
+
+        int firstExponent = qFIO.IntegralPart.Length(base_) - 1;
+        int exponent = firstExponent;
+        foreach ((BigInteger Integer, Q fraction) in qFIO.ShiftedFractions(base_).Take(1000))
+        {
+            if (exponent < 0 && fraction.IsZero)
+                break;
+            if (exponent == -1) sb.Append('.');
+            sb.Append(Integer);
+            
+
+            exponent--;
+            
+
+        }
+        return sb.ToString();
+    }
 }

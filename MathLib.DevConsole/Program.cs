@@ -13,10 +13,14 @@ internal class Program
 {
 
 
-    static void Main()
+    static void MainQp()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
+        Qp xxx = Qp.NaN;
+        Console.WriteLine(xxx);
+        Console.WriteLine(xxx.ToStringPeriodic());
+        return;
 
         Qp qp = new Qp(new Q(1, 1), new Base(10)); //.10111010101010101010
         Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
@@ -33,13 +37,19 @@ internal class Program
 
     }
 
-    static void MainQ()
+    
+    static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
 
         //2102342102342102 4/9 base 5
-        Qb qb1 = new Qb(1, 1, new Base(10)); 
+        Q q = new Q(1, 2);
+        Console.WriteLine(q.ToStringFinite(10));
+        
+        return;
+        Qb qb1 = new Qb(1, 4, new Base(2));
+
         Console.WriteLine(qb1.ToStringExpandedSigned(20));
         Console.WriteLine(qb1.ToStringRotations());
         //Console.WriteLine(qb1.ToStringFactorization());

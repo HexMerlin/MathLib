@@ -45,7 +45,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <param name="length">An optional length of the <see cref="BaseInt"/>. Default is the minimum required length of <paramref name="intValue"/> in the given base.</param>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when the integer value is negative or the base is less than 2.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when an explicit <paramref name="length"/> is specified that is less than minimum required length of <paramref name="intValue"/> (in the given base).</exception>
-    public BaseInt(Base base_, BigInteger intValue, int length = -1) : this(base_, intValue, base_.LengthOf(intValue), Unchecked.Yes) 
+    public BaseInt(Base base_, BigInteger intValue, int length = -1) : this(base_, intValue, intValue.Length(base_.IntValue), Unchecked.Yes) 
     { 
         ArgOutOfRangeException.ThrowIfNegative(intValue, nameof(intValue)); // Negative numbers are not supported.
         if (intValue.IsZero) ArgOutOfRangeException.ThrowIfGreaterThan(length, 0, nameof(length)); 

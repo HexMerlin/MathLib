@@ -1,7 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using System.Linq;
 using System.Numerics;
-using MathLib.Prime;
 
 namespace MathLib;
 public partial class Qb 
