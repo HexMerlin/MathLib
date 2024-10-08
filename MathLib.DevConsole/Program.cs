@@ -5,6 +5,7 @@
 using System;
 using System.Diagnostics;
 using System.Numerics;
+using System.Reflection.Emit;
 using System.Text;
 
 namespace MathLib.DevConsole;
@@ -12,84 +13,82 @@ namespace MathLib.DevConsole;
 internal class Program
 {
 
-
-    static void MainQp()
+    static string PurePeriodic(Qb qb, bool reverse = false)
     {
+        string s = qb.ToStringPeriodic()[1..^1];
+        return reverse ? s.Reverse().Str() : s;
+    }
+
+    static void Main()
+    {
+        
+
         Console.OutputEncoding = Encoding.UTF8;
 
-        Qp xxx = Qp.NaN;
-        Console.WriteLine(xxx);
-        Console.WriteLine(xxx.ToStringPeriodic());
-        return;
+        BigInteger number = 13 * 23; //11*23; //299; //253; //667;
+        int b = 2;
+        Base base_ = new Base(b);
+        // for (BigInteger d = number; d <= number; d+=2)
+        BigInteger d = number;
+        {
+            for (BigInteger n = 1; n < d; n ++)
+            {
+                Q q = new Q(n, d).Negation(true);
+                Qb qb = new Qb(q, base_);
+                Qp qp = new Qp(q, base_);
+                Qb generator = qp.Generator;
 
-        Qp qp = new Qp(new Q(1, 1), new Base(10)); //.10111010101010101010
-        Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
-        Console.WriteLine(qp.Generator.ToStringExpanded(60));
-        return;
+                //string s1 = PurePeriodic(qb);
+                //string s2 = PurePeriodic(generator);
+                //if (s1 != s2)
+                {
+                    var res = (qp / generator);
 
-        ////Console.WriteLine("Cheat: " + new Qb(5, 6, qp.Base));
-        Console.WriteLine($"Generator> {qp.Generator.ToStringCanonical()}");
-        Console.WriteLine($"Generator> {nameof(qp.Generator.FirstExponent)}: {qp.Generator.FirstExponent}");
-        Console.WriteLine($"Generator> {nameof(qp.Generator.PreperiodicPart)}: {qp.Generator.PreperiodicPart}");
-        Console.WriteLine($"Generator> {nameof(qp.Generator.PeriodicPart)}: {qp.Generator.PeriodicPart}");
+                   // Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()}       {res.ToStringCanonical()} ");
+                    //if (q.Numerator != -n)
+                        Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()} {res.ToStringCanonical()}");
+                   // Console.WriteLine(res.InBase(base_).ToStringPeriodic());
+                    //Console.WriteLine(s1);
+                    //Console.WriteLine(s2);
+                    //Console.WriteLine();
+                }
+            }
+        }
 
-        return;
+    
+        //Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
+        //Console.WriteLine(qp.Generator.ToStringExpanded(60));
+        //return;
+
+        //////Console.WriteLine("Cheat: " + new Qb(5, 6, qp.Base));
+        //Console.WriteLine($"Generator> {qp.Generator.ToStringCanonical()}");
+        //Console.WriteLine($"Generator> {nameof(qp.Generator.FirstExponent)}: {qp.Generator.FirstExponent}");
+        //Console.WriteLine($"Generator> {nameof(qp.Generator.PreperiodicPart)}: {qp.Generator.PreperiodicPart}");
+        //Console.WriteLine($"Generator> {nameof(qp.Generator.PeriodicPart)}: {qp.Generator.PeriodicPart}");
+
+        //return;
 
     }
 
     
-    static void Main()
+    static void MainQb()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
 
         //2102342102342102 4/9 base 5
-        Q q = new Q(1, 2);
-        Console.WriteLine(q.ToStringFinite(10));
+      
         
-        return;
-        Qb qb1 = new Qb(1, 4, new Base(2));
-
-        Console.WriteLine(qb1.ToStringExpandedSigned(20));
-        Console.WriteLine(qb1.ToStringRotations());
-        //Console.WriteLine(qb1.ToStringFactorization());
-        Console.WriteLine(qb1.ToStringPeriodic());
-        Console.WriteLine(qb1.ToStringRepetend());
-        //Console.WriteLine($"Forward: {qb1}");
-        //Console.WriteLine(qb1.Forwards(qb1.Base).Take(16).Str(", "));
-        //Console.WriteLine(qb1.Forwards(qb1.Base).Select(f => f.Coeff(qb1.Base)).Take(16).Str(", "));
-        //Console.WriteLine();
-        //Qb qb2 = qb1;
-        //Console.WriteLine($"Backward: {qb2} rev ");
-        //Console.WriteLine(qb2.Backwards(qb2.Base).Take(16).Str(", "));
-        //Console.WriteLine(qb2.Backwards(qb2.Base).Select(f => f.Coeff(qb2.Base)).Take(16).Str(", "));
-
+     
         return;
 
 
         SetQ setQ = new SetQ(base_: 2, maxDenominator: 20);
         setQ.WriteOutput();
          return;
-   
- 
 
-        //Console.WriteLine(new BigInteger(0).IsPowerOf(13));
-        //return;
-
-  
         //TestCreator.CreateTests();
-       
-
-
-        Qb qb = new Qb(-1, 1, new Base(2));
-        foreach (var fraction in qb.ShiftedFractions().Take(20))
-        {
-            Console.WriteLine(fraction);
-        }
-        return;
-
-        Console.WriteLine(qb.ToStringCanonical() + " = " + qb.ToStringExpanded() + " Fractions: " + qb.ShiftedFractions().Take(20).Str(", "));
-
+    
 
     
         //Q_old q2 = new Q_old(22, 3);
