@@ -2418,16 +2418,21 @@ public class QpTests
 
     #region Qp From parts
 
-    private static void AssertQpFromParts_ReturnsCorrectQp(string expStringExpanded, BigInteger expNumerator, BigInteger expDenominator, int expFirstExponent, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, Qp actual)
+    private static void AssertQpFromParts_ReturnsCorrectQp(BigInteger expectedNumerator, BigInteger expectedDenominator, int firstExponent, Qp actual)
     {
-        Assert.Inconclusive("Not ready yet");
-        Assert.AreEqual(expNumerator, actual.Numerator);
-        Assert.AreEqual(expDenominator, actual.Denominator);
-        Assert.AreEqual(expStringExpanded, actual.ToStringExpanded(32));
-        Assert.AreEqual(expFirstExponent, actual.FirstExponent);
-        Assert.AreEqual(expGeneratorNumerator, actual.Generator.Numerator);
-        Assert.AreEqual(expectedGeneratorDenominator, actual.Generator.Denominator);
-        Assert.AreEqual(actual.Sign, actual.Generator.Sign);
+        Assert.AreEqual(expectedNumerator, actual.Numerator);
+        Assert.AreEqual(expectedDenominator, actual.Denominator);
+        Assert.AreEqual(firstExponent, actual.FirstExponent);
+    }
+    
+    [TestMethod()]
+    public void QpFromParts_For0_Base2_ReturnsCorrectQp()
+    {
+        Base base_ = new Base(2);
+        BaseInt preperiodicPart = new BaseInt(base_, 0); //empty
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        Qp actual = new Qp(preperiodicPart, periodicPart);
+        AssertQpFromParts_ReturnsCorrectQp(0, 1, 0, actual);
     }
 
     [TestMethod()]
@@ -2435,20 +2440,21 @@ public class QpTests
     {
         Base base_ = new Base(2);
         BaseInt preperiodicPart = new BaseInt(base_, 1); //1
-        BaseInt periodicPart = new BaseInt(base_, 0); //0
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("10000000000000000000000000000000…", 1, 1, 0, 1, 2, actual);
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(1, 1, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_ForNeg1_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 0); //0
+        BaseInt preperiodicPart = new BaseInt(base_, 0); //empty
         BaseInt periodicPart = new BaseInt(base_, 1); //1
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("11111111111111111111111111111111…", -1, 1, 0, -1, 1, actual);
-
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart);
+        AssertQpFromParts_ReturnsCorrectQp(-1, 1, firstExponent, actual);
     }
 
     [TestMethod()]
@@ -2456,29 +2462,32 @@ public class QpTests
     {
         Base base_ = new Base(2);
         BaseInt preperiodicPart = new BaseInt(base_, 1); //1
-        BaseInt periodicPart = new BaseInt(base_, 0); //0
-        Qp actual = new Qp(preperiodicPart, periodicPart, -1);
-        AssertQpFromParts_ReturnsCorrectQp("1.0000000000000000000000000000000…", 1, 2, -1, 1, 1, actual);
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        int firstExponent = -1;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(1, 2, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_ForNeg1Div2_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 1); //1
+        BaseInt preperiodicPart = new BaseInt(base_, 0); //empty
         BaseInt periodicPart = new BaseInt(base_, 1); //1
-        Qp actual = new Qp(preperiodicPart, periodicPart, -1);
-        AssertQpFromParts_ReturnsCorrectQp("1.1111111111111111111111111111111…", -1, 2, -1, -2, 1, actual);
+        int firstExponent = -1;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-1, 2, firstExponent, actual);
     }
-    
+
     [TestMethod()]
     public void QpFromParts_For2_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 1, 2); //01
-        BaseInt periodicPart = new BaseInt(base_, 0); //0
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("01000000000000000000000000000000…", 2, 1, 0, 1, 4, actual);
+        BaseInt preperiodicPart = new BaseInt(base_, 01, 2); //01
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(2, 1, firstExponent, actual);
     }
 
     [TestMethod()]
@@ -2487,113 +2496,144 @@ public class QpTests
         Base base_ = new Base(2);
         BaseInt preperiodicPart = BaseInt.Zero(base_, 1); //0
         BaseInt periodicPart = new BaseInt(base_, 1); //1
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("01111111111111111111111111111111…", -2, 1, 0, -1, 2, actual);
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-2, 1, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_For5_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 5); //101 
-        BaseInt periodicPart = new BaseInt(base_, 0); //0
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("10100000000000000000000000000000…", 5, 1, 0, 5, 8, actual);
+        BaseInt preperiodicPart = new BaseInt(base_, 5); //101
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(5, 1, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_ForNeg5_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 6); //110 
+        BaseInt preperiodicPart = new BaseInt(base_, 6); //110
         BaseInt periodicPart = new BaseInt(base_, 1); //1
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("11011111111111111111111111111111…", -5, 1, 0, -7, 8, actual);
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-5, 1, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_For1Div3_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 1); //1 
+        BaseInt preperiodicPart = new BaseInt(base_, 1); //1
         BaseInt periodicPart = new BaseInt(base_, 2); //10
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("11010101010101010101010101010101…", 1, 3, 0, 5, 6, actual);
-
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(1, 3, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_ForNeg1Div3_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 0); // 
+        BaseInt preperiodicPart = new BaseInt(base_, 0); //empty
         BaseInt periodicPart = new BaseInt(base_, 2); //10
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("10101010101010101010101010101010…", -1, 3, 0, -2, 3, actual);
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-1, 3, firstExponent, actual);
     }
-
 
     [TestMethod()]
     public void QpFromParts_For5Div2_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 5); //101 
-        BaseInt periodicPart = new BaseInt(base_, 0); //0
-        Qp actual = new Qp(preperiodicPart, periodicPart, -1);
-        AssertQpFromParts_ReturnsCorrectQp("1.0100000000000000000000000000000…", 5, 2, -1, 5, 4, actual);
+        BaseInt preperiodicPart = new BaseInt(base_, 5); //101
+        BaseInt periodicPart = new BaseInt(base_, 0); //empty
+        int firstExponent = -1;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(5, 2, firstExponent, actual);
     }
-
 
     [TestMethod()]
     public void QpFromParts_ForNeg5Div2_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 6); //110 
+        BaseInt preperiodicPart = new BaseInt(base_, 6); //110
         BaseInt periodicPart = new BaseInt(base_, 1); //1
-        Qp actual = new Qp(preperiodicPart, periodicPart, -1);
-        AssertQpFromParts_ReturnsCorrectQp("1.1011111111111111111111111111111…", -5, 2, -1, -7, 4, actual);
+        int firstExponent = -1;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-5, 2, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_For5Div9_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 1); //1 
+        BaseInt preperiodicPart = new BaseInt(base_, 1); //1
         BaseInt periodicPart = new BaseInt(base_, 28, 6); //011100
-        Qp actual = new Qp(preperiodicPart, periodicPart);
-        AssertQpFromParts_ReturnsCorrectQp("10111000111000111000111000111000…", 5, 9, 0, 13, 18, actual);
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(5, 9, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_ForNeg5Div9_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 0); //0 
-        BaseInt periodicPart = new BaseInt(base_, 49); //110001
-        Qp actual = new Qp(preperiodicPart, periodicPart);
-        AssertQpFromParts_ReturnsCorrectQp("11000111000111000111000111000111…", -5, 9, 0, -7, 9, actual);
+        BaseInt preperiodicPart = new BaseInt(base_, 1); //1
+        BaseInt periodicPart = new BaseInt(base_, 35); //100011
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-5, 9, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_For35Div9_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 13); //1101 
+        BaseInt preperiodicPart = new BaseInt(base_, 13); //1101
         BaseInt periodicPart = new BaseInt(base_, 14, 6); //001110
-        Qp actual = new Qp(preperiodicPart, periodicPart, 0);
-        AssertQpFromParts_ReturnsCorrectQp("11010011100011100011100011100011…", 35, 9, 0, 119, 144, actual);
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(35, 9, firstExponent, actual);
     }
 
     [TestMethod()]
     public void QpFromParts_For35Div18_Base2_ReturnsCorrectQp()
     {
         Base base_ = new Base(2);
-        BaseInt preperiodicPart = new BaseInt(base_, 13); //1101 
+        BaseInt preperiodicPart = new BaseInt(base_, 13); //1101
         BaseInt periodicPart = new BaseInt(base_, 14, 6); //001110
-        Qp actual = new Qp(preperiodicPart, periodicPart, -1);
-        AssertQpFromParts_ReturnsCorrectQp("1.1010011100011100011100011100011…", 35, 18, -1, 119, 72, actual);
+        int firstExponent = -1;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(35, 18, firstExponent, actual);
     }
-    #endregion
+
+    [TestMethod()]
+    public void QpFromParts_For23Div3_Base2_ReturnsCorrectQp()
+    {
+        Base base_ = new Base(2);
+        BaseInt preperiodicPart = new BaseInt(base_, 11); //1011
+        BaseInt periodicPart = new BaseInt(base_, 2); //10
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(23, 3, firstExponent, actual);
+    }
+
+    [TestMethod()]
+    public void QpFromParts_ForNeg23Div3_Base2_ReturnsCorrectQp()
+    {
+        Base base_ = new Base(2);
+        BaseInt preperiodicPart = new BaseInt(base_, 12); //1100
+        BaseInt periodicPart = new BaseInt(base_, 1, 2); //01
+        int firstExponent = 0;
+        Qp actual = new Qp(preperiodicPart, periodicPart, firstExponent);
+        AssertQpFromParts_ReturnsCorrectQp(-23, 3, firstExponent, actual);
+    }
+
+    #endregion Qp From parts
 
     #region Reciprocal Coefficients
     //private static void Coefficients_ForReciprocal_ReturnsCorrectSequence(string expected, BigInteger integer, int base_)

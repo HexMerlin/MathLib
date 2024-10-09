@@ -122,21 +122,21 @@ public class Qp : Q
     /// </summary>
     public new static Qp NaN => new Qp();
 
-    public static Qp CreateNaN => new Qp();
-
     /// <summary>
     /// Constructor for a NaN Qp instance.
     /// </summary>
-    private Qp() : base(Q.NaN)
-    {
-        Generator = Qb.NaN;
-    }
+    private Qp() : base(Q.NaN) => Generator = Qb.NaN;
 
     public Qp(BigInteger Numerator, BigInteger Denominator, Base base_) : this(new Q(Numerator, Denominator), base_) {}
 
+    ///<summary>
+    /// Constructor for a p-adic number.
+    /// </summary>
+    /// <param name="q">The rational number to represent as a p-adic number.</param>
+    /// <param name="base_">The prime base of the p-adic number.</param>
     public Qp(Q q, Base base_) : base(q)
     {
-        
+
         int firstExponent = -1;
 
         BigInteger d = q.Denominator;
@@ -163,7 +163,7 @@ public class Qp : Q
                 prefixLength = index;
                 break;
             }
-            
+
             list.Add(tuple);
             //if (current.IsZero)
             //    break;
@@ -185,14 +185,28 @@ public class Qp : Q
 
         int period = periodicInt.IsZero ? 0 : list.Count - prefixLength;
 
-     
-        Generator = new Qb(!q.IsNegative, preperiodicInt.IsZero 
-            ? BaseInt.Zero(base_, prefixLength) 
-            : new BaseInt(base_, preperiodicInt, prefixLength), 
-            periodicInt.IsZero 
-                ? BaseInt.Zero(base_, period) 
-                : new BaseInt(base_, periodicInt, period) , firstExponent);
+
+        Generator = new Qb(!q.IsNegative, preperiodicInt.IsZero
+            ? BaseInt.Zero(base_, prefixLength)
+            : new BaseInt(base_, preperiodicInt, prefixLength),
+            periodicInt.IsZero
+                ? BaseInt.Zero(base_, period)
+                : new BaseInt(base_, periodicInt, period), firstExponent);
     }
+
+    /// <summary>
+    /// Constructor for a p-adic number for the specified preperiodic and periodic parts, and an optional first exponent.
+    /// </summary>
+    /// <param name="pAdicPreperiodic">The p-adic preperiodic part of the number.</param>
+    /// <param name="pAdicPeriodic">The p-adic periodic part of the number.</param>
+    /// <param name="firstExponent">The first exponent of the number (Default value = <c>0</c>).</param>
+    public Qp(BaseInt pAdicPreperiodic, BaseInt pAdicPeriodic, int firstExponent = 0) :
+       this(PAdicInterpretation(pAdicPreperiodic, pAdicPeriodic, firstExponent), pAdicPeriodic.Base)
+    {
+        ArgOutOfRangeException.ThrowIfGreaterThan(firstExponent, 0, nameof(firstExponent));
+        _ = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic);
+    }
+
 
     //https://math.stackexchange.com/questions/1186967/method-of-finding-a-p-adic-expansion-to-a-rational-number#:~:text=You%20can%20calculate%20the%20p,b%2Fp)%20...
     public static IEnumerable<int> PadicCoeffs(Q q, Base base_, bool yieldDelimiters = false)
@@ -225,43 +239,6 @@ public class Qp : Q
         }
     }
 
-    //TODO: FIX THIS
-    //public Qp(Q q, Base base_) : base(q)
-    //{
-    //    Qb qb = (this).InBase(base_);
-    //    BaseInt pAryPreperiodic = qb.PreperiodicPart;
-    //    BaseInt pAryPeriodic = qb.PeriodicPart;
-
-    //    Q preQ = Q.PAdicPreperiodic(pAryPreperiodic, -qb.FirstExponent - 1);
-    //    Q perQ = Q.PAdicPeriodic(pAryPeriodic, -qb.FirstExponent - 1 + pAryPreperiodic.Length);
-
-    //    //DebugPAryPreperiodic = pAryPreperiodic;
-    //    //DebugPAryPeriodic = pAryPeriodic;
-
-    //    //DebugPAdicPreperiodic = Q.GetPAdicPreperiodic(qb.PreperiodicQ(), pAryPreperiodic, qb.FirstExponent);
-    //    //DebugPAdicPeriodic = Q.GetPAdicPeriodic(IsNegative, pAdicPeriodic, -firstExponent - 1 - pAdicPreperiodic.Length);
-
-    //    //Console.WriteLine("PRE: " + preQ);
-    //    //Console.WriteLine("PER: " + perQ);
-    //    Generator = (preQ + perQ).InBase(base_); //TODO: FIX THIS
-    //}
-
-    public Qp(BaseInt pAdicPreperiodic, BaseInt pAdicPeriodic, int firstExponent = 0) :
-       base(PAdicInterpretation(pAdicPreperiodic, pAdicPeriodic, firstExponent))
-    //PAdicPreperiodic(pAdicPreperiodic, firstExponent)
-    //+ PAdicPeriodic(pAdicPeriodic, firstExponent + pAdicPreperiodic.Length))
-    {
-        ArgOutOfRangeException.ThrowIfGreaterThan(firstExponent, 0, nameof(firstExponent));
-        _ = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic);
-
-        //Q preQ = PAryPreperiodic(IsNegative, pAdicPreperiodic, -firstExponent - 1);
-        //Q perQ = PAryPeriodic(IsNegative, pAdicPeriodic, -firstExponent - 1 - pAdicPreperiodic.Length);   
-        //Generator = (preQ + perQ).InBase(pAdicPeriodic.Base);
-        Q q = PAryInterpretation(IsNegative, pAdicPreperiodic, pAdicPeriodic, firstExponent);
-        
-        Generator = q.InBase(pAdicPeriodic.Base);
-      
-    }
 
 
     ///<summary>

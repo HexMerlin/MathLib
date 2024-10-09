@@ -23,7 +23,7 @@ public class BaseIntTests
     public void Constructor_For0_Len1_Base10_ThrowsException()
     {
         Base base_ = new(10);
-        Assert.ThrowsException<ArgumentOutOfRangeException>(() => new BaseInt(base_, 0, 1), "Length for 0 must not be greater than 0.");
+        Assert.ThrowsException<ArgumentException>(() => new BaseInt(base_, 0, 1), "For clarity and robustness, to create value 0 with a non-zero length use BaseInt.Zero() instead.");
     }
 
     [TestMethod]

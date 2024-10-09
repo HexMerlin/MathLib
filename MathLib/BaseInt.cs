@@ -48,9 +48,9 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     public BaseInt(Base base_, BigInteger intValue, int length = -1) : this(base_, intValue, intValue.Length(base_.IntValue), Unchecked.Yes) 
     { 
         ArgOutOfRangeException.ThrowIfNegative(intValue, nameof(intValue)); // Negative numbers are not supported.
-        if (intValue.IsZero) ArgOutOfRangeException.ThrowIfGreaterThan(length, 0, nameof(length)); 
-        //For clarity and robustness, this constructor does not allow BaseInt with value 0 to have a non-zero length. Use Zero() instead.                                                 
-
+        if (intValue.IsZero && length > 0) throw new ArgumentException("For clarity and robustness, to create value 0 with a non-zero length use BaseInt.Zero() instead.");
+        //Only for clarity and robustness, this constructor does not allow BaseInt with value 0 to have a non-zero length. Use Zero() instead.                                                 
+        
         if (length != -1) //override of default automatic length
         {
             ArgOutOfRangeException.ThrowIfLessThan(length, Length, nameof(length));
