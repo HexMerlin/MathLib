@@ -48,7 +48,7 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// In general mathematics, the concept of "integral part" is not objectively defined, since it has two possible interpretations (or modes).
     /// These interpretations are defined by whether we regard the set of all pure fractions to include the number 1 or not.
     /// We denote these interpretations (modes), as FIO (Fractions Include One) and FEO (Fractions Exclude One), respectively.
-    /// <para>For instance, in decimal, the number 1 has the following two interpretations:</para>
+    /// <para>For instance, in decimal, the number 1 could have the following two interpretations:</para>
     /// <code> 
     /// 1 = 0.999999... (FIO)
     /// 1 = 1.000000... (FEO)
@@ -58,9 +58,9 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// <para>Irrespective of the mode, any number is always the sum of its integral and fractional parts.</para>
     /// <para>In FIO, all numbers will have a non-zero-terminating expansion.</para>
     /// <para>In FEO, any number that can terminate (with an ultimately infinite expansion of zeros) will do so.</para>
-    /// <para>Only numbers where the denominator is a power of the base, can have different representations in FIO and FEO.</para>
+    /// <para>Only numbers with a period of 0, can have different representations in FIO and FEO.</para>
     /// <para>To make <see cref="IntegralPart"/> and <see cref="FractionalPart"/> well defined, yet allow access to both FIO and FEO,
-    /// we assign FIO to all positive numbers, and FEO to all negative numbers and zero.</para>
+    /// we assign FIO to all positive numbers, and FEO to all negative numbers and zero. This will make all members of Q have only one correct expansion.</para>
     /// <para>This whole logic is completely governed by the implementation of <see cref="IntegralPart"/>.
     /// Hence, we do not need to manage modes anywhere in the code base.
     /// </para>

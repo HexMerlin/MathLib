@@ -13,7 +13,7 @@ public partial class Qb
     /// <param name="coefficientCount">The number of coefficients to include, starting from the leftmost. (default=16)</param>
     /// <returns>The expanded string representation of the current instance of <see cref="Qb"/>.</returns>
     /// <remarks>
-    /// The sign of a number is not encoded by (kept by) the expanded representation, since some Q and -Q can have the same string representation.
+    /// The sign of a number is not encoded by (contained in) the expanded representation, since some Q and -Q can have the same string representation.
     /// However, negative numbers, completes the generation, by enabling us to generate all ultimately periodic expansions, including those that are not covered by the positive rational numbers.
     /// </remarks>
     /// <example>

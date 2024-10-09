@@ -24,36 +24,47 @@ internal class Program
         
 
         Console.OutputEncoding = Encoding.UTF8;
+        Qb xxx = new Q(0, 1).InBase(2);
+        Console.WriteLine(xxx.Period);
+        return;
+
+        Q a = new Q(4, 5); // -1/5
+        Q b = new Q(8, 11); // -1/11
+        Console.WriteLine(a.InBase(2).ToStringPeriodic());
+        Console.WriteLine(b.InBase(2).ToStringPeriodic());
+        var padicProd = Q.PadicProduct(a, b);
+        Console.WriteLine(padicProd.Take(60).Str(""));
+        return;
 
         BigInteger number = 13 * 23; //11*23; //299; //253; //667;
-        int b = 2;
-        Base base_ = new Base(b);
-        // for (BigInteger d = number; d <= number; d+=2)
-        BigInteger d = number;
-        {
-            for (BigInteger n = 1; n < d; n ++)
-            {
-                Q q = new Q(n, d).Negation(true);
-                Qb qb = new Qb(q, base_);
-                Qp qp = new Qp(q, base_);
-                Qb generator = qp.Generator;
+        //int b = 2;
+        //Base base_ = new Base(b);
+        //// for (BigInteger d = number; d <= number; d+=2)
+        //BigInteger d = number;
+        //{
+        //    for (BigInteger n = 1; n < d; n ++)
+        //    {
+        //        Q q = new Q(n, d).Negation(true);
+        //        Qb qb = new Qb(q, base_);
+        //        Qp qp = new Qp(q, base_);
+        //        Qb generator = qp.Generator;
 
-                //string s1 = PurePeriodic(qb);
-                //string s2 = PurePeriodic(generator);
-                //if (s1 != s2)
-                {
-                    var res = (qp / generator);
+        //        //string s1 = PurePeriodic(qb);
+        //        //string s2 = PurePeriodic(generator);
+        //        //if (s1 != s2)
+        //        {
+        //            var res = (qp / generator);
 
-                   // Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()}       {res.ToStringCanonical()} ");
-                    //if (q.Numerator != -n)
-                        Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()} {res.ToStringCanonical()}");
-                   // Console.WriteLine(res.InBase(base_).ToStringPeriodic());
-                    //Console.WriteLine(s1);
-                    //Console.WriteLine(s2);
-                    //Console.WriteLine();
-                }
-            }
-        }
+        //           // Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()}       {res.ToStringCanonical()} ");
+        //            //if (q.Numerator != -n)
+        //                Console.WriteLine($"Q: {qb.ToStringCanonical()} {generator.ToStringCanonical()} {res.ToStringCanonical()}");
+        //           // Console.WriteLine(res.InBase(base_).ToStringPeriodic());
+        //            //Console.WriteLine(s1);
+        //            //Console.WriteLine(s2);
+        //            //Console.WriteLine();
+        //        }
+        //    }
+        //}
 
     
         //Console.WriteLine(" " + Qp.PadicCoeffs(qp, qp.Base, yieldDelimiters: false).Take(60).Str(""));
