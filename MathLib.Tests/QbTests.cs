@@ -52,7 +52,7 @@ public class QbTests
     public void Coefficients_ForQ537div11_Base5_ReturnsCorrectSequence()
     {
         int[] expected = [1, 4, 3, 4, 0, 2, 1, 1, 4, 0, 2, 1, 1, 4];
-        int[] actual = new Qb(537, 11, new Base(5)).Coefficients().Take(expected.Length).ToArray();
+        int[] actual = new Qb(537, 11, 5).Coefficients().Take(expected.Length).ToArray();
 
         CollectionAssert.AreEqual(expected, actual);
     }

@@ -67,7 +67,7 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <summary>
     /// Gets the base of the rational number extension.
     /// </summary>
-    public Base Base => PeriodicPart.Base;
+    public int Base => PeriodicPart.Base;
 
     /// <summary>
     /// Length of the integer part (of the base B expansion).
@@ -77,7 +77,7 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <para>Formula:</para>
     /// <para><see cref="IntegralLength"/> = <see cref="Q.IntegralPart"/>.Length(Base)</para>
     /// </remarks>
-    public int IntegralLength => IntegralPart.Length(Base.IntValue);
+    public int IntegralLength => IntegralPart.Length(Base);
 
     /// <summary>
     /// Length of the fractional part (of the base B expansion).
@@ -135,7 +135,7 @@ public partial class Qb : Q, IEquatable<Qb>
     /// <param name="numerator">The numerator of the rational number.</param>
     /// <param name="denominator">The denominator of the rational number. Must be non-zero.</param>
     /// <param name="base_">The base of the rational number extension.</param>
-    public Qb(BigInteger numerator, BigInteger denominator, Base base_) : this(new Q(numerator, denominator), base_) { }
+    public Qb(BigInteger numerator, BigInteger denominator, int base_) : this(new Q(numerator, denominator), base_) { }
 
     /// <summary>
     /// Constructor that creates a <see cref="Qb"/> from the defining parts of a base-specific expansion.
@@ -163,8 +163,8 @@ public partial class Qb : Q, IEquatable<Qb>
     /// </summary>
     private Qb() : base(Q.NaN) 
     {
-        PreperiodicPart = BaseInt.Zero(new Base(2));
-        PeriodicPart = BaseInt.Zero(new Base(2));
+        PreperiodicPart = BaseInt.Zero(2);
+        PeriodicPart = BaseInt.Zero(2);
     }
 
     /// <summary>
@@ -172,9 +172,9 @@ public partial class Qb : Q, IEquatable<Qb>
     /// </summary>
     /// <param name="q">A rational number of type <see cref="Q"/></param>
     /// <param name="base_">The base of the rational number extension.</param>
-    public Qb(Q q, Base base_) : base(q)
+    public Qb(Q q, int base_) : base(q)
     {
-        this.PeriodicPart = base_.ZeroInt; //Initialize to zero, so the base is defined
+        this.PeriodicPart = BaseInt.Zero(base_); //Initialize to zero, so the base is defined
 
         //FirstExponent is now also accessible (since IntegralLength has been set)
         int exponent = FirstExponent;
@@ -198,23 +198,23 @@ public partial class Qb : Q, IEquatable<Qb>
                 break; //found end of periodic part
             if (firstPeriodicFraction.IsNaN)
             {
-                preperiodicPart *= Base.IntValue;
+                preperiodicPart *= base_;
                 preperiodicPart += integer;
             }
             else
             {
-                periodicPart *= Base.IntValue;
+                periodicPart *= base_;
                 periodicPart += integer;
             }
             exponent--;
         }
 
         this.PreperiodicPart = preperiodicPart.IsZero
-            ? BaseInt.Zero(Base, FirstExponent - firstPeriodicExponent)
-            : new BaseInt(Base, preperiodicPart, FirstExponent - firstPeriodicExponent);
+            ? BaseInt.Zero(base_, FirstExponent - firstPeriodicExponent)
+            : new BaseInt(base_, preperiodicPart, FirstExponent - firstPeriodicExponent);
         this.PeriodicPart = periodicPart.IsZero
-            ? BaseInt.Zero(Base)
-            : new BaseInt(Base, periodicPart, firstPeriodicExponent - exponent);
+            ? BaseInt.Zero(base_)
+            : new BaseInt(base_, periodicPart, firstPeriodicExponent - exponent);
 
         // Debug.Assert(new Qb(PreperiodicPart, PeriodicPart, FirstExponent).Equals(this)); //Sanity check that we get the same result when running a complete costly period calculation
 
@@ -257,7 +257,7 @@ public partial class Qb : Q, IEquatable<Qb>
         {
             Q f = q.FractionalPart;
 
-            q = f * Base.IntValue;
+            q = f * Base;
             yield return (q.IntegralPart.Abs(), f);
 
         }

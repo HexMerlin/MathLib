@@ -8,14 +8,12 @@ namespace MathLib;
 
 public partial class Q
 {
-    public Qb InBase(int base_) => new Qb(this, new Base(base_));
-
     /// <summary>
     /// Extends the current rational number to a <see cref="Qb"/> with the specified base.
     /// </summary>
     /// <param name="base_">The base to convert to.</param>
     /// <returns>A new <see cref="Qb"/> representing the current rational number in the specified base.</returns>
-    public Qb InBase(Base base_) => new Qb(this, base_);
+    public Qb InBase(int base_) => new Qb(this, base_);
 
     /// <summary>
     /// Light version of <see cref="Qb.ShiftedFractions()"/> that takes a rational number and a base.
@@ -51,26 +49,26 @@ public partial class Q
     public IEnumerable<int> Coefficients(int base_) => ShiftedFractions(base_).Select(c => (int)c.Integer);
 
 
-    public BigInteger Coeff(Base base_) => ((Numerator * base_.IntValue) / Denominator);
+    public BigInteger Coeff(int base_) => ((Numerator * base_) / Denominator);
 
-    public Q Backward(Base base_)
+    public Q Backward(int base_)
         => base_.IsPurelyPeriodic(this)
-            ? Numerator.IsDivisibleBy(base_.IntValue)
-                ? new Q(Numerator / base_.IntValue, Denominator)
-                : new Q((Numerator + Denominator) / base_.IntValue, Denominator)
-            : new Q(Numerator + Denominator, Denominator / base_.IntValue);
-    public Q Forward(Base base_)
+            ? Numerator.IsDivisibleBy(base_)
+                ? new Q(Numerator / base_, Denominator)
+                : new Q((Numerator + Denominator) / base_, Denominator)
+            : new Q(Numerator + Denominator, Denominator / base_);
+    public Q Forward(int base_)
     {
         BigInteger n = Numerator;
         BigInteger d = Denominator;
-        n *= base_.IntValue;
+        n *= base_;
         if (n > d) n /= d; //TODO: Or should it be % instead of /?
         return new Q(n, d);
     }
 
 
     //TODO :Make Forwards and Backwards work correctly
-    public IEnumerable<Q> Forwards(Base base_)
+    public IEnumerable<Q> Forwards(int base_)
     {
         Q q = this;
         while (true)
@@ -80,7 +78,7 @@ public partial class Q
         }
     }
 
-    public IEnumerable<Q> Backwards(Base base_)
+    public IEnumerable<Q> Backwards(int base_)
     {
         Q q = this;
         while (true)

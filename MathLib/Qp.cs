@@ -45,7 +45,7 @@ public class Qp : Q
     /// <summary>
     /// Returns the prime base of this p-adic number.
     /// </summary>
-    public Base Base => Generator.Base;
+    public int Base => Generator.Base;
 
     public int FirstExponent => -Generator.IntegralLength;
 
@@ -108,9 +108,9 @@ public class Qp : Q
         int count = 0;
         
         value = BigInteger.Abs(value);
-        while (value.IsDivisibleBy(Base.IntValue))
+        while (value.IsDivisibleBy(Base))
         {
-            value /= Base.IntValue;
+            value /= Base;
             count++;
         }
         return count;
@@ -129,22 +129,22 @@ public class Qp : Q
 
    
 
-    public Qp(BigInteger Numerator, BigInteger Denominator, Base base_) : this(new Q(Numerator, Denominator), base_) {}
+    public Qp(BigInteger Numerator, BigInteger Denominator, int base_) : this(new Q(Numerator, Denominator), base_) {}
 
     ///<summary>
     /// Constructor for a p-adic number.
     /// </summary>
     /// <param name="q">The rational number to represent as a p-adic number.</param>
     /// <param name="base_">The prime base of the p-adic number.</param>
-    public Qp(Q q, Base base_) : base(q)
+    public Qp(Q q, int base_) : base(q)
     {
 
         int firstExponent = -1;
 
         BigInteger d = q.Denominator;
-        while (d.IsDivisibleBy(base_.IntValue))
+        while (d.IsDivisibleBy(base_))
         {
-            d /= base_.IntValue;
+            d /= base_;
             firstExponent++;
         }
         Q current = new Q(q.Numerator, d);
@@ -155,7 +155,7 @@ public class Qp : Q
 
         while (true)
         {
-            var tuple = FindKQ(current, base_.IntValue);
+            var tuple = FindKQ(current, base_);
             current = tuple.q;
 
             int index = list.IndexOf(tuple);
@@ -175,13 +175,13 @@ public class Qp : Q
         BigInteger preperiodicInt = BigInteger.Zero;
         for (int i = 0; i < prefixLength; i++)
         {
-            preperiodicInt *= base_.IntValue;
+            preperiodicInt *= base_;
             preperiodicInt += list[i].k;
         }
         BigInteger periodicInt = BigInteger.Zero;
         for (int i = prefixLength; i < list.Count; i++)
         {
-            periodicInt *= base_.IntValue;
+            periodicInt *= base_;
             periodicInt += list[i].k;
         }
 
@@ -211,16 +211,16 @@ public class Qp : Q
 
 
     //https://math.stackexchange.com/questions/1186967/method-of-finding-a-p-adic-expansion-to-a-rational-number#:~:text=You%20can%20calculate%20the%20p,b%2Fp)%20...
-    public static IEnumerable<int> PadicCoeffs(Q q, Base base_, bool yieldDelimiters = false)
+    public static IEnumerable<int> PadicCoeffs(Q q, int base_, bool yieldDelimiters = false)
     {
         int firstExponent = -1;
 
         BigInteger d = q.Denominator;
 
         Q firstPeriodic = Q.NaN;
-        while (d.IsDivisibleBy(base_.IntValue))
+        while (d.IsDivisibleBy(base_))
         {
-            d /= base_.IntValue;
+            d /= base_;
             firstExponent--;
         }
         q = new Q(q.Numerator, d, normalize: false);
@@ -299,7 +299,7 @@ public class Qp : Q
     /// </summary>
     /// <param name="n">The integer to take the reciprocal of</param>
     /// <param name="base_">The base (p) of the resulting p-adic number</param>
-    private static Qb ReciprocalGenerator(BigInteger n, Base base_)
+    private static Qb ReciprocalGenerator(BigInteger n, int base_)
     {
         int firstPeriodicExponent = int.MaxValue;
         BigInteger firsPeriodicRemainder = BigInteger.Zero;
@@ -321,12 +321,12 @@ public class Qp : Q
 
             if (firstPeriodicExponent == int.MaxValue)
             {
-                preperiodicInt *= base_.IntValue;
+                preperiodicInt *= base_;
                 preperiodicInt += coefficient;
             }
             else
             {
-                periodicInt *= base_.IntValue;
+                periodicInt *= base_;
                 periodicInt += coefficient;
             }
             exponent--;
@@ -345,10 +345,10 @@ public class Qp : Q
     /// <param name="n">The number whose reciprocal's p-adic expansion is computed.</param>
     /// <param name="base_">The prime base of the p-adic expansion.</param>
     /// <returns>An enumerable tuple sequence (coefficient, remainder).</returns>
-    public static IEnumerable<(int coefficient, BigInteger remainder)> ReciprocalCoefficients(BigInteger n, Base base_)
+    public static IEnumerable<(int coefficient, BigInteger remainder)> ReciprocalCoefficients(BigInteger n, int base_)
     {
         BigInteger remainder = 1;  // Start with 1/n
-        BigInteger mod = base_.IntValue;        // Start with modulus p
+        BigInteger mod = base_;        // Start with modulus p
 
         while (true)
         {
@@ -356,15 +356,15 @@ public class Qp : Q
             BigInteger modInverse = n.ModularInverse(mod);
 
             // Calculate the next p-adic coefficient
-            BigInteger coefficient = (remainder * modInverse) % base_.IntValue;
+            BigInteger coefficient = (remainder * modInverse) % base_;
             if (coefficient < 0)
-                coefficient += base_.IntValue;
+                coefficient += base_;
 
             yield return ((int)coefficient, remainder % n);
             // Update the remainder (reduce by subtracting the contribution of the current coefficient)
-            remainder = (remainder - coefficient * n) / base_.IntValue;
+            remainder = (remainder - coefficient * n) / base_;
 
-            mod *= base_.IntValue;  // Increase mod to handle next precision step
+            mod *= base_;  // Increase mod to handle next precision step
         }
     }
 

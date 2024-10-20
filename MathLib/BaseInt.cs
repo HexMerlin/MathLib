@@ -19,7 +19,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <summary>
     /// Gets the base of the <see cref="BaseInt"/>.
     /// </summary>
-    public Base Base { get; }
+    public int Base { get; }
 
     /// <summary>
     /// Gets the length of the <see cref="BaseInt"/>.
@@ -45,7 +45,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <param name="length">An optional length of the <see cref="BaseInt"/>. Default is the minimum required length of <paramref name="intValue"/> in the given base.</param>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when the integer value is negative or the base is less than 2.</exception>
     /// <exception cref="ArgumentOutOfRangeException">Thrown when an explicit <paramref name="length"/> is specified that is less than minimum required length of <paramref name="intValue"/> (in the given base).</exception>
-    public BaseInt(Base base_, BigInteger intValue, int length = -1) : this(base_, intValue, intValue.Length(base_.IntValue), Unchecked.Yes) 
+    public BaseInt(int base_, BigInteger intValue, int length = -1) : this(base_, intValue, intValue.Length(base_), Unchecked.Yes) 
     { 
         ArgOutOfRangeException.ThrowIfNegative(intValue, nameof(intValue)); // Negative numbers are not supported.
         if (intValue.IsZero && length > 0) throw new ArgumentException("For clarity and robustness, to create value 0 with a non-zero length use BaseInt.Zero() instead.");
@@ -59,14 +59,15 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
 
     }
 
-    private BaseInt(Base base_, BigInteger intValue, int length, Unchecked _)
+    private BaseInt(int base_, BigInteger intValue, int length, Unchecked _)
     {
         Base = base_;
         IntValue = intValue;
         Length = length;
     }
 
-    public static BaseInt Zero(Base base_, int zeroCount = 0)
+
+    public static BaseInt Zero(int base_, int zeroCount = 0)
     {
         ArgOutOfRangeException.ThrowIfLessThan(zeroCount, 0, nameof(zeroCount));
         return new(base_, BigInteger.Zero, zeroCount, Unchecked.Yes);
@@ -98,7 +99,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     public BaseInt Reverse()
     {
         if (IsZero) return this;
-        BigInteger revInt = ReverseInt(Base.IntValue, IntValue, Length);
+        BigInteger revInt = ReverseInt(Base, IntValue, Length);
         return new BaseInt(Base, revInt, this.Length);
     }
 
@@ -106,12 +107,12 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <summary>
     /// Gets the first (most significant) coefficient.
     /// </summary>
-    public int First => (int)(IntValue / BigInteger.Pow(Base.IntValue, Length - 1));
+    public int First => (int)(IntValue / BigInteger.Pow(Base, Length - 1));
 
     /// <summary>
     /// Gets the last (least significant) coefficient.
     /// </summary>
-    public int Last => (int) IntValue % Base.IntValue;
+    public int Last => (int) IntValue % Base;
 
 
     /// <summary>
@@ -135,12 +136,12 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     {
         if (Length == 0) yield break;
         BigInteger current = IntValue;
-        BigInteger power = BigInteger.Pow(Base.IntValue, Length - 1);
+        BigInteger power = BigInteger.Pow(Base, Length - 1);
         for (int i = 0; i < Length; i++)
         {
             yield return (int)BigInteger.DivRem(current, power, out BigInteger remainder);
             current = remainder;
-            power /= Base.IntValue;
+            power /= Base;
         }
     }
 
@@ -211,7 +212,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     public BaseInt PadRightExtra(int zeros) 
         => IsZero ? 
             Zero(Base, Length + zeros) :
-            new BaseInt(Base, IntValue * BigInteger.Pow(Base.IntValue, zeros), Length + zeros);
+            new BaseInt(Base, IntValue * BigInteger.Pow(Base, zeros), Length + zeros);
 
 
 
@@ -231,7 +232,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <returns>A new <see cref="BaseInt"/> shifted left by <paramref name="shift"/> positions.</returns>
     public static BaseInt operator <<(BaseInt baseInt, int shift)
         => shift >= 0
-           ? new BaseInt(baseInt.Base, (baseInt.IntValue * BigInteger.Pow(baseInt.Base.IntValue, shift)) % BigInteger.Pow(baseInt.Base.IntValue, baseInt.Length), baseInt.Length)
+           ? new BaseInt(baseInt.Base, (baseInt.IntValue * BigInteger.Pow(baseInt.Base, shift)) % BigInteger.Pow(baseInt.Base, baseInt.Length), baseInt.Length)
             : baseInt >> -shift;
 
     /// <summary>
@@ -247,7 +248,7 @@ public class BaseInt : IEquatable<BaseInt>, IComparable<BaseInt>
     /// <returns>A new <see cref="BaseInt"/> shifted right by <paramref name="shift"/> positions.</returns>
     public static BaseInt operator >>(BaseInt baseInt, int shift)
         => shift >= 0
-            ? new BaseInt(baseInt.Base, baseInt.IntValue / BigInteger.Pow(baseInt.Base.IntValue, shift), baseInt.Length)
+            ? new BaseInt(baseInt.Base, baseInt.IntValue / BigInteger.Pow(baseInt.Base, shift), baseInt.Length)
             : baseInt << -shift;
 
     /// <summary>

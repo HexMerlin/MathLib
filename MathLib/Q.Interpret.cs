@@ -20,7 +20,7 @@ public partial class Q
     /// <returns>A new <see cref="Q"/> representing the rational number derived from the given parts.</returns>
     public static Q PAryInterpretation(bool negative, BaseInt pAryPreperiodic, BaseInt pAryPeriodic, int firstExponent = -1)
     {
-        Base b = pAryPreperiodic.AssertSameBaseAs(pAryPeriodic).Base;
+        int b = pAryPreperiodic.AssertSameBaseAs(pAryPeriodic).Base;
         int firstPeriodicExponent = firstExponent - pAryPreperiodic.Length + 1;
 
         Q result = new Q(pAryPreperiodic.IntValue);
@@ -34,7 +34,7 @@ public partial class Q
 
     public static Q PAdicInterpretation(BaseInt pAdicPreperiodic, BaseInt pAdicPeriodic, int firstExponent = 0)
     {
-        Base b = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic).Base;
+        int b = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic).Base;
         BaseInt pAryPreperiodic = pAdicPreperiodic.Reverse();
         BaseInt pAryPeriodic = pAdicPeriodic.Reverse();
 
@@ -81,9 +81,9 @@ public partial class Q
 
     public static Q PAryPeriodic(bool negative, BaseInt pAryPeriodic, int firstPeriodicExponent)
     {
-        Base base_ = pAryPeriodic.Base;
+        int base_ = pAryPeriodic.Base;
 
-        Q qPeriodic = pAryPeriodic.IsZero ? Q.Zero : new Q(pAryPeriodic.IntValue, BigInteger.Pow(pAryPeriodic.Base.IntValue, pAryPeriodic.Length) - 1);
+        Q qPeriodic = pAryPeriodic.IsZero ? Q.Zero : new Q(pAryPeriodic.IntValue, BigInteger.Pow(pAryPeriodic.Base, pAryPeriodic.Length) - 1);
 
         return qPeriodic.Negation(negative) * pAryPeriodic.Base.Pow(firstPeriodicExponent + 1);
     }
@@ -92,13 +92,13 @@ public partial class Q
     {
         BaseInt pAryPeriodic  = pAdicPeriodic.Reverse();
 
-        Q qPeriodic = pAryPeriodic.IsZero ? Q.Zero : new Q(pAryPeriodic.IntValue, BigInteger.Pow(pAryPeriodic.Base.IntValue, pAryPeriodic.Length) - 1);
+        Q qPeriodic = pAryPeriodic.IsZero ? Q.Zero : new Q(pAryPeriodic.IntValue, BigInteger.Pow(pAryPeriodic.Base, pAryPeriodic.Length) - 1);
         return -qPeriodic * pAryPeriodic.Base.Pow(firstPeriodicExponent);
     }
 
     public static BaseInt GetPAdicPreperiodic(Q pAdicPreperiodicQ, BaseInt pAryPreperiodic, int firstExponent)
     {
-        Base base_ = pAryPreperiodic.Base;
+        int base_ = pAryPreperiodic.Base;
         pAdicPreperiodicQ /= base_.Pow(firstExponent);
         Qb qb = pAdicPreperiodicQ.InBase(base_);
         return qb.PreperiodicPart.Reverse();
