@@ -127,6 +127,8 @@ public class Qp : Q
     /// </summary>
     private Qp() : base(Q.NaN) => Generator = Qb.NaN;
 
+   
+
     public Qp(BigInteger Numerator, BigInteger Denominator, Base base_) : this(new Q(Numerator, Denominator), base_) {}
 
     ///<summary>
