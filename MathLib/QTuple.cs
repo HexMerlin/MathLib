@@ -14,8 +14,8 @@ public class QTuple
         this.Base = base_;
         Qp qp = new Qp(q, base_);
 
-        A = (q + qp.Generator) / 2;
-        B = (q - qp.Generator) / 2;
+        A = (qp.Generator + q) / 2;
+        B = (qp.Generator - q) / 2;
     }
 
 
