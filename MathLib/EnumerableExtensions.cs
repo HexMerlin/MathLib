@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
 
 namespace MathLib;
 /// <summary>
@@ -15,4 +17,13 @@ public static class EnumerableExtensions
     /// <returns>A string with the joined elements.</returns>
     public static string Str<T>(this IEnumerable<T> source, string delimiter = "") =>
         string.Join(delimiter, source);
+
+
+    /// <summary>
+    /// Sum of all elements in the specified <paramref name="source"/>.
+    /// </summary>
+    /// <param name="source">Collection of <see cref="BigInteger"/> elements.</param>
+    /// <returns>Total sum as <see cref="BigInteger"/>.</returns>
+    public static BigInteger Sum(this IEnumerable<BigInteger> source) =>
+        source.Aggregate(BigInteger.Zero, (total, value) => total + value);
 }

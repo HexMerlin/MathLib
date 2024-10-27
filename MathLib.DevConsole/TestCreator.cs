@@ -62,7 +62,7 @@ public class TestCreator
     }
 
    
-    private static void Constructor_OnParts_FromQb(Q q, Base base_)
+    private static void Constructor_OnParts_FromQb(Q q, int base_)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"[TestMethod()]");
@@ -77,15 +77,15 @@ public class TestCreator
         Console.WriteLine();
     }
 
-    private static void CreateTests_Qb_ToStringExpandedAndFullInt(Q q, Base base_)
+    private static void CreateTests_Qb_ToStringExpandedAndFullInt(Q q, int base_)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append($"[TestMethod()]");
-        sb.AppendLine($" //{q.ToStringCanonical()}, base {(int)base_}");
+        sb.AppendLine($" //{q.ToStringCanonical()}, base {base_}");
         string numeratorString = q.Numerator >= 0 ? q.Numerator.ToString() : $"Neg{q.Numerator.Abs()}";
 
         string numString = q.IsInteger ? $"Int{numeratorString}" : $"Q{numeratorString}div{q.Denominator}";
-        sb.Append($"public void ToStringExpandedAndFullInt_For{numString}_Base{(int) base_}_IsCorrect()");
+        sb.Append($"public void ToStringExpandedAndFullInt_For{numString}_Base{base_}_IsCorrect()");
 
         Qb qb = new Qb(q, base_);
         string expected = qb.ToStringExpanded();
@@ -95,19 +95,19 @@ public class TestCreator
         Console.WriteLine();
     }
 
-    private static void CreateTestsForQAndNegativeQ_Bases235(Q q, Action<Q, Base> TestCreationMethod)
+    private static void CreateTestsForQAndNegativeQ_Bases235(Q q, Action<Q, int> TestCreationMethod)
     {
-        for (int baseInt_ = 2; baseInt_ <= 5; baseInt_++)
+        for (int base_ = 2; base_ <= 5; base_++)
         {
-            if (baseInt_ == 4) continue;
-            Base base_ = new Base(baseInt_);
+            if (base_ == 4) continue;
+            
             TestCreationMethod(q, base_);
             if (!q.IsZero)
                 TestCreationMethod(-q, base_);
         }
     }
 
-    private static void CreateTests(Action<Q, Base> TestCreationMethod)
+    private static void CreateTests(Action<Q, int> TestCreationMethod)
     {
         TestData td = new TestData();
 

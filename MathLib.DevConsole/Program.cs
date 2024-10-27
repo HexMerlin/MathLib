@@ -2,11 +2,10 @@
 #pragma warning disable CS0219 // Suppresses the Variable is assigned but its value is never used
 #pragma warning disable IDE0059 // Suppresses the Unnecessary assignment of a value
 
-using System;
-using System.Diagnostics;
 using System.Numerics;
-using System.Reflection.Emit;
 using System.Text;
+using MathLib;
+using MathLib.PAdics;
 
 namespace MathLib.DevConsole;
 
@@ -24,17 +23,41 @@ internal class Program
         
 
         Console.OutputEncoding = Encoding.UTF8;
-        Qb xxx = new Q(0, 1).InBase(2);
-        Console.WriteLine(xxx.Period);
+        //QTuple qTuple = new QTuple(new Q(77, 1), 2);
+
+        
+        for (int len = 2; len <= 8; len++)
+        {
+            PyramidBase pyramid = new PyramidBase(77, len);
+            Console.Write($"Len {len}: {pyramid}");
+            
+            Console.WriteLine();
+        }
+        
+        //Solver.Run();
         return;
 
-        Q a = new Q(4, 5); // -1/5
-        Q b = new Q(8, 11); // -1/11
-        Console.WriteLine(a.InBase(2).ToStringPeriodic());
-        Console.WriteLine(b.InBase(2).ToStringPeriodic());
-        var padicProd = Q.PadicProduct(a, b);
-        Console.WriteLine(padicProd.Take(60).Str(""));
-        return;
+        //var base_ = new Base(5);
+        //for (int i = -50; i <= 50; i++)
+        //{
+
+        //    Q q = new Q(i, 1);
+        //    Qp qp = new Qp(q, base_);
+        //    var coeffs = qp.Generator.Coefficients().Take(30).Str();
+        //    Qp qpNeg = new Qp(-q, base_);
+        //    var coeffsNeg = DerivedInput.Negate(qpNeg.Generator.Coefficients().Take(30), base_.IntValue).Str();
+
+        //    if (coeffs != coeffsNeg)
+        //    {
+        //        Console.WriteLine(i);
+        //        Console.WriteLine(coeffs);
+        //        Console.WriteLine(coeffsNeg);
+        //    }
+
+        //}
+        //return;
+
+
 
         BigInteger number = 13 * 23; //11*23; //299; //253; //667;
         //int b = 2;
@@ -94,9 +117,9 @@ internal class Program
         return;
 
 
-        SetQ setQ = new SetQ(base_: 2, maxDenominator: 20);
-        setQ.WriteOutput();
-         return;
+        //SetQ setQ = new SetQ(base_: 2, maxDenominator: 20);
+        //setQ.WriteOutput();
+        // return;
 
         //TestCreator.CreateTests();
     

@@ -5,7 +5,7 @@ public class DebugCreateQp
 {
     public static Qp CreateQp(Q q, int baseValue, int maxLen = 9)
     {
-        Base base_ = new Base(baseValue);
+        int base_ = baseValue;
         int MinLen(int intValue) => new BigInteger(intValue).Length(baseValue);
 
         for (int len = 0; len <= maxLen; len++)
