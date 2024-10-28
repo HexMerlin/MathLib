@@ -60,10 +60,10 @@ public class Solver
         {
             int tryVariant = TryArray[index];
             
-            if (!InputA.Certain(index))
+            if (!InputA.Locked(index))
                 InputA[index] = 1 - (tryVariant % 2);
             
-            if (!InputB.Certain(index))
+            if (!InputB.Locked(index))
                 InputB[index] = tryVariant / 2;
                         
             if (!ComputeProdDigit(index))

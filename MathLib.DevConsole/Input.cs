@@ -3,56 +3,62 @@ using MathLib;
 
 namespace MathLib.DevConsole;
 
+public enum LockState
+{
+    Permanent,
+    Locked,
+    Free,
+}
 
 public class Input : IInput
 {
-    public readonly int[] Coeffs;
-    private readonly bool[] certain;
+    public int[] Coeffs { get; }
+    private LockState[] locked { get; }
+
+    public bool Locked(int index) => index >= Length || locked[index] != LockState.Free;
+
+    public void SetLocked(int index, bool locked)
+    {
+        if (index < 0 || index >= Length)
+            throw new IndexOutOfRangeException($"Index {index} for {nameof(SetLocked)} is out of range");
+        if (this.locked[index] == LockState.Permanent)
+            throw new InvalidOperationException("Cannot modify a permanent lock");
+        this.locked[index] = locked ? LockState.Locked : LockState.Free;
+    }
 
     IEnumerable<int> IInput.Coeffs => Coeffs;
 
+    public int Length => Coeffs.Length;
+
     public int this[int index]
     {
-        get => Coeffs[index];
+        get => index < Length ? Coeffs[index] : 0;
         set
         {
-            //if (index >= 10 && value == 1)
-            //{
-            //    Console.WriteLine("Here! " + certain[index]);
-            //}
-            if (Coeffs[index] != value)
-                Coeffs[index] = 
-                    certain[index]
-                    ? throw new InvalidOperationException("Cannot change certain value")
-                    : Coeffs[index] = value;
+            if (value == Coeffs[index]) return;
+
+            Coeffs[index] = 
+                Locked(index)
+                ? throw new InvalidOperationException("Cannot change a locked value")
+                : Coeffs[index] = value;
         }
     }
 
-    public Input(int maxLength)
+    public Input(int length)
     {
-        Coeffs = new int[1000];
-        certain = new bool[1000];
+        Coeffs = new int[length];
+        locked = new LockState[length];
+        
+        Array.Fill(locked, LockState.Free, 0, length);
+
         Coeffs[0] = 1;
-        certain[0] = true;
-        for (int i = maxLength; i < certain.Length; i++) 
-        { 
-            Coeffs[i] = 0;
-            certain[i] = true;
-        }
+        locked[0] = LockState.Permanent;
+        Coeffs[^1] = 1;
+        locked[^1] = LockState.Permanent;
+
     }
-
-    public bool Certain(int index) => certain[index];
-
-    public void SetCertain(int index) => this.certain[index] = true;
 
 }
-
-
-//public void CheatAddAll(Q qB, Q qA)
-//{
-//    aDigits.AddRange(ToBitArray(new Qp(qA, new Base(Base))));
-//    bDigits.AddRange(ToBitArray(new Qp(qB, new Base(Base))));
-//}
 
 
 

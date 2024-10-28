@@ -18,6 +18,7 @@ internal class Program
         return reverse ? s.Reverse().Str() : s;
     }
 
+
     static void Main()
     {
         
@@ -25,13 +26,27 @@ internal class Program
         Console.OutputEncoding = Encoding.UTF8;
         //QTuple qTuple = new QTuple(new Q(77, 1), 2);
 
-        
-        for (int len = 2; len <= 8; len++)
+        //var pb = new PyramidBase(7, 3, 3);
+
+        //for (int i = 0; i < 20; i++)
+        //{    
+        //    Console.Write(pb.MinCoeff(i) + " ");
+        //}
+        //Console.WriteLine();
+
+        //return;
+        for (int yLen = 4; yLen <= 4; yLen++)
         {
-            PyramidBase pyramid = new PyramidBase(77, len);
-            Console.Write($"Len {len}: {pyramid}");
-            
-            Console.WriteLine();
+            Input inputY = new Input(yLen);
+            for (int xLen = 4; xLen <= 4; xLen++)
+            {
+                Input inputX = new Input(xLen);
+               
+                Product product = new Product(77, inputX, inputY);
+                Console.Write($"XLen {xLen} {yLen}: {product}");
+
+                Console.WriteLine();
+            }
         }
         
         //Solver.Run();

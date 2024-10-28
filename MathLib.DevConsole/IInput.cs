@@ -5,9 +5,11 @@ public interface IInput
 {
     int this[int index] { get; set; }
 
-    bool Certain(int index);
+    public bool Locked(int index);
 
-    void SetCertain(int index);
+    public void SetLocked(int index, bool locked);
+
+    public int Length { get; }
 
     public IEnumerable<int> Coeffs { get; }
 }
