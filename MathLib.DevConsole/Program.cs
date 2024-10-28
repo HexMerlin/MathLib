@@ -5,7 +5,7 @@
 using System.Numerics;
 using System.Text;
 using MathLib;
-using MathLib.PAdics;
+using MathLib.Mult;
 
 namespace MathLib.DevConsole;
 
@@ -35,20 +35,38 @@ internal class Program
         //Console.WriteLine();
 
         //return;
-        for (int yLen = 4; yLen <= 4; yLen++)
-        {
-            Input inputY = new Input(yLen);
-            for (int xLen = 4; xLen <= 4; xLen++)
-            {
-                Input inputX = new Input(xLen);
-               
-                Product product = new Product(77, inputX, inputY);
-                Console.Write($"XLen {xLen} {yLen}: {product}");
 
-                Console.WriteLine();
-            }
-        }
-        
+        Input inputX = Input.Fill(77);
+        Input inputY = Input.Fill(5);
+                
+        Product product = new Product(77*5, inputX, inputY);
+
+        Console.WriteLine("InputX: " + inputX);
+        Console.WriteLine("InputY: " + inputY);
+        Console.WriteLine(product);
+
+        Console.WriteLine(product.ToStringColumnSums());
+        Console.WriteLine(product.Number);
+        //for (int yLen = 5; yLen <= 5; yLen++)
+        //{
+        //    Input inputY = new Input(yLen);
+        //    Console.WriteLine("InputY: " + inputY);
+        //    for (int xLen = 2; xLen <= 2; xLen++)
+        //    {
+        //        Input inputX = new Input(xLen);
+        //        Console.WriteLine("InputX: " + inputX);
+        //        Product product = new Product(77, inputX, inputY);
+        //       // Console.WriteLine($"Coeff   {product}  XLen {xLen} YLen {yLen}: ");
+        //        Console.WriteLine($"ColSum: {product.ToStringColumnSums()}");
+        //      //  Console.WriteLine($"Lock:   {product.ToStringLockedValues()}");
+
+        //      // Console.WriteLine($"Min:     {product.ToStringMinValues()}");
+        //       // Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
+        //    }
+        //}
+
+
+
         //Solver.Run();
         return;
 
