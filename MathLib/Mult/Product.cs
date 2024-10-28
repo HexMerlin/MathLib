@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Diagnostics;
 using System.Numerics;
+using System.Collections;
+using System.Collections.Generic;
 
 
 namespace MathLib.Mult;
@@ -77,61 +79,72 @@ public class Product
         }
     }
 
-    public int MinCoeff(int xIndex)
+    public int MinCoeff(int index)
     {
-        int firstRow = xIndex == 0 || xIndex == XLength - 1 ? 1 : 0;
-        int lastRow = xIndex == YLength - 1 || xIndex == XLength + YLength - 2 ? 1 : 0;
+        int firstRow = index == 0 || index == XLength - 1 ? 1 : 0;
+        int lastRow = index == YLength - 1 || index == XLength + YLength - 2 ? 1 : 0;
         return firstRow + lastRow;
     }
 
-    public int ValueCount(int xIndex)
+    public int ValueCount(int index)
     {
-        int startRow = Math.Max(0, xIndex - XLength + 1);
-        int endRow = Math.Min(xIndex, YLength - 1);
+        int startRow = Math.Max(0, index - XLength + 1);
+        int endRow = Math.Min(index, YLength - 1);
 
         return startRow <= endRow ? endRow - startRow + 1 : 0;
     }
 
-    public int MaxCoeff(int xIndex)
+    public int MaxCoeff(int index)
     {
-        return ValueCount(xIndex); //this will not be same for negative numbers
+        return ValueCount(index); //this will not be same for negative numbers
     }
 
-    public bool Locked(int index)
+    public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
     {
-        for (int i = 0; i <= index; i++)
+        int startRow = Math.Max(0, index - InputX.Length + 1);
+        int endRow = Math.Min(index, InputY.Length - 1);
+
+        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
         {
-            if (!InputX.Locked(index - i) || !InputY.Locked(i)) return false;
+            int xIndex = index - yIndex;
+            yield return (xIndex, yIndex);
         }
-           
-        return true;
     }
 
     /// <summary>
-    /// Computes the column sum at a specified <paramref name="columnIndex"/>.
+    /// Computes the column sum at a specified <paramref name="index"/>.
     /// </summary>
-    /// <param name="columnIndex">Column index for which the sum is calculated.</param>
+    /// <param name="index">Column index for which the sum is calculated.</param>
     /// <returns>Sum of values in the specified column.</returns>
-    public int ColumnSum(int columnIndex)
+    public int ColumnSum(int index)
     {
         int columnSum = 0;
-      
-        // Calculate range of rows where InputY[r] affects columnIndex
-        int startRow = Math.Max(0, columnIndex - InputX.Length + 1);
-        int endRow = Math.Min(columnIndex, InputY.Length - 1);
 
-        for (int r = startRow; r <= endRow; r++)
+        foreach (var (xIndex, yIndex) in InputCells(index))
         {
-            if (InputY[r] == 1)
-            {
-                int xIndex = columnIndex - r;
+            if (InputY[yIndex] == 1)  // Only consider if InputY has a '1' at yIndex
                 columnSum += InputX[xIndex];
-            }
         }
-
         return columnSum;
     }
 
+    /// <summary>
+    /// Determines if all values affecting the column at a specified <paramref name="index"/> are locked.
+    /// </summary>
+    /// <param name="index">Column index to check for locked status.</param>
+    /// <returns><see langword="true"/> if all relevant values in <see cref="InputX"/> and <see cref="InputY"/> affecting the column are locked; otherwise, <see langword="false"/>.</returns>
+    public bool Locked(int index)
+    {
+        foreach (var (xIndex, yIndex) in InputCells(index))
+        {
+            // Check if both InputY[yIndex] is 1 and both InputY[yIndex] and InputX[xIndex] are locked
+            if (InputY[yIndex] == 1 && (!InputY.Locked(yIndex) || !InputX.Locked(xIndex)))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
 
     private static BigInteger Weight(int index) => BigInteger.One << index;

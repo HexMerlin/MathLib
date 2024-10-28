@@ -36,17 +36,24 @@ internal class Program
 
         //return;
 
-        Input inputX = Input.Fill(77);
-        Input inputY = Input.Fill(5);
+        Input inputX = Input.Fill(23);
+        Input inputY = Input.Fill(29);
                 
-        Product product = new Product(77*5, inputX, inputY);
+        Product product = new Product(23*29, inputX, inputY);
 
         Console.WriteLine("InputX: " + inputX);
         Console.WriteLine("InputY: " + inputY);
-        Console.WriteLine(product);
+        Console.WriteLine($"Coeff   {product}  XLen {product.XLength} YLen {product.YLength}: ");
+        Console.WriteLine($"ColSum: {product.ToStringColumnSums()}");
+        Console.WriteLine($"Lock:   {product.ToStringLockedValues()}");
 
-        Console.WriteLine(product.ToStringColumnSums());
         Console.WriteLine(product.Number);
+        Console.WriteLine();
+        for (int i = 0; i < product.Length; i++)
+        {
+            Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
+        }
+
         //for (int yLen = 5; yLen <= 5; yLen++)
         //{
         //    Input inputY = new Input(yLen);

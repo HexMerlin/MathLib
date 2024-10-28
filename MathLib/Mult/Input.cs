@@ -52,13 +52,12 @@ public class Input : IInput
     public static Input Fill(BigInteger number)
     {
         int[] coeffs = ToBitArray(number);
-        return new Input(coeffs);
+        Input input = new Input(coeffs);
+ 
+        return input;
     }
 
-    public Input(int length) : this(new int[length])
-    {
-
-    }
+    public Input(int length) : this(new int[length]) {}
     
     public Input(int[] coeffs)
     {
