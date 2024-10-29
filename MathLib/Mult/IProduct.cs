@@ -22,6 +22,10 @@ public interface IProduct
     IEnumerable<(int xIndex, int yIndex)> InputCells(int index);
     (int min, int max) MinMax(int index);
 
+    int TotalSetOnes() => MinMax().Select(m => m.min).Sum();
+
+    public IEnumerable<(int min, int max)> MinMax() => Enumerable.Range(0, Length).Select(MinMax);
+
     string ToStringMinValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).min).Str(", ")}]";
 
     string ToStringMaxValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).max).Str(", ")}]";

@@ -37,7 +37,7 @@ internal class Program
         //return;
 
 
-        IProduct product = new Product(23*29, 5, 5);
+        IProduct product = new Product(29*23, 5, 5);
 
         Console.WriteLine("InputX: " + product.InputX);
         Console.WriteLine("InputY: " + product.InputY);
@@ -46,12 +46,14 @@ internal class Program
         Console.WriteLine($"Min:    {product.ToStringMinValues()}");
         Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
 
-        product.InputX.Fill(23);
         product.InputX.Fill(29);
+        product.InputY.Fill(23);
         Console.WriteLine("Setting input coeffs");
+        Console.WriteLine("InputX: " + product.InputX);
+        Console.WriteLine("InputY: " + product.InputY);
         Console.WriteLine($"Min:    {product.ToStringMinValues()}");
         Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
-
+        Console.WriteLine($"Total set ones: {product.TotalSetOnes()}");
         Console.WriteLine();
         for (int i = 0; i < product.Length; i++)
         {

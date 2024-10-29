@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Diagnostics;
 using System.Numerics;
 using System.Collections;
@@ -93,13 +94,12 @@ public class Product : IProduct
         }
         return (oneCount, oneCount + notSetCount);
     }
-
-
-
+  
+  
     //private static BigInteger Weight(int index) => BigInteger.One << index;
 
     public override string ToString() => IsInvalid ? "Invalid" : $"[{coeffs.Str(", ")}]";
-       
+
     //public string ToStringMinValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).min).Str(", ")}]";
 
     //public string ToStringMaxValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).max).Str(", ")}]";

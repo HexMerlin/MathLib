@@ -108,4 +108,6 @@ public class NegativeProduct : IProduct
         }
         return (oneCount, oneCount + notSetCount);
     }
+
+    public IEnumerable<(int min, int max)> MinMax() => throw new NotImplementedException();
 }
