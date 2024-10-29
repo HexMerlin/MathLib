@@ -42,7 +42,47 @@ public class NegativeProduct : IProduct
         }
     }
 
-    public bool DistributeIntegerWithinMinMax() => throw new NotImplementedException();
+    private static bool IsOdd(int index) => (index & 1) != 0;
+
+    public bool DistributeIntegerWithinMinMax()
+    {
+        int[] initCoeffs = Input.ToBitArray(Integer); //this can be 1 longer than Length
+
+        Array.Copy(initCoeffs, coeffs, Length);
+        //distribute so all get min values 
+        for (int i = 0; i < Length; i++)
+        {
+            (int min, int max) = MinMax(i);
+            if (coeffs[i] < min)
+            {
+                int add = min - coeffs[i];
+                if (IsOdd(add))
+                    add++;
+                coeffs[i] += add;
+                if (i + 1 < Length) coeffs[i + 1] -= add / 2;
+            }
+
+        }
+        AssertCoeffsValid(initCoeffs);
+        return true;
+    }
+
+    private void AssertCoeffsValid(int[] reference)
+    {
+        int[] coeffs = this.coeffs.ToArray();
+
+        for (int i = 0; i < Length; i++)
+        {
+            int move = (coeffs[i] / 2);
+            coeffs[i] -= move * 2;
+            coeffs[i + 1] += move;
+        }
+        for (int i = 0; i < Length; i++)
+        {
+            if (coeffs[i] != reference[i])
+                throw new InvalidOperationException($"Assert failed: Invalid coefficient at index {i}");
+        }
+    }
 
     public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
     {

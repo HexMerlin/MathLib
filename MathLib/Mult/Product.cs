@@ -25,6 +25,8 @@ public class Product : IProduct
     public int YLength => InputY.Length;
 
     public bool IsInvalid => XLength == 0;
+    public NegativeProduct Negative() => new NegativeProduct(this);
+
 
     public Product(BigInteger integer, int xLength, int yLength)
     {

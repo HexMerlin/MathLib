@@ -36,7 +36,7 @@ internal class Program
 
         //return;
 
-        
+
         IProduct product = new Product(23*29, 5, 5);
 
         Console.WriteLine("InputX: " + product.InputX);
