@@ -36,18 +36,22 @@ internal class Program
 
         //return;
 
-        Input inputX = Input.Fill(23);
-        Input inputY = Input.Fill(29);
-                
-        Product product = new Product(23*29, inputX, inputY);
+        
+        IProduct product = new Product(23*29, 5, 5);
 
-        Console.WriteLine("InputX: " + inputX);
-        Console.WriteLine("InputY: " + inputY);
-        Console.WriteLine($"Coeff   {product}  XLen {product.XLength} YLen {product.YLength}: ");
-        Console.WriteLine($"ColSum: {product.ToStringColumnSums()}");
-        Console.WriteLine($"Lock:   {product.ToStringLockedValues()}");
+        Console.WriteLine("InputX: " + product.InputX);
+        Console.WriteLine("InputY: " + product.InputY);
+        Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
+     
+        Console.WriteLine($"Min:    {product.ToStringMinValues()}");
+        Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
 
-        Console.WriteLine(product.Number);
+        product.InputX.Fill(23);
+        product.InputX.Fill(29);
+        Console.WriteLine("Setting input coeffs");
+        Console.WriteLine($"Min:    {product.ToStringMinValues()}");
+        Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
+
         Console.WriteLine();
         for (int i = 0; i < product.Length; i++)
         {

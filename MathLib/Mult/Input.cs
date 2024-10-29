@@ -7,83 +7,69 @@ using System.Buffers.Text;
 
 namespace MathLib.Mult;
 
-public enum LockState
-{
-    Permanent,
-    Locked,
-    Free,
-}
+
 
 public class Input : IInput
 {
-    public int[] Coeffs { get; }
-    public int Length => Coeffs.Length;
+    private int[] coeffs { get; }
+    public int Length => coeffs.Length;
 
-    private LockState[] locked { get; }
+    public NegativeInput Negative() => new NegativeInput(this);
 
-    public bool Locked(int index) => index >= Length || locked[index] != LockState.Free;
+    IEnumerable<int> IInput.Coeffs => coeffs;
 
-    public void SetLocked(int index, bool locked)
-    {
-        if (index < 0 || index >= Length)
-            throw new IndexOutOfRangeException($"Index {index} for {nameof(SetLocked)} is out of range");
-        if (this.locked[index] == LockState.Permanent)
-            throw new InvalidOperationException("Cannot modify a permanent lock");
-        this.locked[index] = locked ? LockState.Locked : LockState.Free;
-    }
+    public bool IsSet(int index) => index >= Length || coeffs[index] != -1;
 
-    IEnumerable<int> IInput.Coeffs => Coeffs;
-
-   
     public int this[int index]
     {
-        get => index < Length ? Coeffs[index] : 0;
+        get => index < Length ? coeffs[index] : 0;
         set
         {
-            if (value == Coeffs[index]) return;
-
-            Coeffs[index] = 
-                Locked(index)
-                ? throw new InvalidOperationException("Cannot change a locked value")
-                : Coeffs[index] = value;
+            if (value == coeffs[index]) return;
+            if (index == 0 || index == Length - 1)
+                throw new InvalidOperationException("Cannot change the first or last coefficient");
+            coeffs[index] = value;
         }
     }
 
-    public static Input Fill(BigInteger number)
+    public void Fill(BigInteger number)
     {
+        if (number <= 0)
+            throw new InvalidOperationException("Cannot fill input with non-positive number");
         int[] coeffs = ToBitArray(number);
-        Input input = new Input(coeffs);
- 
-        return input;
+        if (coeffs.Length != Length)
+            throw new InvalidOperationException("Cannot fill input with different length");
+        Array.Copy(coeffs, this.coeffs, Length);
     }
 
-    public Input(int length) : this(new int[length]) {}
-    
-    public Input(int[] coeffs)
+    private Input(int[] coeffs) => this.coeffs = coeffs;
+
+    public Input(int length) 
     {
-        Coeffs = coeffs;
-        locked = new LockState[Length];
-        
-        Array.Fill(locked, LockState.Free, 0, Length);
-
-        Coeffs[0] = 1;
-        Coeffs[^1] = 1;
-        locked[0] = LockState.Permanent;
-        locked[^1] = LockState.Permanent;
-
+        this.coeffs = new int[length];
+        Array.Fill(coeffs, -1);
+        this.coeffs[0] = 1;
+        this.coeffs[^1] = 1;
     }
- 
+
     public static int[] ToBitArray(BigInteger integer) 
     {
         Qp qp = new Qp(integer, 1, 2);
         return qp.Generator.Coefficients().Take(qp.Generator.Length).ToArray();
     }
-    public override string ToString() => Enumerable.Range(0, Length).Select(i => Coeffs[i]).Str();
-
-    public string ToStringLocked() => Enumerable.Range(0, Length).Select(i => $"{Coeffs[i]}{(Locked(i) ? "L" : "")}").Str();
+    public override string ToString() => Enumerable.Range(0, Length).Select(i => coeffs[i] == -1 ? "?" : coeffs[i].ToString()).Str();
 
 }
 
 
+
+//public void SetLocked(int index, bool locked)
+//{
+//    if (index < 0 || index >= Length)
+//        throw new IndexOutOfRangeException($"Index {index} for {nameof(SetLocked)} is out of range");
+//    if (this.locked[index] == LockState.Permanent)
+//        throw new InvalidOperationException("Cannot modify a permanent lock");
+//    this.locked[index] = locked ? LockState.Locked : LockState.Free;
+//}
 
 

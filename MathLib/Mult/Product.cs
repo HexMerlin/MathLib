@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Diagnostics;
 using System.Numerics;
 using System.Collections;
@@ -8,157 +7,99 @@ using System.Collections.Generic;
 
 namespace MathLib.Mult;
 
-public class Product
+public class Product : IProduct
 {
-    public readonly BigInteger Integer;
+    #region Data
+    public BigInteger Integer { get; }
 
-    private readonly IInput InputX;
-    private readonly IInput InputY;
+    public IInput InputX { get; }
+    public IInput InputY { get; }
 
-    public readonly int[] Coeffs;
-   
+    private readonly int[] coeffs;
+
+    #endregion Data
+
+    public int Length => XLength + YLength - 1;
+
     public int XLength => InputX.Length;
     public int YLength => InputY.Length;
 
-    public int Length => Coeffs.Length;
-    
     public bool IsInvalid => XLength == 0;
 
-    private bool IsPositive => Integer >= 0;
-
-    public Product(BigInteger integer, IInput inputX, IInput inputY)
+    public Product(BigInteger integer, int xLength, int yLength)
     {
         this.Integer = integer;
-        this.InputX = inputX;
-        this.InputY = inputY;
+        this.InputX = new Input(xLength);
+        this.InputY = new Input(yLength);
 
-        int length = XLength + YLength - 1;
-        Coeffs = new int[length];
-       
-        Coeffs[0] = 1;
-        Coeffs[^1] = IsPositive ? 1 : YLength - 1;
-    
-        if (!SetUnlockedCoeffs())
+        coeffs = new int[Length];
+        if (!DistributeIntegerWithinMinMax())
         {
-            Coeffs = Array.Empty<int>();
+            coeffs = Array.Empty<int>();
         }
     }
 
-    private BigInteger LockedSum() => Coeffs.Select((c, i) => Locked(i) ? c * Weight(i) : BigInteger.Zero).Sum();
+    public int this[int index] => index < Length ? coeffs[index] : 0;
 
-    //private bool SetIndex(int index, int value)
-    //{
-    //    if (Locked[index]) throw new InvalidOperationException($"Cannot change locked value at index {index}");
-    //    if (value == Coeffs[index]) return true; //no change
-    //    Debug.Assert(value >= MinCoeff(index) && value <= MaxCoeff(index));
-    //    int delta
-    //    return SetUnlockedCoeffs();
-    //}
-
-    private bool SetUnlockedCoeffs()
+    public bool DistributeIntegerWithinMinMax()
     {
-        BigInteger rem = Integer - LockedSum();
-        if (rem < 0) return false;
-        for (int i = Length - 1; i >= 0; i--)
-        {
-            if (Locked(i)) continue;
-            int coeff = (int)BigInteger.Min(MaxCoeff(i), rem / Weight(i));
-            Coeffs[i] = coeff;
-            rem -= coeff * Weight(i);
-        }
-
-        //if (rem.IsZero) AssertMinCoeffs(); //this check should always pass
-        return rem.IsZero;
-    }
-
-    private void AssertMinCoeffs()
-    {
+        BigInteger rem = Integer;
+        
+        Array.Fill(coeffs, 0);
+        //distribute so all get min values 
         for (int i = 0; i < Length; i++)
         {
-            Debug.Assert(Coeffs[i] >= MinCoeff(i));
+            (int min, int max) = MinMax(i);
+            coeffs[i] = min;
+            rem -= min * IProduct.Weight(i); 
         }
-    }
+        //distribute as much as possible up to max
+        for (int i = Length - 1; i >= 0; i--)
+        {
+            int add = (int)BigInteger.Min(MinMax(i).max - coeffs[i], rem / IProduct.Weight(i));
+            coeffs[i] += add;
+            rem -= add * IProduct.Weight(i);
+        }
 
-    public int MinCoeff(int index)
-    {
-        int firstRow = index == 0 || index == XLength - 1 ? 1 : 0;
-        int lastRow = index == YLength - 1 || index == XLength + YLength - 2 ? 1 : 0;
-        return firstRow + lastRow;
-    }
-
-    public int ValueCount(int index)
-    {
-        int startRow = Math.Max(0, index - XLength + 1);
-        int endRow = Math.Min(index, YLength - 1);
-
-        return startRow <= endRow ? endRow - startRow + 1 : 0;
-    }
-
-    public int MaxCoeff(int index)
-    {
-        return ValueCount(index); //this will not be same for negative numbers
+        return rem.IsZero;
     }
 
     public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
     {
-        int startRow = Math.Max(0, index - InputX.Length + 1);
-        int endRow = Math.Min(index, InputY.Length - 1);
+        int yFirst = Math.Max(0, index - InputX.Length + 1);
+        int yLast = Math.Min(index, InputY.Length - 1);
 
-        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
-        {
-            int xIndex = index - yIndex;
-            yield return (xIndex, yIndex);
-        }
+        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
+            yield return (index - yIndex, yIndex);
     }
 
-    /// <summary>
-    /// Computes the column sum at a specified <paramref name="index"/>.
-    /// </summary>
-    /// <param name="index">Column index for which the sum is calculated.</param>
-    /// <returns>Sum of values in the specified column.</returns>
-    public int ColumnSum(int index)
+    public (int min, int max) MinMax(int index)
     {
-        int columnSum = 0;
-
+        int notSetCount = 0;
+        int oneCount = 0;
+      
         foreach (var (xIndex, yIndex) in InputCells(index))
         {
-            if (InputY[yIndex] == 1)  // Only consider if InputY has a '1' at yIndex
-                columnSum += InputX[xIndex];
+            int x = InputX[xIndex];
+            int y = InputY[yIndex];
+            if (x == 0 || y == 0)
+                continue; //zero value (not counted)
+            else if (x == 1 && y == 1)
+                oneCount++;
+            else
+                notSetCount++;
         }
-        return columnSum;
-    }
-
-    /// <summary>
-    /// Determines if all values affecting the column at a specified <paramref name="index"/> are locked.
-    /// </summary>
-    /// <param name="index">Column index to check for locked status.</param>
-    /// <returns><see langword="true"/> if all relevant values in <see cref="InputX"/> and <see cref="InputY"/> affecting the column are locked; otherwise, <see langword="false"/>.</returns>
-    public bool Locked(int index)
-    {
-        foreach (var (xIndex, yIndex) in InputCells(index))
-        {
-            // Check if both InputY[yIndex] is 1 and both InputY[yIndex] and InputX[xIndex] are locked
-            if (InputY[yIndex] == 1 && (!InputY.Locked(yIndex) || !InputX.Locked(xIndex)))
-            {
-                return false;
-            }
-        }
-        return true;
+        return (oneCount, oneCount + notSetCount);
     }
 
 
-    private static BigInteger Weight(int index) => BigInteger.One << index;
 
-    public BigInteger Number => Coeffs.Select((c, i) => c * Weight(i)).Sum();
+    //private static BigInteger Weight(int index) => BigInteger.One << index;
 
-    public override string ToString() => IsInvalid ? "Invalid" : $"[{Coeffs.Str(", ")}]";
+    public override string ToString() => IsInvalid ? "Invalid" : $"[{coeffs.Str(", ")}]";
+       
+    //public string ToStringMinValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).min).Str(", ")}]";
 
-    public string ToStringColumnSums() => $"[{Enumerable.Range(0, Length).Select(ColumnSum).Str(", ")}]";
-    //public string ToStringLockedValues() => $"[{Enumerable.Range(0, Length).Select(i => $"{Coeffs[i]}{(Locked(i) ? "L" : "")}").Str(", ")}]";
+    //public string ToStringMaxValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).max).Str(", ")}]";
 
-    public string ToStringLockedValues() => $"[{Enumerable.Range(0, Length).Select(i => Locked(i) ? "L" : "U").Str(", ")}]";
-
-    public string ToStringMinValues() => $"[{Enumerable.Range(0, Length).Select(MinCoeff).Str(", ")}]";
-
-    public string ToStringMaxValues() => $"[{Enumerable.Range(0, Length).Select(MaxCoeff).Str(", ")}]";
 }
