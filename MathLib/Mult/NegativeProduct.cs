@@ -47,22 +47,22 @@ public class NegativeProduct : ProductBase
         }
         int[] coeffs = new int[Length];
         Array.Copy(givenCoeffs, coeffs, Length);
-
         return IsCoeffsValid(coeffs) ? coeffs : Array.Empty<int>();
     }
 
-    private bool IsCoeffsValid(int[] coeffs)
+    private bool IsCoeffsValid(ReadOnlySpan<int> coeffs)
     {
         int[] reference = Input.ToBitArray(Integer);
-      
+        int[] result = coeffs.ToArray();
+
         for (int i = 0; i < Length; i++)
         {
-            int move = (coeffs[i] / 2);
-            coeffs[i] -= move * 2;
-            if (i < Length - 1) coeffs[i + 1] += move;
+            int move = (result[i] / 2);
+            result[i] -= move * 2;
+            if (i < Length - 1) result[i + 1] += move;
         }
         for (int i = 0; i < Length; i++)
-            if (coeffs[i] != reference[i]) return false;
+            if (result[i] != reference[i]) return false;
         
         return true;
     }

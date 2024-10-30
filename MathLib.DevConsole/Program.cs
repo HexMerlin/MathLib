@@ -39,32 +39,35 @@ internal class Program
 
         Product product = new Product(29*23, 5, 5);
 
-        Console.WriteLine("InputX: " + product.InputX);
-        Console.WriteLine("InputY: " + product.InputY);
-        Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
+        //Console.WriteLine("InputX: " + product.InputX);
+        //Console.WriteLine("InputY: " + product.InputY);
+        //Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
      
-        Console.WriteLine($"Min:    {product.ToStringMinValues()}");
-        Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
+        //Console.WriteLine($"Min:    {product.ToStringMinValues()}");
+        //Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
 
-        product.InputX.Fill(29);
-        product.InputY.Fill(23);
         Console.WriteLine("Setting input coeffs");
+        product.FillX(29);
+        product.FillY(23);
+        
         Console.WriteLine("InputX: " + product.InputX);
         Console.WriteLine("InputY: " + product.InputY);
         Console.WriteLine($"Min:    {product.ToStringMinValues()}");
+        Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
         Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
         Console.WriteLine($"Total set ones: {product.TotalSetOnes()}");
         Console.WriteLine();
-        for (int i = 0; i < product.Length; i++)
-        {
-            Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
-        }
+        //for (int i = 0; i < product.Length; i++)
+        //{
+        //    Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
+        //}
 
         NegativeProduct np = product.Negative;
-     
+        Console.WriteLine("*** NEGATIVE ***");
         Console.WriteLine("InputX: " + np.InputX);
         Console.WriteLine("InputY: " + np.InputY);
         Console.WriteLine($"Min:    {np.ToStringMinValues()}");
+        Console.WriteLine($"Coeff   {np.ToString()}  XLen {np.XLength} YLen {np.YLength}: ");
         Console.WriteLine($"Max:    {np.ToStringMaxValues()}");
         Console.WriteLine($"Total set ones: {np.TotalSetOnes()}");
         Console.WriteLine();

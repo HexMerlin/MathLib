@@ -38,11 +38,9 @@ public class Input : IInput
             throw new InvalidOperationException("Cannot fill input with non-positive number");
         int[] coeffs = ToBitArray(number);
         if (coeffs.Length != Length)
-            throw new InvalidOperationException("Cannot fill input with unmatching length");
+            throw new InvalidOperationException("Cannot fill input with non-matching length");
         Array.Copy(coeffs, this.coeffs, Length);
     }
-
-    private Input(int[] coeffs) => this.coeffs = coeffs;
 
     public Input(int length) 
     {

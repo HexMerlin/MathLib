@@ -16,8 +16,6 @@ public class Product : ProductBase
 
     #endregion Data
 
-    public bool IsInvalid => Length == 0;
-  
     public Product(BigInteger integer, int xLength, int yLength)
     {
         this.Integer = integer;
@@ -26,13 +24,9 @@ public class Product : ProductBase
         this.Negative = new NegativeProduct(this);
     }
 
-    public bool SetX(int index, int value)
-    {
-        if (InputX[index] == value)
-            return false;
-        InputX[index] = value;
-        return true;
-    }
+    public void FillX(BigInteger number) => InputX.Fill(number);
+
+    public void FillY(BigInteger number) => InputY.Fill(number);
 
     public override int[] GetCoeffs()
     {
