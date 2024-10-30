@@ -10,22 +10,30 @@ public class NegativeProduct : ProductBase
     #region Data
     
     public Product Positive { get; }   
-    public override IInput InputX { get; }
+    public override InputBase InputX { get; }
 
     #endregion Data
 
-    public override IInput InputY => Positive.InputY;
+    public override InputBase InputY => Positive.InputY;
 
     public override BigInteger Integer => -Positive.Integer;
    
     public NegativeProduct(Product positive)
     {
         this.Positive = positive;
-        this.InputX = ((Input) positive.InputX).Negative();
+        this.InputX = ((Input) positive.InputX).CreateNegative();
         
     }
 
     private static bool IsOdd(int index) => (index & 1) != 0;
+
+    public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
+    {
+        int yLast = Math.Min(index, InputY.Length - 1);  // `yLast` remains the same
+
+        for (int yIndex = 0; yIndex <= yLast; yIndex++)
+            yield return (index - yIndex, yIndex);
+    }
 
     public override int[] GetCoeffs()
     {

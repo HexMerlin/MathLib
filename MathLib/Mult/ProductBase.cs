@@ -6,12 +6,11 @@ using System;
 namespace MathLib.Mult;
 
 public abstract class ProductBase
-{
-    
+{    
     public abstract BigInteger Integer { get; }
 
-    public abstract IInput InputX { get; }
-    public abstract IInput InputY { get; }
+    public abstract InputBase InputX { get; }
+    public abstract InputBase InputY { get; }
     
     public int Length => XLength + YLength - 1;
     public int XLength => InputX.Length;
@@ -19,14 +18,7 @@ public abstract class ProductBase
         
     public abstract int[] GetCoeffs();
 
-    public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
-    {
-        int yFirst = Math.Max(0, index - InputX.Length + 1);
-        int yLast = Math.Min(index, InputY.Length - 1);
-
-        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
-            yield return (index - yIndex, yIndex);
-    }
+    public abstract IEnumerable<(int xIndex, int yIndex)> InputCells(int index);
 
     public (int min, int max) MinMax(int index)
     {

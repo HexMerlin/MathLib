@@ -47,8 +47,8 @@ internal class Program
         //Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
 
         Console.WriteLine("Setting input coeffs");
-        product.FillX(29);
-        product.FillY(23);
+        //product.FillX(29);
+        //product.FillY(23);
         
         Console.WriteLine("InputX: " + product.InputX);
         Console.WriteLine("InputY: " + product.InputY);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Numerics;
 
 
@@ -9,8 +10,8 @@ public class Product : ProductBase
     #region Data
     public override BigInteger Integer { get; }
 
-    public override IInput InputX { get; }
-    public override IInput InputY { get; }
+    public override InputBase InputX { get; }
+    public override InputBase InputY { get; }
 
     public NegativeProduct Negative { get; } 
 
@@ -27,6 +28,15 @@ public class Product : ProductBase
     public void FillX(BigInteger number) => InputX.Fill(number);
 
     public void FillY(BigInteger number) => InputY.Fill(number);
+
+    public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
+    {
+        int yFirst = Math.Max(0, index - InputX.Length + 1);
+        int yLast = Math.Min(index, InputY.Length - 1);
+
+        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
+            yield return (index - yIndex, yIndex);
+    }
 
     public override int[] GetCoeffs()
     {

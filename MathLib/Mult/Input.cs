@@ -9,18 +9,19 @@ namespace MathLib.Mult;
 
 
 
-public class Input : IInput
+
+public class Input : InputBase
 {
     private int[] coeffs { get; }
-    public int Length => coeffs.Length;
+    public override int Length => coeffs.Length;
 
-    public NegativeInput Negative() => new NegativeInput(this);
+    public NegativeInput CreateNegative() => new NegativeInput(this);
 
-    IEnumerable<int> IInput.Coeffs => coeffs;
+    public override IEnumerable<int> Coeffs => coeffs;
 
-    public bool IsSet(int index) => index >= Length || coeffs[index] != -1;
+    public override bool IsSet(int index) => index >= Length || coeffs[index] != -1;
 
-    public int this[int index]
+    public override int this[int index]
     {
         get => index < Length ? coeffs[index] : 0;
         set
@@ -32,7 +33,7 @@ public class Input : IInput
         }
     }
 
-    public void Fill(BigInteger number)
+    public override void Fill(BigInteger number)
     {
         if (number <= 0)
             throw new InvalidOperationException("Cannot fill input with non-positive number");
@@ -55,19 +56,6 @@ public class Input : IInput
         Qp qp = new Qp(integer, 1, 2);
         return qp.Generator.Coefficients().Take(qp.Generator.Length).ToArray();
     }
-    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str();
-
+ 
 }
-
-
-
-//public void SetLocked(int index, bool locked)
-//{
-//    if (index < 0 || index >= Length)
-//        throw new IndexOutOfRangeException($"Index {index} for {nameof(SetLocked)} is out of range");
-//    if (this.locked[index] == LockState.Permanent)
-//        throw new InvalidOperationException("Cannot modify a permanent lock");
-//    this.locked[index] = locked ? LockState.Locked : LockState.Free;
-//}
-
 
