@@ -39,7 +39,7 @@ public abstract class ProductBase
         return (oneCount, oneCount + notSetCount);
     }
 
-    public int TotalSetOnes() => MinMax().Select(m => m.min).Sum();
+    public int CoeffsSum() => GetCoeffs().Sum();
 
     public IEnumerable<(int min, int max)> MinMax() => Enumerable.Range(0, Length).Select(MinMax);
 

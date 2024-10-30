@@ -3,6 +3,7 @@
 #pragma warning disable IDE0059 // Suppresses the Unnecessary assignment of a value
 
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text;
 using MathLib;
 using MathLib.Mult;
@@ -35,62 +36,33 @@ internal class Program
         //Console.WriteLine();
 
         //return;
+        static void Print(string title, ProductBase product)
+        {
+            Console.WriteLine($"******** {title} ********");
+            Console.WriteLine("InputX: " + product.InputX);
+            Console.WriteLine("InputY: " + product.InputY);
+            Console.WriteLine($"Min:    {product.ToStringMinValues()}");
+            Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
+            Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
+            Console.WriteLine($"Coeffs sum: {product.CoeffsSum()}");
+            Console.WriteLine();
+
+        }
 
 
         Product product = new Product(29*23, 5, 5);
+        Print("Pos Product", product);
+        Print("Neg Product", product.Negative);
 
-        //Console.WriteLine("InputX: " + product.InputX);
-        //Console.WriteLine("InputY: " + product.InputY);
-        //Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
-     
-        //Console.WriteLine($"Min:    {product.ToStringMinValues()}");
-        //Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
-
-        Console.WriteLine("Setting input coeffs");
-        //product.FillX(29);
-        //product.FillY(23);
-        
-        Console.WriteLine("InputX: " + product.InputX);
-        Console.WriteLine("InputY: " + product.InputY);
-        Console.WriteLine($"Min:    {product.ToStringMinValues()}");
-        Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
-        Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
-        Console.WriteLine($"Total set ones: {product.TotalSetOnes()}");
+        product.FillX(29);
+        product.FillY(23);
         Console.WriteLine();
-        //for (int i = 0; i < product.Length; i++)
-        //{
-        //    Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
-        //}
+        Console.WriteLine("--------- correct -----------");
+        Print("Pos Product", product);
+        Print("Neg Product", product.Negative);
 
-        NegativeProduct np = product.Negative;
-        Console.WriteLine("*** NEGATIVE ***");
-        Console.WriteLine("InputX: " + np.InputX);
-        Console.WriteLine("InputY: " + np.InputY);
-        Console.WriteLine($"Min:    {np.ToStringMinValues()}");
-        Console.WriteLine($"Coeff   {np.ToString()}  XLen {np.XLength} YLen {np.YLength}: ");
-        Console.WriteLine($"Max:    {np.ToStringMaxValues()}");
-        Console.WriteLine($"Total set ones: {np.TotalSetOnes()}");
-        Console.WriteLine();
-
-        //for (int yLen = 5; yLen <= 5; yLen++)
-        //{
-        //    Input inputY = new Input(yLen);
-        //    Console.WriteLine("InputY: " + inputY);
-        //    for (int xLen = 2; xLen <= 2; xLen++)
-        //    {
-        //        Input inputX = new Input(xLen);
-        //        Console.WriteLine("InputX: " + inputX);
-        //        Product product = new Product(77, inputX, inputY);
-        //       // Console.WriteLine($"Coeff   {product}  XLen {xLen} YLen {yLen}: ");
-        //        Console.WriteLine($"ColSum: {product.ToStringColumnSums()}");
-        //      //  Console.WriteLine($"Lock:   {product.ToStringLockedValues()}");
-
-        //      // Console.WriteLine($"Min:     {product.ToStringMinValues()}");
-        //       // Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
-        //    }
-        //}
-
-
+        Console.WriteLine($"Pos Coeff {product.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
+        Console.WriteLine($"Neg Coeff {product.Negative.ToString()}  XLen {product.XLength} YLen {product.YLength}: ");
 
         //Solver.Run();
         return;
