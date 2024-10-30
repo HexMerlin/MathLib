@@ -5,72 +5,56 @@ using System.Numerics;
 
 namespace MathLib.Mult;
 
-public class NegativeProduct : IProduct
+public class NegativeProduct : ProductBase
 {
     #region Data
     
-    public Product Positive { get; }
-  
-    public IInput InputX { get; }
-
-    private readonly int[] coeffs;
+    public Product Positive { get; }   
+    public override IInput InputX { get; }
 
     #endregion Data
 
-    public IInput InputY => Positive.InputY;
+    public override IInput InputY => Positive.InputY;
 
-    public BigInteger Integer => -Positive.Integer;
-
-    public int Length => Positive.Length;
-
-    public int XLength => Positive.XLength;
-
-    public int YLength => Positive.YLength;
-
-    public bool IsInvalid => Positive.IsInvalid;
-
+    public override BigInteger Integer => -Positive.Integer;
    
     public NegativeProduct(Product positive)
     {
         this.Positive = positive;
-        this.InputX = ((Input)positive.InputX).Negative();
+        this.InputX = ((Input) positive.InputX).Negative();
         
-        coeffs = new int[Length];
-        if (!DistributeIntegerWithinMinMax())
-        {
-            coeffs = Array.Empty<int>();
-        }
     }
 
     private static bool IsOdd(int index) => (index & 1) != 0;
 
-    public bool DistributeIntegerWithinMinMax()
+    public override int[] GetCoeffs()
     {
-        int[] initCoeffs = Input.ToBitArray(Integer); //this can be 1 longer than Length
+        int[] givenCoeffs = Input.ToBitArray(Integer); //this can be 1 longer than Length
 
-        Array.Copy(initCoeffs, coeffs, Length);
         //distribute so all get min values 
         for (int i = 0; i < Length; i++)
         {
             (int min, int max) = MinMax(i);
-            if (coeffs[i] < min)
+            if (givenCoeffs[i] < min)
             {
-                int add = min - coeffs[i];
+                int add = min - givenCoeffs[i];
                 if (IsOdd(add))
                     add++;
-                coeffs[i] += add;
-                if (i + 1 < Length) coeffs[i + 1] -= add / 2;
+                givenCoeffs[i] += add;
+                givenCoeffs[i + 1] -= add / 2;
             }
 
         }
-        AssertCoeffsValid(initCoeffs);
-        return true;
+        int[] coeffs = new int[Length];
+        Array.Copy(givenCoeffs, coeffs, Length);
+
+        return IsCoeffsValid(coeffs) ? coeffs : Array.Empty<int>();
     }
 
-    private void AssertCoeffsValid(int[] reference)
+    private bool IsCoeffsValid(int[] coeffs)
     {
-        int[] coeffs = this.coeffs.ToArray();
-
+        int[] reference = Input.ToBitArray(Integer);
+      
         for (int i = 0; i < Length; i++)
         {
             int move = (coeffs[i] / 2);
@@ -78,40 +62,10 @@ public class NegativeProduct : IProduct
             if (i < Length - 1) coeffs[i + 1] += move;
         }
         for (int i = 0; i < Length; i++)
-        {
-            if (coeffs[i] != reference[i])
-                throw new InvalidOperationException($"Assert failed: Invalid coefficient at index {i}");
-        }
+            if (coeffs[i] != reference[i]) return false;
+        
+        return true;
     }
 
-    public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
-    {
-        int yFirst = Math.Max(0, index - InputX.Length + 1);
-        int yLast = Math.Min(index, InputY.Length - 1);
-
-        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
-            yield return (index - yIndex, yIndex);
-    }
-   
-    public (int min, int max) MinMax(int index)
-    {
-        int notSetCount = 0;
-        int oneCount = 0;
-
-        foreach (var (xIndex, yIndex) in InputCells(index))
-        {
-            int x = InputX[xIndex];
-            int y = InputY[yIndex];
-            if (x == 0 || y == 0)
-                continue; //zero value (not counted)
-            else if (x == 1 && y == 1)
-                oneCount++;
-            else
-                notSetCount++;
-        }
-        return (oneCount, oneCount + notSetCount);
-    }
-
-    public override string ToString() => IsInvalid ? "Invalid" : $"[{coeffs.Str(", ")}]";
-
+ 
 }

@@ -37,7 +37,7 @@ internal class Program
         //return;
 
 
-        IProduct product = new Product(29*23, 5, 5);
+        Product product = new Product(29*23, 5, 5);
 
         Console.WriteLine("InputX: " + product.InputX);
         Console.WriteLine("InputY: " + product.InputY);
@@ -60,7 +60,7 @@ internal class Program
             Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
         }
 
-        IProduct np = ((Product) product).Negative();
+        NegativeProduct np = product.Negative;
      
         Console.WriteLine("InputX: " + np.InputX);
         Console.WriteLine("InputY: " + np.InputY);
