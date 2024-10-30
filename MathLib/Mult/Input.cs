@@ -57,7 +57,7 @@ public class Input : IInput
         Qp qp = new Qp(integer, 1, 2);
         return qp.Generator.Coefficients().Take(qp.Generator.Length).ToArray();
     }
-    public override string ToString() => Enumerable.Range(0, Length).Select(i => coeffs[i] == -1 ? "?" : coeffs[i].ToString()).Str();
+    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str();
 
 }
 

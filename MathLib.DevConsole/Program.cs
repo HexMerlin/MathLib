@@ -60,6 +60,15 @@ internal class Program
             Console.WriteLine($"Col {i}: {product.InputCells(i).Str(", ")}");
         }
 
+        IProduct np = ((Product) product).Negative();
+     
+        Console.WriteLine("InputX: " + np.InputX);
+        Console.WriteLine("InputY: " + np.InputY);
+        Console.WriteLine($"Min:    {np.ToStringMinValues()}");
+        Console.WriteLine($"Max:    {np.ToStringMaxValues()}");
+        Console.WriteLine($"Total set ones: {np.TotalSetOnes()}");
+        Console.WriteLine();
+
         //for (int yLen = 5; yLen <= 5; yLen++)
         //{
         //    Input inputY = new Input(yLen);

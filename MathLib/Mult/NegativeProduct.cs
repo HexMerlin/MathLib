@@ -75,7 +75,7 @@ public class NegativeProduct : IProduct
         {
             int move = (coeffs[i] / 2);
             coeffs[i] -= move * 2;
-            coeffs[i + 1] += move;
+            if (i < Length - 1) coeffs[i + 1] += move;
         }
         for (int i = 0; i < Length; i++)
         {
@@ -86,10 +86,13 @@ public class NegativeProduct : IProduct
 
     public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
     {
-        for (int yIndex = 0; yIndex <= YLength; yIndex++)
+        int yFirst = Math.Max(0, index - InputX.Length + 1);
+        int yLast = Math.Min(index, InputY.Length - 1);
+
+        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
             yield return (index - yIndex, yIndex);
     }
-
+   
     public (int min, int max) MinMax(int index)
     {
         int notSetCount = 0;
@@ -109,5 +112,6 @@ public class NegativeProduct : IProduct
         return (oneCount, oneCount + notSetCount);
     }
 
-    public IEnumerable<(int min, int max)> MinMax() => throw new NotImplementedException();
+    public override string ToString() => IsInvalid ? "Invalid" : $"[{coeffs.Str(", ")}]";
+
 }

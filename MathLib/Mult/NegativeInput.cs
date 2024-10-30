@@ -31,6 +31,8 @@ public class NegativeInput : IInput
 
     public int Length => Positive.Length;
 
+    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str();
+
 }
 
 
