@@ -19,7 +19,9 @@ public abstract class InputBase
 
     public abstract void Fill(BigInteger number);
 
-    public override string ToString() => Enumerable.Range(0, Length * 2).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str();
+    public int Sum() => Coeffs.Where(c => c != -1).Sum();
+
+    public override string ToString() => Enumerable.Range(0, Length * 2).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str() + "\tSum:" + Sum();
 
 }
 

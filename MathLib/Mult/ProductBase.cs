@@ -43,16 +43,16 @@ public abstract class ProductBase
 
     public IEnumerable<(int min, int max)> MinMax() => Enumerable.Range(0, Length).Select(MinMax);
 
-    public string ToStringMinValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).min).Str(", ")}]";
+    public string ToStringMinValues() => $"{Enumerable.Range(0, Length).Select(i => MinMax(i).min).Str(", ")}";
 
-    public string ToStringMaxValues() => $"[{Enumerable.Range(0, Length).Select(i => MinMax(i).max).Str(", ")}]";
+    public string ToStringMaxValues() => $"{Enumerable.Range(0, Length).Select(i => MinMax(i).max).Str(", ")}";
 
     public BigInteger Weight(int index) => BigInteger.One << index;
 
     public override string ToString() 
     {
         int[] coeffs = GetCoeffs();
-        return coeffs.Length == 0 ? "Invalid" : $"[{coeffs.Str(", ")}]";
+        return coeffs.Length == 0 ? "Invalid" : $"{coeffs.Str(", ")} \tSum: {coeffs.Sum()}";
     }
      
 }

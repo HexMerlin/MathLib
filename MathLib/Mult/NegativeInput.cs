@@ -13,9 +13,11 @@ public class NegativeInput : InputBase
 
     public override int this[int index]
     {
-        get => index == 0
-                ? Positive[index]
-                : 1 - Positive[index];
+        get => Positive[index] == -1
+                ? -1
+                : index == 0
+                    ? Positive[index]
+                    : 1 - Positive[index];
         set => Positive[index] = 1 - value;
     }
 
