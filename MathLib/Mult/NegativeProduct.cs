@@ -27,13 +27,13 @@ public class NegativeProduct : ProductBase
 
     private static bool IsOdd(int index) => (index & 1) != 0;
 
-    public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
-    {
-        int yLast = Math.Min(index, InputY.Length - 1);  // `yLast` remains the same
+    //public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
+    //{
+    //    int yLast = Math.Min(index, InputY.Length - 1);  // `yLast` remains the same
 
-        for (int yIndex = 0; yIndex <= yLast; yIndex++)
-            yield return (index - yIndex, yIndex);
-    }
+    //    for (int yIndex = 0; yIndex <= yLast; yIndex++)
+    //        yield return (index - yIndex, yIndex);
+    //}
 
     public override int[] GetCoeffs()
     {
@@ -75,5 +75,5 @@ public class NegativeProduct : ProductBase
         return true;
     }
 
- 
+    public override IEnumerable<int> PosNegSum() => Positive.PosNegSum();
 }

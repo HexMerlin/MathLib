@@ -21,7 +21,7 @@ public abstract class InputBase
 
     public int Sum() => Coeffs.Where(c => c != -1).Sum();
 
-    public override string ToString() => Enumerable.Range(0, Length * 2).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str() + "\tSum:" + Sum();
+    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str() + "\tSum:" + Sum();
 
 }
 

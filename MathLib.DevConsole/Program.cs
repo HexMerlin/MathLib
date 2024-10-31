@@ -36,21 +36,29 @@ internal class Program
         //Console.WriteLine();
 
         //return;
-        static void Print(string title, ProductBase product)
+        static void Print(string title, Product product)
         {
             Console.WriteLine($"******** {title} ********");
-            Console.WriteLine("InputX: " + product.InputX);
-            Console.WriteLine("InputY: " + product.InputY);
-            Console.WriteLine($"Min:    {product.ToStringMinValues()}");
-            Console.WriteLine($"Coeff   {product.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
-            Console.WriteLine($"Max:    {product.ToStringMaxValues()}");
-            Console.WriteLine($"Coeffs sum: {product.CoeffsSum()}");
+            //Console.WriteLine("InputX: " + product.InputX);
+           // Console.WriteLine("InputY: " + product.InputY);
+            Console.WriteLine($"Coeffs:     {product.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
+            Console.WriteLine($"Coeffs NEG: {product.Negative.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
+
+            //Console.WriteLine($"Min:        {product.ToStringMinValues()}");
+            //Console.WriteLine($"Min NEG:    {product.Negative.ToStringMinValues()}");
+            Console.WriteLine($"Max:        {product.ToStringMaxValues()}");
+            Console.WriteLine($"Max NEG:    {product.Negative.ToStringMaxValues()}");
+
+            Console.WriteLine($"PosNeg sum: {product.PosNegSum().Str(", ")}    Sum: {product.PosNegSum().Sum()}");
+
+         
+            //Console.WriteLine($"Coeffs sum: {product.CoeffsSum()}");
             Console.WriteLine();
 
         }
 
-        int x = 29; // 1439; // 1439;  //541;// 29;
-        int y = 1123; // 23;  //1123; // 347; // 23;
+        int x = 4297; //1123; //29;  // 1439;  //541;// 29;
+        int y = 1801; // 13; // 23;  //1123; // 347; // 23;
         int xLen = Input.ToBitArray(x).Length;
         int yLen = Input.ToBitArray(y).Length;
 
@@ -59,29 +67,33 @@ internal class Program
         product.FillY(y);
         Product test = new Product(x * y, xLen, yLen);
 
+        Print("REF          ", product);
+    //    Print("REF  Swap    ", product.Swapped);
 
-        Print("Pos Product ", product);
-        Print("Swap Product", product.Swapped);
+      //  Print("REF  Neg     ", product.Negative);
+      //  Print("REF  SwapNeg ", product.Swapped.Negative);
 
-        Print("Neg  Product", product.Negative);
-        Print("Swap Prod", product.Swapped.Negative);
-        Print("Pos Test    ", test);
-        Print("Neg Test    ", test.Negative);
-
-        Console.WriteLine();
-        Console.WriteLine($"Pos Test:    {test.ToString()} ");
-        Console.WriteLine($"Neg Test:    {test.Negative.ToString()} ");
-        Console.WriteLine($"PosNeg sum:  {test.PosNegSum().Str(", ")}");
+        Print("TEST         ", test);
         
-        Console.WriteLine();
-        Console.WriteLine($"Pos Correct: {product.ToString()} ");
-        Console.WriteLine($"Neg Correct: {product.Negative.ToString()} ");
+        //Print("TEST Swap    ", test.Swapped);
+        //Print("TEST Neg     ", test.Negative);
+        //Print("TEST SwapNeg ", test.Swapped.Negative);
 
-        Console.WriteLine($"PosNeg sum:  {product.PosNegSum().Str(", ")}");
-        //Solver.Run();
-        Console.WriteLine("\n\nQuick watch:");
-        Console.WriteLine($"Neg Correct: {product.Negative.ToString()} ");
-        Console.WriteLine($"Neg Test:    {test.Negative.ToString()} ");
+
+        //Console.WriteLine();
+        //Console.WriteLine($"Pos Test:    {test.ToString()} ");
+        //Console.WriteLine($"Neg Test:    {test.Negative.ToString()} ");
+        //Console.WriteLine($"PosNeg sum:  {test.PosNegSum().Str(", ")}");
+
+        //Console.WriteLine();
+        //Console.WriteLine($"Pos Correct: {product.ToString()} ");
+        //Console.WriteLine($"Neg Correct: {product.Negative.ToString()} ");
+
+        //Console.WriteLine($"PosNeg sum:  {product.PosNegSum().Str(", ")}");
+        ////Solver.Run();
+        //Console.WriteLine("\n\nQuick watch:");
+        //Console.WriteLine($"Neg Correct: {product.Negative.ToString()} ");
+        //Console.WriteLine($"Neg Test:    {test.Negative.ToString()} ");
 
         return;
 

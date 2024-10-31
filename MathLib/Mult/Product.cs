@@ -40,14 +40,21 @@ public class Product : ProductBase
 
     public void FillY(BigInteger number) => InputY.Fill(number);
 
-    public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
-    {
-        int yFirst = Math.Max(0, index - InputX.Length + 1);
-        int yLast = Math.Min(index, InputY.Length - 1);
 
-        for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
-            yield return (index - yIndex, yIndex);
-    }
+    //public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
+    //{
+    //    for (int i = 0; i <= index; i++)
+    //        yield return (index - i, i);
+    //}
+
+    //public override IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
+    //{
+    //    int yFirst = Math.Max(0, index - InputX.Length + 1);
+    //    int yLast = Math.Min(index, InputY.Length - 1);
+
+    //    for (int yIndex = yFirst; yIndex <= yLast; yIndex++)
+    //        yield return (index - yIndex, yIndex);
+    //}
 
     public override int[] GetCoeffs()
     {
@@ -85,11 +92,13 @@ public class Product : ProductBase
 
     }
 
-    public IEnumerable<int> PosNegSum()
+    public override IEnumerable<int> PosNegSum()
     {
         var pos = GetCoeffs();
         var neg = Negative.GetCoeffs();
         for (int i = 0; i < Length; i++)
             yield return pos[i] + neg[i];
     }
+
+   
 }
