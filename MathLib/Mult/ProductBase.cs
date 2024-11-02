@@ -2,6 +2,8 @@
 using System.Numerics;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace MathLib.Mult;
 
@@ -57,7 +59,7 @@ public abstract class ProductBase
 
     public BigInteger Weight(int index) => BigInteger.One << index;
 
-    public int[] AdjustedPosNegSum(int targetTrail = 5)
+    public int[] AdjustedPosNegSum(int targetTrail = 7)
     {
         int[] coeffs = PosNegSum().ToArray();
 
@@ -75,12 +77,45 @@ public abstract class ProductBase
                     coeffs[i - 1] += move * 2;
                 }
             }
+            Console.WriteLine("DEBUG: " + coeffs.Str("")) ;
             if (trail >= targetTrail)
                 break;
         }
+
+
         return coeffs;
 
     }
+
+    public int[] PosNegSum(int trail)
+    {
+        int[] coeffs = new int[Length];
+        Array.Fill(coeffs, trail, YLength, Length - YLength);
+
+        coeffs[YLength - 2] = (trail - 1) * 2;
+        coeffs[YLength - 1] = trail + 1;
+
+        Product pos = (Product)this;
+        NegativeProduct neg = pos.Negative;
+        int[] posMin = pos.MinMax().Select(t => t.min).ToArray();
+        int[] negMin = neg.MinMax().Select(t => t.min).ToArray();
+        for (int i = 0; i <= YLength - 1; i++)
+        {
+            int min = posMin[i] + negMin[i];
+            if (coeffs[i] < min)
+            {
+                int add = min - coeffs[i];
+                if (add % 2 == 1)
+                    add++;
+                coeffs[i] += add;
+                coeffs[i + 1] -= add / 2;
+            }
+        }
+
+        return coeffs;
+    }
+
+   
 
     public override string ToString() 
     {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathLib.Compatibility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -29,6 +30,8 @@ public class Product : ProductBase
 
     private Product(BigInteger integer, InputBase inputX, InputBase inputY, Product? swapped = null)
     {
+        if (integer.IsEven)
+            throw new ArgumentException("Integer must be odd", nameof(integer));
         this.Integer = integer;
         this.InputX = inputX;
         this.InputY = inputY;
@@ -75,8 +78,11 @@ public class Product : ProductBase
             coeffs[i] += add;
             rem -= add * Weight(i);
         }
-
-        return rem.IsZero ? coeffs : Array.Empty<int>();
+        //if (!rem.IsZero)
+        //    throw new InvalidOperationException("GetCoeffs failed to distribute all values");
+        return rem.IsZero 
+            ? coeffs 
+            : Array.Empty<int>();
     }
 
     
