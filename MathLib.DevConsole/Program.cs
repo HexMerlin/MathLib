@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS0162 //Suppresses the CS0162 warning (Unreachable code detected) in this file.
 #pragma warning disable CS0219 // Suppresses the Variable is assigned but its value is never used
 #pragma warning disable IDE0059 // Suppresses the Unnecessary assignment of a value
+#pragma warning disable CS8321 // Local function is declared but never used
 
 using System.Numerics;
 using System.Runtime.InteropServices;
@@ -36,6 +37,7 @@ internal class Program
         //Console.WriteLine();
 
         //return;
+
         static void Print(string title, Product product, int trail)
         {
             //if (trail == -1)
@@ -59,46 +61,57 @@ internal class Program
             Console.WriteLine();
 
         }
+#pragma warning restore CS8321 // Local function is declared but never used
 
-        int x = 53; // 6199;  // 23; // 29;//6199; // 7853; // 4297; //1123; //29;  // 1439;  //541;// 29;
-        int y = 43; // 3779; //  19; //37; // 1123; // 3779; // 1801; // 13; // 23;  //1123; // 347; // 23;
+        BigInteger x = 92048139692281; //25478993; ; // 53; // 6199;  // 23; // 29;//6199; // 7853; // 4297; //1123; //29;  // 1439;  //541;// 29;
+        BigInteger y = 47695699980083; // 43; // 3779; //  19; //37; // 1123; // 3779; // 1801; // 13; // 23;  //1123; // 347; // 23;
         int xLen = Input.ToBitArray(x).Length;
         int yLen = Input.ToBitArray(y).Length;
-
+      
         Product product = new Product(x * y, xLen, yLen);
         product.FillX(x);
         product.FillY(y);
-        int trail = product.Negative.InputY.Sum();
+        int secondOneXIndex = product.InputX.SecondOneXIndex;
+        Console.WriteLine("SecondOneXIndex: " + secondOneXIndex);
+
+      int trail = product.Negative.InputY.Sum();
 
 
         Product test = new Product(x * y, xLen, yLen);
+        Console.WriteLine("Pos InputX: " + product.InputX);
+        Console.WriteLine("Pos InputY: " + product.InputY);
+        Console.WriteLine("Neg InputX: " + product.Negative.InputX);
+        Console.WriteLine("Neg InputY: " + product.Negative.InputY);
+        Console.WriteLine("");
 
-        Console.WriteLine("InputX: " + product.Negative.InputX);
-        Console.WriteLine("InputY: " + product.Negative.InputY);
+        //Print("REF          ", product, trail);
+        //    Print("REF  Swap    ", product.Swapped);
 
-        Print("REF          ", product, trail);
-    //    Print("REF  Swap    ", product.Swapped);
+        //  Print("REF  Neg     ", product.Negative);
+        //  Print("REF  SwapNeg ", product.Swapped.Negative);
 
-      //  Print("REF  Neg     ", product.Negative);
-      //  Print("REF  SwapNeg ", product.Swapped.Negative);
-
-        Print("TEST         ", test, trail);
+        // Print("TEST         ", test, trail);
         int[] givenCoeffs = Input.ToBitArray(-product.Integer); //this can be 1 longer than Length
-        Console.WriteLine($"DEBUG :     {(givenCoeffs.Str(", "))}");
+        //Console.WriteLine($"DEBUG :     {(givenCoeffs.Str(", "))}");
 
         Console.WriteLine("---------------");
         // Console.WriteLine($"Adj PosNeg: {test.AdjustedPosNegSum().Str(", ")}    Sum: {test.AdjustedPosNegSum().Sum()}");
 
 
-        Console.WriteLine($"Coeffs:     {product.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
-        Console.WriteLine($"Coeffs NEG+:{product.Negative.GetCoeffs(trail).Str(", ")}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
-        Console.WriteLine($"PosNeg sum+:{product.PosNegSum(trail).Str(", ")}");
+        //Console.WriteLine($"Coeffs:     {product.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
+        //Console.WriteLine($"Coeffs NEG+:{product.Negative.GetCoeffs(trail).Str(", ")}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
+        //Console.WriteLine($"PosNeg sum+:{product.PosNegSum(trail).Str(", ")}");
 
-        Console.WriteLine();
-        Console.WriteLine($"Coeffs:     {test.ToString()}  XLen {test.XLength} YLen {test.YLength} Len:{test.Length}");
-        Console.WriteLine($"Coeffs NEG+:{test.Negative.GetCoeffs(trail).Str(", ")}  XLen {test.XLength} YLen {test.YLength} Len:{test.Length}");
-        Console.WriteLine($"PosNeg sum+:{test.PosNegSum(trail).Str(", ")}");
+        //Console.WriteLine();
+        //Console.WriteLine($"Coeffs:     {test.ToString()}  XLen {test.XLength} YLen {test.YLength} Len:{test.Length}");
+        //Console.WriteLine($"Coeffs NEG+:{test.Negative.GetCoeffs(trail).Str(", ")}  XLen {test.XLength} YLen {test.YLength} Len:{test.Length}");
+        //Console.WriteLine($"PosNeg sum+:{test.PosNegSum(trail).Str(", ")}");
 
+        Console.WriteLine($"REF Coeffs:      {product.ToString()}  XLen {product.XLength} YLen {product.YLength} Len:{product.Length}");
+    
+        Console.WriteLine($"TEST Coeffs:     {test.Try(secondOneXIndex).Str(", ")}  XLen {test.XLength} YLen {test.YLength} Len:{test.Length}");
+         
+        
         //Console.WriteLine($"PosNeg MIN :{test.MinMax().Select(t => t.min PosNegSum(trail).Str(", ")}"););
         
         //Console.WriteLine("0, 1");

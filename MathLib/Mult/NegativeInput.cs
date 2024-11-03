@@ -6,33 +6,34 @@ namespace MathLib.Mult;
 
 public class NegativeInput : InputBase
 {
-    public readonly Input Positive;
-    
+    private readonly Input negative;
 
-    public NegativeInput(Input positive) => this.Positive = positive;
+    public override InputBase Negative => negative;
+
+    public NegativeInput(Input negative) => this.negative = negative;
 
     public override int this[int index]
     {
-        get => Positive[index] == -1
+        get => Negative[index] == -1
                 ? -1
                 : index == 0
-                    ? Positive[index]
-                    : 1 - Positive[index];
-        set => Positive[index] = 1 - value;
+                    ? Negative[index]
+                    : 1 - Negative[index];
+        set => Negative[index] = value != -1 ? 1 - value : -1;
     }
 
-    public override bool IsSet(int index) => Positive.IsSet(index);
+    public override bool IsSet(int index) => Negative.IsSet(index);
     
     public override void Fill(BigInteger number)
     {
         if (number >= 0)
             throw new InvalidOperationException("Cannot fill input with positive number");
-        Positive.Fill(-number);
+        Negative.Fill(-number);
     }
 
     public override IEnumerable<int> Coeffs => Enumerable.Range(0, Length).Select(i => this[i]);
 
-    public override int Length => Positive.Length;
+    public override int Length => Negative.Length;
 
   
 }

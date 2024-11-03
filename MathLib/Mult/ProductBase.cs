@@ -28,6 +28,19 @@ public abstract class ProductBase
             yield return (index - i, i);
     }
 
+ 
+    public BigInteger MinSum()
+    {
+        BigInteger result = BigInteger.Zero;
+        for (int i = 0; i < Length; i++)
+        {
+            result *= 2;
+            int min = MinMax(i).min;
+            result += min;
+        }
+        return result;
+    }
+
     public (int min, int max) MinMax(int index)
     {
         int notSetCount = 0;

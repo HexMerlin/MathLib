@@ -12,13 +12,27 @@ namespace MathLib.Mult;
 
 public class Input : InputBase
 {
+    public override InputBase Negative => negative;
+
+    private readonly NegativeInput negative;
+
     private int[] coeffs { get; }
     public override int Length => coeffs.Length;
 
     public NegativeInput CreateNegative() => new NegativeInput(this);
 
+    public Input(int length) 
+    {
+        this.coeffs = new int[length];
+        Array.Fill(coeffs, -1);
+        this.coeffs[0] = 1;
+        this.coeffs[^1] = 1;
+        this.negative = new NegativeInput(this);
+    }
+
     public override IEnumerable<int> Coeffs => coeffs;
 
+   
     public override bool IsSet(int index) => index >= Length || coeffs[index] != -1;
 
     public override int this[int index]
@@ -43,13 +57,7 @@ public class Input : InputBase
         Array.Copy(coeffs, this.coeffs, Length);
     }
 
-    public Input(int length) 
-    {
-        this.coeffs = new int[length];
-        Array.Fill(coeffs, -1);
-        this.coeffs[0] = 1;
-        this.coeffs[^1] = 1;
-    }
+  
 
     public static int[] ToBitArray(BigInteger integer) 
     {
