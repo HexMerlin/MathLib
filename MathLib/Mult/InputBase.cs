@@ -32,7 +32,7 @@ public abstract class InputBase
         }
     }
 
-    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str() + "\tSum:" + Sum();
+    public override string ToString() => Enumerable.Range(0, Length).Select(i => this[i] == -1 ? "?" : this[i].ToString()).Str(); // + "\tSum:" + Sum();
 
 }
 
