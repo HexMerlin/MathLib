@@ -26,7 +26,11 @@ internal class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
-        Qp qp = new Qp(new Q(-95, 1), 2);
+        //Qb qb = new Qb(-1, 1, 2);
+        //Console.WriteLine(qb);
+        //return;
+        Q q = new Q(1, 1);
+        Qp qp = new Qp(q, 2);
         Console.WriteLine(qp);
         Console.WriteLine(qp.Generator.ToStringCanonical());
         return;

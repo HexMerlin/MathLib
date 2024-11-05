@@ -187,13 +187,19 @@ public class Qp : Q
 
         int period = periodicInt.IsZero ? 0 : list.Count - prefixLength;
 
+        Generator = new Qb(
+          !q.IsPositive, preperiodicInt.IsZero
+              ? BaseInt.Zero(base_, prefixLength)
+              : new BaseInt(base_, preperiodicInt, prefixLength), periodicInt.IsZero
+                  ? BaseInt.Zero(base_, period)
+                  : new BaseInt(base_, periodicInt, period), firstExponent);
 
-        Generator = new Qb(!q.IsNegative, preperiodicInt.IsZero
-            ? BaseInt.Zero(base_, prefixLength)
-            : new BaseInt(base_, preperiodicInt, prefixLength),
-            periodicInt.IsZero
-                ? BaseInt.Zero(base_, period)
-                : new BaseInt(base_, periodicInt, period), firstExponent);
+        //Generator = new Qb(
+        //    !q.IsNegative, preperiodicInt.IsZero
+        //        ? BaseInt.Zero(base_, prefixLength)
+        //        : new BaseInt(base_, preperiodicInt, prefixLength), periodicInt.IsZero
+        //            ? BaseInt.Zero(base_, period)
+        //            : new BaseInt(base_, periodicInt, period), firstExponent);
     }
 
     /// <summary>

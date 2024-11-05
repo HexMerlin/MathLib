@@ -131,9 +131,14 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// </example>
     /// <seealso cref="Qb.ToStringExpanded(int)"/>
     public BigInteger IntegralPart =>
-        IsPositiveInteger
-            ? (Numerator / Denominator) - 1
+        IsNegativeInteger
+            ? (Numerator / Denominator) + 1
             : (Numerator / Denominator);
+
+    //public BigInteger IntegralPart =>
+    //  IsPositiveInteger
+    //      ? (Numerator / Denominator) - 1
+    //      : (Numerator / Denominator);
 
     /// <value>
     /// The fractional part of the rational number, obtained by subtracting the integer part.

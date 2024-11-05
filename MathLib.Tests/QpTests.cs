@@ -2287,7 +2287,7 @@ public class QpTests
     public void QpFromQ_For1_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(1, 1, 2);  
-        AssertQpFromQ_ReturnsCorrectQp(".10000000000000000000000000000000", 1, 1, -1, 2, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10000000000000000000000000000000", 1, 1, 1, 1, 0, actual);
     }
 
     [TestMethod()]
