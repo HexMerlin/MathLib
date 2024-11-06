@@ -26,57 +26,57 @@ public partial class Qb
     ///   <item>
     ///     <term>0</term>
     ///     <description>.0000000000000000</description>
-    ///     <description>FIO=FEO, in any base</description>
+    ///     <description>FEO=FIO, in any base</description>
     ///   </item>
     ///   <item>
     ///     <term>1₂</term>
-    ///     <description>.1111111111111111</description>
-    ///     <description>FIO</description>
+    ///     <description>1.000000000000000</description>
+    ///     <description>FEO</description>
     ///   </item>
     ///   <item>
     ///     <term>-1₂</term>
-    ///     <description>1.000000000000000 </description>
-    ///      <description>FEO</description>
+    ///     <description>.1111111111111111</description>
+    ///      <description>FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>103/16₂</term>
-    ///     <description>110.0110111111111</description>
-    ///     <description>FIO</description>
-    ///   </item>
-    ///   <item>
-    ///     <term>-103/16₂</term>
     ///     <description>110.0111000000000</description>
     ///     <description>FEO</description>
     ///   </item>
     ///   <item>
+    ///     <term>-103/16₂</term>
+    ///     <description>110.0110111111111</description>
+    ///     <description>FIO</description>
+    ///   </item>
+    ///   <item>
     ///     <term>5/24₂</term>
     ///     <description>.0011010101010101</description>
-    ///      <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>-5/24₂</term>
     ///     <description>.0011010101010101</description>
-    ///     <description>FIO=FEO</description>
+    ///      <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>3/45₅</term>
-    ///     <description>.3333333333333333</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>.3333333333333333</description> 
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>-3/45₅</term>
-    ///     <description>.3333333333333333</description> 
-    ///     <description>FIO=FEO</description>
-    ///   </item>
-    ///   <item>
-    ///     <term>537/11₃</term>
-    ///     <description>1210.211002110021</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>.3333333333333333</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///    <item>
+    ///     <term>537/11₃</term>
+    ///     <description>1210.211002110021</description>
+    ///     <description>FEO=FIO</description>
+    ///   </item>
+    ///   <item>
     ///     <term>-537/11₃</term>
     ///     <description>1210.211002110021</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     /// </list>
     /// </example>

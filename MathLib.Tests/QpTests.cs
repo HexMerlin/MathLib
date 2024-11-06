@@ -2267,13 +2267,13 @@ public class QpTests
 
     private static void AssertQpFromQ_ReturnsCorrectQp(string expStringExpanded, BigInteger expNumerator, BigInteger expDenominator, BigInteger expGeneratorNumerator, BigInteger expectedGeneratorDenominator, int expFirstExponent, Qp actual)
     {
-        Assert.AreEqual(expNumerator, actual.Numerator);
-        Assert.AreEqual(expDenominator, actual.Denominator);
+        Assert.AreEqual(expNumerator, actual.Numerator, $"{nameof(expNumerator)}={expNumerator} {nameof(actual.Numerator)}={actual.Numerator}");
+        Assert.AreEqual(expDenominator, actual.Denominator, $"{nameof(expDenominator)}={expDenominator} {nameof(actual.Denominator)}={actual.Denominator}" );
         Assert.AreEqual(expStringExpanded, actual.ToStringExpanded(32));
-        Assert.AreEqual(expFirstExponent, actual.FirstExponent);
-        Assert.AreEqual(expGeneratorNumerator, actual.Generator.Numerator);
-        Assert.AreEqual(expectedGeneratorDenominator, actual.Generator.Denominator);
-        Assert.AreEqual(actual.Sign, -actual.Generator.Sign);
+        Assert.AreEqual(expFirstExponent, actual.FirstExponent, $"{nameof(expFirstExponent)}={expFirstExponent} {nameof(actual.FirstExponent)}={actual.FirstExponent}");
+        Assert.AreEqual(expGeneratorNumerator, actual.Generator.Numerator, $"{nameof(expGeneratorNumerator)}={expGeneratorNumerator} {nameof(actual.Generator.Numerator)}={actual.Generator.Numerator}");
+        Assert.AreEqual(expectedGeneratorDenominator, actual.Generator.Denominator, $"{nameof(expectedGeneratorDenominator)}={expectedGeneratorDenominator} {nameof(actual.Generator.Denominator)}={actual.Generator.Denominator}");
+        Assert.AreEqual(actual.Sign, actual.Generator.Sign, $"{nameof(actual.Sign)}={actual.Sign} {nameof(actual.Generator.Sign)}={actual.Generator.Sign}");
     }
 
     [TestMethod()]
@@ -2287,14 +2287,14 @@ public class QpTests
     public void QpFromQ_For1_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(1, 1, 2);  
-        AssertQpFromQ_ReturnsCorrectQp(".10000000000000000000000000000000", 1, 1, 1, 1, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10000000000000000000000000000000", 1, 1, 1, 2, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQForNeg1_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-1, 1, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11111111111111111111111111111111", -1, 1, 1, 1, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11111111111111111111111111111111", -1, 1, -1, 1, 0, actual);
 
     }
 
@@ -2302,49 +2302,49 @@ public class QpTests
     public void QpFromQ_For1Div2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(1, 2, 2);
-        AssertQpFromQ_ReturnsCorrectQp("1.0000000000000000000000000000000", 1, 2, -1, 1, -1, actual);
+        AssertQpFromQ_ReturnsCorrectQp("1.0000000000000000000000000000000", 1, 2, 1, 1, -1, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_ForNeg1Div2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-1, 2, 2);
-        AssertQpFromQ_ReturnsCorrectQp("1.1111111111111111111111111111111", -1, 2, 2, 1, -1, actual);
+        AssertQpFromQ_ReturnsCorrectQp("1.1111111111111111111111111111111", -1, 2, -2, 1, -1, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(2, 1, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".01000000000000000000000000000000", 2, 1, -1, 4, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".01000000000000000000000000000000", 2, 1, 1, 4, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_ForNeg2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-2, 1, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".01111111111111111111111111111111", -2, 1, 1, 2, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".01111111111111111111111111111111", -2, 1, -1, 2, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For5_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(5, 1, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".10100000000000000000000000000000", 5, 1, -5, 8, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10100000000000000000000000000000", 5, 1, 5, 8, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_ForNeg5_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-5, 1, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11011111111111111111111111111111", -5, 1, 7, 8, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11011111111111111111111111111111", -5, 1, -7, 8, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For1Div3_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(1, 3, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11010101010101010101010101010101", 1, 3, -5, 6, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11010101010101010101010101010101", 1, 3, 5, 6, 0, actual);
 
     }
 
@@ -2352,7 +2352,7 @@ public class QpTests
     public void QpFromQ_ForNeg1Div3_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-1, 3, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".10101010101010101010101010101010", -1, 3, 2, 3, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10101010101010101010101010101010", -1, 3, -2, 3, 0, actual);
     }
 
 
@@ -2360,7 +2360,7 @@ public class QpTests
     public void QpFromQ_For5Div2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(5, 2, 2);
-        AssertQpFromQ_ReturnsCorrectQp("1.0100000000000000000000000000000", 5, 2, -5, 4, -1, actual);
+        AssertQpFromQ_ReturnsCorrectQp("1.0100000000000000000000000000000", 5, 2, 5, 4, -1, actual);
     }
 
 
@@ -2368,49 +2368,49 @@ public class QpTests
     public void QpFromQ_ForNeg5Div2_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-5, 2, 2);
-        AssertQpFromQ_ReturnsCorrectQp("1.1011111111111111111111111111111", -5, 2, 7, 4, -1, actual);
+        AssertQpFromQ_ReturnsCorrectQp("1.1011111111111111111111111111111", -5, 2, -7, 4, -1, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For5Div9_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(5, 9, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".10111000111000111000111000111000", 5, 9, -13, 18, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10111000111000111000111000111000", 5, 9, 13, 18, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_ForNeg5Div9_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-5, 9, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11000111000111000111000111000111", -5, 9, 7, 9, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11000111000111000111000111000111", -5, 9, -7, 9, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For35Div9_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(35, 9, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11010011100011100011100011100011", 35, 9, -119, 144, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11010011100011100011100011100011", 35, 9, 119, 144, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For35Div18_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(35, 18, 2);
-        AssertQpFromQ_ReturnsCorrectQp("1.1010011100011100011100011100011", 35, 18, -119, 72, -1, actual);
+        AssertQpFromQ_ReturnsCorrectQp("1.1010011100011100011100011100011", 35, 18, 119, 72, -1, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_For23Div3_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(23, 3, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".10111010101010101010101010101010", 23, 3, -35, 48, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".10111010101010101010101010101010", 23, 3, 35, 48, 0, actual);
     }
 
     [TestMethod()]
     public void QpFromQ_ForNeg23Div3_Base2_ReturnsCorrectQp()
     {
         Qp actual = new Qp(-23, 3, 2);
-        AssertQpFromQ_ReturnsCorrectQp(".11000101010101010101010101010101", -23, 3, 37, 48, 0, actual);
+        AssertQpFromQ_ReturnsCorrectQp(".11000101010101010101010101010101", -23, 3, -37, 48, 0, actual);
     }
 
     #endregion Qp From Q

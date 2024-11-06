@@ -47,22 +47,31 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// <remarks>
     /// In general mathematics, the concept of "integral part" is not objectively defined, since it has two possible interpretations (or modes).
     /// These interpretations are defined by whether we regard the set of all pure fractions to include the number 1 or not.
-    /// We denote these interpretations (modes), as FIO (Fractions Include One) and FEO (Fractions Exclude One), respectively.
+    /// We denote these interpretations (modes) as FEO (Fractions Exclude One) and FIO (Fractions Include One), respectively.
     /// <para>For instance, in decimal, the number 1 could have the following two interpretations:</para>
     /// <code> 
-    /// 1 = 0.999999... (FIO)
     /// 1 = 1.000000... (FEO)
+    /// 1 = 0.999999... (FIO)
     /// </code>
-    /// <para>In FIO the number 1 is a purely fractional number, with integral part=0 and fractional part=1.</para>
     /// <para>In FEO the number 1 is a purely integral number, with integral part=1 and fractional part=0.</para>
+    /// <para>In FIO the number 1 is a purely fractional number, with integral part=0 and fractional part=1.</para>
     /// <para>Irrespective of the mode, any number is always the sum of its integral and fractional parts.</para>
     /// <para>In FIO, all numbers will have a non-zero-terminating expansion.</para>
     /// <para>In FEO, any number that can terminate (with an ultimately infinite expansion of zeros) will do so.</para>
     /// <para>Only numbers with a period of 0, can have different representations in FIO and FEO.</para>
     /// <para>To make <see cref="IntegralPart"/> and <see cref="FractionalPart"/> well defined, yet allow access to both FIO and FEO,
-    /// we assign FIO to all positive numbers, and FEO to all negative numbers and zero. This will make all members of Q have only one correct expansion.</para>
+    /// we assign FEO to all positive numbers, and FIO to all negative numbers and zero. This will make all members of Q have only one correct expansion.</para>
     /// <para>This whole logic is completely governed by the implementation of <see cref="IntegralPart"/>.
     /// Hence, we do not need to manage modes anywhere in the code base.
+    /// </para>
+    /// <para>
+    /// To instead swap behavior (postive numbers = FIO and negative numbers = FEO) we can change <see cref="IntegralPart"/> to the following:
+    /// <code>
+    /// public BigInteger IntegralPart =>
+    ///     IsPositiveInteger
+    ///         ? (Numerator / Denominator) - 1
+    ///         : (Numerator / Denominator);
+    /// </code>
     /// </para>
     /// </remarks>
     /// <example>
@@ -75,57 +84,57 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     ///   <item>
     ///     <term>0</term>
     ///     <description>.0000000000000000</description>
-    ///     <description>FIO=FEO, in any base</description>
+    ///     <description>FEO=FIO, in any base</description>
     ///   </item>
     ///   <item>
     ///     <term>1₂</term>
-    ///     <description>.1111111111111111</description>
-    ///     <description>FIO</description>
+    ///     <description>1.000000000000000</description>
+    ///     <description>FEO</description>
     ///   </item>
     ///   <item>
     ///     <term>-1₂</term>
-    ///     <description>1.000000000000000 </description>
-    ///      <description>FEO</description>
+    ///     <description>.1111111111111111</description>
+    ///      <description>FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>103/16₂</term>
-    ///     <description>110.0110111111111</description>
-    ///     <description>FIO</description>
-    ///   </item>
-    ///   <item>
-    ///     <term>-103/16₂</term>
     ///     <description>110.0111000000000</description>
     ///     <description>FEO</description>
     ///   </item>
     ///   <item>
+    ///     <term>-103/16₂</term>
+    ///     <description>110.0110111111111</description>
+    ///     <description>FIO</description>
+    ///   </item>
+    ///   <item>
     ///     <term>5/24₂</term>
     ///     <description>.0011010101010101</description>
-    ///      <description>FIO=FEO</description>
+    ///      <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>-5/24₂</term>
     ///     <description>.0011010101010101</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>3/45₅</term>
     ///     <description>.3333333333333333</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>-3/45₅</term>
     ///     <description>.3333333333333333</description> 
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///   <item>
     ///     <term>537/11₃</term>
     ///     <description>1210.211002110021</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     ///    <item>
     ///     <term>-537/11₃</term>
     ///     <description>1210.211002110021</description>
-    ///     <description>FIO=FEO</description>
+    ///     <description>FEO=FIO</description>
     ///   </item>
     /// </list>
     /// </example>
@@ -134,11 +143,6 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
         IsNegativeInteger
             ? (Numerator / Denominator) + 1
             : (Numerator / Denominator);
-
-    //public BigInteger IntegralPart =>
-    //  IsPositiveInteger
-    //      ? (Numerator / Denominator) - 1
-    //      : (Numerator / Denominator);
 
     /// <value>
     /// The fractional part of the rational number, obtained by subtracting the integer part.

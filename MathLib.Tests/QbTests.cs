@@ -1288,83 +1288,83 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForIntNeg2_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.444444444444444", new Q(-2, 1), 5);
 
     [TestMethod()] //3, base 2
-    public void ToStringExpandedAndFullInt_ForInt3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.11111111111111", new Q(3, 1), 2);
+    public void ToStringExpandedAndFullInt_ForInt3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(3, 1), 2);
 
     [TestMethod()] //-3, base 2
-    public void ToStringExpandedAndFullInt_ForIntNeg3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(-3, 1), 2);
+    public void ToStringExpandedAndFullInt_ForIntNeg3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.11111111111111", new Q(-3, 1), 2);
 
     [TestMethod()] //3, base 3
-    public void ToStringExpandedAndFullInt_ForInt3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("2.222222222222222", new Q(3, 1), 3);
+    public void ToStringExpandedAndFullInt_ForInt3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.00000000000000", new Q(3, 1), 3);
 
     [TestMethod()] //-3, base 3
-    public void ToStringExpandedAndFullInt_ForIntNeg3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.00000000000000", new Q(-3, 1), 3);
+    public void ToStringExpandedAndFullInt_ForIntNeg3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("2.222222222222222", new Q(-3, 1), 3);
 
     [TestMethod()] //3, base 5
-    public void ToStringExpandedAndFullInt_ForInt3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("2.444444444444444", new Q(3, 1), 5);
+    public void ToStringExpandedAndFullInt_ForInt3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("3.000000000000000", new Q(3, 1), 5);
 
     [TestMethod()] //-3, base 5
-    public void ToStringExpandedAndFullInt_ForIntNeg3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("3.000000000000000", new Q(-3, 1), 5);
+    public void ToStringExpandedAndFullInt_ForIntNeg3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("2.444444444444444", new Q(-3, 1), 5);
 
     [TestMethod()] //4, base 2
-    public void ToStringExpandedAndFullInt_ForInt4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.11111111111111", new Q(4, 1), 2);
+    public void ToStringExpandedAndFullInt_ForInt4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("100.0000000000000", new Q(4, 1), 2);
 
     [TestMethod()] //-4, base 2
-    public void ToStringExpandedAndFullInt_ForIntNeg4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("100.0000000000000", new Q(-4, 1), 2);
+    public void ToStringExpandedAndFullInt_ForIntNeg4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.11111111111111", new Q(-4, 1), 2);
 
     [TestMethod()] //4, base 3
-    public void ToStringExpandedAndFullInt_ForInt4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.22222222222222", new Q(4, 1), 3);
+    public void ToStringExpandedAndFullInt_ForInt4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(4, 1), 3);
 
     [TestMethod()] //-4, base 3
-    public void ToStringExpandedAndFullInt_ForIntNeg4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(-4, 1), 3);
+    public void ToStringExpandedAndFullInt_ForIntNeg4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.22222222222222", new Q(-4, 1), 3);
 
     [TestMethod()] //4, base 5
-    public void ToStringExpandedAndFullInt_ForInt4_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("3.444444444444444", new Q(4, 1), 5);
+    public void ToStringExpandedAndFullInt_ForInt4_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("4.000000000000000", new Q(4, 1), 5);
 
     [TestMethod()] //-4, base 5
-    public void ToStringExpandedAndFullInt_ForIntNeg4_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("4.000000000000000", new Q(-4, 1), 5);
+    public void ToStringExpandedAndFullInt_ForIntNeg4_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("3.444444444444444", new Q(-4, 1), 5);
 
     [TestMethod()] //5, base 2
-    public void ToStringExpandedAndFullInt_ForInt5_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("100.1111111111111", new Q(5, 1), 2);
+    public void ToStringExpandedAndFullInt_ForInt5_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("101.0000000000000", new Q(5, 1), 2);
 
     [TestMethod()] //-5, base 2
-    public void ToStringExpandedAndFullInt_ForIntNeg5_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("101.0000000000000", new Q(-5, 1), 2);
+    public void ToStringExpandedAndFullInt_ForIntNeg5_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("100.1111111111111", new Q(-5, 1), 2);
 
     [TestMethod()] //5, base 3
-    public void ToStringExpandedAndFullInt_ForInt5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.22222222222222", new Q(5, 1), 3);
+    public void ToStringExpandedAndFullInt_ForInt5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("12.00000000000000", new Q(5, 1), 3);
 
     [TestMethod()] //-5, base 3
-    public void ToStringExpandedAndFullInt_ForIntNeg5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("12.00000000000000", new Q(-5, 1), 3);
+    public void ToStringExpandedAndFullInt_ForIntNeg5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.22222222222222", new Q(-5, 1), 3);
 
     [TestMethod()] //5, base 5
-    public void ToStringExpandedAndFullInt_ForInt5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("4.444444444444444", new Q(5, 1), 5);
+    public void ToStringExpandedAndFullInt_ForInt5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.00000000000000", new Q(5, 1), 5);
 
     [TestMethod()] //-5, base 5
-    public void ToStringExpandedAndFullInt_ForIntNeg5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.00000000000000", new Q(-5, 1), 5);
+    public void ToStringExpandedAndFullInt_ForIntNeg5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("4.444444444444444", new Q(-5, 1), 5);
 
     [TestMethod()] //6, base 2
-    public void ToStringExpandedAndFullInt_ForInt6_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("101.1111111111111", new Q(6, 1), 2);
+    public void ToStringExpandedAndFullInt_ForInt6_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("110.0000000000000", new Q(6, 1), 2);
 
     [TestMethod()] //-6, base 2
-    public void ToStringExpandedAndFullInt_ForIntNeg6_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("110.0000000000000", new Q(-6, 1), 2);
+    public void ToStringExpandedAndFullInt_ForIntNeg6_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("101.1111111111111", new Q(-6, 1), 2);
 
     [TestMethod()] //6, base 3
-    public void ToStringExpandedAndFullInt_ForInt6_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("12.22222222222222", new Q(6, 1), 3);
+    public void ToStringExpandedAndFullInt_ForInt6_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("20.00000000000000", new Q(6, 1), 3);
 
     [TestMethod()] //-6, base 3
-    public void ToStringExpandedAndFullInt_ForIntNeg6_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("20.00000000000000", new Q(-6, 1), 3);
+    public void ToStringExpandedAndFullInt_ForIntNeg6_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("12.22222222222222", new Q(-6, 1), 3);
 
     [TestMethod()] //6, base 5
-    public void ToStringExpandedAndFullInt_ForInt6_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.44444444444444", new Q(6, 1), 5);
+    public void ToStringExpandedAndFullInt_ForInt6_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(6, 1), 5);
 
     [TestMethod()] //-6, base 5
-    public void ToStringExpandedAndFullInt_ForIntNeg6_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("11.00000000000000", new Q(-6, 1), 5);
+    public void ToStringExpandedAndFullInt_ForIntNeg6_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.44444444444444", new Q(-6, 1), 5);
 
     // Unit fraction tests
     [TestMethod()] //1/2, base 2
-    public void ToStringExpandedAndFullInt_ForQ1div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0111111111111111", new Q(1, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQ1div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(1, 2), 2);
 
     [TestMethod()] //-1/2, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg1div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(-1, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg1div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0111111111111111", new Q(-1, 2), 2);
 
     [TestMethod()] //1/2, base 3
     public void ToStringExpandedAndFullInt_ForQ1div2_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1111111111111111", new Q(1, 2), 3);
@@ -1385,10 +1385,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0101010101010101", new Q(-1, 3), 2);
 
     [TestMethod()] //1/3, base 3
-    public void ToStringExpandedAndFullInt_ForQ1div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0222222222222222", new Q(1, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQ1div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(1, 3), 3);
 
     [TestMethod()] //-1/3, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg1div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(-1, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg1div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0222222222222222", new Q(-1, 3), 3);
 
     [TestMethod()] //1/3, base 5
     public void ToStringExpandedAndFullInt_ForQ1div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1313131313131313", new Q(1, 3), 5);
@@ -1397,10 +1397,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1313131313131313", new Q(-1, 3), 5);
 
     [TestMethod()] //1/4, base 2
-    public void ToStringExpandedAndFullInt_ForQ1div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0011111111111111", new Q(1, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQ1div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100000000000000", new Q(1, 4), 2);
 
     [TestMethod()] //-1/4, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg1div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100000000000000", new Q(-1, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg1div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0011111111111111", new Q(-1, 4), 2);
 
     [TestMethod()] //1/4, base 3
     public void ToStringExpandedAndFullInt_ForQ1div4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0202020202020202", new Q(1, 4), 3);
@@ -1427,10 +1427,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0121012101210121", new Q(-1, 5), 3);
 
     [TestMethod()] //1/5, base 5
-    public void ToStringExpandedAndFullInt_ForQ1div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0444444444444444", new Q(1, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQ1div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(1, 5), 5);
 
     [TestMethod()] //-1/5, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg1div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1000000000000000", new Q(-1, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg1div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0444444444444444", new Q(-1, 5), 5);
 
     [TestMethod()] //1/6, base 2
     public void ToStringExpandedAndFullInt_ForQ1div6_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0010101010101010", new Q(1, 6), 2);
@@ -1463,10 +1463,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div25_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0010020110221220", new Q(-1, 25), 3);
 
     [TestMethod()] //1/25, base 5
-    public void ToStringExpandedAndFullInt_ForQ1div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0044444444444444", new Q(1, 25), 5);
+    public void ToStringExpandedAndFullInt_ForQ1div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100000000000000", new Q(1, 25), 5);
 
     [TestMethod()] //-1/25, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg1div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100000000000000", new Q(-1, 25), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg1div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0044444444444444", new Q(-1, 25), 5);
 
     [TestMethod()] //1/125, base 2
     public void ToStringExpandedAndFullInt_ForQ1div125_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000001000001100", new Q(1, 125), 2);
@@ -1481,10 +1481,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div125_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000122111101120", new Q(-1, 125), 3);
 
     [TestMethod()] //1/125, base 5
-    public void ToStringExpandedAndFullInt_ForQ1div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0004444444444444", new Q(1, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQ1div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0010000000000000", new Q(1, 125), 5);
 
     [TestMethod()] //-1/125, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg1div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0010000000000000", new Q(-1, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg1div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0004444444444444", new Q(-1, 125), 5);
 
     [TestMethod()] //1/250, base 2
     public void ToStringExpandedAndFullInt_ForQ1div250_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000000100000110", new Q(1, 250), 2);
@@ -1505,10 +1505,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg1div250_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0002222222222222", new Q(-1, 250), 5);
 
     [TestMethod()] //1/256, base 2
-    public void ToStringExpandedAndFullInt_ForQ1div256_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000000011111111", new Q(1, 256), 2);
+    public void ToStringExpandedAndFullInt_ForQ1div256_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000000100000000", new Q(1, 256), 2);
 
     [TestMethod()] //-1/256, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg1div256_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000000100000000", new Q(-1, 256), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg1div256_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000000011111111", new Q(-1, 256), 2);
 
     [TestMethod()] //1/256, base 3
     public void ToStringExpandedAndFullInt_ForQ1div256_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0000022112122211", new Q(1, 256), 3);
@@ -1548,10 +1548,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg2div3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1010101010101010", new Q(-2, 3), 2);
 
     [TestMethod()] //2/3, base 3
-    public void ToStringExpandedAndFullInt_ForQ2div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1222222222222222", new Q(2, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQ2div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2000000000000000", new Q(2, 3), 3);
 
     [TestMethod()] //-2/3, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg2div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2000000000000000", new Q(-2, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg2div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1222222222222222", new Q(-2, 3), 3);
 
     [TestMethod()] //2/3, base 5
     public void ToStringExpandedAndFullInt_ForQ2div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".3131313131313131", new Q(2, 3), 5);
@@ -1572,10 +1572,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg2div5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1012101210121012", new Q(-2, 5), 3);
 
     [TestMethod()] //2/5, base 5
-    public void ToStringExpandedAndFullInt_ForQ2div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1444444444444444", new Q(2, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQ2div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2000000000000000", new Q(2, 5), 5);
 
     [TestMethod()] //-2/5, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg2div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2000000000000000", new Q(-2, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg2div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1444444444444444", new Q(-2, 5), 5);
 
     [TestMethod()] //2/7, base 2
     public void ToStringExpandedAndFullInt_ForQ2div7_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100100100100100", new Q(2, 7), 2);
@@ -1608,17 +1608,17 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg2div125_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0001021222210011", new Q(-2, 125), 3);
 
     [TestMethod()] //2/125, base 5
-    public void ToStringExpandedAndFullInt_ForQ2div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0014444444444444", new Q(2, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQ2div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0020000000000000", new Q(2, 125), 5);
 
     [TestMethod()] //-2/125, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg2div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0020000000000000", new Q(-2, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg2div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0014444444444444", new Q(-2, 125), 5);
 
     // 3/x tests
     [TestMethod()] //3/2, base 2
-    public void ToStringExpandedAndFullInt_ForQ3div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.011111111111111", new Q(3, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQ3div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.100000000000000", new Q(3, 2), 2);
 
     [TestMethod()] //-3/2, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg3div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.100000000000000", new Q(-3, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg3div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.011111111111111", new Q(-3, 2), 2);
 
     [TestMethod()] //3/2, base 3
     public void ToStringExpandedAndFullInt_ForQ3div2_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.111111111111111", new Q(3, 2), 3);
@@ -1633,10 +1633,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg3div2_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.222222222222222", new Q(-3, 2), 5);
 
     [TestMethod()] //3/4, base 2
-    public void ToStringExpandedAndFullInt_ForQ3div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1011111111111111", new Q(3, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQ3div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1100000000000000", new Q(3, 4), 2);
 
     [TestMethod()] //-3/4, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg3div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1100000000000000", new Q(-3, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg3div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1011111111111111", new Q(-3, 4), 2);
 
     [TestMethod()] //3/4, base 3
     public void ToStringExpandedAndFullInt_ForQ3div4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2020202020202020", new Q(3, 4), 3);
@@ -1663,10 +1663,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg3div5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1210121012101210", new Q(-3, 5), 3);
 
     [TestMethod()] //3/5, base 5
-    public void ToStringExpandedAndFullInt_ForQ3div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2444444444444444", new Q(3, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQ3div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".3000000000000000", new Q(3, 5), 5);
 
     [TestMethod()] //-3/5, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg3div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".3000000000000000", new Q(-3, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg3div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2444444444444444", new Q(-3, 5), 5);
 
     [TestMethod()] //3/7, base 2
     public void ToStringExpandedAndFullInt_ForQ3div7_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0110110110110110", new Q(3, 7), 2);
@@ -1699,10 +1699,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg3div25_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100201102212202", new Q(-3, 25), 3);
 
     [TestMethod()] //3/25, base 5
-    public void ToStringExpandedAndFullInt_ForQ3div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0244444444444444", new Q(3, 25), 5);
+    public void ToStringExpandedAndFullInt_ForQ3div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0300000000000000", new Q(3, 25), 5);
 
     [TestMethod()] //-3/25, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg3div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0300000000000000", new Q(-3, 25), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg3div25_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0244444444444444", new Q(-3, 25), 5);
 
     // 4/x tests
     [TestMethod()] //4/3, base 2
@@ -1712,10 +1712,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg4div3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.010101010101010", new Q(-4, 3), 2);
 
     [TestMethod()] //4/3, base 3
-    public void ToStringExpandedAndFullInt_ForQ4div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.022222222222222", new Q(4, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQ4div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.100000000000000", new Q(4, 3), 3);
 
     [TestMethod()] //-4/3, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg4div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.100000000000000", new Q(-4, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg4div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.022222222222222", new Q(-4, 3), 3);
 
     [TestMethod()] //4/3, base 5
     public void ToStringExpandedAndFullInt_ForQ4div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.131313131313131", new Q(4, 3), 5);
@@ -1736,10 +1736,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg4div5_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2101210121012101", new Q(-4, 5), 3);
 
     [TestMethod()] //4/5, base 5
-    public void ToStringExpandedAndFullInt_ForQ4div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".3444444444444444", new Q(4, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQ4div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".4000000000000000", new Q(4, 5), 5);
 
     [TestMethod()] //-4/5, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg4div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".4000000000000000", new Q(-4, 5), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg4div5_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".3444444444444444", new Q(-4, 5), 5);
 
     [TestMethod()] //4/7, base 2
     public void ToStringExpandedAndFullInt_ForQ4div7_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1001001001001001", new Q(4, 7), 2);
@@ -1766,10 +1766,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg4div9_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0111000111000111", new Q(-4, 9), 2);
 
     [TestMethod()] //4/9, base 3
-    public void ToStringExpandedAndFullInt_ForQ4div9_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1022222222222222", new Q(4, 9), 3);
+    public void ToStringExpandedAndFullInt_ForQ4div9_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1100000000000000", new Q(4, 9), 3);
 
     [TestMethod()] //-4/9, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg4div9_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1100000000000000", new Q(-4, 9), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg4div9_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1022222222222222", new Q(-4, 9), 3);
 
     [TestMethod()] //4/9, base 5
     public void ToStringExpandedAndFullInt_ForQ4div9_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".2102342102342102", new Q(4, 9), 5);
@@ -1779,10 +1779,10 @@ public class QbTests
 
     // 5/x tests
     [TestMethod()] //5/2, base 2
-    public void ToStringExpandedAndFullInt_ForQ5div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.01111111111111", new Q(5, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQ5div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.10000000000000", new Q(5, 2), 2);
 
     [TestMethod()] //-5/2, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg5div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.10000000000000", new Q(-5, 2), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg5div2_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("10.01111111111111", new Q(-5, 2), 2);
 
     [TestMethod()] //5/2, base 3
     public void ToStringExpandedAndFullInt_ForQ5div2_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("2.111111111111111", new Q(5, 2), 3);
@@ -1803,10 +1803,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg5div3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.101010101010101", new Q(-5, 3), 2);
 
     [TestMethod()] //5/3, base 3
-    public void ToStringExpandedAndFullInt_ForQ5div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.122222222222222", new Q(5, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQ5div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.200000000000000", new Q(5, 3), 3);
 
     [TestMethod()] //-5/3, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg5div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.200000000000000", new Q(-5, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg5div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.122222222222222", new Q(-5, 3), 3);
 
     [TestMethod()] //5/3, base 5
     public void ToStringExpandedAndFullInt_ForQ5div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.313131313131313", new Q(5, 3), 5);
@@ -1815,10 +1815,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg5div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.313131313131313", new Q(-5, 3), 5);
 
     [TestMethod()] //5/4, base 2
-    public void ToStringExpandedAndFullInt_ForQ5div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.001111111111111", new Q(5, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQ5div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.010000000000000", new Q(5, 4), 2);
 
     [TestMethod()] //-5/4, base 2
-    public void ToStringExpandedAndFullInt_ForQNeg5div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.010000000000000", new Q(-5, 4), 2);
+    public void ToStringExpandedAndFullInt_ForQNeg5div4_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.001111111111111", new Q(-5, 4), 2);
 
     [TestMethod()] //5/4, base 3
     public void ToStringExpandedAndFullInt_ForQ5div4_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.020202020202020", new Q(5, 4), 3);
@@ -2020,10 +2020,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg22div3_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("111.0101010101010", new Q(-22, 3), 2);
 
     [TestMethod()] //22/3, base 3
-    public void ToStringExpandedAndFullInt_ForQ22div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("21.02222222222222", new Q(22, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQ22div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("21.10000000000000", new Q(22, 3), 3);
 
     [TestMethod()] //-22/3, base 3
-    public void ToStringExpandedAndFullInt_ForQNeg22div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("21.10000000000000", new Q(-22, 3), 3);
+    public void ToStringExpandedAndFullInt_ForQNeg22div3_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("21.02222222222222", new Q(-22, 3), 3);
 
     [TestMethod()] //22/3, base 5
     public void ToStringExpandedAndFullInt_ForQ22div3_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("12.13131313131313", new Q(22, 3), 5);
@@ -2044,10 +2044,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg12div125_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0021202221201000", new Q(-12, 125), 3);
 
     [TestMethod()] //12/125, base 5
-    public void ToStringExpandedAndFullInt_ForQ12div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0214444444444444", new Q(12, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQ12div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0220000000000000", new Q(12, 125), 5);
 
     [TestMethod()] //-12/125, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg12div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0220000000000000", new Q(-12, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg12div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0214444444444444", new Q(-12, 125), 5);
 
     [TestMethod()] //37/125, base 2
     public void ToStringExpandedAndFullInt_ForQ37div125_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0100101111000110", new Q(37, 125), 2);
@@ -2062,10 +2062,10 @@ public class QbTests
     public void ToStringExpandedAndFullInt_ForQNeg37div125_Base3_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".0212222100111121", new Q(-37, 125), 3);
 
     [TestMethod()] //37/125, base 5
-    public void ToStringExpandedAndFullInt_ForQ37div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1214444444444444", new Q(37, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQ37div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1220000000000000", new Q(37, 125), 5);
 
     [TestMethod()] //-37/125, base 5
-    public void ToStringExpandedAndFullInt_ForQNeg37div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1220000000000000", new Q(-37, 125), 5);
+    public void ToStringExpandedAndFullInt_ForQNeg37div125_Base5_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect(".1214444444444444", new Q(-37, 125), 5);
 
     [TestMethod()] //23/18, base 2
     public void ToStringExpandedAndFullInt_ForQ23div18_Base2_IsCorrect() => ToStringExpandedAndFullInt_ForQb_IsCorrect("1.010001110001110", new Q(23, 18), 2);
