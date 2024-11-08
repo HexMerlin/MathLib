@@ -6,7 +6,7 @@ using System.Linq;
 namespace MathLib;
 
 /// <summary>
-/// Represents a rational number with a base-dependent expansion, denoted ℚ_b.
+/// Represents a rational number with a base-dependent expansion, denoted ℚb.
 /// </summary>
 /// <remarks>
 /// The class <see cref="Qb"/> extends <see cref="Q"/> by adopting a base, and thus defining a base-specific coefficient expansion 
