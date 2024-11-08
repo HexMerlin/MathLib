@@ -7,22 +7,18 @@ using MathLib.Compatibility;
 namespace MathLib;
 
 /// <summary>
-/// Represents the field of ultimately periodic p-adic numbers, denoted ℚₚ in mathematics.
+/// Represents p-adic numbers that are rational, denoted ℚ⊂ℚₚ.
 /// </summary>
 /// <remarks>
-/// ℚₚ is the completion of the rational numbers ℚ with respect to the p-adic norm, defined for a given prime p.
-/// Each number can be decomposed into a finite preperiodic part and a periodic part in its coefficient expansion. 
-/// Both parts can be optionally empty.
+/// In mathematics, the set of p-adic numbers ℚₚ is the completion of the rational numbers ℚ with respect to the p-adic norm.
+/// This completion includes both rational numbers and p-adic irrationals (limits of infinite p-adic expansions).
+/// <para>However, in this library, the <see cref="Qp"/> class is restricted to representing only the rational numbers within ℚₚ (which can be finitely represented in a computer).
+/// Consequently, it handles p-adic numbers whose expansions are finite or ultimately periodic, corresponding exactly to elements of ℚ
+///</para>
 /// <para>
-/// ℚₚ contains exactly the set ℚ of all rational numbers.
-/// </para>
-/// ℚₚ is closed under addition, subtraction, multiplication, and division (excluding division by zero), but it is 
-/// not algebraically closed. For example, the square root of -1 does not exist in ℚₚ, but it does exist in ℂₚ, 
-/// the complex p-adic numbers (<see cref="Cp"/>).
-/// <para>
-/// The class <see cref="Qp"/> represents these ultimately periodic p-adic numbers and can extend to <see cref="Cp"/> 
-/// for operations like √-1.
-/// </para>
+/// This means that while ℚₚ is uncountable and includes numbers that cannot be expressed as ratios of integers (p-adic irrationals),
+/// our <see cref="Qp"/> class cannot represent these elements. It focuses on rational numbers and their representations in p-adic form.
+///</para>
 /// </remarks>
 /// <example>
 /// A 5-adic expansion for the rational number -4/3 is:
@@ -193,13 +189,6 @@ public class Qp : Q
               : new BaseInt(base_, preperiodicInt, prefixLength), periodicInt.IsZero
                   ? BaseInt.Zero(base_, period)
                   : new BaseInt(base_, periodicInt, period), firstExponent);
-
-        //Generator = new Qb(
-        //    !q.IsNegative, preperiodicInt.IsZero
-        //        ? BaseInt.Zero(base_, prefixLength)
-        //        : new BaseInt(base_, preperiodicInt, prefixLength), periodicInt.IsZero
-        //            ? BaseInt.Zero(base_, period)
-        //            : new BaseInt(base_, periodicInt, period), firstExponent);
     }
 
     /// <summary>
@@ -247,19 +236,6 @@ public class Qp : Q
         }
     }
 
-
-
-    ///<summary>
-    ///Constructor for a p-adic number.
-    ///</summary> 
-    ///<param name="generator">A generator that generates the coefficients of the p-adic number.</param>
-    /// <param name="_">A parameter to denote Q is not the value of Qp (but a generator)</param>
-    //public Qp(Qb generator, QIsGenerator _)
-    //{
-    //    this.Generator = generator;
-    //    //CALL BASE CONSTRUCTOR. MUST SET ALL PROPERTIES 
-    //}
-
     public IEnumerable<int> Coefficients() => Generator.Coefficients();
 
     /// <summary>
@@ -274,31 +250,6 @@ public class Qp : Q
     /// Default string representation of the p-adic number.
     /// </summary>
     public override string ToString() => $"{base.ToStringCanonical()} = {ToStringExpanded()}";
-
-    /// <summary>
-    /// Returns a p-adic number representing 0.
-    /// </summary>
-    /// <example><code>0₂ = 0000000000000000...</code></example>
-    /// <param name="base_">The base</param>
-    /// <returns></returns>
-   // public static Qp Zero(Base base_) => new Qp(new Qb(0, 1, base_), QIsGenerator.Yes);
-
-    /// <summary>
-    /// Returns a p-adic number representing 1.
-    /// </summary>
-    /// <example><code>1₂ = 1000000000000000...</code></example>
-    /// <param name="base_">The base</param>
-    /// <returns></returns>
-   // public static Qp One(Base base_) => new Qp(new Qb(1, 1, base_), QIsGenerator.Yes);
-
-    /// <summary>
-    /// Returns a p-adic number representing -1.
-    /// </summary>
-    /// <example><code>-1₂ = 1111111111111111...</code></example>
-    /// <param name="base_">The base</param>
-    /// <returns></returns>
-   // public static Qp MinusOne(Base base_) => new Qp(new Qb(-1, 1, base_), QIsGenerator.Yes);
-
 
     /// <summary>
     /// Returns a reverse generator for the p-adic number denoting the reciprocal of a given integer in the base <paramref name="base_"/>.
@@ -380,8 +331,3 @@ public class Qp : Q
     public string ToStringPeriodic()
         => IsNaN ? nameof(NaN) : Generator.ToStringPeriodic(FirstExponent == 0 ? "" : FirstExponent.ToString());
 }
-
-//public enum QIsGenerator
-//{
-//    Yes,
-//}
