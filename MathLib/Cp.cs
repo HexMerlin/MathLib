@@ -25,6 +25,7 @@
 /// <code>
 /// √(-1) = i = "…04240422331102414131141421404340423140223032431212"₅ (no repeating pattern)
 /// </code>
+/// This is the OEIS sequence <a href="https://oeis.org/A210850">A210850</a>, the other OEIS sequences for <c>i</c> is <a href="https://oeis.org/A210851">A210851</a>
 /// </example>
 public class Cp { }
 
