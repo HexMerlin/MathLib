@@ -1,6 +1,4 @@
-﻿using System;
-using System.Numerics;
-using MathLib.Compatibility;
+﻿using System.Numerics;
 
 
 namespace MathLib;
@@ -8,7 +6,7 @@ namespace MathLib;
 /// <summary>
 /// Contains extensions for base in number representations.
 /// </summary>
-public static class Base 
+public static class BaseExtensions 
 {
     /// <summary>
     /// Checks if the given rational number is purely periodic in the current base.

@@ -47,28 +47,6 @@ public partial class Q
         return result;
     }
 
-
-    //Original
-    //public static Q PAryInterpretation(bool negative, BaseInt pAryPreperiodic, BaseInt pAryPeriodic, int firstExponent = -1)
-    //{
-    //    _ = pAryPreperiodic.AssertSameBaseAs(pAryPeriodic);
-    //    Q preQ = PAryPreperiodic(negative, pAryPreperiodic, firstExponent);
-    //    Q perQ = PAryPeriodic(negative, pAryPeriodic, firstExponent - pAryPreperiodic.Length);
-    //    return preQ + perQ;
-    //}
-
-    //Original
-    //public static Q PAdicInterpretation(BaseInt pAdicPreperiodic, BaseInt pAdicPeriodic, int firstExponent = 0)
-    //{
-    //    _ = pAdicPreperiodic.AssertSameBaseAs(pAdicPeriodic);
-    //    Q preQ = PAdicPreperiodic(pAdicPreperiodic, firstExponent);
-    //    Q perQ = PAdicPeriodic(pAdicPeriodic, firstExponent + pAdicPreperiodic.Length);
-    //    return preQ + perQ;
-    //}
-
-
-
-
     public static Q PAryPreperiodic(bool negative, BaseInt pAryPreperiodic, int firstExponent = -1)
         => new Q(pAryPreperiodic.IntValue).Negation(negative) * pAryPreperiodic.Base.Pow(firstExponent + 1 - pAryPreperiodic.Length);
 
