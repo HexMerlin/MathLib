@@ -25,6 +25,34 @@ public class Product
     public int XLength => InputX.Length;
     public int YLength => InputY.Length;
 
+    public Product(BigInteger xInteger, BigInteger yInteger, bool reverse = false)
+    {
+        if (xInteger.Abs() < yInteger.Abs())
+            (xInteger, yInteger) = (yInteger, xInteger);
+        InputX = Input.Create(xInteger, reverse);
+        InputY = Input.Create(yInteger, reverse);
+        Integer = GetSetNumber();
+
+        InputBase negInputX = InputX.Negative;
+        InputBase negInputY = InputY.Negative;
+
+        Product[] p = new Product[] {
+                this,
+                new Product(-Integer, negInputX, InputY),
+                new Product(-Integer, InputX, negInputY),
+                new Product(Integer, negInputX, negInputY)
+        };
+
+        p[0].SetNegativeX(p[1]);
+        p[0].SetNegativeY(p[2]);
+        p[0].SetNegativeXY(p[3]);
+        p[1].SetNegativeY(p[3]);
+        p[1].SetNegativeXY(p[2]);
+        p[2].SetNegativeX(p[3]);
+    }
+
+
+
 
     public Product(BigInteger integer, int xLength, int yLength) :
         this(integer, new Input(xLength), new Input(yLength))
@@ -350,6 +378,9 @@ public class Product
         //for (int i = 0; i < Length; i++)
         //    yield return pos[i] + neg[i];
     }
+
+
+    public IEnumerable<int> SetCoeffs() => Enumerable.Range(0, Length).Select(GetSetCoeff);
 
     public IEnumerable<(int min, int max)> MinMax() => Enumerable.Range(0, Length).Select(MinMax);
 

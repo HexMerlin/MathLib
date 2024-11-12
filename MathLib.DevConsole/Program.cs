@@ -26,14 +26,29 @@ internal class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
+
+        BigInteger x = 97; // 137; // 97;
+        BigInteger y = 59; // 181; // 59;
+        x = 137; // 137; // 97;
+        y = 181; // 181; // 59;
+        x = 7841; // 137; // 97;
+        y = 6857; // 181; // 59;
+        int[] coeffs = Input.ToBitArray(x*y);
+        int[] coeffsRev = Input.ToBitArrayFactors(x, y);
+
+        Console.WriteLine(coeffs.Str());
+        Console.WriteLine(Input.BalancedCoeffs(coeffs).Select(c => c > 0 ? '+' : '-').Str());
+        Console.WriteLine(" " + Input.BalancedCoeffs(coeffsRev).Select(c => c > 0 ? '+' : '-').Str());
+        Console.WriteLine(coeffsRev.Str());
+
+        return;
+
+     
+        //Console.WriteLine(rev.GetSetNumber());
         //Qb qb = new Qb(-1, 1, 2);
         //Console.WriteLine(qb);
         //return;
-        Q q = new Q(1, 1);
-        Qp qp = new Qp(q, 2);
-        Console.WriteLine(qp);
-        Console.WriteLine(qp.Generator.ToStringCanonical());
-        return;
+
         //QTuple qTuple = new QTuple(new Q(77, 1), 2);
 
         //var pb = new PyramidBase(7, 3, 3);
@@ -70,60 +85,60 @@ internal class Program
 
         //}
 
-        Random random = new Random(17);
-                BigInteger GetOddRandom() => random.Next(100, 1000) * 2 + 1;
+        //Random random = new Random(17);
+        //        BigInteger GetOddRandom() => random.Next(100, 1000) * 2 + 1;
 
-                BigInteger NegativeXNumber(Product product)
-                {
-                    Qb qp0 = new Qp(product.Integer, 1, 2).Generator;
-                    Qb qp1 = new Qp(qp0, 2).Generator;
-                    Debug.Assert(qp1.IsInteger);
-                    return qp1.Numerator;
-                }
+        //        BigInteger NegativeXNumber(Product product)
+        //        {
+        //            Qb qp0 = new Qp(product.Integer, 1, 2).Generator;
+        //            Qb qp1 = new Qp(qp0, 2).Generator;
+        //            Debug.Assert(qp1.IsInteger);
+        //            return qp1.Numerator;
+        //        }
 
-        for (int c = 0; c < 100; c++)
-        {
-            BigInteger x = GetOddRandom();
-            BigInteger y = GetOddRandom();
-            //x = 107; // 23; //1611;
-            //y = 11; // 19; //1215;
-            if (x < y)
-            {
-                (x, y) = (y, x);
-            }
-            int xLen = Input.ToBitArray(x).Length;
-            int yLen = Input.ToBitArray(y).Length;
-            //  int xyLength = Input.ToBitArray(x*y).Length;
-            Product reference = new Product(x * y, xLen, yLen);
-            reference.FillX(x);
-            reference.FillY(y);
-            //Console.WriteLine("Input number: " + reference.NegativeX.Integer);
+        //for (int c = 0; c < 100; c++)
+        //{
+        //    BigInteger x = GetOddRandom();
+        //    BigInteger y = GetOddRandom();
+        //    //x = 107; // 23; //1611;
+        //    //y = 11; // 19; //1215;
+        //    if (x < y)
+        //    {
+        //        (x, y) = (y, x);
+        //    }
+        //    int xLen = Input.ToBitArray(x).Length;
+        //    int yLen = Input.ToBitArray(y).Length;
+        //    //  int xyLength = Input.ToBitArray(x*y).Length;
+        //    Product reference = new Product(x * y, xLen, yLen);
+        //    reference.FillX(x);
+        //    reference.FillY(y);
+        //    //Console.WriteLine("Input number: " + reference.NegativeX.Integer);
 
-            Product negX = reference.NegativeX;
-            BigInteger setNumber = negX.GetSetNumber();
-            BigInteger preComputedNegativeX = NegativeXNumber(reference);
+        //    Product negX = reference.NegativeX;
+        //    BigInteger setNumber = negX.GetSetNumber();
+        //    BigInteger preComputedNegativeX = NegativeXNumber(reference);
 
-            //if (setNumber - preComputedNegativeX != 0)
-            //    continue;
+        //    //if (setNumber - preComputedNegativeX != 0)
+        //    //    continue;
 
-            // int lenDiff = xyLength - reference.Length;
-            var lastCoeffVal = negX.GetSetCoeff(negX.Length - 1); // * Product.Weight(negX.Length - 1);
+        //    // int lenDiff = xyLength - reference.Length;
+        //    var lastCoeffVal = negX.GetSetCoeff(negX.Length - 1); // * Product.Weight(negX.Length - 1);
 
-            Console.WriteLine($"{x} * {y}:  Set:{setNumber} Pre:{preComputedNegativeX} Diff:{setNumber - preComputedNegativeX} XLen:{xLen} YLen:{yLen} Len:{negX.Length}");
+        //    Console.WriteLine($"{x} * {y}:  Set:{setNumber} Pre:{preComputedNegativeX} Diff:{setNumber - preComputedNegativeX} XLen:{xLen} YLen:{yLen} Len:{negX.Length}");
 
-            Console.WriteLine("LastVal: " + lastCoeffVal);
-            Console.WriteLine("PosSetNumber: " + reference.GetSetNumber() + " Sub: " + (setNumber - reference.GetSetNumber()));
-           // reference.DebugPrint();
-            negX.DebugPrint();
-            Console.WriteLine(Input.ToBitArray(preComputedNegativeX).Str(""));
-            Console.WriteLine(Input.ToBitArray(setNumber).Str(""));
-            Console.WriteLine();
+        //    Console.WriteLine("LastVal: " + lastCoeffVal);
+        //    Console.WriteLine("PosSetNumber: " + reference.GetSetNumber() + " Sub: " + (setNumber - reference.GetSetNumber()));
+        //   // reference.DebugPrint();
+        //    negX.DebugPrint();
+        //    Console.WriteLine(Input.ToBitArray(preComputedNegativeX).Str(""));
+        //    Console.WriteLine(Input.ToBitArray(setNumber).Str(""));
+        //    Console.WriteLine();
 
 
-        
-        }
-        return;
-        
+
+        //}
+        //return;
+
         //BigInteger x = 53; // 29; // 23; // 92048139692281; // 53; // 92048139692281; //25478993; ; // 53; // 6199;  // 23; // 29;//6199; // 7853; // 4297; //1123; //29;  // 1439;  //541;// 29;
         //BigInteger y = 43; // 11; // 19; // 47695699980083; // 43; // 47695699980083; // 43; // 3779; //  19; //37; // 1123; // 3779; // 1801; // 13; // 23;  //1123; // 347; // 23;
         //int xLen = Input.ToBitArray(x).Length;
@@ -155,7 +170,7 @@ internal class Program
 
         //Console.WriteLine("Input number: " + reference.NegativeX.Integer);
         //Console.WriteLine("Set number: " + reference.NegativeX.GetSetNumber());
-       
+
         return;
 
         //   int secondOneXIndex = reference.InputX.SecondOneXIndex;
