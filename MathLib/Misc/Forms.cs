@@ -90,12 +90,12 @@ public static class Forms
     /// is the last digit in the balanced binary representation.
     /// </param>
     /// <returns>
-    /// The integer <c>-1</c>, <c>0</c>, or <c>1</c>, representing the balanced bit at the specified 
-    /// index. Returns <c>-1</c> for negative, <c>0</c> for zero, and <c>1</c> for positive.
+    /// Returns <c>-1</c> for negative and <c>1</c> for positive, representing the balanced bit at the specified 
+    /// index.
     /// </returns>
     /// <remarks>
-    /// A "balanced bit" system uses the set {-1, 0, 1} at each position to represent both positive 
-    /// and negative values efficiently. This method is part of converting numbers into balanced binary form.
+    /// A "balanced bit" system uses the set {-1, 1} at each position to represent both positive 
+    /// and negative values. This method is part of converting numbers into balanced binary form.
     /// </remarks>
     private static int BalancedBit(BigInteger number, int index, bool isLastDigit)
     {
