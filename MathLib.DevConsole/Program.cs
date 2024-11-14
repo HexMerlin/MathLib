@@ -10,6 +10,7 @@ using System.Diagnostics;
 using MathLib;
 using MathLib.Mult;
 using static System.Net.Mime.MediaTypeNames;
+using MathLib.Misc;
 
 namespace MathLib.DevConsole;
 
@@ -22,10 +23,47 @@ internal class Program
         return reverse ? s.Reverse().Str() : s;
     }
 
+    public static void TestToBalancedDigits()
+    {
+        var testCases = new List<(BigInteger integer, int[] constraints)>
+        {
+            (1, new[] {1, 1}),
+            (-1, new[] {1, 1}),
+            (9, new[] {1, 2, 1}),
+            (-9, new[] {1, 2, 1}),
+            (15, new[] {1, 2, 2, 1}),
+            (-15, new[] {1, 2, 2, 1}),
+            (25, new[] {1, 2, 3, 2, 1}),
+            (-25, new[] {1, 2, 3, 2, 1}),
+            (2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
+            (-2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
+            (20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1}),
+            (-20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1})
+        };
+
+        foreach (var (integer, constraints) in testCases)
+        {
+            var digits = Forms.ToBalancedDigits(integer, constraints);
+            bool lengthCheck = digits.Length == constraints.Length;
+            bool firstLastCheck = digits.First() is -1 or 1 && digits.Last() is -1 or 1;
+            bool digitsCheck = digits.Zip(constraints, (d, c) => Math.Abs(d) <= Math.Abs(c) && d.Mod(2) == c.Mod(2)).All(check => check);
+            BigInteger weightedSum = digits.Select((d, i) => d * BigInteger.Pow(2, i)).Aggregate(BigInteger.Zero, (acc, x) => acc + x);
+            bool sumCheck = weightedSum == integer;
+
+            bool testPassed = lengthCheck && firstLastCheck && digitsCheck && sumCheck;
+            Console.WriteLine($"Input: {integer}, Constraints: [{string.Join(", ", constraints)}]");
+            Console.WriteLine($"Output Digits: [{string.Join(", ", digits)}]");
+            Console.WriteLine($"Test Passed: {(testPassed ? "Yes" : "No")}\n");
+        }
+    }
 
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
+      
+        TestToBalancedDigits();
+        return;
+    
 
         BigInteger x = 97; // 137; // 97;
         BigInteger y = 59; // 181; // 59;
