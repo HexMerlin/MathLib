@@ -4,12 +4,10 @@
 #pragma warning disable CS8321 // Local function is declared but never used
 
 using System.Numerics;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Diagnostics;
 using MathLib;
-using MathLib.Mult;
-using static System.Net.Mime.MediaTypeNames;
+using MathLib.BalMult;
 using MathLib.Misc;
 
 namespace MathLib.DevConsole;
@@ -43,7 +41,7 @@ internal class Program
 
         foreach (var (integer, constraints) in testCases)
         {
-            var digits = Forms.ToBalancedDigits(integer, constraints);
+            var digits = BalDigits.ToBalancedDigits(integer, constraints);
             bool lengthCheck = digits.Length == constraints.Length;
             bool firstLastCheck = digits.First() is -1 or 1 && digits.Last() is -1 or 1;
             bool digitsCheck = digits.Zip(constraints, (d, c) => Math.Abs(d) <= Math.Abs(c) && d.Mod(2) == c.Mod(2)).All(check => check);
@@ -60,26 +58,42 @@ internal class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
-      
+        BigInteger x = 197;
+        BigInteger y = 103;
+        Product product = new Product(x, y);
+        int xLen = product.XLength;
+        int yLen = product.YLength;
+        Console.WriteLine(x*y + " == " + product.Integer);
+        Console.WriteLine("X: " + product.InputX + " Len: " + xLen);
+        Console.WriteLine("Y: " + product.InputY + " Len: " + yLen);
+        Console.WriteLine(product.Counts.Str(" "));
+        Console.WriteLine(BalDigits.BalancedBitsMaxAbs(product.XLength, product.YLength).Str(" "));
+              
+        Console.WriteLine(product);     
+        var balCoeffs = BalDigits.ToBalancedDigits(product.Integer, xLen, yLen);
+        Console.WriteLine(balCoeffs.Str(" "));
+        var balCoeffs2 = BalDigits.ToBalancedDigits(-product.Integer, yLen, xLen);
+        Console.WriteLine(balCoeffs2.Str(" "));
+        return;
+
         TestToBalancedDigits();
         return;
     
 
-        BigInteger x = 97; // 137; // 97;
-        BigInteger y = 59; // 181; // 59;
-        x = 137; // 137; // 97;
-        y = 181; // 181; // 59;
-        x = 7841; // 137; // 97;
-        y = 6857; // 181; // 59;
-        int[] coeffs = Input.ToBitArray(x*y);
-        int[] coeffsRev = Input.ToBitArrayFactors(x, y);
+        //BigInteger x = 97; // 137; // 97;
+        //BigInteger y = 59; // 181; // 59;
+        //x = 137; // 137; // 97;
+        //y = 181; // 181; // 59;
+        //x = 7841; // 137; // 97;
+        //y = 6857; // 181; // 59;
+        //int[] coeffs = Input.ToBitArray(x*y);
+        //int[] coeffsRev = Input.ToBitArrayFactors(x, y);
 
-        Console.WriteLine(coeffs.Str());
-        Console.WriteLine(Input.BalancedCoeffs(coeffs).Select(c => c > 0 ? '+' : '-').Str());
-        Console.WriteLine(" " + Input.BalancedCoeffs(coeffsRev).Select(c => c > 0 ? '+' : '-').Str());
-        Console.WriteLine(coeffsRev.Str());
-
-        return;
+        //Console.WriteLine(coeffs.Str());
+        //Console.WriteLine(Input.BalancedCoeffs(coeffs).Select(c => c > 0 ? '+' : '-').Str());
+        //Console.WriteLine(" " + Input.BalancedCoeffs(coeffsRev).Select(c => c > 0 ? '+' : '-').Str());
+        //Console.WriteLine(coeffsRev.Str());
+        //return;
 
      
         //Console.WriteLine(rev.GetSetNumber());

@@ -28,14 +28,14 @@ public class FormsTests
         Assert.AreEqual(expected, sum, $"The sum of the NAF digits does not equal the expected number {expected}");
     }
 
-    public static void AssertBalancedBinaryIsExpected(BigInteger expected)
+    public static void AssertBalancedBitsIsExpected(BigInteger expected)
     {
         BigInteger weight = BigInteger.One;
         BigInteger sum = 0;
 
-        var debug = expected.ToBalancedBinary().ToArray();
+        var debug = expected.ToBalancedBits().ToArray();
 
-        foreach (int c in expected.ToBalancedBinary())
+        foreach (int c in expected.ToBalancedBits())
         {
             if (c is -1 or 1)
                 sum += c * weight;
@@ -48,7 +48,7 @@ public class FormsTests
 
     public static void AssertToBalancedDigitsHasValidSolution(BigInteger integer, int[] constraints)
     {
-        var digits = Forms.ToBalancedDigits(integer, constraints);
+        var digits = BalDigits.ToBalancedDigits(integer, constraints);
 
         bool lengthCheck = digits.Length == constraints.Length;
         Assert.AreEqual(constraints.Length, digits.Length, $"The number of digits in the balanced representation must be equal to constraints array");
@@ -75,10 +75,10 @@ public class FormsTests
     }
 
     [TestMethod()]
-    public void ToBalancedBinary_ForRange_ReturnsCorrect()
+    public void ToBalancedBits_ForRange_ReturnsCorrect()
     {
         for (BigInteger expected = -31; expected <= 31; expected += 2)
-            AssertBalancedBinaryIsExpected(expected);
+            AssertBalancedBitsIsExpected(expected);
     }
 
     [TestMethod()]
