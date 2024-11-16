@@ -34,8 +34,6 @@ public class Product
         }
     }
 
-    public IEnumerable<int> Counts => Enumerable.Range(0, Length).Select(i => InputCells(i).Count());
-
     public int this[int index] => InputCells(index).Select(t => InputX[t.xIndex] * InputY[t.yIndex]).Sum();
 
     public IEnumerable<int> Coeffs => Enumerable.Range(0, Length).Select(i => this[i]);

@@ -8,7 +8,6 @@ using System.Text;
 using System.Diagnostics;
 using MathLib;
 using MathLib.BalMult;
-using MathLib.Misc;
 
 namespace MathLib.DevConsole;
 
@@ -56,16 +55,17 @@ internal class Program
         BigInteger y = 103;
         Product product = new Product(x, y);
         Console.WriteLine(product.ToExtendedString());
-        return;
+        
 
         int xLen = product.XLength;
         int yLen = product.YLength;
         Console.WriteLine(x*y + " == " + product.Integer);
         Console.WriteLine("X: " + product.InputX + " Len: " + xLen);
         Console.WriteLine("Y: " + product.InputY + " Len: " + yLen);
-        Console.WriteLine(product.Counts.Str(" "));
-        Console.WriteLine(BalDigits.MaxAbsValues(product.XLength, product.YLength).Str(" "));
-              
+      
+        Console.WriteLine(BalDigits.Counts(product.XLength, product.YLength).Str(" "));
+        return;
+
         Console.WriteLine(product);     
         var balCoeffs = BalDigits.ToBalancedDigits(product.Integer, xLen, yLen);
         Console.WriteLine(balCoeffs.Str(" "));

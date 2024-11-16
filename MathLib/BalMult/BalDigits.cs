@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MathLib.Misc;
+namespace MathLib.BalMult;
 public static class BalDigits
 {
     /// <summary>
@@ -48,21 +46,17 @@ public static class BalDigits
         BigInteger Weight(int i) => BigInteger.One << i;
         int n = constraints.Length;
 
-        List<List<int>> allowedDigits = new List<List<int>>();
+        var allowedDigits = new List<List<int>>();
 
         for (int i = 0; i < n; i++)
         {
             int c = constraints[i];
             int parity = c.Mod(2);
             int maxAbs = Math.Abs(c);
-            List<int> digits = new List<int>();
+            var digits = new List<int>();
             for (int d = -maxAbs; d <= maxAbs; d++)
-            {
                 if (d.Mod(2) == parity)
-                {
                     digits.Add(d);
-                }
-            }
             allowedDigits.Add(digits);
         }
 
@@ -78,9 +72,7 @@ public static class BalDigits
                 return memoResult;
 
             if (position == n)
-            {
-                return (currentSum == integer) ? new List<int>() : null;
-            }
+                return currentSum == integer ? new List<int>() : null;
 
             BigInteger minRemaining = BigInteger.Zero;
             BigInteger maxRemaining = BigInteger.Zero;
@@ -115,19 +107,21 @@ public static class BalDigits
     }
     public static int[] ToBalancedDigits(BigInteger integer, int xLength, int yLength)
     {
-        int[] constraints = MaxAbsValues(xLength, yLength).ToArray();
+        int[] constraints = Counts(xLength, yLength).ToArray();
         return ToBalancedDigits(integer, constraints);
     }
 
-    public static IEnumerable<int> MaxAbsValues(int xLength, int yLength)
+    public static int Count(int index, int xLength, int yLength)
     {
         (int max, int min) = xLength >= yLength ? (xLength, yLength) : (yLength, xLength);
-
-        for (int i = 1; i < min; i++)
-            yield return i;
-        for (int i = 0; i < max - min + 1; i++)
-            yield return min;
-        for (int i = min - 1; i > 0; i--)
-            yield return i;
+        return index >= 0 && index < min + max - 1
+            ? index < min - 1 
+                ? index + 1 
+                : index < max 
+                    ? min 
+                    : max + min - 1 - index
+            : 0;    
     }
+
+    public static IEnumerable<int> Counts(int xLength, int yLength) => Enumerable.Range(0, xLength + yLength - 1).Select(i => Count(i, xLength, yLength));
 }
