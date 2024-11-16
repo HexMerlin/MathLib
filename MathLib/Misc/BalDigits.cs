@@ -115,13 +115,14 @@ public static class BalDigits
     }
     public static int[] ToBalancedDigits(BigInteger integer, int xLength, int yLength)
     {
-        int[] constraints = BalancedBitsMaxAbs(xLength, yLength).ToArray();
+        int[] constraints = MaxAbsValues(xLength, yLength).ToArray();
         return ToBalancedDigits(integer, constraints);
     }
 
-    public static IEnumerable<int> BalancedBitsMaxAbs(int xLength, int yLength)
+    public static IEnumerable<int> MaxAbsValues(int xLength, int yLength)
     {
-        (int min, int max) = (Math.Min(xLength, yLength), Math.Max(xLength, yLength));
+        (int max, int min) = xLength >= yLength ? (xLength, yLength) : (yLength, xLength);
+
         for (int i = 1; i < min; i++)
             yield return i;
         for (int i = 0; i < max - min + 1; i++)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Linq;
+using System.Text;
 
 namespace MathLib.BalMult;
 public class Product
@@ -39,5 +40,22 @@ public class Product
 
     public IEnumerable<int> Coeffs => Enumerable.Range(0, Length).Select(i => this[i]);
 
+
+    public string ToExtendedString()
+    {
+
+        string xString = InputX.ToString(4);
+
+        StringBuilder sb = new();
+        for (int y = 0; y < YLength; y++)
+        {
+            sb.Append(' ', y * 4);
+            sb.AppendLine(xString);
+        }
+        sb.Append('_', Length*4);
+        sb.AppendLine();
+        sb.AppendLine(Coeffs.Select(c => c.ToString().PadLeft(4)).Str());
+        return sb.ToString();
+    }
     public override string ToString() => Coeffs.Str(" ");
 }

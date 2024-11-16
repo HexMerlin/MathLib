@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using MathLib.Misc;
+using MathLib.Mult;
 
 namespace MathLib.BalMult;
 
@@ -20,6 +21,12 @@ public class Input
     public bool IsNaN => coeffs.Length == 0;
 
     public int Length => coeffs.Length;
+
+    /// <summary>
+    /// Exposes the coefficients as a readonly span.
+    /// </summary>
+    public ReadOnlySpan<int> Coeffs => coeffs;
+
 
     /// <summary>
     /// Gets the coefficient at the specified index.
@@ -45,6 +52,13 @@ public class Input
     /// Gets the BigInteger representation of the input.
     /// </summary>
     public BigInteger Integer => coeffs.Select((d, i) => (BigInteger.One << i) * d).Sum();
+
+    /// <summary>
+    /// Outputs the coefficients as a string with left-padding of coefficient to the specified cell width.
+    /// </summary>
+    /// <param name="cellWidth">Pad each coefficient to this length</param>
+    /// <returns></returns>
+    public string ToString(int cellWidth) => coeffs.Select(c => new string(' ', Math.Max(0, cellWidth-1)) + (c == 1 ? '+' : '-')).Str();
 
     public override string ToString() => coeffs.Select(c => c == 1 ? '+' : '-').Str();
 }

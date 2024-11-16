@@ -15,12 +15,6 @@ namespace MathLib.DevConsole;
 internal class Program
 {
 
-    static string PurePeriodic(Qb qb, bool reverse = false)
-    {
-        string s = qb.ToStringPeriodic()[1..^1];
-        return reverse ? s.Reverse().Str() : s;
-    }
-
     public static void TestToBalancedDigits()
     {
         var testCases = new List<(BigInteger integer, int[] constraints)>
@@ -61,13 +55,16 @@ internal class Program
         BigInteger x = 197;
         BigInteger y = 103;
         Product product = new Product(x, y);
+        Console.WriteLine(product.ToExtendedString());
+        return;
+
         int xLen = product.XLength;
         int yLen = product.YLength;
         Console.WriteLine(x*y + " == " + product.Integer);
         Console.WriteLine("X: " + product.InputX + " Len: " + xLen);
         Console.WriteLine("Y: " + product.InputY + " Len: " + yLen);
         Console.WriteLine(product.Counts.Str(" "));
-        Console.WriteLine(BalDigits.BalancedBitsMaxAbs(product.XLength, product.YLength).Str(" "));
+        Console.WriteLine(BalDigits.MaxAbsValues(product.XLength, product.YLength).Str(" "));
               
         Console.WriteLine(product);     
         var balCoeffs = BalDigits.ToBalancedDigits(product.Integer, xLen, yLen);
