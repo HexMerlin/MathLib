@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using MathLib.Misc;
-using MathLib.Mult;
 
 namespace MathLib.BalMult;
 
@@ -41,11 +40,12 @@ public class Input
     /// Initializes a new instance of the <see cref="Input"/> class with the specified BigInteger.
     /// </summary>
     /// <param name="integer">The BigInteger to convert to balanced binary coefficients.</param>
-    public Input(BigInteger integer)
+    /// <param name="minLength">Optional min length for the returned sequence.</param>
+    public Input(BigInteger integer, int minLength = 0)
     {
         if (integer.IsEven)
             coeffs = new int[0];
-        coeffs = Forms.ToBalancedBits(integer).ToArray();
+        coeffs = BalBits.ToBalancedBits(integer, minLength).ToArray();
     }
 
     /// <summary>
@@ -54,11 +54,10 @@ public class Input
     public BigInteger Integer => coeffs.Select((d, i) => (BigInteger.One << i) * d).Sum();
 
     /// <summary>
-    /// Outputs the coefficients as a string with left-padding of coefficient to the specified cell width.
+    /// Outputs the input as a string with left-padding of bits to the specified width.
     /// </summary>
-    /// <param name="cellWidth">Pad each coefficient to this length</param>
-    /// <returns></returns>
-    public string ToString(int cellWidth) => coeffs.Select(c => new string(' ', Math.Max(0, cellWidth-1)) + (c == 1 ? '+' : '-')).Str();
+    /// <param name="bitWidth">Pad each coefficient to this length</param>
+    public string ToString(int bitWidth) => coeffs.BitString(bitWidth);
 
-    public override string ToString() => coeffs.Select(c => c == 1 ? '+' : '-').Str();
+    public override string ToString() => coeffs.BitString();
 }

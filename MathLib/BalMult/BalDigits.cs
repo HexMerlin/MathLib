@@ -111,6 +111,18 @@ public static class BalDigits
         return ToBalancedDigits(integer, constraints);
     }
 
+    public static int Count(int index, int length)
+    {
+        if (length.IsEven())
+            throw new ArgumentException("Length must be odd", nameof(length));
+        if (index < 0 || index >= length)
+            throw new ArgumentOutOfRangeException(nameof(index));
+
+        return index <= length / 2
+                ? index + 1
+                : length - index;
+    }
+
     public static int Count(int index, int xLength, int yLength)
     {
         (int max, int min) = xLength >= yLength ? (xLength, yLength) : (yLength, xLength);
@@ -124,4 +136,9 @@ public static class BalDigits
     }
 
     public static IEnumerable<int> Counts(int xLength, int yLength) => Enumerable.Range(0, xLength + yLength - 1).Select(i => Count(i, xLength, yLength));
+
+   
+    public static string DigitString(this IEnumerable<int> balDigits, int digitWidth) 
+        => balDigits.Select(c => c.ToString().PadLeft(digitWidth)).Str();
+
 }

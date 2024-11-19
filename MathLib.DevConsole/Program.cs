@@ -7,7 +7,10 @@ using System.Numerics;
 using System.Text;
 using System.Diagnostics;
 using MathLib;
+using MathLib.Prime;
 using MathLib.BalMult;
+using MathLib.Misc;
+
 
 namespace MathLib.DevConsole;
 
@@ -50,28 +53,151 @@ internal class Program
 
     static void Main()
     {
+
         Console.OutputEncoding = Encoding.UTF8;
-        BigInteger x = 197;
-        BigInteger y = 103;
-        Product product = new Product(x, y);
-        Console.WriteLine(product.ToExtendedString());
-        
+        //Console.WriteLine(Forms.ToBalancedBits(5, 0).Select(c => c > 0 ? '+' : '-').Str(""));
+        //Console.WriteLine(Forms.ToBalancedBits(5, 3).Select(c => c > 0 ? '+' : '-').Str(""));
+        //Console.WriteLine(Forms.ToBalancedBits(5, 4).Select(c => c > 0 ? '+' : '-').Str(""));
+        //Console.WriteLine(Forms.ToBalancedBits(5, 5).Select(c => c > 0 ? '+' : '-').Str(""));
+        //Console.WriteLine(Forms.ToBalancedBits(5, 6).Select(c => c > 0 ? '+' : '-').Str(""));
+        //return;
 
-        int xLen = product.XLength;
-        int yLen = product.YLength;
-        Console.WriteLine(x*y + " == " + product.Integer);
-        Console.WriteLine("X: " + product.InputX + " Len: " + xLen);
-        Console.WriteLine("Y: " + product.InputY + " Len: " + yLen);
-      
-        Console.WriteLine(BalDigits.Counts(product.XLength, product.YLength).Str(" "));
-        return;
+        //static void Test(int xLen, int yLen)
+        //{
+        //    var counts = BalDigits.Counts(xLen, yLen);
+        //    Console.WriteLine($"xLen:{xLen} yLen:{yLen}");
+        //    Console.WriteLine(counts.Str(" "));
+        //    Console.WriteLine(Product.IndexPairs(xLen, yLen).Str(", "));
+        //    Console.WriteLine();
+        //}
 
-        Console.WriteLine(product);     
-        var balCoeffs = BalDigits.ToBalancedDigits(product.Integer, xLen, yLen);
-        Console.WriteLine(balCoeffs.Str(" "));
-        var balCoeffs2 = BalDigits.ToBalancedDigits(-product.Integer, yLen, xLen);
-        Console.WriteLine(balCoeffs2.Str(" "));
+        //Test(5, 7);
+        //Test(8, 6);
+        //Test(8, 7);
+        //Test(10, 7);
+        //return;
+       
+
+        //Product debug = new Product(7, 3);
+        //Console.WriteLine("X: " + debug.InputX.ToString());
+        //Console.WriteLine("Y: " + debug.InputY.ToString());
+        //Console.WriteLine(debug.ToExtendedString());
+        //return;
+
+        int prodLen = 15;
+        int xLen = 7;
+        int yLen = 6;
+
+        SortedSet<int>[] counts = new SortedSet<int>[30];
+        for (int i = 0; i < counts.Length; i++)
+            counts[i] = new SortedSet<int>();
+
+        var primes = PrimeGenerator.GeneratePrimes().Skip(21).Take(200).ToArray();
+
+        for (int yi = 0; yi < primes.Length; yi++)
+        {
+            int y = primes[yi];
+          
+            for (int xi = 0; xi < primes.Length; xi++)
+            {
+                int x = primes[xi];
+                if (x <= y)
+                    continue;
+               
+                Product product = new Product(x, y);
+                //Console.WriteLine(product.Length + " " + BalBits.ToBalancedBits(product.Integer).Count());
+
+                //continue;
+                //if (product.Integer != 8453)
+                //    continue;
+                //if (product.Length != prodLen)
+                //    continue;
+
+                //if (product.XLength != xLen || product.YLength != yLen)
+                //    continue;
+                //if (product.IsAlternatingParity())
+                //    continue;
+
+                //var pairedSums = product.PairedSums().ToArray();
+                for (int i = 0; i < product.Length; i++)
+                    counts[i].Add(product[i]);
+
+                //var baseX = product.BaseX().ToArray();
+                //var base4 = product.Base4().ToArray();
+                //for (int i = 0; i < base4.Length; i++)
+                //    counts[i].Add(base4[i]);
+
+                // var base4 = product.Base4().ToArray();
+                //if (base4[base4.Length - 1] != 1)
+                //{
+                //    continue;
+                //}
+             
+                Console.WriteLine(product.InputX);
+                Console.WriteLine(product.InputY);
+                Console.WriteLine(product.InputX.Integer + " * " + product.InputY.Integer);
+                Console.WriteLine(product.ToExtendedString());
+                //Console.WriteLine(Enumerable.Range(0, product.Length).Select(i => BalDigits.Count(i, product.Length)).DigitString(4));
+                AltParity altParity = new AltParity(product.Integer, product.Length);
+
+                Console.WriteLine(altParity.ToString(4));
+             //   Console.WriteLine(BalBits.ToBalancedBits(product.Integer, product.Length).DigitString(4));
+                //Console.WriteLine(altParity.Min.DigitString(4));
+                //Console.WriteLine(altParity.Max.DigitString(4));
+
+              //  Debug.Assert(altParity.Length == product.Length);
+
+                Console.WriteLine();
+                //Product product2 = new Product(y, x);
+                //Console.WriteLine(product2.InputX.Integer + " * " + product2.InputY.Integer);
+                //Console.WriteLine(product2.ToExtendedString());
+                //Console.WriteLine();
+             
+          
+
+                //Console.WriteLine(product.Base4().DigitString(8).Remove(0, 4));
+                //Console.WriteLine();
+            
+               
+             
+
+                //Console.WriteLine(product.ToString());
+                //Console.WriteLine(product.PairedSums().Str(", "));
+                //Console.WriteLine();
+            }
+        }
+        Console.WriteLine();
+        Console.WriteLine("Sets: ");
+        int setIndex = 0;
+        foreach (var set in counts)
+        {
+            if (set.Count > 0 && set.Last() != 0)
+                Console.WriteLine($"{setIndex}: {set.Str(" ")}");
+            setIndex++;
+        }
+
         return;
+        //BigInteger x = 197;
+        //BigInteger y = 103;
+        //Product product = new Product(x, y);
+        //Console.WriteLine(product.ToExtendedString());
+
+
+        //int xLen = product.XLength;
+        //int yLen = product.YLength;
+        //Console.WriteLine(x*y + " == " + product.Integer);
+        //Console.WriteLine("X: " + product.InputX + " Len: " + xLen);
+        //Console.WriteLine("Y: " + product.InputY + " Len: " + yLen);
+
+        //Console.WriteLine(BalDigits.Counts(product.XLength, product.YLength).Str(" "));
+        //return;
+
+        //Console.WriteLine(product);     
+        //var balCoeffs = BalDigits.ToBalancedDigits(product.Integer, xLen, yLen);
+        //Console.WriteLine(balCoeffs.Str(" "));
+        //var balCoeffs2 = BalDigits.ToBalancedDigits(-product.Integer, yLen, xLen);
+        //Console.WriteLine(balCoeffs2.Str(" "));
+
 
         TestToBalancedDigits();
         return;

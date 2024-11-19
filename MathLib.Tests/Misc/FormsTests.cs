@@ -29,14 +29,12 @@ public class FormsTests
         Assert.AreEqual(expected, sum, $"The sum of the NAF digits does not equal the expected number {expected}");
     }
 
-    public static void AssertBalancedBitsIsExpected(BigInteger expected)
+    public static void AssertBalancedBitsIsExpected(BigInteger expected, int minLength = 0)
     {
         BigInteger weight = BigInteger.One;
         BigInteger sum = 0;
 
-        var debug = expected.ToBalancedBits().ToArray();
-
-        foreach (int c in expected.ToBalancedBits())
+        foreach (int c in expected.ToBalancedBits(minLength))
         {
             if (c is -1 or 1)
                 sum += c * weight;
@@ -80,6 +78,22 @@ public class FormsTests
     {
         for (BigInteger expected = -31; expected <= 31; expected += 2)
             AssertBalancedBitsIsExpected(expected);
+    }
+
+    [TestMethod()]
+    public void ToBalancedBits_ForRangeDifferentMinLength_ReturnsCorrect()
+    {
+        AssertBalancedBitsIsExpected(1, 2);
+        AssertBalancedBitsIsExpected(1, 3);
+        AssertBalancedBitsIsExpected(1, 4);
+        
+        AssertBalancedBitsIsExpected(3, 3);
+        AssertBalancedBitsIsExpected(3, 4);
+        AssertBalancedBitsIsExpected(3, 5);
+
+        AssertBalancedBitsIsExpected(5, 4);
+        AssertBalancedBitsIsExpected(5, 5);
+        AssertBalancedBitsIsExpected(5, 6);
     }
 
     [TestMethod()]
