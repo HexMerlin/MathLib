@@ -51,6 +51,20 @@ internal class Program
         }
     }
 
+    private static void Print(Product product, bool printFlipped = true)
+    {
+        Console.WriteLine(product.InputX);
+        Console.WriteLine(product.InputY);
+        Console.WriteLine(product.InputX.Integer + " * " + product.InputY.Integer);
+        Console.WriteLine(product.ToExtendedString());
+        AltParity altParity = new AltParity(product.Integer, product.Length);
+        Console.WriteLine(altParity.ToString(4));
+        Console.WriteLine();
+        if (printFlipped)
+            Print(new Product(product.InputY.Integer, product.InputX.Integer), false);
+
+    }
+
     static void Main()
     {
 
@@ -84,6 +98,10 @@ internal class Program
         //Console.WriteLine(debug.ToExtendedString());
         //return;
 
+        Print(new Product(83, 79));
+        Print(new Product(83*79, 1));
+        return;
+
         int prodLen = 15;
         int xLen = 7;
         int yLen = 6;
@@ -92,7 +110,7 @@ internal class Program
         for (int i = 0; i < counts.Length; i++)
             counts[i] = new SortedSet<int>();
 
-        var primes = PrimeGenerator.GeneratePrimes().Skip(21).Take(200).ToArray();
+        var primes = PrimeGenerator.GeneratePrimes().Skip(21).Take(10).ToArray();
 
         for (int yi = 0; yi < primes.Length; yi++)
         {
@@ -132,34 +150,17 @@ internal class Program
                 //{
                 //    continue;
                 //}
-             
-                Console.WriteLine(product.InputX);
-                Console.WriteLine(product.InputY);
-                Console.WriteLine(product.InputX.Integer + " * " + product.InputY.Integer);
-                Console.WriteLine(product.ToExtendedString());
-                //Console.WriteLine(Enumerable.Range(0, product.Length).Select(i => BalDigits.Count(i, product.Length)).DigitString(4));
-                AltParity altParity = new AltParity(product.Integer, product.Length);
-
-                Console.WriteLine(altParity.ToString(4));
-             //   Console.WriteLine(BalBits.ToBalancedBits(product.Integer, product.Length).DigitString(4));
-                //Console.WriteLine(altParity.Min.DigitString(4));
-                //Console.WriteLine(altParity.Max.DigitString(4));
-
-              //  Debug.Assert(altParity.Length == product.Length);
-
-                Console.WriteLine();
-                //Product product2 = new Product(y, x);
-                //Console.WriteLine(product2.InputX.Integer + " * " + product2.InputY.Integer);
-                //Console.WriteLine(product2.ToExtendedString());
-                //Console.WriteLine();
-             
+                Print(product);
+                Product product2 = new Product(product.InputY.Integer, product.InputX.Integer);
+                Print(product2);
           
+
 
                 //Console.WriteLine(product.Base4().DigitString(8).Remove(0, 4));
                 //Console.WriteLine();
-            
-               
-             
+
+
+
 
                 //Console.WriteLine(product.ToString());
                 //Console.WriteLine(product.PairedSums().Str(", "));
