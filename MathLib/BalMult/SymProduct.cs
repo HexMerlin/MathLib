@@ -7,7 +7,6 @@ using System.Text;
 namespace MathLib.BalMult;
 
 
-
 /// <summary>
 /// Provides extension methods for composing and decomposing CBit values that are pairs of bits.
 /// </summary>
@@ -16,29 +15,29 @@ public static class CBit
     /// <summary>
     /// Composes a CBit value from the given boolean values.
     /// </summary>
-    /// <param name="pos">Indicates if the bit is positive.</param>
+    /// <param name="sign">Value 1 (+) or -1 (-)</param>
     /// <param name="green">Indicates if the bit is green.</param>
     /// <returns>
     /// An integer representing the composed CBit value:
     /// <list type="bullet">
     /// <item>
-    /// <description>0 - None / Invalid</description>
+    /// <description>Zero: 0</description>
     /// </item>
     /// <item>
-    /// <description>1 - Pos | Green</description>
+    /// <description>1 Green: 1</description>
     /// </item>
     /// <item>
-    /// <description>-1 - Neg | Green</description>
+    /// <description>-1 Green: -1</description>
     /// </item>
     /// <item>
-    /// <description>2 - Pos | Red</description>
+    /// <description>1 Red: 2</description>
     /// </item>
     /// <item>
-    /// <description>-2 - Neg | Red</description>
+    /// <description>-1 Red: -2</description>
     /// </item>
     /// </list>
     /// </returns>
-    public static int Compose(bool pos, bool green) => pos ? (green ? 1 : 2) : (green ? -1 : -2);
+    public static int Compose(int sign, bool green) => green ? sign : sign << 1;
 
     /// <summary>
     /// Decomposes a CBit value into its boolean components.
@@ -48,24 +47,30 @@ public static class CBit
     /// A tuple containing two boolean values:
     /// <list type="bullet">
     /// <item>
-    /// <description>pos: true iff the bit is positive.</description>
+    /// <description>sign: 1 (+) or -1 (-), or 0 for Zero/Invalid</description>
     /// </item>
     /// <item>
     /// <description>green: true iff the bit is green.</description>
     /// </item>
     /// </list>
     /// </returns>
-    public static (bool pos, bool green) Decompose(int value) => (value > 0, value.IsOdd());
+    public static (int sign, bool green) Decompose(int value) => (value.Sign(), value.IsOdd());
 
-    public static int Mult(int bitA, int bitB)
+    /// <summary>
+    /// Computes the product of two CBit values.
+    /// </summary>
+    /// <param name="cbit1">The first CBit value.</param>
+    /// <param name="cbit2">The second CBit value.</param>
+    /// <returns>A new CBit value that is the product of the two given.</returns>
+    public static int Product(int cbit1, int cbit2)
     {
-        (bool posA, bool greenA) = Decompose(bitA);
-        (bool posB, bool greenB) = Decompose(bitB);
-        if (greenA != greenB)
-            return 0;
-        if (greenA)
-            return posA == posB ? 1 : -1;
-        return posA == posB ? -2 : 2;
+        (int sign1, bool green1) = Decompose(cbit1);
+        (int sign2, bool green2) = Decompose(cbit2);
+        return green1 != green2
+            ? 0
+            : green1
+                ? sign1 == sign2 ? 1 : -1
+                : sign1 == sign2 ? -2 : 2;
     }
 
     public const char PosChar = '+';
@@ -98,16 +103,15 @@ public class SymProduct
         var yBits = BalBits.ToBalancedBits(y, xBits.Length).ToArray();
         Coeffs = new int[xBits.Length];
         for (int i = 0; i < Coeffs.Length; i++)
-            Coeffs[i] = CBit.Compose(xBits[i] == 1, xBits[i] == yBits[i]);
-        
+            Coeffs[i] = CBit.Compose(xBits[i], xBits[i] == yBits[i]); 
     }
 
 
     public static string ColorCoeff(int coeff)
     {
         if (coeff == 0) return CBit.ZeroChar.ToString();
-        var (pos, green) = CBit.Decompose(coeff);
-        return $"{(green ? CBit.GreenColorCode : CBit.RedColorCode)}{(pos ? CBit.PosChar : CBit.NegChar)}{CBit.ResetColorCode}";
+        (int sign, bool green) = CBit.Decompose(coeff);
+        return $"{(green ? CBit.GreenColorCode : CBit.RedColorCode)}{(sign == 1 ? CBit.PosChar : CBit.NegChar)}{CBit.ResetColorCode}";
     }
 
     public override string ToString() => Coeffs.Select(ColorCoeff).Str();
@@ -118,7 +122,7 @@ public class SymProduct
         for (int y = 0; y < Length; y++)
         {
             for (int x = 0; x < Length; x++)
-                sb.Append(ColorCoeff(CBit.Mult(Coeffs[x], Coeffs[y])));
+                sb.Append(ColorCoeff(CBit.Product(Coeffs[x], Coeffs[y])));
             sb.AppendLine();
         }
         return sb.ToString();
