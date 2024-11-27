@@ -59,9 +59,20 @@ public class AltParity
         this.Coeffs = ToAltParity(integer, length).ToArray();
         if (Coeffs.Length != length)
             ReduceLength();
-        Debug.Assert(Coeffs.Length == length);
-        Debug.Assert(Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]));
-        Debug.Assert(Integer == Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum());
+        if (Coeffs.Length != length)
+            throw new ArgumentException(nameof(length), "Length of Coeffs must be odd");
+        if (!Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]))
+            throw new ArgumentException(nameof(Coeffs), "Coeffs must be within Min and Max");
+        if (Integer != Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum())
+            throw new ArgumentException(nameof(Integer), "Coeffs must sum to Integer");
+        //Debug.Assert(Coeffs.Length == length);
+        //Debug.Assert(Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]));
+        //Debug.Assert(Integer == Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum());
+    }
+
+    public int this[int index]
+    {
+        get => Coeffs[index];
     }
 
     private void UpdateLeft(int index)

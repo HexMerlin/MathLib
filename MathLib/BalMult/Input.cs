@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Text;
 using MathLib.Misc;
 
 namespace MathLib.BalMult;
@@ -36,6 +38,13 @@ public class Input
             ? coeffs[index] 
             : 0;
 
+    public void Set(int index, int value)
+    {
+       Debug.Assert(index >= 0 && index < Length);
+       Debug.Assert(value is 1 or -1);
+       coeffs[index] = value;
+    }
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Input"/> class with the specified BigInteger.
     /// </summary>
@@ -48,10 +57,15 @@ public class Input
         coeffs = BalBits.ToBalancedBits(integer, minLength).ToArray();
     }
 
+    public Input(params int[] coeffs) => this.coeffs = coeffs;
+
+
     /// <summary>
     /// Gets the BigInteger representation of the input.
     /// </summary>
     public BigInteger Integer => coeffs.Select((d, i) => (BigInteger.One << i) * d).Sum();
+
+    public void Clear() => Array.Clear(coeffs, 0, coeffs.Length);
 
     /// <summary>
     /// Outputs the input as a string with left-padding of bits to the specified width.
@@ -60,4 +74,26 @@ public class Input
     public string ToString(int bitWidth) => coeffs.BitString(bitWidth);
 
     public override string ToString() => coeffs.BitString();
+
+    public bool Flip(int i) => Enumerable.Range(0, i).Count(i => this[i] == -1).IsOdd();
+
+    public int Flip(int x, int y) => Flip(x) == Flip(y) ? 1 : -1;
+
+    public string Test()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for (int y = 0; y < Length; y++)
+        {
+            for (int x = 0; x < Length; x++)
+            {
+                int val = this[x] != this[y]
+                    ? 0
+                    : this[x] * Flip(x, y);
+                sb.Append(val == 0 ? ' ' : val == 1 ? '+' : '-');
+            }
+            sb.AppendLine();
+        }
+        return sb.ToString();
+    }
 }

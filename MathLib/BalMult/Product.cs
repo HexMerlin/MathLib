@@ -20,16 +20,16 @@ public class Product
 
     public int this[int index] => InputCells(index).Select(t => InputX[t.xIndex] * InputY[t.yIndex]).Sum();
 
-    public Product(BigInteger x, BigInteger y)
+    public Product(BigInteger x, BigInteger y, int minLength = 0)
     {
         if (x.Abs() >= y.Abs())
         {
-            InputX = new Input(x);
+            InputX = new Input(x, minLength);
             InputY = new Input(y, InputX.Length);
         }
         else
         {
-            InputY = new Input(y);
+            InputY = new Input(y,minLength);
             InputX = new Input(x, InputY.Length);
         }
         //InputX = new Input(x);
@@ -53,6 +53,27 @@ public class Product
     public int Count(int index) => BalDigits.Count(index, XLength, YLength);
 
     public bool IsAlternatingParity() => Enumerable.Range(0, Length).All(i => i.IsOdd() != Count(i).IsOdd());
+
+    public Input Diff() => new Input(Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[i] ? 1 : -1).ToArray());
+
+    public string Reference()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for (int y = 0; y < YLength; y++) { 
+        
+            for (int x = 0; x < XLength; x++)
+            {
+                //int val = InputX[x] * InputY[y];
+                int val = InputX[x] * InputY[y] != InputX[y] * InputY[x]
+                    ? 0
+                    : InputX[x] * InputY[y];
+                sb.Append(val == 0 ? ' ' : val == 1 ? '+' : '-');
+            }
+            sb.AppendLine();
+        }
+        return sb.ToString();
+    }
 
     public IEnumerable<int> Base4()
     {
@@ -79,47 +100,71 @@ public class Product
         }
     }
 
-    //public static IEnumerable<(int i1, int i2)> IndexPairs(int xLength, int yLength)
-    //{
-    //    int min = Math.Min(xLength, yLength);
-    //    int length = xLength + yLength - 1;
-    //    for (int i1 = 0; i1 < length; i1++)
-    //    {
-    //        int i2 = BalDigits.Count(i1, xLength, yLength).IsEven() && i1 + 1 < length && BalDigits.Count(i1 + 1, xLength, yLength).IsOdd() ? i1 + 1 : -1;
-    //        yield return (i1, i2); 
-    //        if (i2 != -1)
-    //            i1++;
-    //    }
-    //}
+    public IEnumerable<int> Code() => Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[i] ? 1 : -1); 
+    public string CodeString() => Code().BitString(2);
 
-    //public static IEnumerable<(int i1, int i2)> IndexPairs(int xLength, int yLength)
-    //{
-    //    int min = Math.Min(xLength, yLength);
-    //    int length = xLength + yLength - 1;
-    //    int p = min / 2; //number of pairs
-    //    int p2 = p * 2; //paired length
-    //    int centerLength = length - p2 * 2;
+    public IEnumerable<int> Code2() => Enumerable.Range(0, XLength).Select(i => InputX[0] == InputY[i] ? 1 : -1);
+    public string Code2String() => Code2().BitString(2);
 
-    //    for (int i = 0; i < p2; i += 2)
-    //        yield return (i, i + 1);
+    public IEnumerable<int> Code3() => Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[0] ? 1 : -1);
+    public string Code3String() => Code3().BitString(2);
 
-    //    for (int i = p2; i < p2 + centerLength; i++)
-    //        yield return (i, -1);
+    public int Match(AltParity altParity)
+    {
+        static int Combine(int x, int y) => (x == 1 ? 2 : 0) + (y == 1 ? 1 : 0); //Combines two values that are -1 or 1 into a single unique value [0..3]
+        static (int x, int y) Split(int z) => ((z & 2) - 1, (z & 1) * 2 - 1);    //Splits a combined value back into the original two values
 
-    //    for (int i = p2 + centerLength; i < length - 1; i += 2)
-    //        yield return (i, i + 1);
-    //}
 
-    //public IEnumerable<int> PairedSums()
-    //{
-    //    foreach ((int i1, int i2) in IndexPairs(XLength, YLength))
-    //    {
-    //        if (i2 == -1)
-    //            yield return this[i1];
-    //        else
-    //            yield return this[i1] + this[i2]*2;
-    //    }
-    //}
+        Debug.Assert(Length == altParity.Length);
+        InputX.Clear();
+        InputY.Clear();
+        int[] combinations = new int[Length];
+       
+        
+        for (int i = 0; i < Length;)
+        {
+            Console.WriteLine($"Trying from comb {combinations[i]} at index {i}");
+            combinations[i] = MatchAt(altParity, i, combinations[i]);
+            
+            if (combinations[i] < 4)
+            {
+                Console.WriteLine($"Success for combination {combinations[i]} at index {i}");
+                combinations[i]++; //add the next combination to try if returning here
+                
+                i++;
+                continue;
+            }
+            else while (combinations[i] == 4)
+            {
+                Console.WriteLine("No combs left at index " + i + " - backtracking");
+                combinations[i] = 0;
+                i--;
+                if (i < 0) return -1;
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine("FULL SUCCESS!");
+        return Length;
+    }
+
+    public int MatchAt(AltParity altParity, int index, int startCombination)
+    {
+        static int Combine(int x, int y) => (x == 1 ? 2 : 0) + (y == 1 ? 1 : 0); //Combines two values that are -1 or 1 into a single unique value [0..3]
+        static (int x, int y) Split(int z) => ((z & 2) - 1, (z & 1) * 2 - 1);    //Splits a combined value back into the original two values
+
+        int refSum = altParity[index];
+       
+        for (int combination = startCombination; combination < 4; combination++)
+        {
+            (int x, int y) = Split(combination);
+            InputX.Set(index, x);
+            InputY.Set(index, y);
+            int testSum = this[index];
+            if (testSum == refSum)
+                return combination; 
+        }
+        return 4; //failed to find a match
+    }
 
     public string ToExtendedString()
     {

@@ -59,16 +59,28 @@ internal class Program
         Console.WriteLine(product.ToExtendedString());
         AltParity altParity = new AltParity(product.Integer, product.Length);
         Console.WriteLine(altParity.ToString(4));
+        Console.WriteLine("Code  : " + product.CodeString());
+        Console.WriteLine("Code 2: " + product.Code2String());
+        Console.WriteLine("Code 3: " + product.Code3String());
         Console.WriteLine();
-        if (printFlipped)
-            Print(new Product(product.InputY.Integer, product.InputX.Integer), false);
+        //if (printFlipped)
+        //    Print(new Product(product.InputY.Integer, product.InputX.Integer), false);
 
     }
+
 
     static void Main()
     {
 
         Console.OutputEncoding = Encoding.UTF8;
+      
+        SymProduct symProd = new SymProduct(227, 199);
+        Console.WriteLine(symProd);
+        Console.WriteLine();
+
+        Console.WriteLine(symProd.ToStringExpanded());
+        return;
+
         //Console.WriteLine(Forms.ToBalancedBits(5, 0).Select(c => c > 0 ? '+' : '-').Str(""));
         //Console.WriteLine(Forms.ToBalancedBits(5, 3).Select(c => c > 0 ? '+' : '-').Str(""));
         //Console.WriteLine(Forms.ToBalancedBits(5, 4).Select(c => c > 0 ? '+' : '-').Str(""));
@@ -90,7 +102,7 @@ internal class Program
         //Test(8, 7);
         //Test(10, 7);
         //return;
-       
+
 
         //Product debug = new Product(7, 3);
         //Console.WriteLine("X: " + debug.InputX.ToString());
@@ -98,9 +110,55 @@ internal class Program
         //Console.WriteLine(debug.ToExtendedString());
         //return;
 
-        Print(new Product(83, 79));
-        Print(new Product(83*79, 1));
-        return;
+        static bool TestSame(Product product)
+        {
+            var diff = product.Diff();
+            //Console.WriteLine("SAME: " + (product.Reference() == diff.Test()));
+            bool same = product.Reference() == diff.Test();
+            return same;
+            //Console.WriteLine("SAME: " + () + " " + product.InputX.Integer + " * " + product.InputY.Integer);
+
+        }
+
+        //Product product = new Product(227, 199); //OK
+
+
+        //Product product = new Product(167, 137);
+        Product product = new Product(149, 131);
+        var diff = product.Diff();
+
+        //Input input = new Input([1, -1, 1, 1, -1, 1, 1, 1]);
+        //Input input = new Input([1, -1, -1, -1,  1, 1, 1]);
+
+        //Console.WriteLine(diff);
+        //Console.WriteLine(input);
+
+        //Console.WriteLine(input.Flip(2));
+        //Console.WriteLine(input.Flip(2, 0));
+        Console.WriteLine("X: " + product.InputX);
+        Console.WriteLine("Y: " + product.InputY);
+        Console.WriteLine();
+        Console.WriteLine(product.Reference());
+        Console.WriteLine();
+        Console.WriteLine(diff.Test());
+        Console.WriteLine("SAME: " + (product.Reference() == diff.Test()) + " " + product.InputX.Integer + " " + product.InputY.Integer);
+       // return;
+     
+
+        //AltParity altParity = new AltParity(product.Integer, product.Length);
+        //var result = product.Match(altParity);
+        //Console.WriteLine("failed at: " + result);
+        //Console.WriteLine(product.ToExtendedString());
+        //Console.WriteLine("Result sum: " + product[result]);
+
+
+
+        //Product product3 = new Product(1, 79 * 83);
+        //Print(product3);
+
+        //Product product4 = new Product(-1, -79 * 83);
+        //Print(product4);
+        //return;
 
         int prodLen = 15;
         int xLen = 7;
@@ -110,7 +168,10 @@ internal class Program
         for (int i = 0; i < counts.Length; i++)
             counts[i] = new SortedSet<int>();
 
-        var primes = PrimeGenerator.GeneratePrimes().Skip(21).Take(10).ToArray();
+        var primes = PrimeGenerator.GeneratePrimes().Skip(31).Take(200).ToArray();
+
+        int countSame = 0;
+        int countTotal = 0;
 
         for (int yi = 0; yi < primes.Length; yi++)
         {
@@ -121,12 +182,13 @@ internal class Program
                 int x = primes[xi];
                 if (x <= y)
                     continue;
-               
-                Product product = new Product(x, y);
+              // if (Math.Abs(x-y) < 5) continue;
+
+                product = new Product(x, y);
                 //Console.WriteLine(product.Length + " " + BalBits.ToBalancedBits(product.Integer).Count());
 
                 //continue;
-                //if (product.Integer != 8453)
+                //if (product.Integer != 227 * 199)
                 //    continue;
                 //if (product.Length != prodLen)
                 //    continue;
@@ -137,8 +199,8 @@ internal class Program
                 //    continue;
 
                 //var pairedSums = product.PairedSums().ToArray();
-                for (int i = 0; i < product.Length; i++)
-                    counts[i].Add(product[i]);
+                //for (int i = 0; i < product.Length; i++)
+                //    counts[i].Add(product[i]);
 
                 //var baseX = product.BaseX().ToArray();
                 //var base4 = product.Base4().ToArray();
@@ -147,26 +209,17 @@ internal class Program
 
                 // var base4 = product.Base4().ToArray();
                 //if (base4[base4.Length - 1] != 1)
-                //{
+                //
                 //    continue;
                 //}
-                Print(product);
-                Product product2 = new Product(product.InputY.Integer, product.InputX.Integer);
-                Print(product2);
-          
-
-
-                //Console.WriteLine(product.Base4().DigitString(8).Remove(0, 4));
-                //Console.WriteLine();
-
-
-
-
-                //Console.WriteLine(product.ToString());
-                //Console.WriteLine(product.PairedSums().Str(", "));
-                //Console.WriteLine();
+                //Print(product);
+             
+                //product2 = new Product(product.InputY.Integer, product.InputX.Integer);
+                //Print(product2);
+         
             }
         }
+   
         Console.WriteLine();
         Console.WriteLine("Sets: ");
         int setIndex = 0;
