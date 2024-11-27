@@ -8,43 +8,43 @@ namespace MathLib.BalMult;
 
 
 /// <summary>
-/// Provides extension methods for composing and decomposing CBit values that are pairs of bits.
+/// Provides extension methods for composing and decomposing cBit values that are pairs of bits.
 /// </summary>
 public static class CBit
 {
     /// <summary>
-    /// Composes a CBit value from the given boolean values.
+    /// Composes a cBit value from the given component values.
     /// </summary>
-    /// <param name="sign">Value 1 (+) or -1 (-)</param>
+    /// <param name="sign">Value 1 (+) or -1 (-) or 0 for Zero/Invalid</param>
     /// <param name="green">Indicates if the bit is green.</param>
     /// <returns>
-    /// An integer representing the composed CBit value:
+    /// An integer representing the composed cBit value:
     /// <list type="bullet">
     /// <item>
-    /// <description>Zero: 0</description>
+    /// <description>Zero: 0 (has no color)</description>
     /// </item>
     /// <item>
-    /// <description>1 Green: 1</description>
+    /// <description>1 + Green: 1</description>
     /// </item>
     /// <item>
-    /// <description>-1 Green: -1</description>
+    /// <description>-1 + Green: -1</description>
     /// </item>
     /// <item>
-    /// <description>1 Red: 2</description>
+    /// <description>1 + Red: 2</description>
     /// </item>
     /// <item>
-    /// <description>-1 Red: -2</description>
+    /// <description>-1 + Red: -2</description>
     /// </item>
     /// </list>
     /// </returns>
     public static int Compose(int sign, bool green) => green ? sign : sign << 1;
 
     /// <summary>
-    /// Decomposes a CBit value into its boolean components.
+    /// Decomposes a cBit value into its components.
     /// </summary>
     /// <param name="value">The integer value to decompose.</param>
     /// <returns>
-    /// A tuple containing two boolean values:
+    /// A tuple containing two values:
     /// <list type="bullet">
     /// <item>
     /// <description>sign: 1 (+) or -1 (-), or 0 for Zero/Invalid</description>
@@ -57,15 +57,15 @@ public static class CBit
     public static (int sign, bool green) Decompose(int value) => (value.Sign(), value.IsOdd());
 
     /// <summary>
-    /// Computes the product of two CBit values.
+    /// Computes the product of two cBit values.
     /// </summary>
-    /// <param name="cbit1">The first CBit value.</param>
-    /// <param name="cbit2">The second CBit value.</param>
-    /// <returns>A new CBit value that is the product of the two given.</returns>
-    public static int Product(int cbit1, int cbit2)
+    /// <param name="cBit1">The first cBit value.</param>
+    /// <param name="cBit2">The second cBit value.</param>
+    /// <returns>A new cBit value that is the product of the two given.</returns>
+    public static int Product(int cBit1, int cBit2)
     {
-        (int sign1, bool green1) = Decompose(cbit1);
-        (int sign2, bool green2) = Decompose(cbit2);
+        (int sign1, bool green1) = Decompose(cBit1);
+        (int sign2, bool green2) = Decompose(cBit2);
         return green1 != green2
             ? 0
             : green1
