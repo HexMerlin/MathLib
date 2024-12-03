@@ -10,16 +10,21 @@
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->
 	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net9.0-windows</TargetFramework>
 	</PropertyGroup>
 
 	<!-- Release configuration for .NET 9, using the latest C# version -->
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
-		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework>net9.0-windows</TargetFramework>
 	</PropertyGroup>
+	
 	<PropertyGroup Condition="'$(Configuration)'=='Legacy'">
 	  <TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
+	
+	<ItemGroup>
+	  <PackageReference Include="Automata.Visualization" Version="1.0.0" />
+	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\MathLib\MathLib.csproj" />

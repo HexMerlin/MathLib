@@ -6,6 +6,11 @@ using System.Numerics;
 
 namespace MathLib.BalMult;
 
+public enum MinFluctuation
+{
+    Yes,
+}
+
 /// <summary>
 /// This class represents an odd integer represented in base 2 with the following constraints:
 /// 1. Positional weights starts with the least-significant coefficient: 2^0, 2^1, 2^2, ...
@@ -47,33 +52,55 @@ public class AltParity
     public int[] Coeffs;
     public int Length => Coeffs.Length;
 
-    public AltParity(BigInteger integer, int length)
+    public AltParity(BigInteger integer, int length = 0)
     {
         if (integer.IsEven)
             throw new ArgumentException(nameof(integer), "Must be an odd integer");
 
         this.Integer = integer;
-      
+        this.Coeffs = ToAltParity(integer, length).ToArray();
         this.Max = Enumerable.Range(0, length).Select(i => i <= length / 2 ? i + 1 : length - i).ToArray();
         this.Min = Max.Select(max => -max).ToArray();
-        this.Coeffs = ToAltParity(integer, length).ToArray();
-        if (Coeffs.Length != length)
-            ReduceLength();
-        if (Coeffs.Length != length)
-            throw new ArgumentException(nameof(length), "Length of Coeffs must be odd");
-        if (!Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]))
-            throw new ArgumentException(nameof(Coeffs), "Coeffs must be within Min and Max");
-        if (Integer != Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum())
-            throw new ArgumentException(nameof(Integer), "Coeffs must sum to Integer");
-        //Debug.Assert(Coeffs.Length == length);
-        //Debug.Assert(Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]));
-        //Debug.Assert(Integer == Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum());
+        if (length != 0) 
+        {
+            if (Coeffs.Length != length)
+                ReduceLength();
+            Debug.Assert(Coeffs.Length == length);
+        }
+     
+  
+          
+        Debug.Assert(Enumerable.Range(0, Length).All(i => Coeffs[i] >= Min[i] && Coeffs[i] <= Max[i]));
+        Debug.Assert(Integer == Coeffs.Select((c, i) => (BigInteger.One << i) * c).Sum());
     }
 
-    public int this[int index]
+    public AltParity(BigInteger integer, int[] coeffs)
     {
-        get => Coeffs[index];
+        this.Integer = integer;
+        this.Coeffs = coeffs.ToArray();
+        this.Min = this.Coeffs.ToArray();
+        this.Max = this.Coeffs.ToArray();
     }
+
+    //Create a new AltParity with minimum fluctuation
+    public AltParity(BigInteger integer, MinFluctuation _)
+    {
+        this.Integer = integer;
+        this.Coeffs = ToAltParityMinFluctuation(integer).ToArray();
+        this.Min = this.Coeffs.ToArray();
+        this.Max = this.Coeffs.ToArray();
+    }
+
+    //Create a new AltParity object that replicates the product coefficients from a SymProduct object
+    public AltParity(SymProduct symProduct)
+    {
+        this.Integer = symProduct.Product;
+        this.Coeffs = symProduct.ProductCoeffs().ToArray();
+        this.Min = this.Coeffs.ToArray();
+        this.Max = this.Coeffs.ToArray();
+    }
+
+    public int this[int index] => Coeffs[index];
 
     private void UpdateLeft(int index)
     {
@@ -103,7 +130,30 @@ public class AltParity
     }
 
     public static bool IsOdd(int integer) => (integer & 1) != 0;
-       
+
+    public static IEnumerable<int> ToAltParityMinFluctuation(BigInteger integer)
+    {
+      
+        var bits = integer.ToBalancedBits().ToArray();
+        if (bits.Length.IsEven())
+            bits = integer.ToBalancedBits(bits.Length + 1).ToArray();
+
+        for (int i = 0; i < bits.Length - 1; i+=2)
+        {
+            if (bits[i] != bits[i+1])
+            {
+                yield return bits[i + 1];
+                yield return 0;
+            }
+            else
+            {
+                yield return -bits[i];
+                yield return bits[i + 1] * 2;
+            }
+        }
+        yield return bits[^1];
+    }
+
     public static IEnumerable<int> ToAltParity(BigInteger integer, int length = 0)
     {   
         int carry = 0;
@@ -125,11 +175,14 @@ public class AltParity
             yield return carry;
     }
 
+    public static string CoeffString(IEnumerable<int> coeffs, int coeffWidth)
+        => coeffs.Select(c => c.ToString().PadLeft(coeffWidth)).Str();
+    public string ToStringMinMax() => Min.Zip(Max, (min, max) => $"[{min}, {max}]").Str();
+
     public override string ToString() => CoeffString(Coeffs, 0);
     
     public string ToString(int coeffWidth) => CoeffString(Coeffs, coeffWidth);
 
-    public static string CoeffString( IEnumerable<int> coeffs, int coeffWidth)
-       => coeffs.Select(c => c.ToString().PadLeft(coeffWidth)).Str();
+
 
 }

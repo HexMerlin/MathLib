@@ -2,7 +2,7 @@
 #pragma warning disable CS0219 // Suppresses the Variable is assigned but its value is never used
 #pragma warning disable IDE0059 // Suppresses the Unnecessary assignment of a value
 #pragma warning disable CS8321 // Local function is declared but never used
-
+#pragma warning disable IDE0060 // Remove unused parameter
 using System.Numerics;
 using System.Text;
 using System.Diagnostics;
@@ -10,7 +10,7 @@ using MathLib;
 using MathLib.Prime;
 using MathLib.BalMult;
 using MathLib.Misc;
-
+using Automata.Visualization;
 
 namespace MathLib.DevConsole;
 
@@ -51,6 +51,7 @@ internal class Program
         }
     }
 
+
     private static void Print(Product product, bool printFlipped = true)
     {
         Console.WriteLine(product.InputX);
@@ -71,13 +72,90 @@ internal class Program
 
     static void Main()
     {
+        // Creates the main console window.
+        ConsoleWindow cw = ConsoleWindow.Create();
+
+        AltParity altParity1 = new AltParity(227 * 199, 15);
+        cw.WriteLine(altParity1.Length.ToString());
+        cw.WriteLine(altParity1.ToString(3));
+        cw.WriteLine(altParity1.ToStringMinMax());
+        return;
+
+        // Write some colored text output to the console window
+        cw.WriteLine("Creating graph...", System.Drawing.Color.Blue);
+
+        var primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(40).ToArray();
+        
+        List<string[]> sequences = new();
+
+        for (int yi = 0; yi < primes.Length; yi++)
+        {
+            int y = primes[yi];
+
+            for (int xi = 0; xi < primes.Length; xi++)
+            {
+                int x = primes[xi];
+                if (x <= y)
+                    continue;
+                SymProduct symP = new SymProduct(x, y);
+              
+                if (symP.ProductLength.IsEven() || symP.ProductLength < 9)
+                    continue;
+                var prodCoeffs = symP.ProductCoeffs().Reverse().ToArray();
+                if (prodCoeffs[0] != 1 || prodCoeffs[1] != 2 || prodCoeffs[2] != 3)
+                    continue;
+                sequences.Add(prodCoeffs.Take(5).Select(c => c.ToString()).ToArray());
+            }
+        }
+
+        var graph = GraphFactory.CreateGraph(sequences, minimize: true);
+
+        cw.ShowGraph(graph);
+        cw.WriteLine("Graph created.", System.Drawing.Color.Green);
+
+        return;
 
         Console.OutputEncoding = Encoding.UTF8;
-      
-        SymProduct symProd = new SymProduct(227, 199);
-        Console.WriteLine(symProd);
+
+        SymProduct correct = new SymProduct(23, 19);
+        Console.WriteLine(correct.ToStringExpanded());
         Console.WriteLine();
 
+
+        BigInteger prod = 23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        //AltParity ap = new AltParity(correct);
+        AltParity ap = new AltParity(prod, MinFluctuation.Yes);
+       // AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
+        Console.WriteLine($"AP: (product len: {ap.Length})");
+        Console.WriteLine(ap.ToString(3));
+        SymProduct sp = new SymProduct(ap);
+        int progress = sp.TrySolve(ap);
+      
+        Console.WriteLine("Solve progress: " + progress + "\n");
+        Console.WriteLine(sp.ToString());
+        Console.WriteLine(sp.ProductString(3));
+        Console.WriteLine();
+        Console.WriteLine(sp.ToStringExpanded());
+        return;
+
+        SymProduct symProd = new SymProduct(227, 199, 17);
+       
+        Console.WriteLine(symProd);
+        Console.WriteLine();
+        Console.WriteLine(symProd.ToStringExpanded());
+        Console.WriteLine();
+        Console.WriteLine("Correct:");
+        Console.WriteLine(symProd.ProductString(3));
+        Console.WriteLine(symProd.ToString());
+
+        AltParity altParity = new AltParity(symProd.Product, symProd.ProductLength);
+        //AltParity altParity = new AltParity(symProd);
+        Console.WriteLine("AltParity: " + altParity);
+        Console.WriteLine(altParity.ToString(3));
+        int solveProgress = symProd.TrySolve(altParity);
+        Console.WriteLine("Solve progress: " + solveProgress);
+        Console.WriteLine(symProd.ToString());
+        Console.WriteLine(symProd.ProductString(3));
         Console.WriteLine(symProd.ToStringExpanded());
         return;
 
@@ -160,77 +238,77 @@ internal class Program
         //Print(product4);
         //return;
 
-        int prodLen = 15;
-        int xLen = 7;
-        int yLen = 6;
+        //int prodLen = 15;
+        //int xLen = 7;
+        //int yLen = 6;
 
-        SortedSet<int>[] counts = new SortedSet<int>[30];
-        for (int i = 0; i < counts.Length; i++)
-            counts[i] = new SortedSet<int>();
+        //SortedSet<int>[] counts = new SortedSet<int>[30];
+        //for (int i = 0; i < counts.Length; i++)
+        //    counts[i] = new SortedSet<int>();
 
-        var primes = PrimeGenerator.GeneratePrimes().Skip(31).Take(200).ToArray();
+        //var primes = PrimeGenerator.GeneratePrimes().Skip(31).Take(200).ToArray();
 
-        int countSame = 0;
-        int countTotal = 0;
+        //int countSame = 0;
+        //int countTotal = 0;
 
-        for (int yi = 0; yi < primes.Length; yi++)
-        {
-            int y = primes[yi];
+        //for (int yi = 0; yi < primes.Length; yi++)
+        //{
+        //    int y = primes[yi];
           
-            for (int xi = 0; xi < primes.Length; xi++)
-            {
-                int x = primes[xi];
-                if (x <= y)
-                    continue;
-              // if (Math.Abs(x-y) < 5) continue;
+        //    for (int xi = 0; xi < primes.Length; xi++)
+        //    {
+        //        int x = primes[xi];
+        //        if (x <= y)
+        //            continue;
+        //      // if (Math.Abs(x-y) < 5) continue;
 
-                product = new Product(x, y);
-                //Console.WriteLine(product.Length + " " + BalBits.ToBalancedBits(product.Integer).Count());
+        //        product = new Product(x, y);
+        //        //Console.WriteLine(product.Length + " " + BalBits.ToBalancedBits(product.Integer).Count());
 
-                //continue;
-                //if (product.Integer != 227 * 199)
-                //    continue;
-                //if (product.Length != prodLen)
-                //    continue;
+        //        //continue;
+        //        //if (product.Integer != 227 * 199)
+        //        //    continue;
+        //        //if (product.Length != prodLen)
+        //        //    continue;
 
-                //if (product.XLength != xLen || product.YLength != yLen)
-                //    continue;
-                //if (product.IsAlternatingParity())
-                //    continue;
+        //        //if (product.XLength != xLen || product.YLength != yLen)
+        //        //    continue;
+        //        //if (product.IsAlternatingParity())
+        //        //    continue;
 
-                //var pairedSums = product.PairedSums().ToArray();
-                //for (int i = 0; i < product.Length; i++)
-                //    counts[i].Add(product[i]);
+        //        //var pairedSums = product.PairedSums().ToArray();
+        //        //for (int i = 0; i < product.Length; i++)
+        //        //    counts[i].Add(product[i]);
 
-                //var baseX = product.BaseX().ToArray();
-                //var base4 = product.Base4().ToArray();
-                //for (int i = 0; i < base4.Length; i++)
-                //    counts[i].Add(base4[i]);
+        //        //var baseX = product.BaseX().ToArray();
+        //        //var base4 = product.Base4().ToArray();
+        //        //for (int i = 0; i < base4.Length; i++)
+        //        //    counts[i].Add(base4[i]);
 
-                // var base4 = product.Base4().ToArray();
-                //if (base4[base4.Length - 1] != 1)
-                //
-                //    continue;
-                //}
-                //Print(product);
+        //        // var base4 = product.Base4().ToArray();
+        //        //if (base4[base4.Length - 1] != 1)
+        //        //
+        //        //    continue;
+        //        //}
+        //        //Print(product);
              
-                //product2 = new Product(product.InputY.Integer, product.InputX.Integer);
-                //Print(product2);
+        //        //product2 = new Product(product.InputY.Integer, product.InputX.Integer);
+        //        //Print(product2);
          
-            }
-        }
+        //    }
+        //}
    
-        Console.WriteLine();
-        Console.WriteLine("Sets: ");
-        int setIndex = 0;
-        foreach (var set in counts)
-        {
-            if (set.Count > 0 && set.Last() != 0)
-                Console.WriteLine($"{setIndex}: {set.Str(" ")}");
-            setIndex++;
-        }
+        //Console.WriteLine();
+        //Console.WriteLine("Sets: ");
+        //int setIndex = 0;
+        //foreach (var set in counts)
+        //{
+        //    if (set.Count > 0 && set.Last() != 0)
+        //        Console.WriteLine($"{setIndex}: {set.Str(" ")}");
+        //    setIndex++;
+        //}
 
-        return;
+        //return;
         //BigInteger x = 197;
         //BigInteger y = 103;
         //Product product = new Product(x, y);

@@ -6,93 +6,35 @@ using System.Text;
 
 namespace MathLib.BalMult;
 
-
-/// <summary>
-/// Provides extension methods for composing and decomposing cBit values that are pairs of bits.
-/// </summary>
-public static class CBit
-{
-    /// <summary>
-    /// Composes a cBit value from the given component values.
-    /// </summary>
-    /// <param name="sign">Value 1 (+) or -1 (-) or 0 for Zero/Invalid</param>
-    /// <param name="green">Indicates if the bit is green.</param>
-    /// <returns>
-    /// An integer representing the composed cBit value:
-    /// <list type="bullet">
-    /// <item>
-    /// <description>Zero: 0 (has no color)</description>
-    /// </item>
-    /// <item>
-    /// <description>1 + Green: 1</description>
-    /// </item>
-    /// <item>
-    /// <description>-1 + Green: -1</description>
-    /// </item>
-    /// <item>
-    /// <description>1 + Red: 2</description>
-    /// </item>
-    /// <item>
-    /// <description>-1 + Red: -2</description>
-    /// </item>
-    /// </list>
-    /// </returns>
-    public static int Compose(int sign, bool green) => green ? sign : sign << 1;
-
-    /// <summary>
-    /// Decomposes a cBit value into its components.
-    /// </summary>
-    /// <param name="value">The integer value to decompose.</param>
-    /// <returns>
-    /// A tuple containing two values:
-    /// <list type="bullet">
-    /// <item>
-    /// <description>sign: 1 (+) or -1 (-), or 0 for Zero/Invalid</description>
-    /// </item>
-    /// <item>
-    /// <description>green: true iff the bit is green.</description>
-    /// </item>
-    /// </list>
-    /// </returns>
-    public static (int sign, bool green) Decompose(int value) => (value.Sign(), value.IsOdd());
-
-    /// <summary>
-    /// Computes the product of two cBit values.
-    /// </summary>
-    /// <param name="cBit1">The first cBit value.</param>
-    /// <param name="cBit2">The second cBit value.</param>
-    /// <returns>A new cBit value that is the product of the two given.</returns>
-    public static int Product(int cBit1, int cBit2)
-    {
-        (int sign1, bool green1) = Decompose(cBit1);
-        (int sign2, bool green2) = Decompose(cBit2);
-        return green1 != green2
-            ? 0
-            : green1
-                ? sign1 == sign2 ? 1 : -1
-                : sign1 == sign2 ? -2 : 2;
-    }
-
-    public const char PosChar = '+';
-    public const char NegChar = '-';
-    public const char ZeroChar = ' ';
-    public const string GreenColorCode = "\u001b[32m";
-    public const string RedColorCode = "\u001b[31m";
-    public const string ResetColorCode = "\u001b[0m";
-}
-
 public class SymProduct
 {
-    public int[] Coeffs { get; }
+    public BigInteger Product { get; }
 
-    public int Length => Coeffs.Length;
+    private readonly int[] coeffs;
+    public int Length => coeffs.Length;
+
+    public int ProductLength => (coeffs.Length << 1) - 1;
+    
+    public int this[Index index]
+    {
+        get => coeffs[index.IsFromEnd ? coeffs.Length - index.Value : index.Value];
+        set => coeffs[index.IsFromEnd ? coeffs.Length - index.Value : index.Value] = value;
+    }
+
+    public int ProductCoeff(Index productIndex) => CoeffPairs(productIndex.IsFromEnd ? ProductLength - productIndex.Value : productIndex.Value).Select(t => CBit.Product(coeffs[t.xIndex], coeffs[t.yIndex]).Sign()).Sum();
+
+    public SymProduct(AltParity altParity)
+    {
+        this.Product = altParity.Integer;
+        this.coeffs = new int[(altParity.Length + 1) / 2];
+    }
 
     public SymProduct(BigInteger x, BigInteger y, int minLength = 0)
     {
-        var product = x * y;
-        if (product.IsEven)
+        this.Product = x * y;
+        if (this.Product.IsEven)
         {
-            Coeffs = new int[0];
+            coeffs = new int[0];
             return;
         }
         
@@ -101,11 +43,115 @@ public class SymProduct
                
         var xBits = BalBits.ToBalancedBits(x, minLength).ToArray();
         var yBits = BalBits.ToBalancedBits(y, xBits.Length).ToArray();
-        Coeffs = new int[xBits.Length];
-        for (int i = 0; i < Coeffs.Length; i++)
-            Coeffs[i] = CBit.Compose(xBits[i], xBits[i] == yBits[i]); 
+        coeffs = new int[xBits.Length];
+        for (int i = 0; i < coeffs.Length; i++)
+            coeffs[i] = CBit.Compose(xBits[i], xBits[i] == yBits[i]); 
     }
 
+    public void Reset() => Array.Fill(coeffs, 1);
+
+    private IEnumerable<(int xIndex, int yIndex)> CoeffPairs(int productIndex)
+    {
+        int startRow = Math.Max(0, productIndex - Length + 1);
+        int endRow = Math.Min(productIndex, Length - 1);
+
+        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
+        {
+            int xIndex = productIndex - yIndex;
+            yield return (xIndex, yIndex);
+        }
+    }
+
+    public bool IncreaseOne()
+    {
+        int i = 0;
+        while (i < coeffs.Length)
+        {
+            coeffs[i] = CBit.Next(coeffs[i]);
+            if (coeffs[i] != 1)
+                return true;
+            i++;
+        }
+        return false;
+    }
+
+    public IEnumerable<int> ProductCoeffs() => Enumerable.Range(0, ProductLength).Select(i => ProductCoeff(i));
+
+
+    private bool TrySolve(AltParity altParity, int index)
+    {
+        int i = index;
+        while (true)
+        {
+            if (ProductCoeff(i) == altParity[i])
+            {
+                if (i == index)
+                    return true; //solved to index
+                i++;
+            }
+               
+            this[i] = CBit.Next(this[i]);
+
+            if (this[i] == 1)
+            {
+                index--; //backtrack
+                if (index < 0)
+                    return false; //no solution  
+            }
+        }
+    }
+
+    private bool TrySolveFromRight(AltParity altParity, int index)
+    {
+        int i = index;
+        while (true)
+        {
+            if (ProductCoeff(^i) == altParity[^i])
+            {
+                if (i == index)
+                    return true; //solved to index
+                i++;
+            }
+
+            this[^i] = CBit.Next(this[^i]);
+
+            if (this[^i] == 1)
+            {
+                index--; //backtrack
+                if (index < 1)
+                    return false; //no solution  
+            }
+        }
+    }
+
+    public int TrySolve(AltParity altParity)
+    {
+        Reset();
+
+        int i = 0;
+        while (true)
+        {
+            bool IsSolved = ProductCoeffs().SequenceEqual(altParity.Coeffs);
+            if (IsSolved) return ProductLength;
+            if (!IncreaseOne()) return -1;
+        }        
+    }
+
+    //public int TrySolve(AltParity product)
+    //{
+    //    Reset();
+
+    //    for (int c = 0; c < Length; c++)
+    //    {
+    //        if (!TrySolve(product, c))
+    //            return c;
+    //        if (!TrySolveFromRight(product, c + 1))
+    //            return Length - c;
+    //        //Console.WriteLine(this.ToStringExpanded());
+    //        //Console.WriteLine();
+    //    }
+    //    return Length;
+    //}
 
     public static string ColorCoeff(int coeff)
     {
@@ -114,15 +160,19 @@ public class SymProduct
         return $"{(green ? CBit.GreenColorCode : CBit.RedColorCode)}{(sign == 1 ? CBit.PosChar : CBit.NegChar)}{CBit.ResetColorCode}";
     }
 
-    public override string ToString() => Coeffs.Select(ColorCoeff).Str();
+    public string ProductString(int coeffWidth = 0) => ProductCoeffs().Select(c => c.ToString().PadLeft(coeffWidth)).Str();
+
+    public string ToStringSigns() => coeffs.Select(c => c.Sign()).Str();
+
+    public override string ToString() => coeffs.Select(ColorCoeff).Str();
 
     public string ToStringExpanded()
     {
-        StringBuilder sb = new StringBuilder(Length * (Length + 1));
+        StringBuilder sb = new StringBuilder();
         for (int y = 0; y < Length; y++)
         {
             for (int x = 0; x < Length; x++)
-                sb.Append(ColorCoeff(CBit.Product(Coeffs[x], Coeffs[y])));
+                sb.Append(ColorCoeff(CBit.Product(coeffs[x], coeffs[y])));
             sb.AppendLine();
         }
         return sb.ToString();
