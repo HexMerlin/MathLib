@@ -13,12 +13,16 @@ public class Product3
 
     public Product3(int product, int minLength)
     {
+        this.Product = product;
         int productLength = product.ToBalancedBits(minLength).Count();
         if (productLength.IsEven()) productLength++;
         productLength += 2;
 
         Coeffs = product.ToBalancedBits(productLength).ToArray(); 
     }
+
+    public IEnumerable<ReadOnlyCollection<int>> Sequences() => SequencesForInteger(Product, Coeffs.Length);
+
 
     public bool Request(int index, int requested)
     {
@@ -40,14 +44,16 @@ public class Product3
         return true;
     }
 
-    public void PrintSequencesForInteger(int N, int L)
+    public void PrintSequencesForInteger()
     {
-        foreach (var seq in SequencesForInteger(N, L))
+        foreach (var seq in Sequences())
         {
             Console.WriteLine(seq.Select(c => BitColorString(c)).Str());    
         }
 
     }
+
+
 
     /// <summary>
     /// Generates all sequences of digits {-1, 0, 1} of length <paramref name="sequenceLength"/> 

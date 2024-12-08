@@ -58,10 +58,40 @@ public class Input3 : IEquatable<Input3>
         return (x, y);
     }
 
-    public void TrySolve(Product3 product)
+    public void TrySolve(Product3 product3)
     {
+        int product = product3.Product;
         do
         {
+            int sum = 0;
+            int i = 0;
+            for (; i < ProductLength; i++)
+            {
+                int productCoeff = ProductCoeff_Pruned(i);
+              
+                if (productCoeff.Abs() > 1)
+                    break;
+
+                sum += productCoeff * (1 << i);
+            }
+
+            if (i == ProductLength && sum == product)
+            {                
+                (int xF, int yF) = ToFactors();
+                Console.WriteLine($"\t{xF} * {yF}");
+                Console.WriteLine("     " + ToStringProductColor(5));
+                Console.WriteLine();
+                Console.WriteLine(ToStringDiagonal(10));
+                Console.WriteLine();
+                Console.WriteLine(ToStringExpanded());
+                Console.WriteLine();
+         
+                //Console.WriteLine(InputX.Str(", ", 3));
+                //Console.WriteLine(InputY.Str(", ", 3));
+                //Console.WriteLine();
+            }
+
+
 
         } while (IncreaseCoeffs());
     }
@@ -80,8 +110,7 @@ public class Input3 : IEquatable<Input3>
             int i = 0;
 
             //bool prevIsZero = false;
-            Input3 x = this.Clone();
-         
+           
 
             for (; i < ProductLength; i++)
             {

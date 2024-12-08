@@ -65,7 +65,7 @@ internal class Program
         Product3 product3 = new Product3(product, 0);
 
 
-        product3.PrintSequencesForInteger(-31, 8); // -31, 8);
+        product3.PrintSequencesForInteger(); // -31, 8); // -31, 8);
 
         Console.WriteLine(product3);
         product3.Request(0, 1);
