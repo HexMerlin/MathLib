@@ -153,7 +153,7 @@ public class SymProduct
     //    return Length;
     //}
 
-    public static string ColorCoeff(int coeff)
+    public static string ColorString(int coeff)
     {
         if (coeff == 0) return CBit.ZeroChar.ToString();
         (int sign, bool green) = CBit.Decompose(coeff);
@@ -164,18 +164,19 @@ public class SymProduct
 
     public string ToStringSigns() => coeffs.Select(c => c.Sign()).Str();
 
-    public override string ToString() => coeffs.Select(ColorCoeff).Str();
+    public override string ToString() => throw new NotImplementedException();  ///coeffs.Select(ColorCoeff).Str();
 
     public string ToStringExpanded()
     {
-        StringBuilder sb = new StringBuilder();
-        for (int y = 0; y < Length; y++)
-        {
-            for (int x = 0; x < Length; x++)
-                sb.Append(ColorCoeff(CBit.Product(coeffs[x], coeffs[y])));
-            sb.AppendLine();
-        }
-        return sb.ToString();
+        throw new NotImplementedException();
+        //StringBuilder sb = new StringBuilder();
+        //for (int y = 0; y < Length; y++)
+        //{
+        //    for (int x = 0; x < Length; x++)
+        //        sb.Append(ColorCoeff(CBit.Product(coeffs[x], coeffs[y])));
+        //    sb.AppendLine();
+        //}
+        //return sb.ToString();
     }
 
 }

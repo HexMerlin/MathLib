@@ -52,68 +52,107 @@ internal class Program
     }
 
 
-    private static void Print(Product product, bool printFlipped = true)
-    {
-        Console.WriteLine(product.InputX);
-        Console.WriteLine(product.InputY);
-        Console.WriteLine(product.InputX.Integer + " * " + product.InputY.Integer);
-        Console.WriteLine(product.ToExtendedString());
-        AltParity altParity = new AltParity(product.Integer, product.Length);
-        Console.WriteLine(altParity.ToString(4));
-        Console.WriteLine("Code  : " + product.CodeString());
-        Console.WriteLine("Code 2: " + product.Code2String());
-        Console.WriteLine("Code 3: " + product.Code3String());
-        Console.WriteLine();
-        //if (printFlipped)
-        //    Print(new Product(product.InputY.Integer, product.InputX.Integer), false);
-
-    }
 
 
     static void Main()
     {
         // Creates the main console window.
-        ConsoleWindow cw = ConsoleWindow.Create();
+        // ConsoleWindow cw = ConsoleWindow.Create();
+            
 
-        AltParity altParity1 = new AltParity(227 * 199, 15);
-        cw.WriteLine(altParity1.Length.ToString());
-        cw.WriteLine(altParity1.ToString(3));
-        cw.WriteLine(altParity1.ToStringMinMax());
+        int product = 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        Input3 input3 = new Input3(product, 0);
+        Product3 product3 = new Product3(product, 0);
+
+
+        product3.PrintSequencesForInteger(-31, 8); // -31, 8);
+
+        Console.WriteLine(product3);
+        product3.Request(0, 1);
+        product3.Request(3, -1);
+        Console.WriteLine(product3);
         return;
+
+        //input3.Coeffs = [Val3.PosPos, Val3.NegPos, Val3.NegNeg, Val3.NegNeg, Val3.PosNeg, Val3.PosPos, Val3.PosPos, Val3.PosPos];
+        //Console.WriteLine(input3.ToStringProduct());
+        //Console.WriteLine(input3.Product);
+        //return;
+
+        Console.WriteLine(input3.InputLength);
+        Console.WriteLine(input3.ProductLength);
+        
+        input3.PrintAllMatches(product);
+        Console.WriteLine("Done!");
+        return;
+
+
+        Input input = new Input(227, 199);
+        Console.WriteLine("AP:");
+        AltParity ap = new AltParity(227 * 199, MinFluctuation.Yes);
+        Console.WriteLine(ap.ToString(7));
+
+        Console.WriteLine(input.ToString());
+        Console.WriteLine("-----");
+        Console.WriteLine(input.ToStringExpanded());
+        Console.WriteLine();
+        Console.WriteLine(input.ToStringProduct(7));
+
+        Input unknown = new Input(input.InputLength);
+        //Console.WriteLine(unknown.ToString());
+        //Console.WriteLine("-----");
+        //Console.WriteLine(unknown.ToStringExpanded());
+        //Console.WriteLine();
+        //Console.WriteLine(unknown.ToStringProduct(3));
+
+        unknown.Signs[0] = Sign.Plus;
+        unknown.Signs[^1] = Sign.Plus;
+        unknown.Colors[1] = Color.Red;
+        unknown.Colors[4] = Color.Red;
+        Console.WriteLine(unknown.ToString());
+        Console.WriteLine("-----");
+        Console.WriteLine(unknown.ToStringExpanded());
+        Console.WriteLine();
+        Console.WriteLine(unknown.ToStringProduct(7));
+        return;
+        //AltParity altParity1 = new AltParity(227 * 199, 15);
+        //cw.WriteLine(altParity1.Length.ToString());
+        //cw.WriteLine(altParity1.ToString(3));
+        //cw.WriteLine(altParity1.ToStringMinMax());
+        //return;
 
         // Write some colored text output to the console window
-        cw.WriteLine("Creating graph...", System.Drawing.Color.Blue);
+        //cw.WriteLine("Creating graph...", System.Drawing.Color.Blue);
 
-        var primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(40).ToArray();
+        //var primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(40).ToArray();
         
-        List<string[]> sequences = new();
+        //List<string[]> sequences = new();
 
-        for (int yi = 0; yi < primes.Length; yi++)
-        {
-            int y = primes[yi];
+        //for (int yi = 0; yi < primes.Length; yi++)
+        //{
+        //    int y = primes[yi];
 
-            for (int xi = 0; xi < primes.Length; xi++)
-            {
-                int x = primes[xi];
-                if (x <= y)
-                    continue;
-                SymProduct symP = new SymProduct(x, y);
+        //    for (int xi = 0; xi < primes.Length; xi++)
+        //    {
+        //        int x = primes[xi];
+        //        if (x <= y)
+        //            continue;
+        //        SymProduct symP = new SymProduct(x, y);
               
-                if (symP.ProductLength.IsEven() || symP.ProductLength < 9)
-                    continue;
-                var prodCoeffs = symP.ProductCoeffs().Reverse().ToArray();
-                if (prodCoeffs[0] != 1 || prodCoeffs[1] != 2 || prodCoeffs[2] != 3)
-                    continue;
-                sequences.Add(prodCoeffs.Take(5).Select(c => c.ToString()).ToArray());
-            }
-        }
+        //        if (symP.ProductLength.IsEven() || symP.ProductLength < 9)
+        //            continue;
+        //        var prodCoeffs = symP.ProductCoeffs().Reverse().ToArray();
+        //        if (prodCoeffs[0] != 1 || prodCoeffs[1] != 2 || prodCoeffs[2] != 3)
+        //            continue;
+        //        sequences.Add(prodCoeffs.Take(5).Select(c => c.ToString()).ToArray());
+        //    }
+        //}
 
-        var graph = GraphFactory.CreateGraph(sequences, minimize: true);
+        //var graph = GraphFactory.CreateGraph(sequences, minimize: true);
 
-        cw.ShowGraph(graph);
-        cw.WriteLine("Graph created.", System.Drawing.Color.Green);
+        //cw.ShowGraph(graph);
+        //cw.WriteLine("Graph created.", System.Drawing.Color.Green);
 
-        return;
+        //return;
 
         Console.OutputEncoding = Encoding.UTF8;
 
@@ -124,39 +163,39 @@ internal class Program
 
         BigInteger prod = 23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
         //AltParity ap = new AltParity(correct);
-        AltParity ap = new AltParity(prod, MinFluctuation.Yes);
-       // AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
-        Console.WriteLine($"AP: (product len: {ap.Length})");
-        Console.WriteLine(ap.ToString(3));
-        SymProduct sp = new SymProduct(ap);
-        int progress = sp.TrySolve(ap);
+       // AltParity ap = new AltParity(prod, MinFluctuation.Yes);
+       //// AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
+       // Console.WriteLine($"AP: (product len: {ap.Length})");
+       // Console.WriteLine(ap.ToString(3));
+       // SymProduct sp = new SymProduct(ap);
+       // int progress = sp.TrySolve(ap);
       
-        Console.WriteLine("Solve progress: " + progress + "\n");
-        Console.WriteLine(sp.ToString());
-        Console.WriteLine(sp.ProductString(3));
-        Console.WriteLine();
-        Console.WriteLine(sp.ToStringExpanded());
-        return;
+       // Console.WriteLine("Solve progress: " + progress + "\n");
+       // Console.WriteLine(sp.ToString());
+       // Console.WriteLine(sp.ProductString(3));
+       // Console.WriteLine();
+       // Console.WriteLine(sp.ToStringExpanded());
+        //return;
 
-        SymProduct symProd = new SymProduct(227, 199, 17);
+        //SymProduct symProd = new SymProduct(227, 199, 17);
        
-        Console.WriteLine(symProd);
-        Console.WriteLine();
-        Console.WriteLine(symProd.ToStringExpanded());
-        Console.WriteLine();
-        Console.WriteLine("Correct:");
-        Console.WriteLine(symProd.ProductString(3));
-        Console.WriteLine(symProd.ToString());
+        //Console.WriteLine(symProd);
+        //Console.WriteLine();
+        //Console.WriteLine(symProd.ToStringExpanded());
+        //Console.WriteLine();
+        //Console.WriteLine("Correct:");
+        //Console.WriteLine(symProd.ProductString(3));
+        //Console.WriteLine(symProd.ToString());
 
-        AltParity altParity = new AltParity(symProd.Product, symProd.ProductLength);
-        //AltParity altParity = new AltParity(symProd);
-        Console.WriteLine("AltParity: " + altParity);
-        Console.WriteLine(altParity.ToString(3));
-        int solveProgress = symProd.TrySolve(altParity);
-        Console.WriteLine("Solve progress: " + solveProgress);
-        Console.WriteLine(symProd.ToString());
-        Console.WriteLine(symProd.ProductString(3));
-        Console.WriteLine(symProd.ToStringExpanded());
+        //AltParity altParity = new AltParity(symProd.Product, symProd.ProductLength);
+        ////AltParity altParity = new AltParity(symProd);
+        //Console.WriteLine("AltParity: " + altParity);
+        //Console.WriteLine(altParity.ToString(3));
+        //int solveProgress = symProd.TrySolve(altParity);
+        //Console.WriteLine("Solve progress: " + solveProgress);
+        //Console.WriteLine(symProd.ToString());
+        //Console.WriteLine(symProd.ProductString(3));
+        //Console.WriteLine(symProd.ToStringExpanded());
         return;
 
         //Console.WriteLine(Forms.ToBalancedBits(5, 0).Select(c => c > 0 ? '+' : '-').Str(""));
@@ -188,40 +227,8 @@ internal class Program
         //Console.WriteLine(debug.ToExtendedString());
         //return;
 
-        static bool TestSame(Product product)
-        {
-            var diff = product.Diff();
-            //Console.WriteLine("SAME: " + (product.Reference() == diff.Test()));
-            bool same = product.Reference() == diff.Test();
-            return same;
-            //Console.WriteLine("SAME: " + () + " " + product.InputX.Integer + " * " + product.InputY.Integer);
-
-        }
-
-        //Product product = new Product(227, 199); //OK
 
 
-        //Product product = new Product(167, 137);
-        Product product = new Product(149, 131);
-        var diff = product.Diff();
-
-        //Input input = new Input([1, -1, 1, 1, -1, 1, 1, 1]);
-        //Input input = new Input([1, -1, -1, -1,  1, 1, 1]);
-
-        //Console.WriteLine(diff);
-        //Console.WriteLine(input);
-
-        //Console.WriteLine(input.Flip(2));
-        //Console.WriteLine(input.Flip(2, 0));
-        Console.WriteLine("X: " + product.InputX);
-        Console.WriteLine("Y: " + product.InputY);
-        Console.WriteLine();
-        Console.WriteLine(product.Reference());
-        Console.WriteLine();
-        Console.WriteLine(diff.Test());
-        Console.WriteLine("SAME: " + (product.Reference() == diff.Test()) + " " + product.InputX.Integer + " " + product.InputY.Integer);
-       // return;
-     
 
         //AltParity altParity = new AltParity(product.Integer, product.Length);
         //var result = product.Match(altParity);

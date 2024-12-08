@@ -8,16 +8,22 @@ namespace MathLib;
 /// </summary>
 public static class EnumerableExtensions
 {
+
     /// <summary>
     /// Joins the elements of the enumerable into a string, separated by the specified delimiter.
+    /// Each element is left-padded to meet a specified total width.
     /// </summary>
-    /// <typeparam name="T">The type of the elements in the enumerable.</typeparam>
+    /// <typeparam name="T">The type of the elements in the enumerable. Must not be null.</typeparam>
     /// <param name="source">The enumerable to join.</param>
     /// <param name="delimiter">The delimiter to insert between each element. Defaults to an empty string.</param>
-    /// <returns>A string with the joined elements.</returns>
-    public static string Str<T>(this IEnumerable<T> source, string delimiter = "") =>
-        string.Join(delimiter, source);
-
+    /// <param name="totalWidth">The total width of each element in the joined string. Defaults to 0 (no padding).</param>
+    /// <returns>A string with the joined elements, padded to the specified total width.</returns>
+    public static string Str<T>(
+        this IEnumerable<T> source,
+        string delimiter = "",
+        int totalWidth = 0)
+        where T : notnull =>
+        string.Join(delimiter, source.Select(e => e.ToString()!.PadLeft(totalWidth)));
 
     /// <summary>
     /// Sum of all elements in the specified <paramref name="source"/>.

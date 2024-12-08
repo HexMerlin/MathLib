@@ -5,6 +5,7 @@
 		<GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<Configurations>Debug;Release;Legacy</Configurations>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     </PropertyGroup>
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->

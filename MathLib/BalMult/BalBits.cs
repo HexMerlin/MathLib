@@ -13,6 +13,8 @@ public static class BalBits
 
     public static string BitString(this IEnumerable<int> balBits, int bitWidth) => balBits.Select(c => new string (' ', Math.Max(0, bitWidth - 1)) + (c == 1 ? '+' : '-')).Str();
 
+    public static IEnumerable<int> ToBalancedBits(this int integer, int minLength = 0) => ((BigInteger)integer).ToBalancedBits(minLength);
+
     /// <summary>
     /// Converts a <see cref="BigInteger"/> to its balanced binary form, where each bit is either -1 or 1.
     /// </summary>
