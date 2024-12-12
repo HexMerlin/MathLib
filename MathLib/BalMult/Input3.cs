@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -58,25 +59,13 @@ public class Input3 : IEquatable<Input3>
         return (x, y);
     }
 
-    public void TrySolve(Product3 product3)
+    public void TrySolve(Int3 product3)
     {
-        int product = product3.Product;
-        do
+
+        foreach (var sequence in product3.Sequences())
         {
-            int sum = 0;
-            int i = 0;
-            for (; i < ProductLength; i++)
+            if (TrySolveCurrent(sequence))
             {
-                int productCoeff = ProductCoeff_Pruned(i);
-              
-                if (productCoeff.Abs() > 1)
-                    break;
-
-                sum += productCoeff * (1 << i);
-            }
-
-            if (i == ProductLength && sum == product)
-            {                
                 (int xF, int yF) = ToFactors();
                 Console.WriteLine($"\t{xF} * {yF}");
                 Console.WriteLine("     " + ToStringProductColor(5));
@@ -85,15 +74,76 @@ public class Input3 : IEquatable<Input3>
                 Console.WriteLine();
                 Console.WriteLine(ToStringExpanded());
                 Console.WriteLine();
-         
-                //Console.WriteLine(InputX.Str(", ", 3));
-                //Console.WriteLine(InputY.Str(", ", 3));
-                //Console.WriteLine();
             }
+            else 
+                Console.WriteLine("No solution for sequence.");
+
+        }
+        
+        
+    }
 
 
+    public bool TrySolveCurrent(int[] productCoeffs)
+    {
+        Reset();
+        Retry:
+      
+        int i = 0; //input index
+        while (true)
+        {
+            if (ProductCoeff_Pruned(i) == productCoeffs[i])
+            {
+                i++;
+             
+                if (i == InputLength)
+                {
+                    for (int p = i; p < ProductLength; p++)
+                    {
+                        if (ProductCoeff_Pruned(p) != productCoeffs[p]) 
+                        { 
 
-        } while (IncreaseCoeffs());
+                        }
+                            goto Retry;
+                    }
+                    return true;
+                }
+                    
+                continue;
+            }
+            if (i >= InputLength)
+                goto Retry;
+
+            Coeffs[i]++;
+            if ((int) Coeffs[i] == 9)
+            {
+                if (i == InputLength -1) 
+                    return false;
+                Coeffs[i] = 0;
+                i--;
+                if (i < 0)
+                    return false;
+            }
+        }
+
+    }
+
+
+    /// <summary>
+    /// Increases the coefficients of the Input3 instance.
+    /// </summary>
+    /// <returns>True if the coefficients were successfully increased; otherwise, false.</returns>
+    public bool IncreaseCoeffs()
+    {
+        for (int i = 0; i < Coeffs.Length; i++)
+        {
+            Coeffs[i]++;
+            if ((int)Coeffs[i] == 9)
+                Coeffs[i] = 0;
+            else
+                return true;
+        }
+        return false;
     }
 
     public void PrintAllMatches(int product)
@@ -114,7 +164,7 @@ public class Input3 : IEquatable<Input3>
 
             for (; i < ProductLength; i++)
             {
-                int productCoeff = ProductCoeff_Pruned(i);
+                int productCoeff = ProductCoeff(i);
                 //if (productCoeff == 0)
                 //{
                     //if (prevIsZero)
@@ -155,21 +205,7 @@ public class Input3 : IEquatable<Input3>
     public void Reset() => Array.Fill(Coeffs, (Val3) 0);
 
     
-    /// <summary>
-    /// Increases the coefficients of the Input3 instance.
-    /// </summary>
-    /// <returns>True if the coefficients were successfully increased; otherwise, false.</returns>
-    public bool IncreaseCoeffs()
-    {
-        static Val3 Inc(Val3 val3) => (int) val3 != 8 ? val3 + 1 : 0;
-        for (int i = 0; i < Coeffs.Length; i++)
-        {
-            Coeffs[i] = Inc(Coeffs[i]);
-            if (Coeffs[i] != 0)
-                return true;
-        }
-        return false;
-    }
+
 
     public int Product => Enumerable.Range(0, ProductLength).Select(i => (1 << i) * ProductCoeff(i)).Sum();
 

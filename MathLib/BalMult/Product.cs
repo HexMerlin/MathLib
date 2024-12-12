@@ -1,187 +1,262 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Numerics;
-//using System.Linq;
-//using System.Text;
-//using System.Threading;
-//using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Numerics;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
 
-//namespace MathLib.BalMult;
-//public class Product
-//{
-//    public BigInteger Integer => InputX.Integer * InputY.Integer;
+namespace MathLib.BalMult;
+public class Product
+{
+    public readonly Int3 X;
+    public readonly Int3 Y;
 
-//    public Input InputX { get; }
-//    public Input InputY { get; }
+    public int InputLength => X.Length;
 
-//    public int Length => XLength + YLength - 1;
-//    public int XLength => InputX.Length;
-//    public int YLength => InputY.Length;
+    public int ProductLength => (X.Length << 1) - 1;
 
-//    public int this[int index] => InputCells(index).Select(t => InputX[t.xIndex] * InputY[t.yIndex]).Sum();
+    public readonly int[] XBits;
+    public readonly int[] YBits;
+  
+    public Product(int x, int y)
+    {
+        (x, y) = x.Abs() >= y.Abs() ? (x, y) : (y, x);
+        this.X = new Int3(x);
+        this.Y = new Int3(y, X.Length);
+        //Matrix = new int[InputLength, InputLength];
+        XBits = new int[InputLength];
+        YBits = new int[InputLength];
+    }
 
-//    public Product(BigInteger x, BigInteger y, int minLength = 0)
-//    {
-//        if (x.Abs() >= y.Abs())
-//        {
-//            InputX = new Input(x, minLength);
-//            InputY = new Input(y, InputX.Length);
-//        }
-//        else
-//        {
-//            InputY = new Input(y,minLength);
-//            InputX = new Input(x, InputY.Length);
-//        }
-//        //InputX = new Input(x);
-//        //InputY = new Input(y);
-//    }
- 
-//    public IEnumerable<(int xIndex, int yIndex)> InputCells(int index)
-//    {
-//        int startRow = Math.Max(0, index - InputX.Length + 1);
-//        int endRow = Math.Min(index, InputY.Length - 1);
+    public int this[int y, int x] => (YBits[y] == 0 || XBits[x] == 0) ? 0 : (YBits[y] == XBits[x] ? 1 : -1);
 
-//        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
-//        {
-//            int xIndex = index - yIndex;
-//            yield return (xIndex, yIndex);
-//        }
-//    }
+    public IEnumerable<Product> MatricesUnfiltered()
+    {
+        //static bool IsNAF(ReadOnlyCollection<int> sequence)
+        //{
+        //    bool prevZero = true;
+        //    for (int i = 0; i < sequence.Count; i++)
+        //    {
+        //        if (sequence[i] != 0)
+        //        {
+        //            if (!prevZero)
+        //                return false;
+        //            prevZero = false;
+        //        }   
+        //        else prevZero = true;
 
-//    public IEnumerable<int> Coeffs => Enumerable.Range(0, Length).Select(i => this[i]);
+        //    }
+        //    return true;
+        //}
 
-//    public int Count(int index) => BalDigits.Count(index, XLength, YLength);
+        foreach (int[] seqY in Y.Sequences())
+        {
+            seqY.CopyTo(YBits);
+            //if (!IsNAF(seqY))
+            //    continue;
+            foreach (int[] seqX in X.Sequences())
+            {
+                seqX.CopyTo(XBits);
 
-//    public bool IsAlternatingParity() => Enumerable.Range(0, Length).All(i => i.IsOdd() != Count(i).IsOdd());
+                yield return this;
+            }
+        }
+    }
 
-//    public Input Diff() => new Input(Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[i] ? 1 : -1).ToArray());
+    public IEnumerable<Product> Matrices()
+    {
+        foreach (var product in MatricesUnfiltered())
+        {
+            //AssertProductValid();
+            if (IsValid())
+            {
+                yield return this;
 
-//    public string Reference()
-//    {
-//        StringBuilder sb = new StringBuilder();
+            }
+        }
+    }
 
-//        for (int y = 0; y < YLength; y++) { 
-        
-//            for (int x = 0; x < XLength; x++)
-//            {
-//                //int val = InputX[x] * InputY[y];
-//                int val = InputX[x] * InputY[y] != InputX[y] * InputY[x]
-//                    ? 0
-//                    : InputX[x] * InputY[y];
-//                sb.Append(val == 0 ? ' ' : val == 1 ? '+' : '-');
-//            }
-//            sb.AppendLine();
-//        }
-//        return sb.ToString();
-//    }
+    public IEnumerable<int> ProductCoeffs()
+    {
+        for (int i = 0; i < ProductLength; i++)
+            yield return ProductCoeff(i);
+    }
+    public IEnumerable<int> DiagCoeffs()
+    {
+        for (int i = 0; i < InputLength; i++)
+            yield return this[i, i];
+    }
 
-//    public IEnumerable<int> Base4()
-//    {
-//        yield return this[0];
-//        for (int i = 2; i < Length; i += 2)
-//        {
-//            Debug.Assert(this[i - 1].IsEven());
-//            yield return this[i - 1] / 2 + this[i];
-//        }
-//    }
+    public void AssertProductValid()
+    {
+        int sum = 0;
+        for (int i = 0; i < ProductLength; i++)
+            sum+= ProductCoeff(i) * (1 << i);
+        if (sum != X.Integer * Y.Integer)
+            throw new Exception("Invalid product");
+    }
 
-//    public IEnumerable<int> BaseX()
-//    {
-//        for (int i = 0; i < Length; i ++)
-//        {
-//            if (this[i].IsOdd())
-//                yield return this[i];
-//            else
-//            {
-//                yield return 0;
-//                yield return this[i] / 2 + this[i + 1];
-//                i++;
-//            }
-//        }
-//    }
+    public bool IsValid()
+    {
 
-//    public IEnumerable<int> Code() => Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[i] ? 1 : -1); 
-//    public string CodeString() => Code().BitString(2);
+        //Diagonal consists of only 0 and -
+        //One factor consists of only + and -, except for 0 padding in the end
 
-//    public IEnumerable<int> Code2() => Enumerable.Range(0, XLength).Select(i => InputX[0] == InputY[i] ? 1 : -1);
-//    public string Code2String() => Code2().BitString(2);
-
-//    public IEnumerable<int> Code3() => Enumerable.Range(0, XLength).Select(i => InputX[i] == InputY[0] ? 1 : -1);
-//    public string Code3String() => Code3().BitString(2);
-
-//    public int Match(AltParity altParity)
-//    {
-//        static int Combine(int x, int y) => (x == 1 ? 2 : 0) + (y == 1 ? 1 : 0); //Combines two values that are -1 or 1 into a single unique value [0..3]
-//        static (int x, int y) Split(int z) => ((z & 2) - 1, (z & 1) * 2 - 1);    //Splits a combined value back into the original two values
+        //if (XBits.All(b => b != 0) && YBits.All(b => b != 0))
+        //    return true;
+        //if (!XBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0)) &&
+        //    !YBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0))) return false;
 
 
-//        Debug.Assert(Length == altParity.Length);
-//        InputX.Clear();
-//        InputY.Clear();
-//        int[] combinations = new int[Length];
-       
-        
-//        for (int i = 0; i < Length;)
-//        {
-//            Console.WriteLine($"Trying from comb {combinations[i]} at index {i}");
-//            combinations[i] = MatchAt(altParity, i, combinations[i]);
-            
-//            if (combinations[i] < 4)
-//            {
-//                Console.WriteLine($"Success for combination {combinations[i]} at index {i}");
-//                combinations[i]++; //add the next combination to try if returning here
-                
-//                i++;
-//                continue;
-//            }
-//            else while (combinations[i] == 4)
-//            {
-//                Console.WriteLine("No combs left at index " + i + " - backtracking");
-//                combinations[i] = 0;
-//                i--;
-//                if (i < 0) return -1;
-//            }
-//            Console.WriteLine();
-//        }
-//        Console.WriteLine("FULL SUCCESS!");
-//        return Length;
-//    }
+        for (int i = 0; i < InputLength; i++)
+        {
+            if (XBits[i] == YBits[i])
+                return false;
+        }
 
-//    public int MatchAt(AltParity altParity, int index, int startCombination)
-//    {
-//        static int Combine(int x, int y) => (x == 1 ? 2 : 0) + (y == 1 ? 1 : 0); //Combines two values that are -1 or 1 into a single unique value [0..3]
-//        static (int x, int y) Split(int z) => ((z & 2) - 1, (z & 1) * 2 - 1);    //Splits a combined value back into the original two values
+        bool expectedOdd(int i) => i.IsEven();
+        bool flipParity = false;
 
-//        int refSum = altParity[index];
-       
-//        for (int combination = startCombination; combination < 4; combination++)
-//        {
-//            (int x, int y) = Split(combination);
-//            InputX.Set(index, x);
-//            InputY.Set(index, y);
-//            int testSum = this[index];
-//            if (testSum == refSum)
-//                return combination; 
-//        }
-//        return 4; //failed to find a match
-//    }
+        for (int i = 0; i < InputLength; i++)
+        {
+            if (XBits[i] == 0 || YBits[i] == 0)
+                flipParity = !flipParity;
+            bool realExpectedOdd = expectedOdd(i) != flipParity;
+            if (ProductCoeff(i).IsOdd() != realExpectedOdd)
+                return false;
+        }
+  
+        if (ProductCoeff(1) == 0)
+            return false;
 
-//    public string ToExtendedString()
-//    {
+        return true; //remove this line
 
-//        string xString = InputX.ToString(4);
-//        string negXSting = new Input(-InputX.Integer, InputX.Length).ToString(4);
 
-//        StringBuilder sb = new();
-//        for (int y = 0; y < YLength; y++)
-//        {
-//            sb.Append(' ', y * 4);
-//            sb.AppendLine(InputY[y] == 1 ? xString : negXSting);
-//        }
-//        sb.Append('_', Length*4);
-//        sb.AppendLine();
-//        sb.Append(Coeffs.Select(c => c.ToString().PadLeft(4)).Str());
-//        return sb.ToString();
-//    }
-//    public override string ToString() => Coeffs.Str(" ");
-//}
+        int largeCount = 0;
+
+        for (int i = 0; i < ProductLength; i++)
+        {
+            int coeff = ProductCoeff(i);
+
+            //if (i.IsEven() == coeff.IsEven())
+            //    return false;
+            //if (coeff.Abs() != Matrix[i, i].Abs())
+            //    return false;
+            //if (coeff.IsEven() != i.IsOdd())
+            //    return false;
+            //if (coeff < 0)
+            //    return false;
+            //if (i != InputLength - 1 && coeff.Abs() > 1)
+            //    return false;
+
+             //if (i != (InputLength - 1) && coeff.Abs() > 1)
+             if (coeff.Abs() > 1)
+             {
+                if (i < InputLength - 1)
+                    return false;
+
+                largeCount++;
+
+                if (largeCount > 1)
+                    return false;
+            }
+             
+
+        }
+        return true;
+    }
+
+    public int ProductCoeff(int productIndex)
+    {
+        int startRow = Math.Max(0, productIndex - InputLength + 1);
+        int endRow = Math.Min(productIndex, InputLength - 1);
+        int sum = 0;
+        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
+        {
+            int xIndex = productIndex - yIndex;
+            sum += this[yIndex, xIndex];
+            //if (sum.Abs() > 1)
+            //    return int.MaxValue;
+        }
+        return sum;
+    }
+
+
+    public IEnumerable<(int xIndex, int yIndex)> CoeffPairs(int productIndex)
+    {
+        int startRow = Math.Max(0, productIndex - InputLength + 1);
+        int endRow = Math.Min(productIndex, InputLength - 1);
+
+        for (int yIndex = startRow; yIndex <= endRow; yIndex++)
+        {
+            int xIndex = productIndex - yIndex;
+            yield return (xIndex, yIndex);
+        }
+    }
+
+   
+    public enum Color
+    {
+        Red,
+        Green,
+        Blue
+    }
+
+    private static string BitColorString(int bit, int coeffWidth = 0)
+    {
+        Color color = bit > 0 ? Color.Blue : bit < 0 ? Color.Red : Color.Green;
+        return Colorize(Symbolize(bit).PadLeft(coeffWidth), color);
+
+    }
+
+
+    public static string Symbolize(int value) => value switch
+    {
+        0 => "0",
+        1 => "+",
+        -1 => "-",
+        _ => value.ToString()
+    };
+    
+    public static string Colorize(string str, Color color) => color switch
+    {
+        Color.Red => $"\u001b[31m{str}\u001b[0m",
+        Color.Green => $"\u001b[32m{str}\u001b[0m",
+        Color.Blue => $"\u001b[34m{str}\u001b[0m",
+        _ => str
+    };
+
+    public string ToStringExpanded()
+    {
+        StringBuilder sb = new();
+        for (int y = 0; y < InputLength; y++)
+        {
+            for (int x = 0; x < InputLength; x++)
+            {
+                int val = this[y, x];
+                Color color = val > 0 ? Color.Blue : val < 0 ? Color.Red : Color.Green;
+                sb.Append(Colorize(Symbolize(this[y, x]), color));
+            }
+            sb.AppendLine();
+        }
+        return sb.ToString();
+    }
+
+    public string ToStringProduct(int coeffWidth = 0) => ProductCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
+    public string ToStringX(int coeffWidth = 0) => XBits.Select(c => BitColorString(c, coeffWidth)).Str();
+    public string ToStringY(int coeffWidth = 0) => YBits.Select(c => BitColorString(c, coeffWidth)).Str();
+
+    public string ToStringDiag(int coeffWidth = 0) => DiagCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
+
+    //public static int GetLength(int integer, int minLength = 0)
+    //{
+    //    int productLength = integer.ToBalancedBits(minLength).Count();
+    //    if (productLength.IsEven()) productLength++;
+    //    productLength += 2;
+    //    int inputLength = (productLength + 1) / 2;
+    //    return inputLength;
+    //}
+
+}

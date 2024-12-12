@@ -21,10 +21,6 @@
 	<PropertyGroup Condition="'$(Configuration)'=='Legacy'">
 	  <TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
-	
-	<ItemGroup>
-	  <PackageReference Include="Automata.Visualization" Version="1.0.0" />
-	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\MathLib\MathLib.csproj" />

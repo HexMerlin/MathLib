@@ -2,47 +2,34 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 
 namespace MathLib.BalMult;
 
-public class Product3
+public class Int3
 {
 
-    public readonly int Product; 
-    public readonly int[] Coeffs;
-
-    public Product3(int product, int minLength)
+    public readonly int Length;
+    public readonly int Integer; 
+ 
+    public Int3(int integer, int minLength = 0)
     {
-        this.Product = product;
-        int productLength = product.ToBalancedBits(minLength).Count();
-        if (productLength.IsEven()) productLength++;
-        productLength += 2;
+        this.Integer = integer;
 
-        Coeffs = product.ToBalancedBits(productLength).ToArray(); 
+        if (minLength == 0)
+        {
+            minLength = Integer.ToBalancedBits(minLength).Count();
+            minLength+=1;
+            //if (minLength.IsEven())
+            //    minLength += 1;
+        }
+        this.Length = minLength;   
     }
 
-    public IEnumerable<ReadOnlyCollection<int>> Sequences() => SequencesForInteger(Product, Coeffs.Length);
+    public IEnumerable<int[]> Sequences() => Sequences(Integer, Length);
 
 
-    public bool Request(int index, int requested)
-    {
-        int cur = Coeffs[index];
-        if (requested == cur) return true;
-        if (requested == 0) return false;
 
-        int len = 1;
-        for (; len < Coeffs.Length; len++)
-            if (Coeffs[index + len] != cur) break;
-        
-        if (len == Coeffs.Length) 
-            return false;
-
-        Span<int> span = Coeffs.AsSpan(index, len + 1);
-        
-        span.Fill(0);
-        span[0] = -cur;
-        return true;
-    }
 
     public void PrintSequencesForInteger()
     {
@@ -89,7 +76,7 @@ public class Product3
     /// The returned sequences are views over the same internal array and should 
     /// be consumed or copied immediately if persistent storage is required.
     /// </returns>
-    public static IEnumerable<ReadOnlyCollection<int>> SequencesForInteger(int integer, int sequenceLength)
+    public static IEnumerable<int[]> Sequences(int integer, int sequenceLength)
     {
         // Precompute weights (powers of 2) and cumulative sums
         int[] weights = new int[sequenceLength];
@@ -102,16 +89,16 @@ public class Product3
             remainingWeightsSum[i] = remSum;
         }
 
-        var sequence = new int[sequenceLength];
+        int[] sequence = new int[sequenceLength];
 
         return Backtrack(0, 0);
 
-        IEnumerable<ReadOnlyCollection<int>> Backtrack(int pos, int currentSum)
+        IEnumerable<int[]> Backtrack(int pos, int currentSum)
         {
             if (pos == sequenceLength)
             {
                 if (currentSum == integer)
-                    yield return sequence.AsReadOnly();
+                    yield return sequence;
                 yield break;
             }
 
@@ -126,7 +113,7 @@ public class Product3
                 if (newSum - remWeightsSum <= integer && newSum + remWeightsSum >= integer)
                 {
                     sequence[pos] = coeff;
-                    foreach (ReadOnlyCollection<int> result in Backtrack(pos + 1, newSum))
+                    foreach (int[] result in Backtrack(pos + 1, newSum))
                         yield return result;
                 }
             }
@@ -136,11 +123,30 @@ public class Product3
 
    
 
-    public string ToString(int coeffWidth) => Coeffs.Select(c => BitColorString(c, coeffWidth)).Str();
+    //public string ToString(int coeffWidth) => Coeffs.Select(c => BitColorString(c, coeffWidth)).Str();
 
     private static string BitColorString(int bit, int coeffWidth = 0) => $"{(bit == 0 ? Input3.GreenColorCode : bit < 0 ? Input3.RedColorCode : Input3.BlueColorCode)}{(bit == 0 ? '0' : bit == 1 ? Input3.PlusChar : Input3.MinusChar).ToString().PadLeft(coeffWidth)}{Input3.ResetColorCode}";
 
 
-    public override string ToString() => ToString(1);
-
 }
+
+
+//public bool Request(int index, int requested)
+//{
+//    int cur = Coeffs[index];
+//    if (requested == cur) return true;
+//    if (requested == 0) return false;
+
+//    int len = 1;
+//    for (; len < Coeffs.Length; len++)
+//        if (Coeffs[index + len] != cur) break;
+
+//    if (len == Coeffs.Length) 
+//        return false;
+
+//    Span<int> span = Coeffs.AsSpan(index, len + 1);
+
+//    span.Fill(0);
+//    span[0] = -cur;
+//    return true;
+//}

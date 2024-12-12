@@ -124,18 +124,18 @@ public class SymProduct
         }
     }
 
-    public int TrySolve(AltParity altParity)
-    {
-        Reset();
+    //public int TrySolve(AltParity altParity)
+    //{
+    //    Reset();
 
-        int i = 0;
-        while (true)
-        {
-            bool IsSolved = ProductCoeffs().SequenceEqual(altParity.Coeffs);
-            if (IsSolved) return ProductLength;
-            if (!IncreaseOne()) return -1;
-        }        
-    }
+    //    int i = 0;
+    //    while (true)
+    //    {
+    //        bool IsSolved = ProductCoeffs().SequenceEqual(altParity.Coeffs);
+    //        if (IsSolved) return ProductLength;
+    //        if (!IncreaseOne()) return -1;
+    //    }        
+    //}
 
     //public int TrySolve(AltParity product)
     //{

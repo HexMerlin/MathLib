@@ -10,68 +10,81 @@ using MathLib;
 using MathLib.Prime;
 using MathLib.BalMult;
 using MathLib.Misc;
-using Automata.Visualization;
 
 namespace MathLib.DevConsole;
 
 internal class Program
 {
 
-    public static void TestToBalancedDigits()
-    {
-        var testCases = new List<(BigInteger integer, int[] constraints)>
-        {
-            (1, new[] {1, 1}),
-            (-1, new[] {1, 1}),
-            (9, new[] {1, 2, 1}),
-            (-9, new[] {1, 2, 1}),
-            (15, new[] {1, 2, 2, 1}),
-            (-15, new[] {1, 2, 2, 1}),
-            (25, new[] {1, 2, 3, 2, 1}),
-            (-25, new[] {1, 2, 3, 2, 1}),
-            (2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
-            (-2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
-            (20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1}),
-            (-20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1})
-        };
-
-        foreach (var (integer, constraints) in testCases)
-        {
-            var digits = BalDigits.ToBalancedDigits(integer, constraints);
-            bool lengthCheck = digits.Length == constraints.Length;
-            bool firstLastCheck = digits.First() is -1 or 1 && digits.Last() is -1 or 1;
-            bool digitsCheck = digits.Zip(constraints, (d, c) => Math.Abs(d) <= Math.Abs(c) && d.Mod(2) == c.Mod(2)).All(check => check);
-            BigInteger weightedSum = digits.Select((d, i) => d * BigInteger.Pow(2, i)).Aggregate(BigInteger.Zero, (acc, x) => acc + x);
-            bool sumCheck = weightedSum == integer;
-
-            bool testPassed = lengthCheck && firstLastCheck && digitsCheck && sumCheck;
-            Console.WriteLine($"Input: {integer}, Constraints: [{string.Join(", ", constraints)}]");
-            Console.WriteLine($"Output Digits: [{string.Join(", ", digits)}]");
-            Console.WriteLine($"Test Passed: {(testPassed ? "Yes" : "No")}\n");
-        }
-    }
 
 
 
 
+    // ConsoleWindow cw = ConsoleWindow.Create();
     static void Main()
     {
-        // Creates the main console window.
-        // ConsoleWindow cw = ConsoleWindow.Create();
-            
+        int[] primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(120).ToArray();
+        for (int p1 = 0; p1 < primes.Length; p1++)
+        {
+            for (int p2 = 0; p2 < primes.Length; p2++)
+            {
+                Product prodX = new Product(primes[p1], primes[p2]);
 
-        int product = 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
-        Input3 input3 = new Input3(product, 0);
-        Product3 product3 = new Product3(product, 0);
 
-
-        product3.PrintSequencesForInteger(); // -31, 8); // -31, 8);
-
-        Console.WriteLine(product3);
-        product3.Request(0, 1);
-        product3.Request(3, -1);
-        Console.WriteLine(product3);
+                if (!prodX.Matrices().Any())
+                {
+                    Console.WriteLine(primes[p1] + " * " + primes[p2]);
+                }
+                //if (prodX.Matrices().Count() <= 2)
+                //{
+                //    Console.WriteLine(primes[p1] + " * " + primes[p2]);
+                //}
+            }
+        }
         return;
+
+        Product prod = new Product(3187, 2543); //new Product(7151, 241); ////new Product(7321, 6553);  //new Product(577, 229);  //new Product(47, 41); //new Product(541, 53);  // //new Product(71, 173); //new Product(431, 79); //  //
+        AltParity ap = new AltParity(prod.X.Integer * prod.Y.Integer, prod.ProductLength);
+        Console.WriteLine(ap.ToString(3));
+
+      
+        foreach (var prodVersion in prod.Matrices())
+        {
+           // Debug.Assert(prodVersion.ProductCoeffs().Count() == ap.Coeffs.Length);    
+
+           
+            Console.WriteLine(prodVersion.ToStringExpanded());
+            Console.WriteLine();
+            Console.WriteLine(prodVersion.ToStringProduct(3));
+            Console.WriteLine(prodVersion.ToStringX(3));
+            Console.WriteLine(prodVersion.ToStringY(3));
+            Console.WriteLine();
+            Console.WriteLine(prodVersion.ToStringDiag(3));
+            Console.WriteLine();
+            
+        }
+
+        
+
+        return;
+
+        //Int3 x = new Int3(181, 9);
+        //x.PrintSequencesForInteger();
+        //return;
+
+        int product = 433 * 359; // 181 * 151; // 211 * 107; // 433 * 359; // 83 * 79; //227 * 199; // 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        Input3 input3 = new Input3(product, 0);
+        Int3 product3 = new Int3(product, 0);
+
+        //input3.TrySolve(product3);
+        //return;
+
+        //product3.PrintSequencesForInteger(); // -31, 8); // -31, 8);
+        //Console.WriteLine(product3);
+        //product3.Request(0, 1);
+        //product3.Request(3, -1);
+        //Console.WriteLine(product3);
+        //return;
 
         //input3.Coeffs = [Val3.PosPos, Val3.NegPos, Val3.NegNeg, Val3.NegNeg, Val3.PosNeg, Val3.PosPos, Val3.PosPos, Val3.PosPos];
         //Console.WriteLine(input3.ToStringProduct());
@@ -86,34 +99,34 @@ internal class Program
         return;
 
 
-        Input input = new Input(227, 199);
-        Console.WriteLine("AP:");
-        AltParity ap = new AltParity(227 * 199, MinFluctuation.Yes);
-        Console.WriteLine(ap.ToString(7));
+        //Input input = new Input(227, 199);
+        //Console.WriteLine("AP:");
+        //AltParity ap = new AltParity(227 * 199, MinFluctuation.Yes);
+        //Console.WriteLine(ap.ToString(7));
 
-        Console.WriteLine(input.ToString());
-        Console.WriteLine("-----");
-        Console.WriteLine(input.ToStringExpanded());
-        Console.WriteLine();
-        Console.WriteLine(input.ToStringProduct(7));
+        //Console.WriteLine(input.ToString());
+        //Console.WriteLine("-----");
+        //Console.WriteLine(input.ToStringExpanded());
+        //Console.WriteLine();
+        //Console.WriteLine(input.ToStringProduct(7));
 
-        Input unknown = new Input(input.InputLength);
+       // Input unknown = new Input(input.InputLength);
         //Console.WriteLine(unknown.ToString());
         //Console.WriteLine("-----");
         //Console.WriteLine(unknown.ToStringExpanded());
         //Console.WriteLine();
         //Console.WriteLine(unknown.ToStringProduct(3));
 
-        unknown.Signs[0] = Sign.Plus;
-        unknown.Signs[^1] = Sign.Plus;
-        unknown.Colors[1] = Color.Red;
-        unknown.Colors[4] = Color.Red;
-        Console.WriteLine(unknown.ToString());
-        Console.WriteLine("-----");
-        Console.WriteLine(unknown.ToStringExpanded());
-        Console.WriteLine();
-        Console.WriteLine(unknown.ToStringProduct(7));
-        return;
+        //unknown.Signs[0] = Sign.Plus;
+        //unknown.Signs[^1] = Sign.Plus;
+        //unknown.Colors[1] = Color.Red;
+        //unknown.Colors[4] = Color.Red;
+        //Console.WriteLine(unknown.ToString());
+        //Console.WriteLine("-----");
+        //Console.WriteLine(unknown.ToStringExpanded());
+        //Console.WriteLine();
+        //Console.WriteLine(unknown.ToStringProduct(7));
+        //return;
         //AltParity altParity1 = new AltParity(227 * 199, 15);
         //cw.WriteLine(altParity1.Length.ToString());
         //cw.WriteLine(altParity1.ToString(3));
@@ -154,14 +167,14 @@ internal class Program
 
         //return;
 
-        Console.OutputEncoding = Encoding.UTF8;
+        //Console.OutputEncoding = Encoding.UTF8;
 
-        SymProduct correct = new SymProduct(23, 19);
-        Console.WriteLine(correct.ToStringExpanded());
-        Console.WriteLine();
+        //SymProduct correct = new SymProduct(23, 19);
+        //Console.WriteLine(correct.ToStringExpanded());
+        //Console.WriteLine();
 
 
-        BigInteger prod = 23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        //BigInteger prod = 23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
         //AltParity ap = new AltParity(correct);
        // AltParity ap = new AltParity(prod, MinFluctuation.Yes);
        //// AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
@@ -640,17 +653,15 @@ internal class Program
 
     }
 
-    
+
     static void MainQb()
     {
         Console.OutputEncoding = Encoding.UTF8;
 
 
         //2102342102342102 4/9 base 5
-      
-        
-     
-        return;
+
+
 
 
         //SetQ setQ = new SetQ(base_: 2, maxDenominator: 20);
@@ -658,9 +669,9 @@ internal class Program
         // return;
 
         //TestCreator.CreateTests();
-    
 
-    
+
+
         //Q_old q2 = new Q_old(22, 3);
         //Console.WriteLine(q2.NumeralSystem.RotationsBin.Select(r => r.ToString()).Take(20).Str(", "));
         //Console.WriteLine(q1.Coefficients().Select(q => q.Numerator).Take(20).Str(", "));
@@ -679,9 +690,40 @@ internal class Program
         //Console.WriteLine(q1.NumeralSystem.ToStringBin());
         //PAdic p1 = new PAdicPrefix(1, 7);
         //Console.WriteLine(p1);
-
     }
+    public static void TestToBalancedDigits()
+    {
+        var testCases = new List<(BigInteger integer, int[] constraints)>
+        {
+            (1, new[] {1, 1}),
+            (-1, new[] {1, 1}),
+            (9, new[] {1, 2, 1}),
+            (-9, new[] {1, 2, 1}),
+            (15, new[] {1, 2, 2, 1}),
+            (-15, new[] {1, 2, 2, 1}),
+            (25, new[] {1, 2, 3, 2, 1}),
+            (-25, new[] {1, 2, 3, 2, 1}),
+            (2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
+            (-2581, new[] {1, 2, 3, 4, 5, 5, 5, 4, 3, 2, 1}),
+            (20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1}),
+            (-20291, new[] {1, 2, 3, 4, 5, 6, 7, 7, 6, 5, 4, 3, 2, 1})
+        };
 
+        foreach (var (integer, constraints) in testCases)
+        {
+            var digits = BalDigits.ToBalancedDigits(integer, constraints);
+            bool lengthCheck = digits.Length == constraints.Length;
+            bool firstLastCheck = digits.First() is -1 or 1 && digits.Last() is -1 or 1;
+            bool digitsCheck = digits.Zip(constraints, (d, c) => Math.Abs(d) <= Math.Abs(c) && d.Mod(2) == c.Mod(2)).All(check => check);
+            BigInteger weightedSum = digits.Select((d, i) => d * BigInteger.Pow(2, i)).Aggregate(BigInteger.Zero, (acc, x) => acc + x);
+            bool sumCheck = weightedSum == integer;
 
-
+            bool testPassed = lengthCheck && firstLastCheck && digitsCheck && sumCheck;
+            Console.WriteLine($"Input: {integer}, Constraints: [{string.Join(", ", constraints)}]");
+            Console.WriteLine($"Output Digits: [{string.Join(", ", digits)}]");
+            Console.WriteLine($"Test Passed: {(testPassed ? "Yes" : "No")}\n");
+        }
+    }
 }
+
+
