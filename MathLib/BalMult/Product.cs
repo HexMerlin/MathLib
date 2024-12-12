@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Numerics;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
 
 namespace MathLib.BalMult;
 public class Product
 {
-    public readonly Int3 X;
-    public readonly Int3 Y;
+    public Int3 X;
+    public Int3 Y;
 
     public int InputLength => X.Length;
 
@@ -19,20 +15,15 @@ public class Product
 
     public int Integer => X.Integer * Y.Integer;
 
-    public readonly int[] XBits;
-    public readonly int[] YBits;
-  
     public Product(int x, int y)
     {
         (x, y) = x.Abs() >= y.Abs() ? (x, y) : (y, x);
         this.X = new Int3(x);
         this.Y = new Int3(y, X.Length);
-        
-        XBits = new int[InputLength];
-        YBits = new int[InputLength];
+
     }
 
-    public int this[int y, int x] => (YBits[y] == 0 || XBits[x] == 0) ? 0 : (YBits[y] == XBits[x] ? 1 : -1);
+    public int this[int y, int x] => (Y[y] == 0 || X[x] == 0) ? 0 : (Y[y] == X[x] ? 1 : -1);
 
     public IEnumerable<Product> MatricesUnfiltered()
     {
@@ -54,12 +45,12 @@ public class Product
         //}
         foreach (int[] seqX in X.Sequences())
         {
-            seqX.CopyTo(XBits);
+            //seqX.CopyTo(XBits);
             //if (!IsNAF(seqY))
             //    continue;
             foreach (int[] seqY in Y.Sequences())
             {
-                seqY.CopyTo(YBits);
+                //seqY.CopyTo(YBits);
 
                 yield return this;
             }
@@ -70,17 +61,10 @@ public class Product
     {
         foreach (var product in MatricesUnfiltered())
         {
-            //AssertProductValid();
+   
             if (IsValid())
             {
-                //for (int i = 0; i < InputLength - 1; i++)
-                //    if (product.XBits[i] == 0)
-                //    {
-                //        product.swapXY = true;
-                //        break;
-                //    }
                 yield return this;
-               // product.swapXY = false;
             }
         }
     }
@@ -126,19 +110,9 @@ public class Product
         //        return false;
         //}
 
-        //for (int i = 0; i < InputLength - 1; i++)
-        //    if (XBits[i] == 0)
-        //    {
-        //        var temp = XBits;
-        //        XBits = YBits;
-        //        YBits = temp;
-        //        break;
-        //    }
-
-
         for (int i = 0; i < InputLength; i++)
         {
-            if (XBits[i] == YBits[i])
+            if (X[i] == Y[i])
                 return false;
         }
 
@@ -147,7 +121,7 @@ public class Product
 
         for (int i = 0; i < InputLength; i++)
         {
-            if (XBits[i] == 0 || YBits[i] == 0)
+            if (X[i] == 0 || Y[i] == 0)
                 flipParity = !flipParity;
             bool realExpectedOdd = expectedOdd(i) != flipParity;
             if (ProductCoeff(i).IsOdd() != realExpectedOdd)
@@ -161,7 +135,7 @@ public class Product
         //    if (ProductCoeff(1) != -1)
         //        return false;
         //}
-            
+
 
 
         return true; //remove this line
@@ -211,8 +185,6 @@ public class Product
         {
             int xIndex = productIndex - yIndex;
             sum += this[yIndex, xIndex];
-            //if (sum.Abs() > 1)
-            //    return int.MaxValue;
         }
         return sum;
     }
@@ -238,7 +210,7 @@ public class Product
         Blue
     }
 
-    private static string BitColorString(int bit, int coeffWidth = 0)
+    public static string BitColorString(int bit, int coeffWidth = 0)
     {
         Color color = bit > 0 ? Color.Blue : bit < 0 ? Color.Red : Color.Green;
         return Colorize(Symbolize(bit).PadLeft(coeffWidth), color);
@@ -279,18 +251,9 @@ public class Product
     }
 
     public string ToStringProduct(int coeffWidth = 0) => ProductCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
-    public string ToStringX(int coeffWidth = 0) => XBits.Select(c => BitColorString(c, coeffWidth)).Str();
-    public string ToStringY(int coeffWidth = 0) => YBits.Select(c => BitColorString(c, coeffWidth)).Str();
+    public string ToStringX(int coeffWidth = 0) => X.ToString(coeffWidth);
+    public string ToStringY(int coeffWidth = 0) => Y.ToString(coeffWidth);
 
     public string ToStringDiag(int coeffWidth = 0) => DiagCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
-
-    //public static int GetLength(int integer, int minLength = 0)
-    //{
-    //    int productLength = integer.ToBalancedBits(minLength).Count();
-    //    if (productLength.IsEven()) productLength++;
-    //    productLength += 2;
-    //    int inputLength = (productLength + 1) / 2;
-    //    return inputLength;
-    //}
 
 }

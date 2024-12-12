@@ -9,9 +9,11 @@ namespace MathLib.BalMult;
 public class Int3
 {
 
-    public readonly int Length;
-    public readonly int Integer; 
- 
+    public readonly int Integer;
+
+    public readonly int[] Bits;
+
+    public int Length => Bits.Length;
     public Int3(int integer, int minLength = 0)
     {
         this.Integer = integer;
@@ -23,36 +25,20 @@ public class Int3
             //if (minLength.IsEven())
             //    minLength += 1;
         }
-        this.Length = minLength;   
+        Bits = new int[minLength]; 
     }
 
-    public IEnumerable<int[]> Sequences() => Sequences(Integer, Length);
-
-    public void PrintSequencesForInteger()
-    {
-        foreach (var seq in Sequences())
-        {
-            Console.WriteLine(seq.Select(c => BitColorString(c)).Str());    
-        }
-
-    }
+    public int this[int index] => Bits[index];
 
 
 
     /// <summary>
-    /// Generates all sequences of digits {-1, 0, 1} of length <paramref name="sequenceLength"/> 
-    /// such that their weighted sum in base 2 equals <paramref name="integer"/>.
+    /// Generates all sequences of digits {-1, 0, 1} 
+    /// such that their weighted sum in base 2 equals <see cref="Integer"/>.
     /// </summary>
-    /// <param name="integer">
-    /// The target sum to achieve by summing the weighted sequence of digits.
-    /// </param>
-    /// <param name="sequenceLength">
-    /// The length of the sequences to generate.
-    /// </param>
     /// <remarks>
     /// Each sequence represents a series of digits, where the weight of each digit is determined by its position 
     /// as a power of 2 (e.g., for position <c>i</c>, the weight is <c>2^i</c>). 
-    /// <para>If the length is not large enough to represent the target sum, the method will return an empty sequence.</para>
     /// </remarks>
     /// <example>
     /// For <c>N = -5</c> and <c>L = 4</c>, the output is:
@@ -64,38 +50,33 @@ public class Int3
     ///++0-
     /// </code>
     /// </example>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Thrown if <paramref name="sequenceLength"/> is negative, as sequences of negative length are not meaningful.
-    /// </exception>
     /// <returns>
-    /// An <see cref="IEnumerable{T}"/> of immutable <see cref="ReadOnlyCollection{T}"/> instances, 
+    /// A collection of int[] arrays,
     /// each representing a sequence of integers {-1, 0, 1} satisfying the criteria. 
     /// The returned sequences are views over the same internal array and should 
     /// be consumed or copied immediately if persistent storage is required.
     /// </returns>
-    public static IEnumerable<int[]> Sequences(int integer, int sequenceLength)
+    public IEnumerable<int[]> Sequences()
     {
         // Precompute weights (powers of 2) and cumulative sums
-        int[] weights = new int[sequenceLength];
-        int[] remainingWeightsSum = new int[sequenceLength + 1];
+        int[] weights = new int[Length];
+        int[] remainingWeightsSum = new int[Length + 1];
         int remSum = 0;
-        for (int i = sequenceLength - 1; i >= 0; i--)
+        for (int i = Length - 1; i >= 0; i--)
         {
             weights[i] = 1 << i;
             remSum += weights[i];
             remainingWeightsSum[i] = remSum;
         }
 
-        int[] sequence = new int[sequenceLength];
-
         return Backtrack(0, 0);
 
         IEnumerable<int[]> Backtrack(int pos, int currentSum)
         {
-            if (pos == sequenceLength)
+            if (pos == Length)
             {
-                if (currentSum == integer)
-                    yield return sequence;
+                if (currentSum == Integer)
+                    yield return Bits;
                 yield break;
             }
 
@@ -107,9 +88,9 @@ public class Int3
                 int newSum = currentSum + coeff * weight;
 
                 // prune branches, that can't reach the target sum
-                if (newSum - remWeightsSum <= integer && newSum + remWeightsSum >= integer)
+                if (newSum - remWeightsSum <= Integer && newSum + remWeightsSum >= Integer)
                 {
-                    sequence[pos] = coeff;
+                    Bits[pos] = coeff;
                     foreach (int[] result in Backtrack(pos + 1, newSum))
                         yield return result;
                 }
@@ -118,13 +99,10 @@ public class Int3
     }
 
 
-   
+ 
+    public string ToString(int coeffWidth = 0) => Bits.Select(c => Product.BitColorString(c, coeffWidth)).Str();
 
-    //public string ToString(int coeffWidth) => Coeffs.Select(c => BitColorString(c, coeffWidth)).Str();
-
-    private static string BitColorString(int bit, int coeffWidth = 0) => $"{(bit == 0 ? Input3.GreenColorCode : bit < 0 ? Input3.RedColorCode : Input3.BlueColorCode)}{(bit == 0 ? '0' : bit == 1 ? Input3.PlusChar : Input3.MinusChar).ToString().PadLeft(coeffWidth)}{Input3.ResetColorCode}";
-
-
+    public override string ToString() => ToString(0);
 }
 
 
