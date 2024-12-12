@@ -25,7 +25,7 @@ internal class Program
     static void Main()
     {
 
-#if !SEARCH
+#if SEARCH
         int[] primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(120).ToArray();
         for (int p1 = 0; p1 < primes.Length; p1++)
         {
@@ -51,17 +51,19 @@ internal class Program
         return;
 #endif
         //new Product(811, 139); //both factors === 3 (mod 8)
-        Product prod = new Product(577, 229);  //new Product(13, 11); // new Product(19, 11); // new Product(151, 23);//new Product(43, 19); //new Product(29, 3); //new Product(811, 139); //new Product(23, 17);  ////new Product(71, 173); //new Product(431, 79); //new Product(23, 13); //   // // //new Product(7321, 6553);  //new Product(3187, 2543);  //new Product(7151, 241);   //  //new Product(47, 41); //new Product(541, 53);  // // // //  //
+        Product prod = new Product(431, 79); //new Product(577, 229);  //new Product(13, 11); // new Product(19, 11); // new Product(151, 23);//new Product(43, 19); //new Product(29, 3); //new Product(811, 139); //new Product(23, 17);  ////new Product(71, 173);  //new Product(23, 13); //   // // //new Product(7321, 6553);  //new Product(3187, 2543);  //new Product(7151, 241);   //  //new Product(47, 41); //new Product(541, 53);
         //AltParity ap = new AltParity(prod.X.Integer * prod.Y.Integer, prod.ProductLength);
         //Console.WriteLine(ap.ToString(3));
         string prodBits = prod.Integer.ToBalancedBits(prod.ProductLength).Select(c => c == 1 ? '+' : '-').Str("  ");
         Console.WriteLine(prodBits);
-
+        Console.WriteLine(prod.Integer);
+        Console.WriteLine();
         foreach (var prodVersion in prod.Matrices())
         {
-           // Debug.Assert(prodVersion.ProductCoeffs().Count() == ap.Coeffs.Length);    
+            // Debug.Assert(prodVersion.ProductCoeffs().Count() == ap.Coeffs.Length);    
 
-           
+
+
             Console.WriteLine(prodVersion.ToStringExpanded());
             Console.WriteLine();
             Console.WriteLine(prodVersion.ToStringProduct(3));

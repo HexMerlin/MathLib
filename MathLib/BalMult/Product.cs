@@ -206,7 +206,19 @@ public class Product
         return sb.ToString();
     }
 
-    public string ToStringProduct(int coeffWidth = 0) => ProductCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
+    private static int Sum(IEnumerable<int> coeffs)
+    {
+        int sum = 0;
+        int weight = 1;
+        foreach (int c in coeffs)
+        {
+            sum += c * weight; 
+            weight <<= 1;
+        }
+        return sum; 
+    }
+
+    public string ToStringProduct(int coeffWidth = 0) => ProductCoeffs().Select(c => BitColorString(c, coeffWidth)).Str() + " " + Sum(ProductCoeffs());
     public string ToStringX(int coeffWidth = 0) => X.ToString(coeffWidth);
     public string ToStringY(int coeffWidth = 0) => Y.ToString(coeffWidth);
 
