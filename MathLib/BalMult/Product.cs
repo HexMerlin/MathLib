@@ -27,48 +27,23 @@ public class Product
 
     public IEnumerable<Product> MatricesUnfiltered()
     {
-        //static bool IsNAF(ReadOnlyCollection<int> sequence)
-        //{
-        //    bool prevZero = true;
-        //    for (int i = 0; i < sequence.Count; i++)
-        //    {
-        //        if (sequence[i] != 0)
-        //        {
-        //            if (!prevZero)
-        //                return false;
-        //            prevZero = false;
-        //        }   
-        //        else prevZero = true;
+        //foreach (int[] seqX in X.Sequences())
+        //    foreach (int[] seqY in Y.Sequences())
+        //        yield return this;
 
-        //    }
-        //    return true;
-        //}
-        foreach (int[] seqX in X.Sequences())
-        {
-            //seqX.CopyTo(XBits);
-            //if (!IsNAF(seqY))
-            //    continue;
+        foreach (int[] seqX in X.SequencesOnlyPlusMinus())
             foreach (int[] seqY in Y.Sequences())
-            {
-                //seqY.CopyTo(YBits);
-
                 yield return this;
-            }
-        }
+
+        (X, Y) = (Y, X);
+
+        foreach (int[] seqX in X.SequencesOnlyPlusMinus())
+            foreach (int[] seqY in Y.Sequences())
+                yield return this;
+        (X, Y) = (Y, X);
     }
 
-    public IEnumerable<Product> Matrices()
-    {
-        foreach (var product in MatricesUnfiltered())
-        {
-   
-            if (IsValid())
-            {
-                yield return this;
-            }
-        }
-    }
-
+    public IEnumerable<Product> Matrices() => MatricesUnfiltered().Where(m => m.IsValid());
     
 
     public IEnumerable<int> ProductCoeffs()
@@ -100,16 +75,6 @@ public class Product
         //   0: -
         //   1: not zero
 
-        //if (XBits.All(b => b != 0) && YBits.All(b => b != 0))
-        //    return true;
-        //if (!XBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0)) &&
-        //    !YBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0))) return false;
-        //for (int i = 0; i < 3; i++)
-        //{
-        //    if (ProductCoeff(i) == 0)
-        //        return false;
-        //}
-
         for (int i = 0; i < InputLength; i++)
         {
             if (X[i] == Y[i])
@@ -127,15 +92,6 @@ public class Product
             if (ProductCoeff(i).IsOdd() != realExpectedOdd)
                 return false;
         }
-
-        //var balBits = Integer.ToBalancedBits(ProductLength).ToArray();
-
-        //if (balBits[0] == -1 && balBits[1] == -1)
-        //{
-        //    if (ProductCoeff(1) != -1)
-        //        return false;
-        //}
-
 
 
         return true; //remove this line

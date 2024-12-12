@@ -13,12 +13,42 @@ public static class BalBits
 
     public static string BitString(this IEnumerable<int> balBits, int bitWidth) => balBits.Select(c => new string (' ', Math.Max(0, bitWidth - 1)) + (c == 1 ? '+' : '-')).Str();
 
-    public static IEnumerable<int> ToBalancedBits(this int integer, int minLength = 0) => ((BigInteger)integer).ToBalancedBits(minLength);
+    /// <summary>Same as <see cref="BalBits.ToBalancedBits(BigInteger, int)"/> but for Int32 type</summary>
+    public static IEnumerable<int> ToBalancedBits(this int integer, int minLength = 0)
+    {
+        if (integer.IsEven())
+            throw new ArgumentException("The balanced binary form can only represent odd numbers.");
+        int length = 0;
+
+        int rem = integer;
+        for (int index = 0; ; index++)
+        {
+            int digit = BalancedBit(integer, index, rem.Abs() == 1);
+            rem -= digit;
+            rem /= 2;
+            length++;
+
+            if (rem != 0)
+                yield return digit;
+            else
+            {
+                while (length < minLength)
+                {
+                    yield return -digit;
+                    length++;
+                }
+                yield return digit;
+                yield break;
+            }
+
+        }
+    }
 
     /// <summary>
     /// Converts a <see cref="BigInteger"/> to its balanced binary form, where each bit is either -1 or 1.
     /// </summary>
     /// <param name="integer">The integer to convert. Must be odd.</param>
+    /// <param name="minLength"> The minimum length of the resulting balanced bit sequence.</param>
     /// <returns>
     /// An <see cref="IEnumerable{T}"/> of <see cref="int"/> values representing the balanced binary form of 
     /// <paramref name="integer"/>, where each bit is either -1 or 1.
@@ -86,4 +116,10 @@ public static class BalBits
         return isLastDigit ? rem.Sign : -rem.Sign;
     }
 
+    public static int BalancedBit(int number, int index, bool isLastDigit)
+    {
+        int mod = 1 << (index + 2);
+        int rem = number.ModMinAbs(mod);
+        return isLastDigit ? rem.Sign() : -(rem.Sign());
+    }
 }
