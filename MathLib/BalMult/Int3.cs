@@ -28,9 +28,6 @@ public class Int3
 
     public IEnumerable<int[]> Sequences() => Sequences(Integer, Length);
 
-
-
-
     public void PrintSequencesForInteger()
     {
         foreach (var seq in Sequences())

@@ -17,6 +17,8 @@ public class Product
 
     public int ProductLength => (X.Length << 1) - 1;
 
+    public int Integer => X.Integer * Y.Integer;
+
     public readonly int[] XBits;
     public readonly int[] YBits;
   
@@ -25,7 +27,7 @@ public class Product
         (x, y) = x.Abs() >= y.Abs() ? (x, y) : (y, x);
         this.X = new Int3(x);
         this.Y = new Int3(y, X.Length);
-        //Matrix = new int[InputLength, InputLength];
+        
         XBits = new int[InputLength];
         YBits = new int[InputLength];
     }
@@ -50,15 +52,14 @@ public class Product
         //    }
         //    return true;
         //}
-
-        foreach (int[] seqY in Y.Sequences())
+        foreach (int[] seqX in X.Sequences())
         {
-            seqY.CopyTo(YBits);
+            seqX.CopyTo(XBits);
             //if (!IsNAF(seqY))
             //    continue;
-            foreach (int[] seqX in X.Sequences())
+            foreach (int[] seqY in Y.Sequences())
             {
-                seqX.CopyTo(XBits);
+                seqY.CopyTo(YBits);
 
                 yield return this;
             }
@@ -72,11 +73,19 @@ public class Product
             //AssertProductValid();
             if (IsValid())
             {
+                //for (int i = 0; i < InputLength - 1; i++)
+                //    if (product.XBits[i] == 0)
+                //    {
+                //        product.swapXY = true;
+                //        break;
+                //    }
                 yield return this;
-
+               // product.swapXY = false;
             }
         }
     }
+
+    
 
     public IEnumerable<int> ProductCoeffs()
     {
@@ -89,25 +98,42 @@ public class Product
             yield return this[i, i];
     }
 
-    public void AssertProductValid()
+    public int ProductSum()
     {
         int sum = 0;
         for (int i = 0; i < ProductLength; i++)
             sum+= ProductCoeff(i) * (1 << i);
-        if (sum != X.Integer * Y.Integer)
-            throw new Exception("Invalid product");
+        return sum;
     }
+
 
     public bool IsValid()
     {
 
-        //Diagonal consists of only 0 and -
-        //One factor consists of only + and -, except for 0 padding in the end
+        //1. Diagonal consists of only 0 and -
+        //2. One factor consists of only + and -, except for 0 padding in the end
+        //3. Product bits:
+        //   0: -
+        //   1: not zero
 
         //if (XBits.All(b => b != 0) && YBits.All(b => b != 0))
         //    return true;
         //if (!XBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0)) &&
         //    !YBits.Select((b, i) => new { b, i }).All(t => (t.b == 0) == (this[t.i, t.i] == 0))) return false;
+        //for (int i = 0; i < 3; i++)
+        //{
+        //    if (ProductCoeff(i) == 0)
+        //        return false;
+        //}
+
+        //for (int i = 0; i < InputLength - 1; i++)
+        //    if (XBits[i] == 0)
+        //    {
+        //        var temp = XBits;
+        //        XBits = YBits;
+        //        YBits = temp;
+        //        break;
+        //    }
 
 
         for (int i = 0; i < InputLength; i++)
@@ -127,9 +153,16 @@ public class Product
             if (ProductCoeff(i).IsOdd() != realExpectedOdd)
                 return false;
         }
-  
-        if (ProductCoeff(1) == 0)
-            return false;
+
+        //var balBits = Integer.ToBalancedBits(ProductLength).ToArray();
+
+        //if (balBits[0] == -1 && balBits[1] == -1)
+        //{
+        //    if (ProductCoeff(1) != -1)
+        //        return false;
+        //}
+            
+
 
         return true; //remove this line
 
@@ -165,6 +198,7 @@ public class Product
              
 
         }
+      
         return true;
     }
 
@@ -237,7 +271,7 @@ public class Product
             {
                 int val = this[y, x];
                 Color color = val > 0 ? Color.Blue : val < 0 ? Color.Red : Color.Green;
-                sb.Append(Colorize(Symbolize(this[y, x]), color));
+                sb.Append(Colorize(Symbolize(val), color));
             }
             sb.AppendLine();
         }

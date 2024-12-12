@@ -1,4 +1,5 @@
-﻿#pragma warning disable CS0162 //Suppresses the CS0162 warning (Unreachable code detected) in this file.
+﻿
+#pragma warning disable CS0162 //Suppresses the CS0162 warning (Unreachable code detected) in this file.
 #pragma warning disable CS0219 // Suppresses the Variable is assigned but its value is never used
 #pragma warning disable IDE0059 // Suppresses the Unnecessary assignment of a value
 #pragma warning disable CS8321 // Local function is declared but never used
@@ -23,6 +24,8 @@ internal class Program
     // ConsoleWindow cw = ConsoleWindow.Create();
     static void Main()
     {
+ 
+#if SEARCH
         int[] primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(120).ToArray();
         for (int p1 = 0; p1 < primes.Length; p1++)
         {
@@ -34,6 +37,10 @@ internal class Program
                 if (!prodX.Matrices().Any())
                 {
                     Console.WriteLine(primes[p1] + " * " + primes[p2]);
+                    Console.WriteLine(prodX.Integer.ToBalancedBits(prodX.ProductLength).Select(c => c == 1 ? '+' : '-').Str("  "));
+
+                    Console.WriteLine();
+
                 }
                 //if (prodX.Matrices().Count() <= 2)
                 //{
@@ -42,12 +49,14 @@ internal class Program
             }
         }
         return;
+#endif
+        //new Product(811, 139); //both factors === 3 (mod 8)
+        Product prod = new Product(151, 23); //new Product(19, 11);// // // ////  //new Product(43, 19); //new Product(577, 229); //new Product(29, 3); //new Product(811, 139); //new Product(23, 17);  ////new Product(71, 173); //new Product(431, 79); //new Product(23, 13); //   // // //new Product(7321, 6553);  //new Product(3187, 2543);  //new Product(7151, 241);   //  //new Product(47, 41); //new Product(541, 53);  // // // //  //
+        //AltParity ap = new AltParity(prod.X.Integer * prod.Y.Integer, prod.ProductLength);
+        //Console.WriteLine(ap.ToString(3));
+        string prodBits = prod.Integer.ToBalancedBits(prod.ProductLength).Select(c => c == 1 ? '+' : '-').Str("  ");
+        Console.WriteLine(prodBits);
 
-        Product prod = new Product(3187, 2543); //new Product(7151, 241); ////new Product(7321, 6553);  //new Product(577, 229);  //new Product(47, 41); //new Product(541, 53);  // //new Product(71, 173); //new Product(431, 79); //  //
-        AltParity ap = new AltParity(prod.X.Integer * prod.Y.Integer, prod.ProductLength);
-        Console.WriteLine(ap.ToString(3));
-
-      
         foreach (var prodVersion in prod.Matrices())
         {
            // Debug.Assert(prodVersion.ProductCoeffs().Count() == ap.Coeffs.Length);    
@@ -72,7 +81,7 @@ internal class Program
         //x.PrintSequencesForInteger();
         //return;
 
-        int product = 433 * 359; // 181 * 151; // 211 * 107; // 433 * 359; // 83 * 79; //227 * 199; // 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        int product =  227 * 199; //433 * 359; // 181 * 151; // 211 * 107; // 83 * 79; // 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
         Input3 input3 = new Input3(product, 0);
         Int3 product3 = new Int3(product, 0);
 
