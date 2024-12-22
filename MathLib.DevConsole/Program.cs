@@ -11,6 +11,7 @@ using MathLib;
 using MathLib.Prime;
 using MathLib.BalMult;
 using MathLib.Misc;
+using Automata.Visualization;
 
 namespace MathLib.DevConsole;
 
@@ -18,74 +19,67 @@ internal class Program
 {
 
 
-
-
-
-    // ConsoleWindow cw = ConsoleWindow.Create();
     static void Main()
     {
 
+
 #if SEARCH
-        int[] primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(120).ToArray();
+        int[] primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(50).ToArray();
         for (int p1 = 0; p1 < primes.Length; p1++)
         {
+            int x = -primes[p1];
+            if ((x + 1).IsPowerOfTwo()) continue; //skip powers of 2 
             for (int p2 = 0; p2 < primes.Length; p2++)
             {
-                Product prodX = new Product(primes[p1], primes[p2]);
-
-
-                if (!prodX.Matrices().Any())
+                if (p1 == p2) continue; //skip perfect squares
+                int y = primes[p2];
+                if ((y + 1).IsPowerOfTwo()) continue; //skip powers of 2
+                Product prod = new Product(x, y);
+                //if (prod[0] != -1)
+                //    continue;
+                if (prod.Matrices().Any())
                 {
-                    Console.WriteLine(primes[p1] + " * " + primes[p2]);
-                    Console.WriteLine(prodX.Integer.ToBalancedBits(prodX.ProductLength).Select(c => c == 1 ? '+' : '-').Str("  "));
-
-                    Console.WriteLine();
+                    //Console.WriteLine(prod.ToString());
+                    //foreach (var version in prod.Matrices())
+                    //{
+                    //    Console.WriteLine(version.ToStringX());
+                    //    Console.WriteLine(version.ToStringY());
+                    //    Console.WriteLine();
+                    //}
+                    //Console.WriteLine();
 
                 }
-                //if (prodX.Matrices().Count() <= 2)
-                //{
-                //    Console.WriteLine(primes[p1] + " * " + primes[p2]);
-                //}
+                else {
+
+
+                    Console.WriteLine("FAIL: " + prod);
+                }
+                //Console.WriteLine(prod.ToStringExpanded());
+                //Console.WriteLine(prod.ToString());
+           
             }
         }
         return;
 #endif
-        //new Product(811, 139); //both factors === 3 (mod 8)
-        Product prod = new Product(17, 11); //new Product(431, 79); //// //new Product(577, 229);  // new Product(19, 11); // new Product(151, 23);//new Product(43, 19); //new Product(29, 3); //new Product(811, 139); //new Product(23, 17);  ////new Product(71, 173);  //new Product(23, 13); //   // // //new Product(7321, 6553);  //new Product(3187, 2543);  //new Product(7151, 241);   //  //new Product(47, 41); //new Product(541, 53);
-        //AltParity ap = new AltParity(prod.X.Integer * prod.Y.Integer, prod.ProductLength);
-        //Console.WriteLine(ap.ToString(3));
-        string prodBits = prod.Integer.ToBalancedBits(prod.ProductLength).Select(c => c == 1 ? '+' : '-').Str("  ");
-        Console.WriteLine(prodBits);
-        Console.WriteLine(prod.Integer);
-        Console.WriteLine();
-        foreach (var prodVersion in prod.Matrices())
+
+        Product prod = new Product(23, 17); //new Product(7321, 6553); //new Product(17, 11); //new Product(431, 79); //// //new Product(577, 229);  // new Product(19, 11); // new Product(151, 23);//new Product(43, 19); //new Product(29, 3); //new Product(811, 139); //  ////new Product(71, 173);  //new Product(23, 13); //   // // //  //new Product(3187, 2543);  //new Product(7151, 241);   //  //new Product(47, 41); //new Product(541, 53);
+        Console.WriteLine(prod.ToString());
+        foreach (var version in prod.Matrices())
         {
-            // Debug.Assert(prodVersion.ProductCoeffs().Count() == ap.Coeffs.Length);    
-
-
-
-            Console.WriteLine(prodVersion.ToStringExpanded());
+            Console.WriteLine(version.ToStringX());
+            Console.WriteLine(version.ToStringY());
+            Console.WriteLine(prod.ToStringCrossSum() + " CROSS-SUM");
             Console.WriteLine();
-            Console.WriteLine(prodVersion.ToStringProduct(3));
-            Console.WriteLine(prodVersion.ToStringX(3));
-            Console.WriteLine(prodVersion.ToStringY(3));
-            Console.WriteLine();
-            Console.WriteLine(prodVersion.ToStringDiag(3));
-            Console.WriteLine();
+            Console.WriteLine(prod.ToStringExpanded());
 
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
-        
-
-        return;
-
-        //Int3 x = new Int3(181, 9);
-        //x.PrintSequencesForInteger();
-        //return;
-
-        int product =  227 * 199; //433 * 359; // 181 * 151; // 211 * 107; // 83 * 79; // 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
-        Input3 input3 = new Input3(product, 0);
-        Int3 product3 = new Int3(product, 0);
+        //int product =  227 * 199; //433 * 359; // 181 * 151; // 211 * 107; // 83 * 79; // 83 * 79; //331 * 463; //227 * 199; //83 * 79; //331 * 463; //83 * 79; //331 * 463; // //227 * 199; //   331 * 463;  //227 * 199; /// 331 * 463; //251 * 149; // 83 * 79; //23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
+        //Input3 input3 = new Input3(product, 0);
+        //Int3 product3 = new Int3(product, 0);
 
         //input3.TrySolve(product3);
         //return;
@@ -102,13 +96,6 @@ internal class Program
         //Console.WriteLine(input3.Product);
         //return;
 
-        Console.WriteLine(input3.InputLength);
-        Console.WriteLine(input3.ProductLength);
-        
-        input3.PrintAllMatches(product);
-        Console.WriteLine("Done!");
-        return;
-
 
         //Input input = new Input(227, 199);
         //Console.WriteLine("AP:");
@@ -121,7 +108,7 @@ internal class Program
         //Console.WriteLine();
         //Console.WriteLine(input.ToStringProduct(7));
 
-       // Input unknown = new Input(input.InputLength);
+        // Input unknown = new Input(input.InputLength);
         //Console.WriteLine(unknown.ToString());
         //Console.WriteLine("-----");
         //Console.WriteLine(unknown.ToStringExpanded());
@@ -148,7 +135,7 @@ internal class Program
         //cw.WriteLine("Creating graph...", System.Drawing.Color.Blue);
 
         //var primes = PrimeGenerator.GeneratePrimes().Skip(1).Take(40).ToArray();
-        
+
         //List<string[]> sequences = new();
 
         //for (int yi = 0; yi < primes.Length; yi++)
@@ -161,7 +148,7 @@ internal class Program
         //        if (x <= y)
         //            continue;
         //        SymProduct symP = new SymProduct(x, y);
-              
+
         //        if (symP.ProductLength.IsEven() || symP.ProductLength < 9)
         //            continue;
         //        var prodCoeffs = symP.ProductCoeffs().Reverse().ToArray();
@@ -187,22 +174,22 @@ internal class Program
 
         //BigInteger prod = 23 * 19; // 13 * 17; // 83 * 79; // 227 * 199;
         //AltParity ap = new AltParity(correct);
-       // AltParity ap = new AltParity(prod, MinFluctuation.Yes);
-       //// AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
-       // Console.WriteLine($"AP: (product len: {ap.Length})");
-       // Console.WriteLine(ap.ToString(3));
-       // SymProduct sp = new SymProduct(ap);
-       // int progress = sp.TrySolve(ap);
-      
-       // Console.WriteLine("Solve progress: " + progress + "\n");
-       // Console.WriteLine(sp.ToString());
-       // Console.WriteLine(sp.ProductString(3));
-       // Console.WriteLine();
-       // Console.WriteLine(sp.ToStringExpanded());
+        // AltParity ap = new AltParity(prod, MinFluctuation.Yes);
+        //// AltParity ap = new AltParity(prod, new int[] { 1, 0, -3, -2, 1, 6, 3, 0, -5, -4, -1, 2, 3, 2, 1 });
+        // Console.WriteLine($"AP: (product len: {ap.Length})");
+        // Console.WriteLine(ap.ToString(3));
+        // SymProduct sp = new SymProduct(ap);
+        // int progress = sp.TrySolve(ap);
+
+        // Console.WriteLine("Solve progress: " + progress + "\n");
+        // Console.WriteLine(sp.ToString());
+        // Console.WriteLine(sp.ProductString(3));
+        // Console.WriteLine();
+        // Console.WriteLine(sp.ToStringExpanded());
         //return;
 
         //SymProduct symProd = new SymProduct(227, 199, 17);
-       
+
         //Console.WriteLine(symProd);
         //Console.WriteLine();
         //Console.WriteLine(symProd.ToStringExpanded());

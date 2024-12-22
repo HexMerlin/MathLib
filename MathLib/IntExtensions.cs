@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
 namespace MathLib;
 public static class IntExtensions
@@ -115,4 +116,16 @@ public static class IntExtensions
     /// <param name="integer">The 32-bit signed integer to check.</param>
     /// <returns>The absolute value of <paramref name="integer"/>.</returns>
     public static int Abs(this int integer) => Math.Abs(integer);
+
+    /// <summary>
+    /// Indicates whether the specified <paramref name="integer"/> is a power of two.
+    /// </summary>
+    /// <param name="integer">The integer to test.</param>
+    /// <remarks>If the <paramref name="integer"/> is negative the result is <see langref="false"/></remarks>
+    /// <returns><see langword="true"/> <c>iff</c> <paramref name="integer"/> is a power of two.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static bool IsPowerOfTwo(this int integer) =>
+        integer > 0 && (integer & (integer - 1)) == 0;
+
+    
 }

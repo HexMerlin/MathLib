@@ -17,6 +17,8 @@ public class Product
 
     public Product(int x, int y)
     {
+        //if (x.Sign() == y.Sign())
+        //    throw new ArgumentException("Factors must have different signs");
         (x, y) = x.Abs() >= y.Abs() ? (x, y) : (y, x);
         this.X = new Int3(x);
         this.Y = new Int3(y, X.Length);
@@ -27,23 +29,29 @@ public class Product
 
     public IEnumerable<Product> MatricesUnfiltered()
     {
-        //foreach (int[] seqX in X.Sequences())
-        //    foreach (int[] seqY in Y.Sequences())
-        //        yield return this;
 
-        foreach (int[] seqX in X.SequencesOnlyPlusMinus())
-            foreach (int[] seqY in Y.Sequences())
-                yield return this;
+
+        X.SetABalBits();
+        foreach (int[] seqY in Y.Sequences())
+            yield return this;
 
         (X, Y) = (Y, X);
 
-        foreach (int[] seqX in X.SequencesOnlyPlusMinus())
-            foreach (int[] seqY in Y.Sequences())
-                yield return this;
+        X.SetABalBits();
+        foreach (int[] seqY in Y.Sequences())
+            yield return this;
         (X, Y) = (Y, X);
     }
 
-    public IEnumerable<Product> Matrices() => MatricesUnfiltered().Where(m => m.IsValid());
+    public IEnumerable<Product> Matrices()
+    {
+        foreach (var seq in MatricesUnfiltered().Where(m => m.IsValid()))
+        {
+            yield return this;
+        }
+    }
+
+  //  public IEnumerable<Product> Matrices() => MatricesUnfiltered().Where(m => m.IsValid());
     
 
     public IEnumerable<int> ProductCoeffs()
@@ -55,6 +63,12 @@ public class Product
     {
         for (int i = 0; i < InputLength; i++)
             yield return this[i, i];
+    }
+
+    public IEnumerable<int> OtherDiagCoeffs()
+    {
+        for (int i = 0; i < InputLength; i++)
+            yield return this[InputLength - i -1, i];
     }
 
     public int ProductSum()
@@ -77,9 +91,15 @@ public class Product
 
         for (int i = 0; i < InputLength; i++)
         {
-            if (X[i] == Y[i])
+            if (X[i] == Y[InputLength - 1 - i])
                 return false;
         }
+
+        //for (int i = 0; i < InputLength; i++)
+        //{
+        //    if (X[i] == Y[i])
+        //        return false;
+        //}
 
         bool expectedOdd(int i) => i.IsEven();
         bool flipParity = false;
@@ -190,6 +210,20 @@ public class Product
         _ => str
     };
 
+
+
+    private static int Sum(IEnumerable<int> coeffs)
+    {
+        int sum = 0;
+        int weight = 1;
+        foreach (int c in coeffs)
+        {
+            sum += c * weight; 
+            weight <<= 1;
+        }
+        return sum; 
+    }
+
     public string ToStringExpanded()
     {
         StringBuilder sb = new();
@@ -206,22 +240,13 @@ public class Product
         return sb.ToString();
     }
 
-    private static int Sum(IEnumerable<int> coeffs)
-    {
-        int sum = 0;
-        int weight = 1;
-        foreach (int c in coeffs)
-        {
-            sum += c * weight; 
-            weight <<= 1;
-        }
-        return sum; 
-    }
-
+    public override string ToString() => $"{Integer} = {X.Integer} * {Y.Integer}";
     public string ToStringProduct(int coeffWidth = 0) => ProductCoeffs().Select(c => BitColorString(c, coeffWidth)).Str() + " " + Sum(ProductCoeffs());
     public string ToStringX(int coeffWidth = 0) => X.ToString(coeffWidth);
     public string ToStringY(int coeffWidth = 0) => Y.ToString(coeffWidth);
 
     public string ToStringDiag(int coeffWidth = 0) => DiagCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
+    public string ToStringOtherDiag(int coeffWidth = 0) => OtherDiagCoeffs().Select(c => BitColorString(c, coeffWidth)).Str();
 
+    public string ToStringCrossSum(int coeffWidth = 0) => Enumerable.Range(0, InputLength).Select(i => X[i] + Y[InputLength - 1 - i]).Select(c => BitColorString(c, coeffWidth)).Str();
 }

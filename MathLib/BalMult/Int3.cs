@@ -30,20 +30,11 @@ public class Int3
 
     /// <summary>
     /// Generates the integer as sequences of bits {-1, 1}
-    /// If the last two bits are different, returns another sequence with the second last bit flipped and last is zero
     /// </summary>
-    /// <returns></returns>
-    public IEnumerable<int[]> SequencesOnlyPlusMinus()
+    public void SetABalBits()
     {
         for (int i = 0; i < Length; i++)
             Bits[i] = BalBits.BalancedBit(Integer, i, i == Length - 1);
-        yield return Bits;
-        if (Length >= 2 && Bits[^1] != Bits[^2])
-        {
-            Bits[^2] = -Bits[^2];
-            Bits[^1] = 0;
-            yield return Bits;
-        }
     }
 
     /// <summary>
