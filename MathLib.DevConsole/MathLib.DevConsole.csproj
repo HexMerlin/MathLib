@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<Configurations>Debug;Release;Legacy</Configurations>
+		<Configurations>Debug;Release;Legacy;Release + Docs</Configurations>
 	</PropertyGroup>
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->
@@ -17,6 +17,9 @@
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<TargetFramework>net9.0-windows</TargetFramework>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release + Docs'">
+	  <TargetFramework>net9.0-windows</TargetFramework>
+	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)'=='Legacy'">
 	  <TargetFramework>net9.0</TargetFramework>
@@ -27,6 +30,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\MathLib.Experimental\MathLib.Experimental.csproj" />
 	  <ProjectReference Include="..\MathLib\MathLib.csproj" />
 	</ItemGroup>
 

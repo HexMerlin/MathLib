@@ -6,12 +6,8 @@
 #pragma warning disable IDE0060 // Remove unused parameter
 using System.Numerics;
 using System.Text;
-using System.Diagnostics;
-using MathLib;
-using MathLib.Prime;
-using MathLib.BalMult;
+using MathLib.Experimental.BalMult;
 using MathLib.Misc;
-using Automata.Visualization;
 
 namespace MathLib.DevConsole;
 

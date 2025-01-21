@@ -8,6 +8,7 @@
           "files": ["**/*.csproj"],
           "exclude": [
             "MathLib.Docs/MathLib.Docs.csproj",
+            "MathLib.Experimental/MathLib.Experimental.csproj",
             "MathLib.DevConsole/MathLib.DevConsole.csproj",
             "MathLib.Tests/MathLib.Tests.csproj"
           ]

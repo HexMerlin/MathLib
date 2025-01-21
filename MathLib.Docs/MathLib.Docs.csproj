@@ -5,6 +5,7 @@
 		<OutputType>Library</OutputType>
 		<!-- Define the output directory for docfx -->
 		<DocsOutputDir>$(SolutionDir)\docs</DocsOutputDir>
+		<Configurations>Debug;Release;Release + Docs</Configurations>
 		<!-- Disable NuGet package restore -->
 	</PropertyGroup>
 
