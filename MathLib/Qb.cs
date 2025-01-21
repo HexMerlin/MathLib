@@ -15,7 +15,7 @@ namespace MathLib;
 /// <para>Each number is expressed in terms of a base, denoted by <see cref="Base"/>, with a preperiodic part (initial terminating sequence) 
 /// and a periodic part (repeating sequence).</para>
 /// <para>Each coefficient is indexed according to the exponent of the base <see cref="Base"/>. The index <c>i</c> corresponds to the 
-/// coefficient <c>c_i</c> associated with the term <c>c_i * Base^i</c>, where the value of <c>i</c> decreases as we move from 
+/// coefficient <c>c_i</c> associated with the term <c>c_i · Base^i</c>, where the value of <c>i</c> decreases as we move from 
 /// left to right in the expansion.</para>
 /// <para>The first (leftmost) coefficient has index <see cref="FirstExponent"/>, which corresponds to the largest 
 /// exponent. The index decreases through the expansion, reflecting the successive exponents of the base, including negative 
@@ -23,7 +23,7 @@ namespace MathLib;
 /// </para>
 /// <para>
 /// This consistent indexing system aligns with the mathematical representation of the number as a series in base <see cref="Base"/>:
-/// <c>q = Σ (c_i * <see cref="Base"/>^i)</c>
+/// <c>q = Σ (c_i · <see cref="Base"/>^i)</c>
 /// where the index <c>i</c> decreases from <see cref="FirstExponent"/> to negative values as the expansion proceeds.
 /// </para>
 /// 
