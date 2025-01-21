@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Qp | MathLib Docs </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Qp | MathLib Docs ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+              <span class="brand-title">MathLib Docs</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+                          <span class="brand-title">MathLib Docs</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp.md&amp;value=---%0Auid%3A%20MathLib.Qp%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="MathLib.Qp">
+
+
+
+  <h1 id="MathLib_Qp" data-uid="MathLib.Qp" class="text-break">Class Qp</h1>
+  <div class="markdown level0 summary"><p>Represents p-adic numbers that are rational, denoted ℚ⊂ℚₚ.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="MathLib.Q.html">Q</a></div>
+    <div class="level2"><span class="xref">Qp</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="MathLib.Q.html">Q</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="MathLib.Q.html">Q</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsNaN">Q.IsNaN</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsZero">Q.IsZero</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsOne">Q.IsOne</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsPositive">Q.IsPositive</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsNegative">Q.IsNegative</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsInteger">Q.IsInteger</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsNonZeroInteger">Q.IsNonZeroInteger</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsPositiveInteger">Q.IsPositiveInteger</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsNegativeInteger">Q.IsNegativeInteger</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IsUnitFraction">Q.IsUnitFraction</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Equals_MathLib_Q_">Q.Equals(Q)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_CompareTo_MathLib_Q_">Q.CompareTo(Q)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_CompareTo_System_Numerics_BigInteger_">Q.CompareTo(BigInteger)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_CompareTo_System_Int32_">Q.CompareTo(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Equals_System_Object_">Q.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_GetHashCode">Q.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Numerator">Q.Numerator</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Denominator">Q.Denominator</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPart">Q.IntegralPart</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_FractionalPart">Q.FractionalPart</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Zero">Q.Zero</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_One">Q.One</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAryInterpretation_System_Boolean_MathLib_BaseInt_MathLib_BaseInt_System_Int32_">Q.PAryInterpretation(bool, BaseInt, BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAdicInterpretation_MathLib_BaseInt_MathLib_BaseInt_System_Int32_">Q.PAdicInterpretation(BaseInt, BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAryPreperiodic_System_Boolean_MathLib_BaseInt_System_Int32_">Q.PAryPreperiodic(bool, BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAdicPreperiodic_MathLib_BaseInt_System_Int32_">Q.PAdicPreperiodic(BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAryPeriodic_System_Boolean_MathLib_BaseInt_System_Int32_">Q.PAryPeriodic(bool, BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_PAdicPeriodic_MathLib_BaseInt_System_Int32_">Q.PAdicPeriodic(BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_GetPAdicPreperiodic_MathLib_Q_MathLib_BaseInt_System_Int32_">Q.GetPAdicPreperiodic(Q, BaseInt, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_InBase_System_Int32_">Q.InBase(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_ShiftedFractions_System_Int32_">Q.ShiftedFractions(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Coefficients_System_Int32_">Q.Coefficients(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Coeff_System_Int32_">Q.Coeff(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Backward_System_Int32_">Q.Backward(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Forward_System_Int32_">Q.Forward(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Sign">Q.Sign</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Reciprocal">Q.Reciprocal</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Negation_System_Boolean_">Q.Negation(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Square">Q.Square()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Abs">Q.Abs</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Pow_MathLib_Q_">Q.Pow(Q)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_Pow_System_Int32_">Q.Pow(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_TryCastToInt32_System_Int32__">Q.TryCastToInt32(out int)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPartAlwaysFEO">Q.IntegralPartAlwaysFEO</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPartSelective_System_Boolean_">Q.IntegralPartSelective(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_ToStringCanonical">Q.ToStringCanonical()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_ToStringFactorization">Q.ToStringFactorization()</a>
+    </div>
+    <div>
+      <a class="xref" href="MathLib.Q.html#MathLib_Q_ToStringFinite_System_Int32_">Q.ToStringFinite(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MathLib.html">MathLib</a></h6>
+  <h6><strong>Assembly</strong>: MathLib.dll</h6>
+  <h5 id="MathLib_Qp_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Qp : Q, IEquatable&lt;Q&gt;, IComparable&lt;Q&gt;</code></pre>
+  </div>
+  <h5 id="MathLib_Qp_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>In mathematics, the set of p-adic numbers ℚₚ is the completion of the rational numbers ℚ with respect to the p-adic norm.
+This completion includes both rational numbers and p-adic irrationals (limits of infinite p-adic expansions).</p>
+ <p>However, in this library, the <a class="xref" href="MathLib.Qp.html">Qp</a> class is restricted to representing only the rational numbers within ℚₚ (which can be finitely represented in a computer).
+ Consequently, it handles p-adic numbers whose expansions are finite or ultimately periodic, corresponding exactly to elements of ℚ
+</p><p>
+ This means that while ℚₚ is uncountable and includes numbers that cannot be expressed as ratios of integers (p-adic irrationals),
+ our <a class="xref" href="MathLib.Qp.html">Qp</a> class cannot represent these elements. It focuses on rational numbers and their representations in p-adic form.
+</p>
+</div>
+  <h5 id="MathLib_Qp_examples"><strong>Examples</strong></h5>
+  <p>A 5-adic expansion for the rational number -4/3 is:</p>
+<pre><code class="lang-csharp">-4/3 = …2222222212₅</code></pre>
+
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp__ctor_MathLib_BaseInt_MathLib_BaseInt_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.%23ctor(MathLib.BaseInt%2CMathLib.BaseInt%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L200">View Source</a>
+  </span>
+  <a id="MathLib_Qp__ctor_" data-uid="MathLib.Qp.#ctor*"></a>
+  <h4 id="MathLib_Qp__ctor_MathLib_BaseInt_MathLib_BaseInt_System_Int32_" data-uid="MathLib.Qp.#ctor(MathLib.BaseInt,MathLib.BaseInt,System.Int32)">Qp(BaseInt, BaseInt, int)</h4>
+  <div class="markdown level1 summary"><p>Constructor for a p-adic number for the specified preperiodic and periodic parts, and an optional first exponent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Qp(BaseInt pAdicPreperiodic, BaseInt pAdicPeriodic, int firstExponent = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">pAdicPreperiodic</span></td>
+        <td><p>The p-adic preperiodic part of the number.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">pAdicPeriodic</span></td>
+        <td><p>The p-adic periodic part of the number.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">firstExponent</span></td>
+        <td><p>The first exponent of the number (Default value = <code>0</code>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp__ctor_MathLib_Q_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.%23ctor(MathLib.Q%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L135">View Source</a>
+  </span>
+  <a id="MathLib_Qp__ctor_" data-uid="MathLib.Qp.#ctor*"></a>
+  <h4 id="MathLib_Qp__ctor_MathLib_Q_System_Int32_" data-uid="MathLib.Qp.#ctor(MathLib.Q,System.Int32)">Qp(Q, int)</h4>
+  <div class="markdown level1 summary"><p>Constructor for a p-adic number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Qp(Q q, int base_)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.Q.html">Q</a></td>
+        <td><span class="parametername">q</span></td>
+        <td><p>The rational number to represent as a p-adic number.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td><p>The prime base of the p-adic number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.%23ctor(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L128">View Source</a>
+  </span>
+  <a id="MathLib_Qp__ctor_" data-uid="MathLib.Qp.#ctor*"></a>
+  <h4 id="MathLib_Qp__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.Qp.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Int32)">Qp(BigInteger, BigInteger, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Qp(BigInteger Numerator, BigInteger Denominator, int base_)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">Numerator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">Denominator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_Base.md&amp;value=---%0Auid%3A%20MathLib.Qp.Base%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L44">View Source</a>
+  </span>
+  <a id="MathLib_Qp_Base_" data-uid="MathLib.Qp.Base*"></a>
+  <h4 id="MathLib_Qp_Base" data-uid="MathLib.Qp.Base">Base</h4>
+  <div class="markdown level1 summary"><p>Returns the prime base of this p-adic number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Base { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_FirstExponent.md&amp;value=---%0Auid%3A%20MathLib.Qp.FirstExponent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L46">View Source</a>
+  </span>
+  <a id="MathLib_Qp_FirstExponent_" data-uid="MathLib.Qp.FirstExponent*"></a>
+  <h4 id="MathLib_Qp_FirstExponent" data-uid="MathLib.Qp.FirstExponent">FirstExponent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FirstExponent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_Generator.md&amp;value=---%0Auid%3A%20MathLib.Qp.Generator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L37">View Source</a>
+  </span>
+  <a id="MathLib_Qp_Generator_" data-uid="MathLib.Qp.Generator*"></a>
+  <h4 id="MathLib_Qp_Generator" data-uid="MathLib.Qp.Generator">Generator</h4>
+  <div class="markdown level1 summary"><p>A reverse generator that can be used to generate the coefficients of the p-adic number, in reverse order (least significant digit first).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Qb Generator { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.Qb.html">Qb</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_NaN.md&amp;value=---%0Auid%3A%20MathLib.Qp.NaN%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L119">View Source</a>
+  </span>
+  <a id="MathLib_Qp_NaN_" data-uid="MathLib.Qp.NaN*"></a>
+  <h4 id="MathLib_Qp_NaN" data-uid="MathLib.Qp.NaN">NaN</h4>
+  <div class="markdown level1 summary"><p>Returns a NaN Qp instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Qp NaN { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.Qp.html">Qp</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_Coefficients.md&amp;value=---%0Auid%3A%20MathLib.Qp.Coefficients%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L239">View Source</a>
+  </span>
+  <a id="MathLib_Qp_Coefficients_" data-uid="MathLib.Qp.Coefficients*"></a>
+  <h4 id="MathLib_Qp_Coefficients" data-uid="MathLib.Qp.Coefficients">Coefficients()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; Coefficients()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_FindKQ_MathLib_Q_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.FindKQ(MathLib.Q%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L90">View Source</a>
+  </span>
+  <a id="MathLib_Qp_FindKQ_" data-uid="MathLib.Qp.FindKQ*"></a>
+  <h4 id="MathLib_Qp_FindKQ_MathLib_Q_System_Int32_" data-uid="MathLib.Qp.FindKQ(MathLib.Q,System.Int32)">FindKQ(Q, int)</h4>
+  <div class="markdown level1 summary"><p>Decomposes a rational number <code class="paramref">q</code> into an integer part <code>k</code> and a fractional remainder based on the specified modulus.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (int k, Q q) FindKQ(Q q, int modulus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.Q.html">Q</a></td>
+        <td><span class="parametername">q</span></td>
+        <td><p>The rational number to decompose, represented as an instance of <a class="xref" href="MathLib.Q.html">Q</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">modulus</span></td>
+        <td><p>The modulus (or base) for the decomposition, which must be a positive integer greater than 1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,mathlib.q-.k">k</a>, <a class="xref" href="MathLib.Q.html">Q</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,mathlib.q-.q">q</a>)</td>
+        <td><p>A tuple containing:</p>
+<ul><li><code>k</code>: An integer representing the integer component of the decomposition, in the range [0, <code class="paramref">modulus</code>).</li><li><code>q</code>: The remaining fractional part of the decomposition, represented as a rational number <a class="xref" href="MathLib.Q.html">Q</a>.</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_Qp_FindKQ_MathLib_Q_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method computes the first coefficient <code>k</code> in the p-adic expansion of the rational number <code class="paramref">q</code>
+with respect to the specified modulus <code class="paramref">modulus</code> (which serves as the base of the p-adic expansion).
+The remainder is the fractional part of the number after subtracting the integer part <code>k</code> and dividing by <code class="paramref">modulus</code>.</p>
+<p>Mathematically, this method solves the equation:</p>
+<pre><code class="lang-csharp">q = k + modulus × remainder</code></pre>
+<p>where <code>k</code> is an integer in the range [0, <code class="paramref">modulus</code>) and <code>remainder</code> is the fractional part of <code class="paramref">q</code> after division by <code class="paramref">modulus</code>.</p>
+<p>The method uses modular arithmetic to compute <code>k</code> efficiently by solving the congruence:</p>
+<pre><code class="lang-csharp">k ≡ q.Numerator × (q.Denominator)⁻¹ (mod modulus)</code></pre>
+<p>where <code>q.Denominator⁻¹</code> is the modular inverse of <code>q.Denominator</code> with respect to <code class="paramref">modulus</code>.</p>
+</div>
+  <h5 id="MathLib_Qp_FindKQ_MathLib_Q_System_Int32__examples">Examples</h5>
+  <p>This example demonstrates decomposing a rational number with respect to a modulus:</p>
+<pre><code class="lang-csharp">Q q = new Q(1, 17);
+(int k, Q remainder) = FindKQ(q, 5);
+Console.WriteLine($"k = {k}, remainder = {remainder}");
+// Output: k = 3, remainder = -10 / 17</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if <code class="paramref">q</code>'s denominator and <code class="paramref">modulus</code> are not coprime (i.e., their greatest common divisor is not 1).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_PadicCoeffs_MathLib_Q_System_Int32_System_Boolean_.md&amp;value=---%0Auid%3A%20MathLib.Qp.PadicCoeffs(MathLib.Q%2CSystem.Int32%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L209">View Source</a>
+  </span>
+  <a id="MathLib_Qp_PadicCoeffs_" data-uid="MathLib.Qp.PadicCoeffs*"></a>
+  <h4 id="MathLib_Qp_PadicCoeffs_MathLib_Q_System_Int32_System_Boolean_" data-uid="MathLib.Qp.PadicCoeffs(MathLib.Q,System.Int32,System.Boolean)">PadicCoeffs(Q, int, bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;int&gt; PadicCoeffs(Q q, int base_, bool yieldDelimiters = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.Q.html">Q</a></td>
+        <td><span class="parametername">q</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">yieldDelimiters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_ReciprocalCoefficients_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L305">View Source</a>
+  </span>
+  <a id="MathLib_Qp_ReciprocalCoefficients_" data-uid="MathLib.Qp.ReciprocalCoefficients*"></a>
+  <h4 id="MathLib_Qp_ReciprocalCoefficients_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger,System.Int32)">ReciprocalCoefficients(BigInteger, int)</h4>
+  <div class="markdown level1 summary"><p>Generates the p-adic coefficients of the reciprocal of <code class="paramref">n</code> in the base <code class="paramref">base_</code>.
+Also returns a remainder with each coefficient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(int coefficient, BigInteger remainder)&gt; ReciprocalCoefficients(BigInteger n, int base_)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The number whose reciprocal's p-adic expansion is computed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td><p>The prime base of the p-adic expansion.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.numerics.biginteger-.coefficient">coefficient</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.numerics.biginteger-.remainder">remainder</a>)&gt;</td>
+        <td><p>An enumerable tuple sequence (coefficient, remainder).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_ToString.md&amp;value=---%0Auid%3A%20MathLib.Qp.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L252">View Source</a>
+  </span>
+  <a id="MathLib_Qp_ToString_" data-uid="MathLib.Qp.ToString*"></a>
+  <h4 id="MathLib_Qp_ToString" data-uid="MathLib.Qp.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Default string representation of the p-adic number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="MathLib.Q.html#MathLib_Q_ToString">Q.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_ToStringExpanded_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.Qp.ToStringExpanded(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L246">View Source</a>
+  </span>
+  <a id="MathLib_Qp_ToStringExpanded_" data-uid="MathLib.Qp.ToStringExpanded*"></a>
+  <h4 id="MathLib_Qp_ToStringExpanded_System_Int32_" data-uid="MathLib.Qp.ToStringExpanded(System.Int32)">ToStringExpanded(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a string for the p-adic number in expanded form.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToStringExpanded(int coefficientCount = 16)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">coefficientCount</span></td>
+        <td><p>The number of coefficients to include</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_ToStringPeriodic.md&amp;value=---%0Auid%3A%20MathLib.Qp.ToStringPeriodic%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L331">View Source</a>
+  </span>
+  <a id="MathLib_Qp_ToStringPeriodic_" data-uid="MathLib.Qp.ToStringPeriodic*"></a>
+  <h4 id="MathLib_Qp_ToStringPeriodic" data-uid="MathLib.Qp.ToStringPeriodic">ToStringPeriodic()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToStringPeriodic()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_Qp_Valuation.md&amp;value=---%0Auid%3A%20MathLib.Qp.Valuation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/Qp.cs/#L100">View Source</a>
+  </span>
+  <a id="MathLib_Qp_Valuation_" data-uid="MathLib.Qp.Valuation*"></a>
+  <h4 id="MathLib_Qp_Valuation" data-uid="MathLib.Qp.Valuation">Valuation()</h4>
+  <div class="markdown level1 summary"><p>p-adic valuation of the current p-adic number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Valuation()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Valuation of the number relative to <a class="xref" href="MathLib.Qp.html#MathLib_Qp_Base">Base</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BigIntegerExtensions | MathLib Docs </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BigIntegerExtensions | MathLib Docs ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+              <span class="brand-title">MathLib Docs</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+                          <span class="brand-title">MathLib Docs</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="MathLib.BigIntegerExtensions">
+
+
+
+  <h1 id="MathLib_BigIntegerExtensions" data-uid="MathLib.BigIntegerExtensions" class="text-break">Class BigIntegerExtensions</h1>
+  <div class="markdown level0 summary"><p>Provides a set of extension methods for the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> struct, enabling additional functionality
+such as determining whether a number is odd, computing its absolute value, and calculating its bit length.
+It also provides the Extended Euclidean algorithm for computing GCD and Bézout coefficients.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">BigIntegerExtensions</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MathLib.html">MathLib</a></h6>
+  <h6><strong>Assembly</strong>: MathLib.dll</h6>
+  <h5 id="MathLib_BigIntegerExtensions_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class BigIntegerExtensions</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_Abs_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.Abs(System.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L29">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_Abs_" data-uid="MathLib.BigIntegerExtensions.Abs*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_Abs_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.Abs(System.Numerics.BigInteger)">Abs(BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Absolute value of the specified <code class="paramref">integer</code> value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger Abs(this BigInteger integer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value whose absolute value is to be computed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> representing the absolute value of the input.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_Coprime_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.Coprime(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L37">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_Coprime_" data-uid="MathLib.BigIntegerExtensions.Coprime*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_Coprime_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.Coprime(System.Numerics.BigInteger,System.Numerics.BigInteger)">Coprime(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether two specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> values are coprime.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Coprime(this BigInteger a, BigInteger b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The first <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The second <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code>
+<code class="paramref">a</code> and <code class="paramref">b</code> are coprime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L277">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_" data-uid="MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm(System.Numerics.BigInteger,System.Numerics.BigInteger)">ExtendedEuclideanAlgorithm(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Implements the extended Euclidean algorithm to compute the greatest common divisor (GCD) of two <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> values
+and the corresponding Bézout coefficients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (BigInteger gcd, BigInteger x, BigInteger y) ExtendedEuclideanAlgorithm(BigInteger a, BigInteger b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The first <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The second <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.numerics.biginteger,system.numerics.biginteger,system.numerics.biginteger-.gcd">gcd</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.numerics.biginteger,system.numerics.biginteger,system.numerics.biginteger-.x">x</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.numerics.biginteger,system.numerics.biginteger,system.numerics.biginteger-.y">y</a>)</td>
+        <td><p>A tuple containing three <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> values:</p>
+<ul><li>
+The greatest common divisor (gcd) of <code class="paramref">a</code> and <code class="paramref">b</code>.
+</li><li>
+The Bézout coefficient 'x' (corresponding to <code class="paramref">a</code> in Bézout's identity).
+</li><li>
+The Bézout coefficient 'y' (corresponding to <code class="paramref">b</code> in Bézout's identity).
+</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_System_Numerics_BigInteger_System_Numerics_BigInteger__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>For two integers <code class="paramref">a</code> and <code class="paramref">b</code>, this method computes the GCD, denoted as gcd(a, b),
+and finds integers 'x' and 'y' such that Bézout's identity is satisfied:</p>
+<pre><code class="lang-csharp">a·x + b· y = gcd(a, b)</code></pre>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_IsDivisibleBy_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.IsDivisibleBy(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L46">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_IsDivisibleBy_" data-uid="MathLib.BigIntegerExtensions.IsDivisibleBy*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_IsDivisibleBy_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.IsDivisibleBy(System.Numerics.BigInteger,System.Numerics.BigInteger)">IsDivisibleBy(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value is divisible by the specified divisor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsDivisibleBy(this BigInteger integer, BigInteger divisor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">divisor</span></td>
+        <td><p>The divisor to check against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the value is divisible by the divisor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_IsOdd_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.IsOdd(System.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L22">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_IsOdd_" data-uid="MathLib.BigIntegerExtensions.IsOdd*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_IsOdd_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.IsOdd(System.Numerics.BigInteger)">IsOdd(BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value is odd.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsOdd(this BigInteger integer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value to check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code>
+<code class="paramref">integer</code> is odd.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_IsPowerOf_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L175">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_IsPowerOf_" data-uid="MathLib.BigIntegerExtensions.IsPowerOf*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_IsPowerOf_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger,System.Int32)">IsPowerOf(BigInteger, int)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value is a power of the specified exponent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPowerOf(this BigInteger integer, int exponent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value to check.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">exponent</span></td>
+        <td><p>The exponent to check against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the value is a power of the exponent.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_LCM_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.LCM(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L137">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_LCM_" data-uid="MathLib.BigIntegerExtensions.LCM*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_LCM_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.LCM(System.Numerics.BigInteger,System.Numerics.BigInteger)">LCM(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Returns the Least Common Multiple of two integers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger LCM(this BigInteger first, BigInteger second)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">first</span></td>
+        <td><p>The first integer</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">second</span></td>
+        <td><p>The second integer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>LCM of <code class="paramref">first</code> and <code class="paramref">second</code></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_LCM_System_Numerics_BigInteger_System_Numerics_BigInteger__examples">Examples</h5>
+  <p>LCM(4, 6) = 12, since 12 is both a multiple of 4 (4<em>3) and a multiple of 6 (6</em>2)</p>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if <code class="paramref">first</code> or <code class="paramref">second</code> is zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_Length_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L158">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_Length_" data-uid="MathLib.BigIntegerExtensions.Length*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_Length_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger,System.Int32)">Length(BigInteger, int)</h4>
+  <div class="markdown level1 summary"><p>Returns the number of coefficients (or digits) required to represent this<br>
+<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> in a specified base.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Length(this BigInteger integer, int base_)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> to calculate the coefficient count for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td><p>The base in which this <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> will be represented. Must be greater than <code>1</code> for meaningful results.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The number of coefficients required to represent this <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> in base <code class="paramref">base_</code>.</p>
+<p>
+  <code>0</code> if <code class="paramref">base_</code> is less than <code>2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_Length_System_Numerics_BigInteger_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If this <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> is <code>0</code>, the result is always <code>0</code>, regardless of the base.</p>
+<p>If this <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> is negative, the result will be the same as for its absolute value.</p><p>If the base <code class="paramref">base_</code> is less than <code>2</code>, this method returns <code>0</code>, 
+following the behavior of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger.log#system-numerics-biginteger-log(system-numerics-biginteger-system-double)">Log(BigInteger, double)</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_Mod_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.Mod(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L81">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_Mod_" data-uid="MathLib.BigIntegerExtensions.Mod*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_Mod_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.Mod(System.Numerics.BigInteger,System.Numerics.BigInteger)">Mod(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Computes the modulus of a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> in the same way as in languages like
+Python, Haskell, Julia and Matlab.
+The result follows the mathematical definition of modulus where the remainder always has the same sign as
+the divisor, ensuring predictable results for both positive and negative values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger Mod(this BigInteger integer, BigInteger modulus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> value to compute the modulus for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">modulus</span></td>
+        <td><p>The modulus value. Must be non-zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>The remainder when <code class="paramref">integer</code> is divided by <code class="paramref">modulus</code>, adjusted to
+follow the same sign as <code class="paramref">modulus</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_Mod_System_Numerics_BigInteger_System_Numerics_BigInteger__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The result of the modulus operation is adjusted based on the sign of <code class="paramref">modulus</code>:</p>
+<p>When <code class="paramref">modulus</code> is positive, the result is in the range [0, modulus)</p><p>When <code class="paramref">modulus</code> is negative, the result is in the range (modulus, 0].</p>
+<p>This method provides consistent behavior for modulus operations, similar to how it is implemented
+in Python, Haskell, Julia, and Matlab.</p>
+</div>
+  <h5 id="MathLib_BigIntegerExtensions_Mod_System_Numerics_BigInteger_System_Numerics_BigInteger__examples">Examples</h5>
+  <p>Examples:</p>
+<pre><code class="lang-csharp">BigInteger result1 = new BigInteger(10).Mod(3);  // 1
+BigInteger result2 = new BigInteger(-10).Mod(3); // 2
+BigInteger result3 = new BigInteger(10).Mod(-3); // -2
+BigInteger result4 = new BigInteger(-10).Mod(-3); // -1</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.dividebyzeroexception">DivideByZeroException</a></td>
+        <td><p>Thrown when <code class="paramref">modulus</code> is zero.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_ModMinAbs_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.ModMinAbs(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L117">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_ModMinAbs_" data-uid="MathLib.BigIntegerExtensions.ModMinAbs*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_ModMinAbs_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.ModMinAbs(System.Numerics.BigInteger,System.Numerics.BigInteger)">ModMinAbs(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Modulo operation yielding the remainder (positive or negative) with the smallest absolute value,
+preserving congruence under the specified modulus.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger ModMinAbs(this BigInteger integer, BigInteger modulus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>Dividend, an integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">modulus</span></td>
+        <td><p>Modulus, a positive integer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>The integer <code>r</code> closest to zero for which there exists an integer <code>k</code> such that
+<code>n = k × mod + r</code>, and <code>-mod/2 ≤ r ≤ mod/2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_ModMinAbs_System_Numerics_BigInteger_System_Numerics_BigInteger__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>For both positive and negative <code class="paramref">integer</code>, the result minimizes <code>|r|</code>, providing a &quot;balanced&quot; or symmetric result.
+This is useful in contexts where closeness to zero is desired, such as balanced systems or modular
+arithmetic with minimal magnitude deviation.</p>
+<p>For example:</p>
+<ul><li><code>4 Mod 7</code> yields <code>-3</code> instead of <code>4</code>, as <code>-3</code> is closer to zero.
+</li><li><code>9 Mod 7</code> yields <code>2</code>, as <code>2</code> is already closest to zero.
+</li></ul>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_ModularInverse_System_Numerics_BigInteger_System_Numerics_BigInteger_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.ModularInverse(System.Numerics.BigInteger%2CSystem.Numerics.BigInteger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L224">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_ModularInverse_" data-uid="MathLib.BigIntegerExtensions.ModularInverse*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_ModularInverse_System_Numerics_BigInteger_System_Numerics_BigInteger_" data-uid="MathLib.BigIntegerExtensions.ModularInverse(System.Numerics.BigInteger,System.Numerics.BigInteger)">ModularInverse(BigInteger, BigInteger)</h4>
+  <div class="markdown level1 summary"><p>Computes the modular inverse of a number <code class="paramref">integer</code> under a given modulus <code class="paramref">modulus</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger ModularInverse(this BigInteger integer, BigInteger modulus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td><p>The number for which the modular inverse is to be computed. Must be greater than or equal to 1.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">modulus</span></td>
+        <td><p>The modulus under which the inverse is computed. Must be greater than or equal to 2.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>The modular inverse of <code class="paramref">integer</code> modulo <code class="paramref">modulus</code>.
+The result is normalized to be within the range [0, <code class="paramref">modulus</code>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_ModularInverse_System_Numerics_BigInteger_System_Numerics_BigInteger__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The modular inverse of <code class="paramref">integer</code> modulo <code class="paramref">modulus</code> is a number <code>x</code> such that:</p>
+<pre><code class="lang-csharp">integer ⋅ x ≡ 1 (mod modulus)</code></pre>
+<p>This method uses the Extended Euclidean Algorithm to compute the inverse.</p>
+<p>The result of this method is always in the range [0, <code class="paramref">modulus</code>), as it is normalized by applying the modulus operation.</p>
+</div>
+  <h5 id="MathLib_BigIntegerExtensions_ModularInverse_System_Numerics_BigInteger_System_Numerics_BigInteger__examples">Examples</h5>
+  <pre><code class="lang-csharp">BigInteger result1 = new BigInteger(3).ModularInverse(7);  // 5
+BigInteger result2 = new BigInteger(2).ModularInverse(11); // 6</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if <code class="paramref">integer</code> is less than 1 <code>or</code> if <code class="paramref">modulus</code> is less than 2.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if <code class="paramref">integer</code> and <code class="paramref">modulus</code> are not coprime, i.e., if the greatest common divisor of the two is not 1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BigIntegerExtensions_Parse_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BigIntegerExtensions.Parse(System.String%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BigIntegerExtensions.cs/#L307">View Source</a>
+  </span>
+  <a id="MathLib_BigIntegerExtensions_Parse_" data-uid="MathLib.BigIntegerExtensions.Parse*"></a>
+  <h4 id="MathLib_BigIntegerExtensions_Parse_System_String_System_Int32_" data-uid="MathLib.BigIntegerExtensions.Parse(System.String,System.Int32)">Parse(string, int)</h4>
+  <div class="markdown level1 summary"><p>Parses the string representation of a number in the specified base to its <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> equivalent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger Parse(string input, int fromBase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>The string representation of the number to parse. It may start with a '-' to indicate a negative number.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">fromBase</span></td>
+        <td><p>The base of the input number, ranging from 2 to 36.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> representation of the parsed value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BigIntegerExtensions_Parse_System_String_System_Int32__examples">Examples</h5>
+  <pre><code class="lang-csharp">Console.WriteLine(Parse("-10.011", 2));  //outputs "-19/8"</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if <code class="paramref">fromBase</code> is not within 2 to 36.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>

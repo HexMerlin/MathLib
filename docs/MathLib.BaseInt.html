@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BaseInt | MathLib Docs </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BaseInt | MathLib Docs ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  
+    </head>
+    <body>
+        <!-- Header required for docfx anchor scroll to work -->
+        <header id="head"></header>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+              <span class="brand-title">MathLib Docs</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="images/logo.svg" alt="MathLib Docs" class="logomark">
+                          <span class="brand-title">MathLib Docs</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt.md&amp;value=---%0Auid%3A%20MathLib.BaseInt%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="MathLib.BaseInt">
+
+
+
+  <h1 id="MathLib_BaseInt" data-uid="MathLib.BaseInt" class="text-break">Class BaseInt</h1>
+  <div class="markdown level0 summary"><p>Represents an immutable base-specific integer of a fixed length, that supports zero-padding.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">BaseInt</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="MathLib.BaseInt.html">BaseInt</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="MathLib.BaseInt.html">BaseInt</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MathLib.html">MathLib</a></h6>
+  <h6><strong>Assembly</strong>: MathLib.dll</h6>
+  <h5 id="MathLib_BaseInt_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class BaseInt : IEquatable&lt;BaseInt&gt;, IComparable&lt;BaseInt&gt;</code></pre>
+  </div>
+  <h5 id="MathLib_BaseInt_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> is fully defined by its integer value, base and length.
+Shifting and other operations are applied with respect to the specified base, and the length is preserved.</p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt__ctor_System_Int32_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.%23ctor(System.Int32%2CSystem.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L48">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt__ctor_" data-uid="MathLib.BaseInt.#ctor*"></a>
+  <h4 id="MathLib_BaseInt__ctor_System_Int32_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.BaseInt.#ctor(System.Int32,System.Numerics.BigInteger,System.Int32)">BaseInt(int, BigInteger, int)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt(int base_, BigInteger intValue, int length = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td><p>The base of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">intValue</span></td>
+        <td><p>The integer value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>An optional length of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a>. Default is the minimum required length of <code class="paramref">intValue</code> in the given base.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when the integer value is negative or the base is less than 2.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when an explicit <code class="paramref">length</code> is specified that is less than minimum required length of <code class="paramref">intValue</code> (in the given base).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Base.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Base%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L22">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Base_" data-uid="MathLib.BaseInt.Base*"></a>
+  <h4 id="MathLib_BaseInt_Base" data-uid="MathLib.BaseInt.Base">Base</h4>
+  <div class="markdown level1 summary"><p>Gets the base of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Base { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_First.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.First%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L110">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_First_" data-uid="MathLib.BaseInt.First*"></a>
+  <h4 id="MathLib_BaseInt_First" data-uid="MathLib.BaseInt.First">First</h4>
+  <div class="markdown level1 summary"><p>Gets the first (most significant) coefficient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int First { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_IntValue.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.IntValue%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L37">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_IntValue_" data-uid="MathLib.BaseInt.IntValue*"></a>
+  <h4 id="MathLib_BaseInt_IntValue" data-uid="MathLib.BaseInt.IntValue">IntValue</h4>
+  <div class="markdown level1 summary"><p>Integer value of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> in descending order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BigInteger IntValue { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BaseInt_IntValue_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This value is always stored descending order, regardless of the base's natural order.
+This makes it compliant with arithmetic operations of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a> type.</p>
+<p>For ascending order, the value is reversed when the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> is created.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_IsZero.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.IsZero%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L121">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_IsZero_" data-uid="MathLib.BaseInt.IsZero*"></a>
+  <h4 id="MathLib_BaseInt_IsZero" data-uid="MathLib.BaseInt.IsZero">IsZero</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> is zero.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsZero { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Last.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Last%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L115">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Last_" data-uid="MathLib.BaseInt.Last*"></a>
+  <h4 id="MathLib_BaseInt_Last" data-uid="MathLib.BaseInt.Last">Last</h4>
+  <div class="markdown level1 summary"><p>Gets the last (least significant) coefficient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Last { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Length.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Length%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L27">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Length_" data-uid="MathLib.BaseInt.Length*"></a>
+  <h4 id="MathLib_BaseInt_Length" data-uid="MathLib.BaseInt.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Gets the length of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Append_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Append(MathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L194">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Append_" data-uid="MathLib.BaseInt.Append*"></a>
+  <h4 id="MathLib_BaseInt_Append_MathLib_BaseInt_" data-uid="MathLib.BaseInt.Append(MathLib.BaseInt)">Append(BaseInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt Append(BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_AssertSameBaseAs_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.AssertSameBaseAs(MathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L191">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_AssertSameBaseAs_" data-uid="MathLib.BaseInt.AssertSameBaseAs*"></a>
+  <h4 id="MathLib_BaseInt_AssertSameBaseAs_MathLib_BaseInt_" data-uid="MathLib.BaseInt.AssertSameBaseAs(MathLib.BaseInt)">AssertSameBaseAs(BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Asserts that the current <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> has the same base as the specified <a class="xref" href="MathLib.BaseInt.html">BaseInt</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt AssertSameBaseAs(BaseInt other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare the base with.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><p>The current <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> if the bases are equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when the bases are not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Coefficients.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Coefficients%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L127">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Coefficients_" data-uid="MathLib.BaseInt.Coefficients*"></a>
+  <h4 id="MathLib_BaseInt_Coefficients" data-uid="MathLib.BaseInt.Coefficients">Coefficients()</h4>
+  <div class="markdown level1 summary"><p>Returns the coefficients in current base in descending order of significance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;int&gt; Coefficients()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><p>An enumerable sequence of coefficients from most to least significant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_CompareTo_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.CompareTo(MathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L174">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_CompareTo_" data-uid="MathLib.BaseInt.CompareTo*"></a>
+  <h4 id="MathLib_BaseInt_CompareTo_MathLib_BaseInt_" data-uid="MathLib.BaseInt.CompareTo(MathLib.BaseInt)">CompareTo(BaseInt?)</h4>
+  <div class="markdown level1 summary"><p>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(BaseInt? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A value that indicates the relative order of the objects being compared. The return value has these meanings:</p>
+ <table><thead><tr><th class="term"> Value</th><th class="description"> Meaning</th></tr></thead><tbody><tr><td class="term"> Less than zero</td><td class="description"> This instance precedes <code class="paramref">other</code> in the sort order.</td></tr><tr><td class="term"> Zero</td><td class="description"> This instance occurs in the same position in the sort order as <code class="paramref">other</code>.</td></tr><tr><td class="term"> Greater than zero</td><td class="description"> This instance follows <code class="paramref">other</code> in the sort order.</td></tr></tbody></table>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Concatenation_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Concatenation(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L197">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Concatenation_" data-uid="MathLib.BaseInt.Concatenation*"></a>
+  <h4 id="MathLib_BaseInt_Concatenation_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.Concatenation(MathLib.BaseInt,MathLib.BaseInt)">Concatenation(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt Concatenation(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Equals_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Equals(MathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L168">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Equals_" data-uid="MathLib.BaseInt.Equals*"></a>
+  <h4 id="MathLib_BaseInt_Equals_MathLib_BaseInt_" data-uid="MathLib.BaseInt.Equals(MathLib.BaseInt)">Equals(BaseInt?)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(BaseInt? other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Equals_System_Object_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L171">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Equals_" data-uid="MathLib.BaseInt.Equals*"></a>
+  <h4 id="MathLib_BaseInt_Equals_System_Object_" data-uid="MathLib.BaseInt.Equals(System.Object)">Equals(object?)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>The object to compare with the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the specified object  is equal to the current object; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_GetHashCode.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L165">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_GetHashCode_" data-uid="MathLib.BaseInt.GetHashCode*"></a>
+  <h4 id="MathLib_BaseInt_GetHashCode" data-uid="MathLib.BaseInt.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Serves as the default hash function.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>A hash code for the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_PadLeftExtra_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.PadLeftExtra(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L219">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_PadLeftExtra_" data-uid="MathLib.BaseInt.PadLeftExtra*"></a>
+  <h4 id="MathLib_BaseInt_PadLeftExtra_System_Int32_" data-uid="MathLib.BaseInt.PadLeftExtra(System.Int32)">PadLeftExtra(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt PadLeftExtra(int zeros)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">zeros</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_PadRightExtra_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.PadRightExtra(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L212">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_PadRightExtra_" data-uid="MathLib.BaseInt.PadRightExtra*"></a>
+  <h4 id="MathLib_BaseInt_PadRightExtra_System_Int32_" data-uid="MathLib.BaseInt.PadRightExtra(System.Int32)">PadRightExtra(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt PadRightExtra(int zeros)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">zeros</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Reverse.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Reverse%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L99">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Reverse_" data-uid="MathLib.BaseInt.Reverse*"></a>
+  <h4 id="MathLib_BaseInt_Reverse" data-uid="MathLib.BaseInt.Reverse">Reverse()</h4>
+  <div class="markdown level1 summary"><p>Returns a new <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> where the coefficients are reversed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BaseInt Reverse()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><p>A new <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> with reversed coefficients.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BaseInt_Reverse_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The coefficients are reversed such that the most significant becomes the least significant, and vice versa.
+As a result, the outputs of <a class="xref" href="MathLib.BaseInt.html#MathLib_BaseInt_Coefficients">Coefficients()</a> is reversed,
+compared to the original instance.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_ReverseInt_System_Int32_System_Numerics_BigInteger_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.ReverseInt(System.Int32%2CSystem.Numerics.BigInteger%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L77">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_ReverseInt_" data-uid="MathLib.BaseInt.ReverseInt*"></a>
+  <h4 id="MathLib_BaseInt_ReverseInt_System_Int32_System_Numerics_BigInteger_System_Int32_" data-uid="MathLib.BaseInt.ReverseInt(System.Int32,System.Numerics.BigInteger,System.Int32)">ReverseInt(int, BigInteger, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BigInteger ReverseInt(int base_, BigInteger integer, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td><span class="parametername">integer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">length</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.biginteger">BigInteger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_ToString.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L303">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_ToString_" data-uid="MathLib.BaseInt.ToString*"></a>
+  <h4 id="MathLib_BaseInt_ToString" data-uid="MathLib.BaseInt.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string that represents the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A string that represents the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_ToStringCoefficient.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.ToStringCoefficient%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L306">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_ToStringCoefficient_" data-uid="MathLib.BaseInt.ToStringCoefficient*"></a>
+  <h4 id="MathLib_BaseInt_ToStringCoefficient" data-uid="MathLib.BaseInt.ToStringCoefficient">ToStringCoefficient()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToStringCoefficient()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_Zero_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.Zero(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L70">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_Zero_" data-uid="MathLib.BaseInt.Zero*"></a>
+  <h4 id="MathLib_BaseInt_Zero_System_Int32_System_Int32_" data-uid="MathLib.BaseInt.Zero(System.Int32,System.Int32)">Zero(int, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt Zero(int base_, int zeroCount = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">base_</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">zeroCount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_Addition_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_Addition(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L201">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_Addition_" data-uid="MathLib.BaseInt.op_Addition*"></a>
+  <h4 id="MathLib_BaseInt_op_Addition_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_Addition(MathLib.BaseInt,MathLib.BaseInt)">operator +(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt operator +(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_Equality_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_Equality(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L260">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_Equality_" data-uid="MathLib.BaseInt.op_Equality*"></a>
+  <h4 id="MathLib_BaseInt_op_Equality_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_Equality(MathLib.BaseInt,MathLib.BaseInt)">operator ==(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether two <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> objects are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the two <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> objects are equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_GreaterThan_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_GreaterThan(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L292">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_GreaterThan_" data-uid="MathLib.BaseInt.op_GreaterThan*"></a>
+  <h4 id="MathLib_BaseInt_op_GreaterThan_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_GreaterThan(MathLib.BaseInt,MathLib.BaseInt)">operator &gt;(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is greater than the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is greater than the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_GreaterThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_GreaterThanOrEqual(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L300">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_GreaterThanOrEqual_" data-uid="MathLib.BaseInt.op_GreaterThanOrEqual*"></a>
+  <h4 id="MathLib_BaseInt_op_GreaterThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_GreaterThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)">operator &gt;=(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is greater than or equal to the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &gt;=(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is greater than or equal to the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_Inequality_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_Inequality(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L268">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_Inequality_" data-uid="MathLib.BaseInt.op_Inequality*"></a>
+  <h4 id="MathLib_BaseInt_op_Inequality_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_Inequality(MathLib.BaseInt,MathLib.BaseInt)">operator !=(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether two <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> objects are not equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the two <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> objects are not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_LeftShift_MathLib_BaseInt_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_LeftShift(MathLib.BaseInt%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L233">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_LeftShift_" data-uid="MathLib.BaseInt.op_LeftShift*"></a>
+  <h4 id="MathLib_BaseInt_op_LeftShift_MathLib_BaseInt_System_Int32_" data-uid="MathLib.BaseInt.op_LeftShift(MathLib.BaseInt,System.Int32)">operator &lt;&lt;(BaseInt, int)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> left by the specified number of positions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt operator &lt;&lt;(BaseInt baseInt, int shift)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">baseInt</span></td>
+        <td><p>The <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to shift.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">shift</span></td>
+        <td><p>The number of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><p>A new <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> shifted left by <code class="paramref">shift</code> positions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BaseInt_op_LeftShift_MathLib_BaseInt_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The length of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> is preserved.</p>
+Positions vacated on the right are zero-padded. 
+<p>Coefficients truncated on the left are discarded.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_LessThan_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_LessThan(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L276">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_LessThan_" data-uid="MathLib.BaseInt.op_LessThan*"></a>
+  <h4 id="MathLib_BaseInt_op_LessThan_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_LessThan(MathLib.BaseInt,MathLib.BaseInt)">operator &lt;(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is less than the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is less than the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_LessThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_LessThanOrEqual(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L284">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_LessThanOrEqual_" data-uid="MathLib.BaseInt.op_LessThanOrEqual*"></a>
+  <h4 id="MathLib_BaseInt_op_LessThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_LessThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)">operator &lt;=(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is less than or equal to the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator &lt;=(BaseInt left, BaseInt right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to compare.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>
+<code>iff</code> the first <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object is less than or equal to the second <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_RightShift_MathLib_BaseInt_System_Int32_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_RightShift(MathLib.BaseInt%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L249">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_RightShift_" data-uid="MathLib.BaseInt.op_RightShift*"></a>
+  <h4 id="MathLib_BaseInt_op_RightShift_MathLib_BaseInt_System_Int32_" data-uid="MathLib.BaseInt.op_RightShift(MathLib.BaseInt,System.Int32)">operator &gt;&gt;(BaseInt, int)</h4>
+  <div class="markdown level1 summary"><p>Shifts the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> right by the specified number of positions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt operator &gt;&gt;(BaseInt baseInt, int shift)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">baseInt</span></td>
+        <td><p>The <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> to shift.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">shift</span></td>
+        <td><p>The number of positions to shift.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><p>A new <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> shifted right by <code class="paramref">shift</code> positions.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="MathLib_BaseInt_op_RightShift_MathLib_BaseInt_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The length of the <a class="xref" href="MathLib.BaseInt.html">BaseInt</a> is preserved.</p>
+<p>Positions vacated on the left are zero-padded.</p>
+<p>Coefficients truncated on the right are discarded.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/HexMerlin/MathLib/new/master/apiSpec/new?filename=MathLib_BaseInt_op_Subtraction_MathLib_BaseInt_MathLib_BaseInt_.md&amp;value=---%0Auid%3A%20MathLib.BaseInt.op_Subtraction(MathLib.BaseInt%2CMathLib.BaseInt)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/HexMerlin/MathLib/blob/master/MathLib/BaseInt.cs/#L206">View Source</a>
+  </span>
+  <a id="MathLib_BaseInt_op_Subtraction_" data-uid="MathLib.BaseInt.op_Subtraction*"></a>
+  <h4 id="MathLib_BaseInt_op_Subtraction_MathLib_BaseInt_MathLib_BaseInt_" data-uid="MathLib.BaseInt.op_Subtraction(MathLib.BaseInt,MathLib.BaseInt)">operator -(BaseInt, BaseInt)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static BaseInt operator -(BaseInt minuend, BaseInt subtrahend)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">minuend</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td><span class="parametername">subtrahend</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MathLib.BaseInt.html">BaseInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable&lt;T&gt;</a>
+  </div>
+
+</article>
+                </div>
+
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>

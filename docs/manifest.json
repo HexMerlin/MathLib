@@ -1,0 +1,292 @@
+{
+  "source_base_path": "C:/Dev/HexMerlin/MathLib/MathLib.Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.BaseExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.BaseExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.BaseInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.BaseInt.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.BigIntegerExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.BigIntegerExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Cp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Cp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.EnumerableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.EnumerableExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.IntExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.IntExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Lib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Lib.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Misc.BalBits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Misc.BalBits.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Misc.BalDigits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Misc.BalDigits.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Misc.Forms.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Misc.Forms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Misc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Misc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.PAdics.ModP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.PAdics.ModP.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.PAdics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.PAdics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Prime.Factorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Prime.Factorization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Prime.PrimeGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Prime.PrimeGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Prime.Primes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Prime.Primes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Prime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Prime.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Q.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Q.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.QTuple.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.QTuple.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Qb.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Qb.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.Qp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.Qp.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/MathLib.yml",
+      "output": {
+        ".html": {
+          "relative_path": "MathLib.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

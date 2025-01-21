@@ -1,0 +1,3365 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MathLib
+  name: MathLib
+  href: MathLib.html
+  commentId: N:MathLib
+  fullName: MathLib
+  nameWithType: MathLib
+- uid: MathLib.BaseExtensions
+  name: BaseExtensions
+  href: MathLib.BaseExtensions.html
+  commentId: T:MathLib.BaseExtensions
+  fullName: MathLib.BaseExtensions
+  nameWithType: BaseExtensions
+- uid: MathLib.BaseExtensions.IsPurelyPeriodic(System.Int32,MathLib.Q)
+  name: IsPurelyPeriodic(int, Q)
+  href: MathLib.BaseExtensions.html#MathLib_BaseExtensions_IsPurelyPeriodic_System_Int32_MathLib_Q_
+  commentId: M:MathLib.BaseExtensions.IsPurelyPeriodic(System.Int32,MathLib.Q)
+  name.vb: IsPurelyPeriodic(Integer, Q)
+  fullName: MathLib.BaseExtensions.IsPurelyPeriodic(int, MathLib.Q)
+  fullName.vb: MathLib.BaseExtensions.IsPurelyPeriodic(Integer, MathLib.Q)
+  nameWithType: BaseExtensions.IsPurelyPeriodic(int, Q)
+  nameWithType.vb: BaseExtensions.IsPurelyPeriodic(Integer, Q)
+- uid: MathLib.BaseExtensions.IsPurelyPeriodic*
+  name: IsPurelyPeriodic
+  href: MathLib.BaseExtensions.html#MathLib_BaseExtensions_IsPurelyPeriodic_
+  commentId: Overload:MathLib.BaseExtensions.IsPurelyPeriodic
+  isSpec: "True"
+  fullName: MathLib.BaseExtensions.IsPurelyPeriodic
+  nameWithType: BaseExtensions.IsPurelyPeriodic
+- uid: MathLib.BaseExtensions.Pow(System.Int32,System.Int32)
+  name: Pow(int, int)
+  href: MathLib.BaseExtensions.html#MathLib_BaseExtensions_Pow_System_Int32_System_Int32_
+  commentId: M:MathLib.BaseExtensions.Pow(System.Int32,System.Int32)
+  name.vb: Pow(Integer, Integer)
+  fullName: MathLib.BaseExtensions.Pow(int, int)
+  fullName.vb: MathLib.BaseExtensions.Pow(Integer, Integer)
+  nameWithType: BaseExtensions.Pow(int, int)
+  nameWithType.vb: BaseExtensions.Pow(Integer, Integer)
+- uid: MathLib.BaseExtensions.Pow*
+  name: Pow
+  href: MathLib.BaseExtensions.html#MathLib_BaseExtensions_Pow_
+  commentId: Overload:MathLib.BaseExtensions.Pow
+  isSpec: "True"
+  fullName: MathLib.BaseExtensions.Pow
+  nameWithType: BaseExtensions.Pow
+- uid: MathLib.BaseInt
+  name: BaseInt
+  href: MathLib.BaseInt.html
+  commentId: T:MathLib.BaseInt
+  fullName: MathLib.BaseInt
+  nameWithType: BaseInt
+- uid: MathLib.BaseInt.#ctor(System.Int32,System.Numerics.BigInteger,System.Int32)
+  name: BaseInt(int, BigInteger, int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt__ctor_System_Int32_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.BaseInt.#ctor(System.Int32,System.Numerics.BigInteger,System.Int32)
+  name.vb: New(Integer, BigInteger, Integer)
+  fullName: MathLib.BaseInt.BaseInt(int, System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.BaseInt.New(Integer, System.Numerics.BigInteger, Integer)
+  nameWithType: BaseInt.BaseInt(int, BigInteger, int)
+  nameWithType.vb: BaseInt.New(Integer, BigInteger, Integer)
+- uid: MathLib.BaseInt.#ctor*
+  name: BaseInt
+  href: MathLib.BaseInt.html#MathLib_BaseInt__ctor_
+  commentId: Overload:MathLib.BaseInt.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.BaseInt.BaseInt
+  fullName.vb: MathLib.BaseInt.New
+  nameWithType: BaseInt.BaseInt
+  nameWithType.vb: BaseInt.New
+- uid: MathLib.BaseInt.Append(MathLib.BaseInt)
+  name: Append(BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Append_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.Append(MathLib.BaseInt)
+  fullName: MathLib.BaseInt.Append(MathLib.BaseInt)
+  nameWithType: BaseInt.Append(BaseInt)
+- uid: MathLib.BaseInt.Append*
+  name: Append
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Append_
+  commentId: Overload:MathLib.BaseInt.Append
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Append
+  nameWithType: BaseInt.Append
+- uid: MathLib.BaseInt.AssertSameBaseAs(MathLib.BaseInt)
+  name: AssertSameBaseAs(BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_AssertSameBaseAs_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.AssertSameBaseAs(MathLib.BaseInt)
+  fullName: MathLib.BaseInt.AssertSameBaseAs(MathLib.BaseInt)
+  nameWithType: BaseInt.AssertSameBaseAs(BaseInt)
+- uid: MathLib.BaseInt.AssertSameBaseAs*
+  name: AssertSameBaseAs
+  href: MathLib.BaseInt.html#MathLib_BaseInt_AssertSameBaseAs_
+  commentId: Overload:MathLib.BaseInt.AssertSameBaseAs
+  isSpec: "True"
+  fullName: MathLib.BaseInt.AssertSameBaseAs
+  nameWithType: BaseInt.AssertSameBaseAs
+- uid: MathLib.BaseInt.Base
+  name: Base
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Base
+  commentId: P:MathLib.BaseInt.Base
+  fullName: MathLib.BaseInt.Base
+  nameWithType: BaseInt.Base
+- uid: MathLib.BaseInt.Base*
+  name: Base
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Base_
+  commentId: Overload:MathLib.BaseInt.Base
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Base
+  nameWithType: BaseInt.Base
+- uid: MathLib.BaseInt.Coefficients
+  name: Coefficients()
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Coefficients
+  commentId: M:MathLib.BaseInt.Coefficients
+  fullName: MathLib.BaseInt.Coefficients()
+  nameWithType: BaseInt.Coefficients()
+- uid: MathLib.BaseInt.Coefficients*
+  name: Coefficients
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Coefficients_
+  commentId: Overload:MathLib.BaseInt.Coefficients
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Coefficients
+  nameWithType: BaseInt.Coefficients
+- uid: MathLib.BaseInt.CompareTo(MathLib.BaseInt)
+  name: CompareTo(BaseInt?)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_CompareTo_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.CompareTo(MathLib.BaseInt)
+  name.vb: CompareTo(BaseInt)
+  fullName: MathLib.BaseInt.CompareTo(MathLib.BaseInt?)
+  fullName.vb: MathLib.BaseInt.CompareTo(MathLib.BaseInt)
+  nameWithType: BaseInt.CompareTo(BaseInt?)
+  nameWithType.vb: BaseInt.CompareTo(BaseInt)
+- uid: MathLib.BaseInt.CompareTo*
+  name: CompareTo
+  href: MathLib.BaseInt.html#MathLib_BaseInt_CompareTo_
+  commentId: Overload:MathLib.BaseInt.CompareTo
+  isSpec: "True"
+  fullName: MathLib.BaseInt.CompareTo
+  nameWithType: BaseInt.CompareTo
+- uid: MathLib.BaseInt.Concatenation(MathLib.BaseInt,MathLib.BaseInt)
+  name: Concatenation(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Concatenation_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.Concatenation(MathLib.BaseInt,MathLib.BaseInt)
+  fullName: MathLib.BaseInt.Concatenation(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.Concatenation(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.Concatenation*
+  name: Concatenation
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Concatenation_
+  commentId: Overload:MathLib.BaseInt.Concatenation
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Concatenation
+  nameWithType: BaseInt.Concatenation
+- uid: MathLib.BaseInt.Equals(MathLib.BaseInt)
+  name: Equals(BaseInt?)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Equals_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.Equals(MathLib.BaseInt)
+  name.vb: Equals(BaseInt)
+  fullName: MathLib.BaseInt.Equals(MathLib.BaseInt?)
+  fullName.vb: MathLib.BaseInt.Equals(MathLib.BaseInt)
+  nameWithType: BaseInt.Equals(BaseInt?)
+  nameWithType.vb: BaseInt.Equals(BaseInt)
+- uid: MathLib.BaseInt.Equals(System.Object)
+  name: Equals(object?)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Equals_System_Object_
+  commentId: M:MathLib.BaseInt.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: MathLib.BaseInt.Equals(object?)
+  fullName.vb: MathLib.BaseInt.Equals(Object)
+  nameWithType: BaseInt.Equals(object?)
+  nameWithType.vb: BaseInt.Equals(Object)
+- uid: MathLib.BaseInt.Equals*
+  name: Equals
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Equals_
+  commentId: Overload:MathLib.BaseInt.Equals
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Equals
+  nameWithType: BaseInt.Equals
+- uid: MathLib.BaseInt.First
+  name: First
+  href: MathLib.BaseInt.html#MathLib_BaseInt_First
+  commentId: P:MathLib.BaseInt.First
+  fullName: MathLib.BaseInt.First
+  nameWithType: BaseInt.First
+- uid: MathLib.BaseInt.First*
+  name: First
+  href: MathLib.BaseInt.html#MathLib_BaseInt_First_
+  commentId: Overload:MathLib.BaseInt.First
+  isSpec: "True"
+  fullName: MathLib.BaseInt.First
+  nameWithType: BaseInt.First
+- uid: MathLib.BaseInt.GetHashCode
+  name: GetHashCode()
+  href: MathLib.BaseInt.html#MathLib_BaseInt_GetHashCode
+  commentId: M:MathLib.BaseInt.GetHashCode
+  fullName: MathLib.BaseInt.GetHashCode()
+  nameWithType: BaseInt.GetHashCode()
+- uid: MathLib.BaseInt.GetHashCode*
+  name: GetHashCode
+  href: MathLib.BaseInt.html#MathLib_BaseInt_GetHashCode_
+  commentId: Overload:MathLib.BaseInt.GetHashCode
+  isSpec: "True"
+  fullName: MathLib.BaseInt.GetHashCode
+  nameWithType: BaseInt.GetHashCode
+- uid: MathLib.BaseInt.IntValue
+  name: IntValue
+  href: MathLib.BaseInt.html#MathLib_BaseInt_IntValue
+  commentId: P:MathLib.BaseInt.IntValue
+  fullName: MathLib.BaseInt.IntValue
+  nameWithType: BaseInt.IntValue
+- uid: MathLib.BaseInt.IntValue*
+  name: IntValue
+  href: MathLib.BaseInt.html#MathLib_BaseInt_IntValue_
+  commentId: Overload:MathLib.BaseInt.IntValue
+  isSpec: "True"
+  fullName: MathLib.BaseInt.IntValue
+  nameWithType: BaseInt.IntValue
+- uid: MathLib.BaseInt.IsZero
+  name: IsZero
+  href: MathLib.BaseInt.html#MathLib_BaseInt_IsZero
+  commentId: P:MathLib.BaseInt.IsZero
+  fullName: MathLib.BaseInt.IsZero
+  nameWithType: BaseInt.IsZero
+- uid: MathLib.BaseInt.IsZero*
+  name: IsZero
+  href: MathLib.BaseInt.html#MathLib_BaseInt_IsZero_
+  commentId: Overload:MathLib.BaseInt.IsZero
+  isSpec: "True"
+  fullName: MathLib.BaseInt.IsZero
+  nameWithType: BaseInt.IsZero
+- uid: MathLib.BaseInt.Last
+  name: Last
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Last
+  commentId: P:MathLib.BaseInt.Last
+  fullName: MathLib.BaseInt.Last
+  nameWithType: BaseInt.Last
+- uid: MathLib.BaseInt.Last*
+  name: Last
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Last_
+  commentId: Overload:MathLib.BaseInt.Last
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Last
+  nameWithType: BaseInt.Last
+- uid: MathLib.BaseInt.Length
+  name: Length
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Length
+  commentId: P:MathLib.BaseInt.Length
+  fullName: MathLib.BaseInt.Length
+  nameWithType: BaseInt.Length
+- uid: MathLib.BaseInt.Length*
+  name: Length
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Length_
+  commentId: Overload:MathLib.BaseInt.Length
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Length
+  nameWithType: BaseInt.Length
+- uid: MathLib.BaseInt.PadLeftExtra(System.Int32)
+  name: PadLeftExtra(int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_PadLeftExtra_System_Int32_
+  commentId: M:MathLib.BaseInt.PadLeftExtra(System.Int32)
+  name.vb: PadLeftExtra(Integer)
+  fullName: MathLib.BaseInt.PadLeftExtra(int)
+  fullName.vb: MathLib.BaseInt.PadLeftExtra(Integer)
+  nameWithType: BaseInt.PadLeftExtra(int)
+  nameWithType.vb: BaseInt.PadLeftExtra(Integer)
+- uid: MathLib.BaseInt.PadLeftExtra*
+  name: PadLeftExtra
+  href: MathLib.BaseInt.html#MathLib_BaseInt_PadLeftExtra_
+  commentId: Overload:MathLib.BaseInt.PadLeftExtra
+  isSpec: "True"
+  fullName: MathLib.BaseInt.PadLeftExtra
+  nameWithType: BaseInt.PadLeftExtra
+- uid: MathLib.BaseInt.PadRightExtra(System.Int32)
+  name: PadRightExtra(int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_PadRightExtra_System_Int32_
+  commentId: M:MathLib.BaseInt.PadRightExtra(System.Int32)
+  name.vb: PadRightExtra(Integer)
+  fullName: MathLib.BaseInt.PadRightExtra(int)
+  fullName.vb: MathLib.BaseInt.PadRightExtra(Integer)
+  nameWithType: BaseInt.PadRightExtra(int)
+  nameWithType.vb: BaseInt.PadRightExtra(Integer)
+- uid: MathLib.BaseInt.PadRightExtra*
+  name: PadRightExtra
+  href: MathLib.BaseInt.html#MathLib_BaseInt_PadRightExtra_
+  commentId: Overload:MathLib.BaseInt.PadRightExtra
+  isSpec: "True"
+  fullName: MathLib.BaseInt.PadRightExtra
+  nameWithType: BaseInt.PadRightExtra
+- uid: MathLib.BaseInt.Reverse
+  name: Reverse()
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Reverse
+  commentId: M:MathLib.BaseInt.Reverse
+  fullName: MathLib.BaseInt.Reverse()
+  nameWithType: BaseInt.Reverse()
+- uid: MathLib.BaseInt.Reverse*
+  name: Reverse
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Reverse_
+  commentId: Overload:MathLib.BaseInt.Reverse
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Reverse
+  nameWithType: BaseInt.Reverse
+- uid: MathLib.BaseInt.ReverseInt(System.Int32,System.Numerics.BigInteger,System.Int32)
+  name: ReverseInt(int, BigInteger, int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ReverseInt_System_Int32_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.BaseInt.ReverseInt(System.Int32,System.Numerics.BigInteger,System.Int32)
+  name.vb: ReverseInt(Integer, BigInteger, Integer)
+  fullName: MathLib.BaseInt.ReverseInt(int, System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.BaseInt.ReverseInt(Integer, System.Numerics.BigInteger, Integer)
+  nameWithType: BaseInt.ReverseInt(int, BigInteger, int)
+  nameWithType.vb: BaseInt.ReverseInt(Integer, BigInteger, Integer)
+- uid: MathLib.BaseInt.ReverseInt*
+  name: ReverseInt
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ReverseInt_
+  commentId: Overload:MathLib.BaseInt.ReverseInt
+  isSpec: "True"
+  fullName: MathLib.BaseInt.ReverseInt
+  nameWithType: BaseInt.ReverseInt
+- uid: MathLib.BaseInt.ToString
+  name: ToString()
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ToString
+  commentId: M:MathLib.BaseInt.ToString
+  fullName: MathLib.BaseInt.ToString()
+  nameWithType: BaseInt.ToString()
+- uid: MathLib.BaseInt.ToString*
+  name: ToString
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ToString_
+  commentId: Overload:MathLib.BaseInt.ToString
+  isSpec: "True"
+  fullName: MathLib.BaseInt.ToString
+  nameWithType: BaseInt.ToString
+- uid: MathLib.BaseInt.ToStringCoefficient
+  name: ToStringCoefficient()
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ToStringCoefficient
+  commentId: M:MathLib.BaseInt.ToStringCoefficient
+  fullName: MathLib.BaseInt.ToStringCoefficient()
+  nameWithType: BaseInt.ToStringCoefficient()
+- uid: MathLib.BaseInt.ToStringCoefficient*
+  name: ToStringCoefficient
+  href: MathLib.BaseInt.html#MathLib_BaseInt_ToStringCoefficient_
+  commentId: Overload:MathLib.BaseInt.ToStringCoefficient
+  isSpec: "True"
+  fullName: MathLib.BaseInt.ToStringCoefficient
+  nameWithType: BaseInt.ToStringCoefficient
+- uid: MathLib.BaseInt.Zero(System.Int32,System.Int32)
+  name: Zero(int, int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Zero_System_Int32_System_Int32_
+  commentId: M:MathLib.BaseInt.Zero(System.Int32,System.Int32)
+  name.vb: Zero(Integer, Integer)
+  fullName: MathLib.BaseInt.Zero(int, int)
+  fullName.vb: MathLib.BaseInt.Zero(Integer, Integer)
+  nameWithType: BaseInt.Zero(int, int)
+  nameWithType.vb: BaseInt.Zero(Integer, Integer)
+- uid: MathLib.BaseInt.Zero*
+  name: Zero
+  href: MathLib.BaseInt.html#MathLib_BaseInt_Zero_
+  commentId: Overload:MathLib.BaseInt.Zero
+  isSpec: "True"
+  fullName: MathLib.BaseInt.Zero
+  nameWithType: BaseInt.Zero
+- uid: MathLib.BaseInt.op_Addition(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator +(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Addition_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_Addition(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: +(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator +(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.+(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator +(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.+(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_Addition*
+  name: operator +
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Addition_
+  commentId: Overload:MathLib.BaseInt.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: MathLib.BaseInt.operator +
+  fullName.vb: MathLib.BaseInt.+
+  nameWithType: BaseInt.operator +
+  nameWithType.vb: BaseInt.+
+- uid: MathLib.BaseInt.op_Equality(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator ==(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Equality_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_Equality(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: =(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator ==(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.=(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator ==(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.=(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_Equality*
+  name: operator ==
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Equality_
+  commentId: Overload:MathLib.BaseInt.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: MathLib.BaseInt.operator ==
+  fullName.vb: MathLib.BaseInt.=
+  nameWithType: BaseInt.operator ==
+  nameWithType.vb: BaseInt.=
+- uid: MathLib.BaseInt.op_GreaterThan(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator >(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_GreaterThan_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_GreaterThan(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: '>(BaseInt, BaseInt)'
+  fullName: MathLib.BaseInt.operator >(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.>(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator >(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.>(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_GreaterThan*
+  name: operator >
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_GreaterThan_
+  commentId: Overload:MathLib.BaseInt.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: MathLib.BaseInt.operator >
+  fullName.vb: MathLib.BaseInt.>
+  nameWithType: BaseInt.operator >
+  nameWithType.vb: BaseInt.>
+- uid: MathLib.BaseInt.op_GreaterThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator >=(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_GreaterThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_GreaterThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: '>=(BaseInt, BaseInt)'
+  fullName: MathLib.BaseInt.operator >=(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.>=(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator >=(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.>=(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_GreaterThanOrEqual*
+  name: operator >=
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_GreaterThanOrEqual_
+  commentId: Overload:MathLib.BaseInt.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: MathLib.BaseInt.operator >=
+  fullName.vb: MathLib.BaseInt.>=
+  nameWithType: BaseInt.operator >=
+  nameWithType.vb: BaseInt.>=
+- uid: MathLib.BaseInt.op_Inequality(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator !=(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Inequality_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_Inequality(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: <>(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator !=(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.<>(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator !=(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.<>(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_Inequality*
+  name: operator !=
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Inequality_
+  commentId: Overload:MathLib.BaseInt.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: MathLib.BaseInt.operator !=
+  fullName.vb: MathLib.BaseInt.<>
+  nameWithType: BaseInt.operator !=
+  nameWithType.vb: BaseInt.<>
+- uid: MathLib.BaseInt.op_LeftShift(MathLib.BaseInt,System.Int32)
+  name: operator <<(BaseInt, int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LeftShift_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.BaseInt.op_LeftShift(MathLib.BaseInt,System.Int32)
+  name.vb: <<(BaseInt, Integer)
+  fullName: MathLib.BaseInt.operator <<(MathLib.BaseInt, int)
+  fullName.vb: MathLib.BaseInt.<<(MathLib.BaseInt, Integer)
+  nameWithType: BaseInt.operator <<(BaseInt, int)
+  nameWithType.vb: BaseInt.<<(BaseInt, Integer)
+- uid: MathLib.BaseInt.op_LeftShift*
+  name: operator <<
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LeftShift_
+  commentId: Overload:MathLib.BaseInt.op_LeftShift
+  isSpec: "True"
+  name.vb: <<
+  fullName: MathLib.BaseInt.operator <<
+  fullName.vb: MathLib.BaseInt.<<
+  nameWithType: BaseInt.operator <<
+  nameWithType.vb: BaseInt.<<
+- uid: MathLib.BaseInt.op_LessThan(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator <(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LessThan_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_LessThan(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: <(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator <(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.<(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator <(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.<(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_LessThan*
+  name: operator <
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LessThan_
+  commentId: Overload:MathLib.BaseInt.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: MathLib.BaseInt.operator <
+  fullName.vb: MathLib.BaseInt.<
+  nameWithType: BaseInt.operator <
+  nameWithType.vb: BaseInt.<
+- uid: MathLib.BaseInt.op_LessThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator <=(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LessThanOrEqual_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_LessThanOrEqual(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: <=(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator <=(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.<=(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator <=(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.<=(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_LessThanOrEqual*
+  name: operator <=
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_LessThanOrEqual_
+  commentId: Overload:MathLib.BaseInt.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: MathLib.BaseInt.operator <=
+  fullName.vb: MathLib.BaseInt.<=
+  nameWithType: BaseInt.operator <=
+  nameWithType.vb: BaseInt.<=
+- uid: MathLib.BaseInt.op_RightShift(MathLib.BaseInt,System.Int32)
+  name: operator >>(BaseInt, int)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_RightShift_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.BaseInt.op_RightShift(MathLib.BaseInt,System.Int32)
+  name.vb: '>>(BaseInt, Integer)'
+  fullName: MathLib.BaseInt.operator >>(MathLib.BaseInt, int)
+  fullName.vb: MathLib.BaseInt.>>(MathLib.BaseInt, Integer)
+  nameWithType: BaseInt.operator >>(BaseInt, int)
+  nameWithType.vb: BaseInt.>>(BaseInt, Integer)
+- uid: MathLib.BaseInt.op_RightShift*
+  name: operator >>
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_RightShift_
+  commentId: Overload:MathLib.BaseInt.op_RightShift
+  isSpec: "True"
+  name.vb: '>>'
+  fullName: MathLib.BaseInt.operator >>
+  fullName.vb: MathLib.BaseInt.>>
+  nameWithType: BaseInt.operator >>
+  nameWithType.vb: BaseInt.>>
+- uid: MathLib.BaseInt.op_Subtraction(MathLib.BaseInt,MathLib.BaseInt)
+  name: operator -(BaseInt, BaseInt)
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Subtraction_MathLib_BaseInt_MathLib_BaseInt_
+  commentId: M:MathLib.BaseInt.op_Subtraction(MathLib.BaseInt,MathLib.BaseInt)
+  name.vb: -(BaseInt, BaseInt)
+  fullName: MathLib.BaseInt.operator -(MathLib.BaseInt, MathLib.BaseInt)
+  fullName.vb: MathLib.BaseInt.-(MathLib.BaseInt, MathLib.BaseInt)
+  nameWithType: BaseInt.operator -(BaseInt, BaseInt)
+  nameWithType.vb: BaseInt.-(BaseInt, BaseInt)
+- uid: MathLib.BaseInt.op_Subtraction*
+  name: operator -
+  href: MathLib.BaseInt.html#MathLib_BaseInt_op_Subtraction_
+  commentId: Overload:MathLib.BaseInt.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: MathLib.BaseInt.operator -
+  fullName.vb: MathLib.BaseInt.-
+  nameWithType: BaseInt.operator -
+  nameWithType.vb: BaseInt.-
+- uid: MathLib.BigIntegerExtensions
+  name: BigIntegerExtensions
+  href: MathLib.BigIntegerExtensions.html
+  commentId: T:MathLib.BigIntegerExtensions
+  fullName: MathLib.BigIntegerExtensions
+  nameWithType: BigIntegerExtensions
+- uid: MathLib.BigIntegerExtensions.Abs(System.Numerics.BigInteger)
+  name: Abs(BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Abs_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.Abs(System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.Abs(System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.Abs(BigInteger)
+- uid: MathLib.BigIntegerExtensions.Abs*
+  name: Abs
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Abs_
+  commentId: Overload:MathLib.BigIntegerExtensions.Abs
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.Abs
+  nameWithType: BigIntegerExtensions.Abs
+- uid: MathLib.BigIntegerExtensions.Coprime(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: Coprime(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Coprime_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.Coprime(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.Coprime(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.Coprime(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.Coprime*
+  name: Coprime
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Coprime_
+  commentId: Overload:MathLib.BigIntegerExtensions.Coprime
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.Coprime
+  nameWithType: BigIntegerExtensions.Coprime
+- uid: MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: ExtendedEuclideanAlgorithm(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.ExtendedEuclideanAlgorithm(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm*
+  name: ExtendedEuclideanAlgorithm
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ExtendedEuclideanAlgorithm_
+  commentId: Overload:MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.ExtendedEuclideanAlgorithm
+  nameWithType: BigIntegerExtensions.ExtendedEuclideanAlgorithm
+- uid: MathLib.BigIntegerExtensions.IsDivisibleBy(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: IsDivisibleBy(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsDivisibleBy_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.IsDivisibleBy(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.IsDivisibleBy(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.IsDivisibleBy(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.IsDivisibleBy*
+  name: IsDivisibleBy
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsDivisibleBy_
+  commentId: Overload:MathLib.BigIntegerExtensions.IsDivisibleBy
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.IsDivisibleBy
+  nameWithType: BigIntegerExtensions.IsDivisibleBy
+- uid: MathLib.BigIntegerExtensions.IsOdd(System.Numerics.BigInteger)
+  name: IsOdd(BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsOdd_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.IsOdd(System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.IsOdd(System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.IsOdd(BigInteger)
+- uid: MathLib.BigIntegerExtensions.IsOdd*
+  name: IsOdd
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsOdd_
+  commentId: Overload:MathLib.BigIntegerExtensions.IsOdd
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.IsOdd
+  nameWithType: BigIntegerExtensions.IsOdd
+- uid: MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger,System.Int32)
+  name: IsPowerOf(BigInteger, int)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsPowerOf_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger,System.Int32)
+  name.vb: IsPowerOf(BigInteger, Integer)
+  fullName: MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.BigIntegerExtensions.IsPowerOf(System.Numerics.BigInteger, Integer)
+  nameWithType: BigIntegerExtensions.IsPowerOf(BigInteger, int)
+  nameWithType.vb: BigIntegerExtensions.IsPowerOf(BigInteger, Integer)
+- uid: MathLib.BigIntegerExtensions.IsPowerOf*
+  name: IsPowerOf
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_IsPowerOf_
+  commentId: Overload:MathLib.BigIntegerExtensions.IsPowerOf
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.IsPowerOf
+  nameWithType: BigIntegerExtensions.IsPowerOf
+- uid: MathLib.BigIntegerExtensions.LCM(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: LCM(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_LCM_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.LCM(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.LCM(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.LCM(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.LCM*
+  name: LCM
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_LCM_
+  commentId: Overload:MathLib.BigIntegerExtensions.LCM
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.LCM
+  nameWithType: BigIntegerExtensions.LCM
+- uid: MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger,System.Int32)
+  name: Length(BigInteger, int)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Length_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger,System.Int32)
+  name.vb: Length(BigInteger, Integer)
+  fullName: MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.BigIntegerExtensions.Length(System.Numerics.BigInteger, Integer)
+  nameWithType: BigIntegerExtensions.Length(BigInteger, int)
+  nameWithType.vb: BigIntegerExtensions.Length(BigInteger, Integer)
+- uid: MathLib.BigIntegerExtensions.Length*
+  name: Length
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Length_
+  commentId: Overload:MathLib.BigIntegerExtensions.Length
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.Length
+  nameWithType: BigIntegerExtensions.Length
+- uid: MathLib.BigIntegerExtensions.Mod(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: Mod(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Mod_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.Mod(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.Mod(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.Mod(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.Mod*
+  name: Mod
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Mod_
+  commentId: Overload:MathLib.BigIntegerExtensions.Mod
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.Mod
+  nameWithType: BigIntegerExtensions.Mod
+- uid: MathLib.BigIntegerExtensions.ModMinAbs(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: ModMinAbs(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ModMinAbs_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.ModMinAbs(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.ModMinAbs(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.ModMinAbs(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.ModMinAbs*
+  name: ModMinAbs
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ModMinAbs_
+  commentId: Overload:MathLib.BigIntegerExtensions.ModMinAbs
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.ModMinAbs
+  nameWithType: BigIntegerExtensions.ModMinAbs
+- uid: MathLib.BigIntegerExtensions.ModularInverse(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: ModularInverse(BigInteger, BigInteger)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ModularInverse_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.BigIntegerExtensions.ModularInverse(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  fullName: MathLib.BigIntegerExtensions.ModularInverse(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: BigIntegerExtensions.ModularInverse(BigInteger, BigInteger)
+- uid: MathLib.BigIntegerExtensions.ModularInverse*
+  name: ModularInverse
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_ModularInverse_
+  commentId: Overload:MathLib.BigIntegerExtensions.ModularInverse
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.ModularInverse
+  nameWithType: BigIntegerExtensions.ModularInverse
+- uid: MathLib.BigIntegerExtensions.Parse(System.String,System.Int32)
+  name: Parse(string, int)
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Parse_System_String_System_Int32_
+  commentId: M:MathLib.BigIntegerExtensions.Parse(System.String,System.Int32)
+  name.vb: Parse(String, Integer)
+  fullName: MathLib.BigIntegerExtensions.Parse(string, int)
+  fullName.vb: MathLib.BigIntegerExtensions.Parse(String, Integer)
+  nameWithType: BigIntegerExtensions.Parse(string, int)
+  nameWithType.vb: BigIntegerExtensions.Parse(String, Integer)
+- uid: MathLib.BigIntegerExtensions.Parse*
+  name: Parse
+  href: MathLib.BigIntegerExtensions.html#MathLib_BigIntegerExtensions_Parse_
+  commentId: Overload:MathLib.BigIntegerExtensions.Parse
+  isSpec: "True"
+  fullName: MathLib.BigIntegerExtensions.Parse
+  nameWithType: BigIntegerExtensions.Parse
+- uid: MathLib.Cp
+  name: Cp
+  href: MathLib.Cp.html
+  commentId: T:MathLib.Cp
+  fullName: MathLib.Cp
+  nameWithType: Cp
+- uid: MathLib.EnumerableExtensions
+  name: EnumerableExtensions
+  href: MathLib.EnumerableExtensions.html
+  commentId: T:MathLib.EnumerableExtensions
+  fullName: MathLib.EnumerableExtensions
+  nameWithType: EnumerableExtensions
+- uid: MathLib.EnumerableExtensions.Str*
+  name: Str
+  href: MathLib.EnumerableExtensions.html#MathLib_EnumerableExtensions_Str_
+  commentId: Overload:MathLib.EnumerableExtensions.Str
+  isSpec: "True"
+  fullName: MathLib.EnumerableExtensions.Str
+  nameWithType: EnumerableExtensions.Str
+- uid: MathLib.EnumerableExtensions.Str``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Int32)
+  name: Str<T>(IEnumerable<T>, string, int)
+  href: MathLib.EnumerableExtensions.html#MathLib_EnumerableExtensions_Str__1_System_Collections_Generic_IEnumerable___0__System_String_System_Int32_
+  commentId: M:MathLib.EnumerableExtensions.Str``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Int32)
+  name.vb: Str(Of T)(IEnumerable(Of T), String, Integer)
+  fullName: MathLib.EnumerableExtensions.Str<T>(System.Collections.Generic.IEnumerable<T>, string, int)
+  fullName.vb: MathLib.EnumerableExtensions.Str(Of T)(System.Collections.Generic.IEnumerable(Of T), String, Integer)
+  nameWithType: EnumerableExtensions.Str<T>(IEnumerable<T>, string, int)
+  nameWithType.vb: EnumerableExtensions.Str(Of T)(IEnumerable(Of T), String, Integer)
+- uid: MathLib.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable{System.Numerics.BigInteger})
+  name: Sum(IEnumerable<BigInteger>)
+  href: MathLib.EnumerableExtensions.html#MathLib_EnumerableExtensions_Sum_System_Collections_Generic_IEnumerable_System_Numerics_BigInteger__
+  commentId: M:MathLib.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable{System.Numerics.BigInteger})
+  name.vb: Sum(IEnumerable(Of BigInteger))
+  fullName: MathLib.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable<System.Numerics.BigInteger>)
+  fullName.vb: MathLib.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable(Of System.Numerics.BigInteger))
+  nameWithType: EnumerableExtensions.Sum(IEnumerable<BigInteger>)
+  nameWithType.vb: EnumerableExtensions.Sum(IEnumerable(Of BigInteger))
+- uid: MathLib.EnumerableExtensions.Sum*
+  name: Sum
+  href: MathLib.EnumerableExtensions.html#MathLib_EnumerableExtensions_Sum_
+  commentId: Overload:MathLib.EnumerableExtensions.Sum
+  isSpec: "True"
+  fullName: MathLib.EnumerableExtensions.Sum
+  nameWithType: EnumerableExtensions.Sum
+- uid: MathLib.IntExtensions
+  name: IntExtensions
+  href: MathLib.IntExtensions.html
+  commentId: T:MathLib.IntExtensions
+  fullName: MathLib.IntExtensions
+  nameWithType: IntExtensions
+- uid: MathLib.IntExtensions.Abs(System.Int32)
+  name: Abs(int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Abs_System_Int32_
+  commentId: M:MathLib.IntExtensions.Abs(System.Int32)
+  name.vb: Abs(Integer)
+  fullName: MathLib.IntExtensions.Abs(int)
+  fullName.vb: MathLib.IntExtensions.Abs(Integer)
+  nameWithType: IntExtensions.Abs(int)
+  nameWithType.vb: IntExtensions.Abs(Integer)
+- uid: MathLib.IntExtensions.Abs*
+  name: Abs
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Abs_
+  commentId: Overload:MathLib.IntExtensions.Abs
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.Abs
+  nameWithType: IntExtensions.Abs
+- uid: MathLib.IntExtensions.IsEven(System.Int32)
+  name: IsEven(int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsEven_System_Int32_
+  commentId: M:MathLib.IntExtensions.IsEven(System.Int32)
+  name.vb: IsEven(Integer)
+  fullName: MathLib.IntExtensions.IsEven(int)
+  fullName.vb: MathLib.IntExtensions.IsEven(Integer)
+  nameWithType: IntExtensions.IsEven(int)
+  nameWithType.vb: IntExtensions.IsEven(Integer)
+- uid: MathLib.IntExtensions.IsEven*
+  name: IsEven
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsEven_
+  commentId: Overload:MathLib.IntExtensions.IsEven
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.IsEven
+  nameWithType: IntExtensions.IsEven
+- uid: MathLib.IntExtensions.IsOdd(System.Int32)
+  name: IsOdd(int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsOdd_System_Int32_
+  commentId: M:MathLib.IntExtensions.IsOdd(System.Int32)
+  name.vb: IsOdd(Integer)
+  fullName: MathLib.IntExtensions.IsOdd(int)
+  fullName.vb: MathLib.IntExtensions.IsOdd(Integer)
+  nameWithType: IntExtensions.IsOdd(int)
+  nameWithType.vb: IntExtensions.IsOdd(Integer)
+- uid: MathLib.IntExtensions.IsOdd*
+  name: IsOdd
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsOdd_
+  commentId: Overload:MathLib.IntExtensions.IsOdd
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.IsOdd
+  nameWithType: IntExtensions.IsOdd
+- uid: MathLib.IntExtensions.IsPowerOfTwo(System.Int32)
+  name: IsPowerOfTwo(int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsPowerOfTwo_System_Int32_
+  commentId: M:MathLib.IntExtensions.IsPowerOfTwo(System.Int32)
+  name.vb: IsPowerOfTwo(Integer)
+  fullName: MathLib.IntExtensions.IsPowerOfTwo(int)
+  fullName.vb: MathLib.IntExtensions.IsPowerOfTwo(Integer)
+  nameWithType: IntExtensions.IsPowerOfTwo(int)
+  nameWithType.vb: IntExtensions.IsPowerOfTwo(Integer)
+- uid: MathLib.IntExtensions.IsPowerOfTwo*
+  name: IsPowerOfTwo
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_IsPowerOfTwo_
+  commentId: Overload:MathLib.IntExtensions.IsPowerOfTwo
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.IsPowerOfTwo
+  nameWithType: IntExtensions.IsPowerOfTwo
+- uid: MathLib.IntExtensions.Mod(System.Int32,System.Int32)
+  name: Mod(int, int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Mod_System_Int32_System_Int32_
+  commentId: M:MathLib.IntExtensions.Mod(System.Int32,System.Int32)
+  name.vb: Mod(Integer, Integer)
+  fullName: MathLib.IntExtensions.Mod(int, int)
+  fullName.vb: MathLib.IntExtensions.Mod(Integer, Integer)
+  nameWithType: IntExtensions.Mod(int, int)
+  nameWithType.vb: IntExtensions.Mod(Integer, Integer)
+- uid: MathLib.IntExtensions.Mod*
+  name: Mod
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Mod_
+  commentId: Overload:MathLib.IntExtensions.Mod
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.Mod
+  nameWithType: IntExtensions.Mod
+- uid: MathLib.IntExtensions.ModMinAbs(System.Int32,System.Int32)
+  name: ModMinAbs(int, int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_ModMinAbs_System_Int32_System_Int32_
+  commentId: M:MathLib.IntExtensions.ModMinAbs(System.Int32,System.Int32)
+  name.vb: ModMinAbs(Integer, Integer)
+  fullName: MathLib.IntExtensions.ModMinAbs(int, int)
+  fullName.vb: MathLib.IntExtensions.ModMinAbs(Integer, Integer)
+  nameWithType: IntExtensions.ModMinAbs(int, int)
+  nameWithType.vb: IntExtensions.ModMinAbs(Integer, Integer)
+- uid: MathLib.IntExtensions.ModMinAbs*
+  name: ModMinAbs
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_ModMinAbs_
+  commentId: Overload:MathLib.IntExtensions.ModMinAbs
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.ModMinAbs
+  nameWithType: IntExtensions.ModMinAbs
+- uid: MathLib.IntExtensions.Sign(System.Int32)
+  name: Sign(int)
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Sign_System_Int32_
+  commentId: M:MathLib.IntExtensions.Sign(System.Int32)
+  name.vb: Sign(Integer)
+  fullName: MathLib.IntExtensions.Sign(int)
+  fullName.vb: MathLib.IntExtensions.Sign(Integer)
+  nameWithType: IntExtensions.Sign(int)
+  nameWithType.vb: IntExtensions.Sign(Integer)
+- uid: MathLib.IntExtensions.Sign*
+  name: Sign
+  href: MathLib.IntExtensions.html#MathLib_IntExtensions_Sign_
+  commentId: Overload:MathLib.IntExtensions.Sign
+  isSpec: "True"
+  fullName: MathLib.IntExtensions.Sign
+  nameWithType: IntExtensions.Sign
+- uid: MathLib.Lib
+  name: Lib
+  href: MathLib.Lib.html
+  commentId: T:MathLib.Lib
+  fullName: MathLib.Lib
+  nameWithType: Lib
+- uid: MathLib.Lib.BuildVersion
+  name: BuildVersion
+  href: MathLib.Lib.html#MathLib_Lib_BuildVersion
+  commentId: P:MathLib.Lib.BuildVersion
+  fullName: MathLib.Lib.BuildVersion
+  nameWithType: Lib.BuildVersion
+- uid: MathLib.Lib.BuildVersion*
+  name: BuildVersion
+  href: MathLib.Lib.html#MathLib_Lib_BuildVersion_
+  commentId: Overload:MathLib.Lib.BuildVersion
+  isSpec: "True"
+  fullName: MathLib.Lib.BuildVersion
+  nameWithType: Lib.BuildVersion
+- uid: MathLib.Misc
+  name: MathLib.Misc
+  href: MathLib.Misc.html
+  commentId: N:MathLib.Misc
+  fullName: MathLib.Misc
+  nameWithType: MathLib.Misc
+- uid: MathLib.Misc.BalBits
+  name: BalBits
+  href: MathLib.Misc.BalBits.html
+  commentId: T:MathLib.Misc.BalBits
+  fullName: MathLib.Misc.BalBits
+  nameWithType: BalBits
+- uid: MathLib.Misc.BalBits.BalancedBit(System.Int32,System.Int32,System.Boolean)
+  name: BalancedBit(int, int, bool)
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_BalancedBit_System_Int32_System_Int32_System_Boolean_
+  commentId: M:MathLib.Misc.BalBits.BalancedBit(System.Int32,System.Int32,System.Boolean)
+  name.vb: BalancedBit(Integer, Integer, Boolean)
+  fullName: MathLib.Misc.BalBits.BalancedBit(int, int, bool)
+  fullName.vb: MathLib.Misc.BalBits.BalancedBit(Integer, Integer, Boolean)
+  nameWithType: BalBits.BalancedBit(int, int, bool)
+  nameWithType.vb: BalBits.BalancedBit(Integer, Integer, Boolean)
+- uid: MathLib.Misc.BalBits.BalancedBit*
+  name: BalancedBit
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_BalancedBit_
+  commentId: Overload:MathLib.Misc.BalBits.BalancedBit
+  isSpec: "True"
+  fullName: MathLib.Misc.BalBits.BalancedBit
+  nameWithType: BalBits.BalancedBit
+- uid: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable{System.Int32})
+  name: BitString(IEnumerable<int>)
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_BitString_System_Collections_Generic_IEnumerable_System_Int32__
+  commentId: M:MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable{System.Int32})
+  name.vb: BitString(IEnumerable(Of Integer))
+  fullName: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable<int>)
+  fullName.vb: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable(Of Integer))
+  nameWithType: BalBits.BitString(IEnumerable<int>)
+  nameWithType.vb: BalBits.BitString(IEnumerable(Of Integer))
+- uid: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
+  name: BitString(IEnumerable<int>, int)
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_BitString_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_
+  commentId: M:MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
+  name.vb: BitString(IEnumerable(Of Integer), Integer)
+  fullName: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable<int>, int)
+  fullName.vb: MathLib.Misc.BalBits.BitString(System.Collections.Generic.IEnumerable(Of Integer), Integer)
+  nameWithType: BalBits.BitString(IEnumerable<int>, int)
+  nameWithType.vb: BalBits.BitString(IEnumerable(Of Integer), Integer)
+- uid: MathLib.Misc.BalBits.BitString*
+  name: BitString
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_BitString_
+  commentId: Overload:MathLib.Misc.BalBits.BitString
+  isSpec: "True"
+  fullName: MathLib.Misc.BalBits.BitString
+  nameWithType: BalBits.BitString
+- uid: MathLib.Misc.BalBits.ToBalancedBits(System.Int32,System.Int32)
+  name: ToBalancedBits(int, int)
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_ToBalancedBits_System_Int32_System_Int32_
+  commentId: M:MathLib.Misc.BalBits.ToBalancedBits(System.Int32,System.Int32)
+  name.vb: ToBalancedBits(Integer, Integer)
+  fullName: MathLib.Misc.BalBits.ToBalancedBits(int, int)
+  fullName.vb: MathLib.Misc.BalBits.ToBalancedBits(Integer, Integer)
+  nameWithType: BalBits.ToBalancedBits(int, int)
+  nameWithType.vb: BalBits.ToBalancedBits(Integer, Integer)
+- uid: MathLib.Misc.BalBits.ToBalancedBits(System.Numerics.BigInteger,System.Int32)
+  name: ToBalancedBits(BigInteger, int)
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_ToBalancedBits_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.Misc.BalBits.ToBalancedBits(System.Numerics.BigInteger,System.Int32)
+  name.vb: ToBalancedBits(BigInteger, Integer)
+  fullName: MathLib.Misc.BalBits.ToBalancedBits(System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.Misc.BalBits.ToBalancedBits(System.Numerics.BigInteger, Integer)
+  nameWithType: BalBits.ToBalancedBits(BigInteger, int)
+  nameWithType.vb: BalBits.ToBalancedBits(BigInteger, Integer)
+- uid: MathLib.Misc.BalBits.ToBalancedBits*
+  name: ToBalancedBits
+  href: MathLib.Misc.BalBits.html#MathLib_Misc_BalBits_ToBalancedBits_
+  commentId: Overload:MathLib.Misc.BalBits.ToBalancedBits
+  isSpec: "True"
+  fullName: MathLib.Misc.BalBits.ToBalancedBits
+  nameWithType: BalBits.ToBalancedBits
+- uid: MathLib.Misc.BalDigits
+  name: BalDigits
+  href: MathLib.Misc.BalDigits.html
+  commentId: T:MathLib.Misc.BalDigits
+  fullName: MathLib.Misc.BalDigits
+  nameWithType: BalDigits
+- uid: MathLib.Misc.BalDigits.Count(System.Int32,System.Int32)
+  name: Count(int, int)
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_Count_System_Int32_System_Int32_
+  commentId: M:MathLib.Misc.BalDigits.Count(System.Int32,System.Int32)
+  name.vb: Count(Integer, Integer)
+  fullName: MathLib.Misc.BalDigits.Count(int, int)
+  fullName.vb: MathLib.Misc.BalDigits.Count(Integer, Integer)
+  nameWithType: BalDigits.Count(int, int)
+  nameWithType.vb: BalDigits.Count(Integer, Integer)
+- uid: MathLib.Misc.BalDigits.Count(System.Int32,System.Int32,System.Int32)
+  name: Count(int, int, int)
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_Count_System_Int32_System_Int32_System_Int32_
+  commentId: M:MathLib.Misc.BalDigits.Count(System.Int32,System.Int32,System.Int32)
+  name.vb: Count(Integer, Integer, Integer)
+  fullName: MathLib.Misc.BalDigits.Count(int, int, int)
+  fullName.vb: MathLib.Misc.BalDigits.Count(Integer, Integer, Integer)
+  nameWithType: BalDigits.Count(int, int, int)
+  nameWithType.vb: BalDigits.Count(Integer, Integer, Integer)
+- uid: MathLib.Misc.BalDigits.Count*
+  name: Count
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_Count_
+  commentId: Overload:MathLib.Misc.BalDigits.Count
+  isSpec: "True"
+  fullName: MathLib.Misc.BalDigits.Count
+  nameWithType: BalDigits.Count
+- uid: MathLib.Misc.BalDigits.Counts(System.Int32,System.Int32)
+  name: Counts(int, int)
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_Counts_System_Int32_System_Int32_
+  commentId: M:MathLib.Misc.BalDigits.Counts(System.Int32,System.Int32)
+  name.vb: Counts(Integer, Integer)
+  fullName: MathLib.Misc.BalDigits.Counts(int, int)
+  fullName.vb: MathLib.Misc.BalDigits.Counts(Integer, Integer)
+  nameWithType: BalDigits.Counts(int, int)
+  nameWithType.vb: BalDigits.Counts(Integer, Integer)
+- uid: MathLib.Misc.BalDigits.Counts*
+  name: Counts
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_Counts_
+  commentId: Overload:MathLib.Misc.BalDigits.Counts
+  isSpec: "True"
+  fullName: MathLib.Misc.BalDigits.Counts
+  nameWithType: BalDigits.Counts
+- uid: MathLib.Misc.BalDigits.DigitString(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
+  name: DigitString(IEnumerable<int>, int)
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_DigitString_System_Collections_Generic_IEnumerable_System_Int32__System_Int32_
+  commentId: M:MathLib.Misc.BalDigits.DigitString(System.Collections.Generic.IEnumerable{System.Int32},System.Int32)
+  name.vb: DigitString(IEnumerable(Of Integer), Integer)
+  fullName: MathLib.Misc.BalDigits.DigitString(System.Collections.Generic.IEnumerable<int>, int)
+  fullName.vb: MathLib.Misc.BalDigits.DigitString(System.Collections.Generic.IEnumerable(Of Integer), Integer)
+  nameWithType: BalDigits.DigitString(IEnumerable<int>, int)
+  nameWithType.vb: BalDigits.DigitString(IEnumerable(Of Integer), Integer)
+- uid: MathLib.Misc.BalDigits.DigitString*
+  name: DigitString
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_DigitString_
+  commentId: Overload:MathLib.Misc.BalDigits.DigitString
+  isSpec: "True"
+  fullName: MathLib.Misc.BalDigits.DigitString
+  nameWithType: BalDigits.DigitString
+- uid: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger,System.Int32,System.Int32)
+  name: ToBalancedDigits(BigInteger, int, int)
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_ToBalancedDigits_System_Numerics_BigInteger_System_Int32_System_Int32_
+  commentId: M:MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger,System.Int32,System.Int32)
+  name.vb: ToBalancedDigits(BigInteger, Integer, Integer)
+  fullName: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger, int, int)
+  fullName.vb: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger, Integer, Integer)
+  nameWithType: BalDigits.ToBalancedDigits(BigInteger, int, int)
+  nameWithType.vb: BalDigits.ToBalancedDigits(BigInteger, Integer, Integer)
+- uid: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger,System.Int32[])
+  name: ToBalancedDigits(BigInteger, int[])
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_ToBalancedDigits_System_Numerics_BigInteger_System_Int32___
+  commentId: M:MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger,System.Int32[])
+  name.vb: ToBalancedDigits(BigInteger, Integer())
+  fullName: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger, int[])
+  fullName.vb: MathLib.Misc.BalDigits.ToBalancedDigits(System.Numerics.BigInteger, Integer())
+  nameWithType: BalDigits.ToBalancedDigits(BigInteger, int[])
+  nameWithType.vb: BalDigits.ToBalancedDigits(BigInteger, Integer())
+- uid: MathLib.Misc.BalDigits.ToBalancedDigits*
+  name: ToBalancedDigits
+  href: MathLib.Misc.BalDigits.html#MathLib_Misc_BalDigits_ToBalancedDigits_
+  commentId: Overload:MathLib.Misc.BalDigits.ToBalancedDigits
+  isSpec: "True"
+  fullName: MathLib.Misc.BalDigits.ToBalancedDigits
+  nameWithType: BalDigits.ToBalancedDigits
+- uid: MathLib.Misc.Forms
+  name: Forms
+  href: MathLib.Misc.Forms.html
+  commentId: T:MathLib.Misc.Forms
+  fullName: MathLib.Misc.Forms
+  nameWithType: Forms
+- uid: MathLib.Misc.Forms.ToNonAdjacentForm(System.Numerics.BigInteger)
+  name: ToNonAdjacentForm(BigInteger)
+  href: MathLib.Misc.Forms.html#MathLib_Misc_Forms_ToNonAdjacentForm_System_Numerics_BigInteger_
+  commentId: M:MathLib.Misc.Forms.ToNonAdjacentForm(System.Numerics.BigInteger)
+  fullName: MathLib.Misc.Forms.ToNonAdjacentForm(System.Numerics.BigInteger)
+  nameWithType: Forms.ToNonAdjacentForm(BigInteger)
+- uid: MathLib.Misc.Forms.ToNonAdjacentForm*
+  name: ToNonAdjacentForm
+  href: MathLib.Misc.Forms.html#MathLib_Misc_Forms_ToNonAdjacentForm_
+  commentId: Overload:MathLib.Misc.Forms.ToNonAdjacentForm
+  isSpec: "True"
+  fullName: MathLib.Misc.Forms.ToNonAdjacentForm
+  nameWithType: Forms.ToNonAdjacentForm
+- uid: MathLib.PAdics
+  name: MathLib.PAdics
+  href: MathLib.PAdics.html
+  commentId: N:MathLib.PAdics
+  fullName: MathLib.PAdics
+  nameWithType: MathLib.PAdics
+- uid: MathLib.PAdics.ModP
+  name: ModP
+  href: MathLib.PAdics.ModP.html
+  commentId: T:MathLib.PAdics.ModP
+  fullName: MathLib.PAdics.ModP
+  nameWithType: ModP
+- uid: MathLib.PAdics.ModP.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: ModP(BigInteger, BigInteger)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.PAdics.ModP.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name.vb: New(BigInteger, BigInteger)
+  fullName: MathLib.PAdics.ModP.ModP(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  fullName.vb: MathLib.PAdics.ModP.New(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: ModP.ModP(BigInteger, BigInteger)
+  nameWithType.vb: ModP.New(BigInteger, BigInteger)
+- uid: MathLib.PAdics.ModP.#ctor*
+  name: ModP
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP__ctor_
+  commentId: Overload:MathLib.PAdics.ModP.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.PAdics.ModP.ModP
+  fullName.vb: MathLib.PAdics.ModP.New
+  nameWithType: ModP.ModP
+  nameWithType.vb: ModP.New
+- uid: MathLib.PAdics.ModP.Equals(System.Object)
+  name: Equals(object?)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_Equals_System_Object_
+  commentId: M:MathLib.PAdics.ModP.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: MathLib.PAdics.ModP.Equals(object?)
+  fullName.vb: MathLib.PAdics.ModP.Equals(Object)
+  nameWithType: ModP.Equals(object?)
+  nameWithType.vb: ModP.Equals(Object)
+- uid: MathLib.PAdics.ModP.Equals*
+  name: Equals
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_Equals_
+  commentId: Overload:MathLib.PAdics.ModP.Equals
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.Equals
+  nameWithType: ModP.Equals
+- uid: MathLib.PAdics.ModP.GetHashCode
+  name: GetHashCode()
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_GetHashCode
+  commentId: M:MathLib.PAdics.ModP.GetHashCode
+  fullName: MathLib.PAdics.ModP.GetHashCode()
+  nameWithType: ModP.GetHashCode()
+- uid: MathLib.PAdics.ModP.GetHashCode*
+  name: GetHashCode
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_GetHashCode_
+  commentId: Overload:MathLib.PAdics.ModP.GetHashCode
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.GetHashCode
+  nameWithType: ModP.GetHashCode
+- uid: MathLib.PAdics.ModP.Inverse
+  name: Inverse()
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_Inverse
+  commentId: M:MathLib.PAdics.ModP.Inverse
+  fullName: MathLib.PAdics.ModP.Inverse()
+  nameWithType: ModP.Inverse()
+- uid: MathLib.PAdics.ModP.Inverse*
+  name: Inverse
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_Inverse_
+  commentId: Overload:MathLib.PAdics.ModP.Inverse
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.Inverse
+  nameWithType: ModP.Inverse
+- uid: MathLib.PAdics.ModP.N
+  name: N
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_N
+  commentId: P:MathLib.PAdics.ModP.N
+  fullName: MathLib.PAdics.ModP.N
+  nameWithType: ModP.N
+- uid: MathLib.PAdics.ModP.N*
+  name: N
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_N_
+  commentId: Overload:MathLib.PAdics.ModP.N
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.N
+  nameWithType: ModP.N
+- uid: MathLib.PAdics.ModP.P
+  name: P
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_P
+  commentId: P:MathLib.PAdics.ModP.P
+  fullName: MathLib.PAdics.ModP.P
+  nameWithType: ModP.P
+- uid: MathLib.PAdics.ModP.P*
+  name: P
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_P_
+  commentId: Overload:MathLib.PAdics.ModP.P
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.P
+  nameWithType: ModP.P
+- uid: MathLib.PAdics.ModP.ToString
+  name: ToString()
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_ToString
+  commentId: M:MathLib.PAdics.ModP.ToString
+  fullName: MathLib.PAdics.ModP.ToString()
+  nameWithType: ModP.ToString()
+- uid: MathLib.PAdics.ModP.ToString*
+  name: ToString
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_ToString_
+  commentId: Overload:MathLib.PAdics.ModP.ToString
+  isSpec: "True"
+  fullName: MathLib.PAdics.ModP.ToString
+  nameWithType: ModP.ToString
+- uid: MathLib.PAdics.ModP.op_Addition(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name: operator +(ModP, ModP)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Addition_MathLib_PAdics_ModP_MathLib_PAdics_ModP_
+  commentId: M:MathLib.PAdics.ModP.op_Addition(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name.vb: +(ModP, ModP)
+  fullName: MathLib.PAdics.ModP.operator +(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  fullName.vb: MathLib.PAdics.ModP.+(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  nameWithType: ModP.operator +(ModP, ModP)
+  nameWithType.vb: ModP.+(ModP, ModP)
+- uid: MathLib.PAdics.ModP.op_Addition*
+  name: operator +
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Addition_
+  commentId: Overload:MathLib.PAdics.ModP.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: MathLib.PAdics.ModP.operator +
+  fullName.vb: MathLib.PAdics.ModP.+
+  nameWithType: ModP.operator +
+  nameWithType.vb: ModP.+
+- uid: MathLib.PAdics.ModP.op_Division(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name: operator /(ModP, ModP)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Division_MathLib_PAdics_ModP_MathLib_PAdics_ModP_
+  commentId: M:MathLib.PAdics.ModP.op_Division(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name.vb: /(ModP, ModP)
+  fullName: MathLib.PAdics.ModP.operator /(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  fullName.vb: MathLib.PAdics.ModP./(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  nameWithType: ModP.operator /(ModP, ModP)
+  nameWithType.vb: ModP./(ModP, ModP)
+- uid: MathLib.PAdics.ModP.op_Division*
+  name: operator /
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Division_
+  commentId: Overload:MathLib.PAdics.ModP.op_Division
+  isSpec: "True"
+  name.vb: /
+  fullName: MathLib.PAdics.ModP.operator /
+  fullName.vb: MathLib.PAdics.ModP./
+  nameWithType: ModP.operator /
+  nameWithType.vb: ModP./
+- uid: MathLib.PAdics.ModP.op_Multiply(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name: operator *(ModP, ModP)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Multiply_MathLib_PAdics_ModP_MathLib_PAdics_ModP_
+  commentId: M:MathLib.PAdics.ModP.op_Multiply(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name.vb: '*(ModP, ModP)'
+  fullName: MathLib.PAdics.ModP.operator *(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  fullName.vb: MathLib.PAdics.ModP.*(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  nameWithType: ModP.operator *(ModP, ModP)
+  nameWithType.vb: ModP.*(ModP, ModP)
+- uid: MathLib.PAdics.ModP.op_Multiply*
+  name: operator *
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Multiply_
+  commentId: Overload:MathLib.PAdics.ModP.op_Multiply
+  isSpec: "True"
+  name.vb: '*'
+  fullName: MathLib.PAdics.ModP.operator *
+  fullName.vb: MathLib.PAdics.ModP.*
+  nameWithType: ModP.operator *
+  nameWithType.vb: ModP.*
+- uid: MathLib.PAdics.ModP.op_Subtraction(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name: operator -(ModP, ModP)
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Subtraction_MathLib_PAdics_ModP_MathLib_PAdics_ModP_
+  commentId: M:MathLib.PAdics.ModP.op_Subtraction(MathLib.PAdics.ModP,MathLib.PAdics.ModP)
+  name.vb: -(ModP, ModP)
+  fullName: MathLib.PAdics.ModP.operator -(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  fullName.vb: MathLib.PAdics.ModP.-(MathLib.PAdics.ModP, MathLib.PAdics.ModP)
+  nameWithType: ModP.operator -(ModP, ModP)
+  nameWithType.vb: ModP.-(ModP, ModP)
+- uid: MathLib.PAdics.ModP.op_Subtraction*
+  name: operator -
+  href: MathLib.PAdics.ModP.html#MathLib_PAdics_ModP_op_Subtraction_
+  commentId: Overload:MathLib.PAdics.ModP.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: MathLib.PAdics.ModP.operator -
+  fullName.vb: MathLib.PAdics.ModP.-
+  nameWithType: ModP.operator -
+  nameWithType.vb: ModP.-
+- uid: MathLib.Prime
+  name: MathLib.Prime
+  href: MathLib.Prime.html
+  commentId: N:MathLib.Prime
+  fullName: MathLib.Prime
+  nameWithType: MathLib.Prime
+- uid: MathLib.Prime.Factorization
+  name: Factorization
+  href: MathLib.Prime.Factorization.html
+  commentId: T:MathLib.Prime.Factorization
+  fullName: MathLib.Prime.Factorization
+  nameWithType: Factorization
+- uid: MathLib.Prime.Factorization.#ctor(System.Int32[],System.Numerics.BigInteger)
+  name: Factorization(int[], BigInteger)
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization__ctor_System_Int32___System_Numerics_BigInteger_
+  commentId: M:MathLib.Prime.Factorization.#ctor(System.Int32[],System.Numerics.BigInteger)
+  name.vb: New(Integer(), BigInteger)
+  fullName: MathLib.Prime.Factorization.Factorization(int[], System.Numerics.BigInteger)
+  fullName.vb: MathLib.Prime.Factorization.New(Integer(), System.Numerics.BigInteger)
+  nameWithType: Factorization.Factorization(int[], BigInteger)
+  nameWithType.vb: Factorization.New(Integer(), BigInteger)
+- uid: MathLib.Prime.Factorization.#ctor*
+  name: Factorization
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization__ctor_
+  commentId: Overload:MathLib.Prime.Factorization.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.Prime.Factorization.Factorization
+  fullName.vb: MathLib.Prime.Factorization.New
+  nameWithType: Factorization.Factorization
+  nameWithType.vb: Factorization.New
+- uid: MathLib.Prime.Factorization.Equals(MathLib.Prime.Factorization)
+  name: Equals(Factorization?)
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_Equals_MathLib_Prime_Factorization_
+  commentId: M:MathLib.Prime.Factorization.Equals(MathLib.Prime.Factorization)
+  name.vb: Equals(Factorization)
+  fullName: MathLib.Prime.Factorization.Equals(MathLib.Prime.Factorization?)
+  fullName.vb: MathLib.Prime.Factorization.Equals(MathLib.Prime.Factorization)
+  nameWithType: Factorization.Equals(Factorization?)
+  nameWithType.vb: Factorization.Equals(Factorization)
+- uid: MathLib.Prime.Factorization.Equals(System.Object)
+  name: Equals(object?)
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_Equals_System_Object_
+  commentId: M:MathLib.Prime.Factorization.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: MathLib.Prime.Factorization.Equals(object?)
+  fullName.vb: MathLib.Prime.Factorization.Equals(Object)
+  nameWithType: Factorization.Equals(object?)
+  nameWithType.vb: Factorization.Equals(Object)
+- uid: MathLib.Prime.Factorization.Equals*
+  name: Equals
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_Equals_
+  commentId: Overload:MathLib.Prime.Factorization.Equals
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.Equals
+  nameWithType: Factorization.Equals
+- uid: MathLib.Prime.Factorization.FactorCount
+  name: FactorCount
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_FactorCount
+  commentId: P:MathLib.Prime.Factorization.FactorCount
+  fullName: MathLib.Prime.Factorization.FactorCount
+  nameWithType: Factorization.FactorCount
+- uid: MathLib.Prime.Factorization.FactorCount*
+  name: FactorCount
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_FactorCount_
+  commentId: Overload:MathLib.Prime.Factorization.FactorCount
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.FactorCount
+  nameWithType: Factorization.FactorCount
+- uid: MathLib.Prime.Factorization.FactoredInteger
+  name: FactoredInteger
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_FactoredInteger
+  commentId: P:MathLib.Prime.Factorization.FactoredInteger
+  fullName: MathLib.Prime.Factorization.FactoredInteger
+  nameWithType: Factorization.FactoredInteger
+- uid: MathLib.Prime.Factorization.FactoredInteger*
+  name: FactoredInteger
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_FactoredInteger_
+  commentId: Overload:MathLib.Prime.Factorization.FactoredInteger
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.FactoredInteger
+  nameWithType: Factorization.FactoredInteger
+- uid: MathLib.Prime.Factorization.GetHashCode
+  name: GetHashCode()
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_GetHashCode
+  commentId: M:MathLib.Prime.Factorization.GetHashCode
+  fullName: MathLib.Prime.Factorization.GetHashCode()
+  nameWithType: Factorization.GetHashCode()
+- uid: MathLib.Prime.Factorization.GetHashCode*
+  name: GetHashCode
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_GetHashCode_
+  commentId: Overload:MathLib.Prime.Factorization.GetHashCode
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.GetHashCode
+  nameWithType: Factorization.GetHashCode
+- uid: MathLib.Prime.Factorization.IsComplete
+  name: IsComplete
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsComplete
+  commentId: P:MathLib.Prime.Factorization.IsComplete
+  fullName: MathLib.Prime.Factorization.IsComplete
+  nameWithType: Factorization.IsComplete
+- uid: MathLib.Prime.Factorization.IsComplete*
+  name: IsComplete
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsComplete_
+  commentId: Overload:MathLib.Prime.Factorization.IsComplete
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.IsComplete
+  nameWithType: Factorization.IsComplete
+- uid: MathLib.Prime.Factorization.IsOne
+  name: IsOne
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsOne
+  commentId: P:MathLib.Prime.Factorization.IsOne
+  fullName: MathLib.Prime.Factorization.IsOne
+  nameWithType: Factorization.IsOne
+- uid: MathLib.Prime.Factorization.IsOne*
+  name: IsOne
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsOne_
+  commentId: Overload:MathLib.Prime.Factorization.IsOne
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.IsOne
+  nameWithType: Factorization.IsOne
+- uid: MathLib.Prime.Factorization.IsZero
+  name: IsZero
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsZero
+  commentId: P:MathLib.Prime.Factorization.IsZero
+  fullName: MathLib.Prime.Factorization.IsZero
+  nameWithType: Factorization.IsZero
+- uid: MathLib.Prime.Factorization.IsZero*
+  name: IsZero
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_IsZero_
+  commentId: Overload:MathLib.Prime.Factorization.IsZero
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.IsZero
+  nameWithType: Factorization.IsZero
+- uid: MathLib.Prime.Factorization.PrimeFactors
+  name: PrimeFactors
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_PrimeFactors
+  commentId: F:MathLib.Prime.Factorization.PrimeFactors
+  fullName: MathLib.Prime.Factorization.PrimeFactors
+  nameWithType: Factorization.PrimeFactors
+- uid: MathLib.Prime.Factorization.RemainderFactor
+  name: RemainderFactor
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_RemainderFactor
+  commentId: F:MathLib.Prime.Factorization.RemainderFactor
+  fullName: MathLib.Prime.Factorization.RemainderFactor
+  nameWithType: Factorization.RemainderFactor
+- uid: MathLib.Prime.Factorization.ToString
+  name: ToString()
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_ToString
+  commentId: M:MathLib.Prime.Factorization.ToString
+  fullName: MathLib.Prime.Factorization.ToString()
+  nameWithType: Factorization.ToString()
+- uid: MathLib.Prime.Factorization.ToString*
+  name: ToString
+  href: MathLib.Prime.Factorization.html#MathLib_Prime_Factorization_ToString_
+  commentId: Overload:MathLib.Prime.Factorization.ToString
+  isSpec: "True"
+  fullName: MathLib.Prime.Factorization.ToString
+  nameWithType: Factorization.ToString
+- uid: MathLib.Prime.PrimeGenerator
+  name: PrimeGenerator
+  href: MathLib.Prime.PrimeGenerator.html
+  commentId: T:MathLib.Prime.PrimeGenerator
+  fullName: MathLib.Prime.PrimeGenerator
+  nameWithType: PrimeGenerator
+- uid: MathLib.Prime.PrimeGenerator.GeneratePrimes
+  name: GeneratePrimes()
+  href: MathLib.Prime.PrimeGenerator.html#MathLib_Prime_PrimeGenerator_GeneratePrimes
+  commentId: M:MathLib.Prime.PrimeGenerator.GeneratePrimes
+  fullName: MathLib.Prime.PrimeGenerator.GeneratePrimes()
+  nameWithType: PrimeGenerator.GeneratePrimes()
+- uid: MathLib.Prime.PrimeGenerator.GeneratePrimes*
+  name: GeneratePrimes
+  href: MathLib.Prime.PrimeGenerator.html#MathLib_Prime_PrimeGenerator_GeneratePrimes_
+  commentId: Overload:MathLib.Prime.PrimeGenerator.GeneratePrimes
+  isSpec: "True"
+  fullName: MathLib.Prime.PrimeGenerator.GeneratePrimes
+  nameWithType: PrimeGenerator.GeneratePrimes
+- uid: MathLib.Prime.Primes
+  name: Primes
+  href: MathLib.Prime.Primes.html
+  commentId: T:MathLib.Prime.Primes
+  fullName: MathLib.Prime.Primes
+  nameWithType: Primes
+- uid: MathLib.Prime.Primes.Factorization(System.Numerics.BigInteger)
+  name: Factorization(BigInteger)
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_Factorization_System_Numerics_BigInteger_
+  commentId: M:MathLib.Prime.Primes.Factorization(System.Numerics.BigInteger)
+  fullName: MathLib.Prime.Primes.Factorization(System.Numerics.BigInteger)
+  nameWithType: Primes.Factorization(BigInteger)
+- uid: MathLib.Prime.Primes.Factorization*
+  name: Factorization
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_Factorization_
+  commentId: Overload:MathLib.Prime.Primes.Factorization
+  isSpec: "True"
+  fullName: MathLib.Prime.Primes.Factorization
+  nameWithType: Primes.Factorization
+- uid: MathLib.Prime.Primes.IsReady
+  name: IsReady
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_IsReady
+  commentId: P:MathLib.Prime.Primes.IsReady
+  fullName: MathLib.Prime.Primes.IsReady
+  nameWithType: Primes.IsReady
+- uid: MathLib.Prime.Primes.IsReady*
+  name: IsReady
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_IsReady_
+  commentId: Overload:MathLib.Prime.Primes.IsReady
+  isSpec: "True"
+  fullName: MathLib.Prime.Primes.IsReady
+  nameWithType: Primes.IsReady
+- uid: MathLib.Prime.Primes.MaxSupportedPrime
+  name: MaxSupportedPrime
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_MaxSupportedPrime
+  commentId: F:MathLib.Prime.Primes.MaxSupportedPrime
+  fullName: MathLib.Prime.Primes.MaxSupportedPrime
+  nameWithType: Primes.MaxSupportedPrime
+- uid: MathLib.Prime.Primes.Prepare(System.Action)
+  name: Prepare(Action?)
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_Prepare_System_Action_
+  commentId: M:MathLib.Prime.Primes.Prepare(System.Action)
+  name.vb: Prepare(Action)
+  fullName: MathLib.Prime.Primes.Prepare(System.Action?)
+  fullName.vb: MathLib.Prime.Primes.Prepare(System.Action)
+  nameWithType: Primes.Prepare(Action?)
+  nameWithType.vb: Primes.Prepare(Action)
+- uid: MathLib.Prime.Primes.Prepare*
+  name: Prepare
+  href: MathLib.Prime.Primes.html#MathLib_Prime_Primes_Prepare_
+  commentId: Overload:MathLib.Prime.Primes.Prepare
+  isSpec: "True"
+  fullName: MathLib.Prime.Primes.Prepare
+  nameWithType: Primes.Prepare
+- uid: MathLib.Q
+  name: Q
+  href: MathLib.Q.html
+  commentId: T:MathLib.Q
+  fullName: MathLib.Q
+  nameWithType: Q
+- uid: MathLib.Q.#ctor
+  name: Q()
+  href: MathLib.Q.html#MathLib_Q__ctor
+  commentId: M:MathLib.Q.#ctor
+  name.vb: New()
+  fullName: MathLib.Q.Q()
+  fullName.vb: MathLib.Q.New()
+  nameWithType: Q.Q()
+  nameWithType.vb: Q.New()
+- uid: MathLib.Q.#ctor(MathLib.Q)
+  name: Q(Q)
+  href: MathLib.Q.html#MathLib_Q__ctor_MathLib_Q_
+  commentId: M:MathLib.Q.#ctor(MathLib.Q)
+  name.vb: New(Q)
+  fullName: MathLib.Q.Q(MathLib.Q)
+  fullName.vb: MathLib.Q.New(MathLib.Q)
+  nameWithType: Q.Q(Q)
+  nameWithType.vb: Q.New(Q)
+- uid: MathLib.Q.#ctor(System.Numerics.BigInteger)
+  name: Q(BigInteger)
+  href: MathLib.Q.html#MathLib_Q__ctor_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.#ctor(System.Numerics.BigInteger)
+  name.vb: New(BigInteger)
+  fullName: MathLib.Q.Q(System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.New(System.Numerics.BigInteger)
+  nameWithType: Q.Q(BigInteger)
+  nameWithType.vb: Q.New(BigInteger)
+- uid: MathLib.Q.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name: Q(BigInteger, BigInteger)
+  href: MathLib.Q.html#MathLib_Q__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger)
+  name.vb: New(BigInteger, BigInteger)
+  fullName: MathLib.Q.Q(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.New(System.Numerics.BigInteger, System.Numerics.BigInteger)
+  nameWithType: Q.Q(BigInteger, BigInteger)
+  nameWithType.vb: Q.New(BigInteger, BigInteger)
+- uid: MathLib.Q.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Boolean)
+  name: Q(BigInteger, BigInteger, bool)
+  href: MathLib.Q.html#MathLib_Q__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Boolean_
+  commentId: M:MathLib.Q.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Boolean)
+  name.vb: New(BigInteger, BigInteger, Boolean)
+  fullName: MathLib.Q.Q(System.Numerics.BigInteger, System.Numerics.BigInteger, bool)
+  fullName.vb: MathLib.Q.New(System.Numerics.BigInteger, System.Numerics.BigInteger, Boolean)
+  nameWithType: Q.Q(BigInteger, BigInteger, bool)
+  nameWithType.vb: Q.New(BigInteger, BigInteger, Boolean)
+- uid: MathLib.Q.#ctor*
+  name: Q
+  href: MathLib.Q.html#MathLib_Q__ctor_
+  commentId: Overload:MathLib.Q.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.Q.Q
+  fullName.vb: MathLib.Q.New
+  nameWithType: Q.Q
+  nameWithType.vb: Q.New
+- uid: MathLib.Q.Abs
+  name: Abs
+  href: MathLib.Q.html#MathLib_Q_Abs
+  commentId: P:MathLib.Q.Abs
+  fullName: MathLib.Q.Abs
+  nameWithType: Q.Abs
+- uid: MathLib.Q.Abs*
+  name: Abs
+  href: MathLib.Q.html#MathLib_Q_Abs_
+  commentId: Overload:MathLib.Q.Abs
+  isSpec: "True"
+  fullName: MathLib.Q.Abs
+  nameWithType: Q.Abs
+- uid: MathLib.Q.Backward(System.Int32)
+  name: Backward(int)
+  href: MathLib.Q.html#MathLib_Q_Backward_System_Int32_
+  commentId: M:MathLib.Q.Backward(System.Int32)
+  name.vb: Backward(Integer)
+  fullName: MathLib.Q.Backward(int)
+  fullName.vb: MathLib.Q.Backward(Integer)
+  nameWithType: Q.Backward(int)
+  nameWithType.vb: Q.Backward(Integer)
+- uid: MathLib.Q.Backward*
+  name: Backward
+  href: MathLib.Q.html#MathLib_Q_Backward_
+  commentId: Overload:MathLib.Q.Backward
+  isSpec: "True"
+  fullName: MathLib.Q.Backward
+  nameWithType: Q.Backward
+- uid: MathLib.Q.Coeff(System.Int32)
+  name: Coeff(int)
+  href: MathLib.Q.html#MathLib_Q_Coeff_System_Int32_
+  commentId: M:MathLib.Q.Coeff(System.Int32)
+  name.vb: Coeff(Integer)
+  fullName: MathLib.Q.Coeff(int)
+  fullName.vb: MathLib.Q.Coeff(Integer)
+  nameWithType: Q.Coeff(int)
+  nameWithType.vb: Q.Coeff(Integer)
+- uid: MathLib.Q.Coeff*
+  name: Coeff
+  href: MathLib.Q.html#MathLib_Q_Coeff_
+  commentId: Overload:MathLib.Q.Coeff
+  isSpec: "True"
+  fullName: MathLib.Q.Coeff
+  nameWithType: Q.Coeff
+- uid: MathLib.Q.Coefficients(System.Int32)
+  name: Coefficients(int)
+  href: MathLib.Q.html#MathLib_Q_Coefficients_System_Int32_
+  commentId: M:MathLib.Q.Coefficients(System.Int32)
+  name.vb: Coefficients(Integer)
+  fullName: MathLib.Q.Coefficients(int)
+  fullName.vb: MathLib.Q.Coefficients(Integer)
+  nameWithType: Q.Coefficients(int)
+  nameWithType.vb: Q.Coefficients(Integer)
+- uid: MathLib.Q.Coefficients*
+  name: Coefficients
+  href: MathLib.Q.html#MathLib_Q_Coefficients_
+  commentId: Overload:MathLib.Q.Coefficients
+  isSpec: "True"
+  fullName: MathLib.Q.Coefficients
+  nameWithType: Q.Coefficients
+- uid: MathLib.Q.CompareTo(MathLib.Q)
+  name: CompareTo(Q?)
+  href: MathLib.Q.html#MathLib_Q_CompareTo_MathLib_Q_
+  commentId: M:MathLib.Q.CompareTo(MathLib.Q)
+  name.vb: CompareTo(Q)
+  fullName: MathLib.Q.CompareTo(MathLib.Q?)
+  fullName.vb: MathLib.Q.CompareTo(MathLib.Q)
+  nameWithType: Q.CompareTo(Q?)
+  nameWithType.vb: Q.CompareTo(Q)
+- uid: MathLib.Q.CompareTo(System.Int32)
+  name: CompareTo(int)
+  href: MathLib.Q.html#MathLib_Q_CompareTo_System_Int32_
+  commentId: M:MathLib.Q.CompareTo(System.Int32)
+  name.vb: CompareTo(Integer)
+  fullName: MathLib.Q.CompareTo(int)
+  fullName.vb: MathLib.Q.CompareTo(Integer)
+  nameWithType: Q.CompareTo(int)
+  nameWithType.vb: Q.CompareTo(Integer)
+- uid: MathLib.Q.CompareTo(System.Numerics.BigInteger)
+  name: CompareTo(BigInteger)
+  href: MathLib.Q.html#MathLib_Q_CompareTo_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.CompareTo(System.Numerics.BigInteger)
+  fullName: MathLib.Q.CompareTo(System.Numerics.BigInteger)
+  nameWithType: Q.CompareTo(BigInteger)
+- uid: MathLib.Q.CompareTo*
+  name: CompareTo
+  href: MathLib.Q.html#MathLib_Q_CompareTo_
+  commentId: Overload:MathLib.Q.CompareTo
+  isSpec: "True"
+  fullName: MathLib.Q.CompareTo
+  nameWithType: Q.CompareTo
+- uid: MathLib.Q.Denominator
+  name: Denominator
+  href: MathLib.Q.html#MathLib_Q_Denominator
+  commentId: P:MathLib.Q.Denominator
+  fullName: MathLib.Q.Denominator
+  nameWithType: Q.Denominator
+- uid: MathLib.Q.Denominator*
+  name: Denominator
+  href: MathLib.Q.html#MathLib_Q_Denominator_
+  commentId: Overload:MathLib.Q.Denominator
+  isSpec: "True"
+  fullName: MathLib.Q.Denominator
+  nameWithType: Q.Denominator
+- uid: MathLib.Q.Equals(MathLib.Q)
+  name: Equals(Q?)
+  href: MathLib.Q.html#MathLib_Q_Equals_MathLib_Q_
+  commentId: M:MathLib.Q.Equals(MathLib.Q)
+  name.vb: Equals(Q)
+  fullName: MathLib.Q.Equals(MathLib.Q?)
+  fullName.vb: MathLib.Q.Equals(MathLib.Q)
+  nameWithType: Q.Equals(Q?)
+  nameWithType.vb: Q.Equals(Q)
+- uid: MathLib.Q.Equals(System.Object)
+  name: Equals(object?)
+  href: MathLib.Q.html#MathLib_Q_Equals_System_Object_
+  commentId: M:MathLib.Q.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: MathLib.Q.Equals(object?)
+  fullName.vb: MathLib.Q.Equals(Object)
+  nameWithType: Q.Equals(object?)
+  nameWithType.vb: Q.Equals(Object)
+- uid: MathLib.Q.Equals*
+  name: Equals
+  href: MathLib.Q.html#MathLib_Q_Equals_
+  commentId: Overload:MathLib.Q.Equals
+  isSpec: "True"
+  fullName: MathLib.Q.Equals
+  nameWithType: Q.Equals
+- uid: MathLib.Q.Forward(System.Int32)
+  name: Forward(int)
+  href: MathLib.Q.html#MathLib_Q_Forward_System_Int32_
+  commentId: M:MathLib.Q.Forward(System.Int32)
+  name.vb: Forward(Integer)
+  fullName: MathLib.Q.Forward(int)
+  fullName.vb: MathLib.Q.Forward(Integer)
+  nameWithType: Q.Forward(int)
+  nameWithType.vb: Q.Forward(Integer)
+- uid: MathLib.Q.Forward*
+  name: Forward
+  href: MathLib.Q.html#MathLib_Q_Forward_
+  commentId: Overload:MathLib.Q.Forward
+  isSpec: "True"
+  fullName: MathLib.Q.Forward
+  nameWithType: Q.Forward
+- uid: MathLib.Q.FractionalPart
+  name: FractionalPart
+  href: MathLib.Q.html#MathLib_Q_FractionalPart
+  commentId: P:MathLib.Q.FractionalPart
+  fullName: MathLib.Q.FractionalPart
+  nameWithType: Q.FractionalPart
+- uid: MathLib.Q.FractionalPart*
+  name: FractionalPart
+  href: MathLib.Q.html#MathLib_Q_FractionalPart_
+  commentId: Overload:MathLib.Q.FractionalPart
+  isSpec: "True"
+  fullName: MathLib.Q.FractionalPart
+  nameWithType: Q.FractionalPart
+- uid: MathLib.Q.GetHashCode
+  name: GetHashCode()
+  href: MathLib.Q.html#MathLib_Q_GetHashCode
+  commentId: M:MathLib.Q.GetHashCode
+  fullName: MathLib.Q.GetHashCode()
+  nameWithType: Q.GetHashCode()
+- uid: MathLib.Q.GetHashCode*
+  name: GetHashCode
+  href: MathLib.Q.html#MathLib_Q_GetHashCode_
+  commentId: Overload:MathLib.Q.GetHashCode
+  isSpec: "True"
+  fullName: MathLib.Q.GetHashCode
+  nameWithType: Q.GetHashCode
+- uid: MathLib.Q.GetPAdicPreperiodic(MathLib.Q,MathLib.BaseInt,System.Int32)
+  name: GetPAdicPreperiodic(Q, BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_GetPAdicPreperiodic_MathLib_Q_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.GetPAdicPreperiodic(MathLib.Q,MathLib.BaseInt,System.Int32)
+  name.vb: GetPAdicPreperiodic(Q, BaseInt, Integer)
+  fullName: MathLib.Q.GetPAdicPreperiodic(MathLib.Q, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.GetPAdicPreperiodic(MathLib.Q, MathLib.BaseInt, Integer)
+  nameWithType: Q.GetPAdicPreperiodic(Q, BaseInt, int)
+  nameWithType.vb: Q.GetPAdicPreperiodic(Q, BaseInt, Integer)
+- uid: MathLib.Q.GetPAdicPreperiodic*
+  name: GetPAdicPreperiodic
+  href: MathLib.Q.html#MathLib_Q_GetPAdicPreperiodic_
+  commentId: Overload:MathLib.Q.GetPAdicPreperiodic
+  isSpec: "True"
+  fullName: MathLib.Q.GetPAdicPreperiodic
+  nameWithType: Q.GetPAdicPreperiodic
+- uid: MathLib.Q.InBase(System.Int32)
+  name: InBase(int)
+  href: MathLib.Q.html#MathLib_Q_InBase_System_Int32_
+  commentId: M:MathLib.Q.InBase(System.Int32)
+  name.vb: InBase(Integer)
+  fullName: MathLib.Q.InBase(int)
+  fullName.vb: MathLib.Q.InBase(Integer)
+  nameWithType: Q.InBase(int)
+  nameWithType.vb: Q.InBase(Integer)
+- uid: MathLib.Q.InBase*
+  name: InBase
+  href: MathLib.Q.html#MathLib_Q_InBase_
+  commentId: Overload:MathLib.Q.InBase
+  isSpec: "True"
+  fullName: MathLib.Q.InBase
+  nameWithType: Q.InBase
+- uid: MathLib.Q.IntegralPart
+  name: IntegralPart
+  href: MathLib.Q.html#MathLib_Q_IntegralPart
+  commentId: P:MathLib.Q.IntegralPart
+  fullName: MathLib.Q.IntegralPart
+  nameWithType: Q.IntegralPart
+- uid: MathLib.Q.IntegralPart*
+  name: IntegralPart
+  href: MathLib.Q.html#MathLib_Q_IntegralPart_
+  commentId: Overload:MathLib.Q.IntegralPart
+  isSpec: "True"
+  fullName: MathLib.Q.IntegralPart
+  nameWithType: Q.IntegralPart
+- uid: MathLib.Q.IntegralPartAlwaysFEO
+  name: IntegralPartAlwaysFEO
+  href: MathLib.Q.html#MathLib_Q_IntegralPartAlwaysFEO
+  commentId: P:MathLib.Q.IntegralPartAlwaysFEO
+  fullName: MathLib.Q.IntegralPartAlwaysFEO
+  nameWithType: Q.IntegralPartAlwaysFEO
+- uid: MathLib.Q.IntegralPartAlwaysFEO*
+  name: IntegralPartAlwaysFEO
+  href: MathLib.Q.html#MathLib_Q_IntegralPartAlwaysFEO_
+  commentId: Overload:MathLib.Q.IntegralPartAlwaysFEO
+  isSpec: "True"
+  fullName: MathLib.Q.IntegralPartAlwaysFEO
+  nameWithType: Q.IntegralPartAlwaysFEO
+- uid: MathLib.Q.IntegralPartSelective(System.Boolean)
+  name: IntegralPartSelective(bool)
+  href: MathLib.Q.html#MathLib_Q_IntegralPartSelective_System_Boolean_
+  commentId: M:MathLib.Q.IntegralPartSelective(System.Boolean)
+  name.vb: IntegralPartSelective(Boolean)
+  fullName: MathLib.Q.IntegralPartSelective(bool)
+  fullName.vb: MathLib.Q.IntegralPartSelective(Boolean)
+  nameWithType: Q.IntegralPartSelective(bool)
+  nameWithType.vb: Q.IntegralPartSelective(Boolean)
+- uid: MathLib.Q.IntegralPartSelective*
+  name: IntegralPartSelective
+  href: MathLib.Q.html#MathLib_Q_IntegralPartSelective_
+  commentId: Overload:MathLib.Q.IntegralPartSelective
+  isSpec: "True"
+  fullName: MathLib.Q.IntegralPartSelective
+  nameWithType: Q.IntegralPartSelective
+- uid: MathLib.Q.IsInteger
+  name: IsInteger
+  href: MathLib.Q.html#MathLib_Q_IsInteger
+  commentId: P:MathLib.Q.IsInteger
+  fullName: MathLib.Q.IsInteger
+  nameWithType: Q.IsInteger
+- uid: MathLib.Q.IsInteger*
+  name: IsInteger
+  href: MathLib.Q.html#MathLib_Q_IsInteger_
+  commentId: Overload:MathLib.Q.IsInteger
+  isSpec: "True"
+  fullName: MathLib.Q.IsInteger
+  nameWithType: Q.IsInteger
+- uid: MathLib.Q.IsNaN
+  name: IsNaN
+  href: MathLib.Q.html#MathLib_Q_IsNaN
+  commentId: P:MathLib.Q.IsNaN
+  fullName: MathLib.Q.IsNaN
+  nameWithType: Q.IsNaN
+- uid: MathLib.Q.IsNaN*
+  name: IsNaN
+  href: MathLib.Q.html#MathLib_Q_IsNaN_
+  commentId: Overload:MathLib.Q.IsNaN
+  isSpec: "True"
+  fullName: MathLib.Q.IsNaN
+  nameWithType: Q.IsNaN
+- uid: MathLib.Q.IsNegative
+  name: IsNegative
+  href: MathLib.Q.html#MathLib_Q_IsNegative
+  commentId: P:MathLib.Q.IsNegative
+  fullName: MathLib.Q.IsNegative
+  nameWithType: Q.IsNegative
+- uid: MathLib.Q.IsNegative*
+  name: IsNegative
+  href: MathLib.Q.html#MathLib_Q_IsNegative_
+  commentId: Overload:MathLib.Q.IsNegative
+  isSpec: "True"
+  fullName: MathLib.Q.IsNegative
+  nameWithType: Q.IsNegative
+- uid: MathLib.Q.IsNegativeInteger
+  name: IsNegativeInteger
+  href: MathLib.Q.html#MathLib_Q_IsNegativeInteger
+  commentId: P:MathLib.Q.IsNegativeInteger
+  fullName: MathLib.Q.IsNegativeInteger
+  nameWithType: Q.IsNegativeInteger
+- uid: MathLib.Q.IsNegativeInteger*
+  name: IsNegativeInteger
+  href: MathLib.Q.html#MathLib_Q_IsNegativeInteger_
+  commentId: Overload:MathLib.Q.IsNegativeInteger
+  isSpec: "True"
+  fullName: MathLib.Q.IsNegativeInteger
+  nameWithType: Q.IsNegativeInteger
+- uid: MathLib.Q.IsNonZeroInteger
+  name: IsNonZeroInteger
+  href: MathLib.Q.html#MathLib_Q_IsNonZeroInteger
+  commentId: P:MathLib.Q.IsNonZeroInteger
+  fullName: MathLib.Q.IsNonZeroInteger
+  nameWithType: Q.IsNonZeroInteger
+- uid: MathLib.Q.IsNonZeroInteger*
+  name: IsNonZeroInteger
+  href: MathLib.Q.html#MathLib_Q_IsNonZeroInteger_
+  commentId: Overload:MathLib.Q.IsNonZeroInteger
+  isSpec: "True"
+  fullName: MathLib.Q.IsNonZeroInteger
+  nameWithType: Q.IsNonZeroInteger
+- uid: MathLib.Q.IsOne
+  name: IsOne
+  href: MathLib.Q.html#MathLib_Q_IsOne
+  commentId: P:MathLib.Q.IsOne
+  fullName: MathLib.Q.IsOne
+  nameWithType: Q.IsOne
+- uid: MathLib.Q.IsOne*
+  name: IsOne
+  href: MathLib.Q.html#MathLib_Q_IsOne_
+  commentId: Overload:MathLib.Q.IsOne
+  isSpec: "True"
+  fullName: MathLib.Q.IsOne
+  nameWithType: Q.IsOne
+- uid: MathLib.Q.IsPositive
+  name: IsPositive
+  href: MathLib.Q.html#MathLib_Q_IsPositive
+  commentId: P:MathLib.Q.IsPositive
+  fullName: MathLib.Q.IsPositive
+  nameWithType: Q.IsPositive
+- uid: MathLib.Q.IsPositive*
+  name: IsPositive
+  href: MathLib.Q.html#MathLib_Q_IsPositive_
+  commentId: Overload:MathLib.Q.IsPositive
+  isSpec: "True"
+  fullName: MathLib.Q.IsPositive
+  nameWithType: Q.IsPositive
+- uid: MathLib.Q.IsPositiveInteger
+  name: IsPositiveInteger
+  href: MathLib.Q.html#MathLib_Q_IsPositiveInteger
+  commentId: P:MathLib.Q.IsPositiveInteger
+  fullName: MathLib.Q.IsPositiveInteger
+  nameWithType: Q.IsPositiveInteger
+- uid: MathLib.Q.IsPositiveInteger*
+  name: IsPositiveInteger
+  href: MathLib.Q.html#MathLib_Q_IsPositiveInteger_
+  commentId: Overload:MathLib.Q.IsPositiveInteger
+  isSpec: "True"
+  fullName: MathLib.Q.IsPositiveInteger
+  nameWithType: Q.IsPositiveInteger
+- uid: MathLib.Q.IsUnitFraction
+  name: IsUnitFraction
+  href: MathLib.Q.html#MathLib_Q_IsUnitFraction
+  commentId: P:MathLib.Q.IsUnitFraction
+  fullName: MathLib.Q.IsUnitFraction
+  nameWithType: Q.IsUnitFraction
+- uid: MathLib.Q.IsUnitFraction*
+  name: IsUnitFraction
+  href: MathLib.Q.html#MathLib_Q_IsUnitFraction_
+  commentId: Overload:MathLib.Q.IsUnitFraction
+  isSpec: "True"
+  fullName: MathLib.Q.IsUnitFraction
+  nameWithType: Q.IsUnitFraction
+- uid: MathLib.Q.IsZero
+  name: IsZero
+  href: MathLib.Q.html#MathLib_Q_IsZero
+  commentId: P:MathLib.Q.IsZero
+  fullName: MathLib.Q.IsZero
+  nameWithType: Q.IsZero
+- uid: MathLib.Q.IsZero*
+  name: IsZero
+  href: MathLib.Q.html#MathLib_Q_IsZero_
+  commentId: Overload:MathLib.Q.IsZero
+  isSpec: "True"
+  fullName: MathLib.Q.IsZero
+  nameWithType: Q.IsZero
+- uid: MathLib.Q.NaN
+  name: NaN
+  href: MathLib.Q.html#MathLib_Q_NaN
+  commentId: P:MathLib.Q.NaN
+  fullName: MathLib.Q.NaN
+  nameWithType: Q.NaN
+- uid: MathLib.Q.NaN*
+  name: NaN
+  href: MathLib.Q.html#MathLib_Q_NaN_
+  commentId: Overload:MathLib.Q.NaN
+  isSpec: "True"
+  fullName: MathLib.Q.NaN
+  nameWithType: Q.NaN
+- uid: MathLib.Q.Negation(System.Boolean)
+  name: Negation(bool)
+  href: MathLib.Q.html#MathLib_Q_Negation_System_Boolean_
+  commentId: M:MathLib.Q.Negation(System.Boolean)
+  name.vb: Negation(Boolean)
+  fullName: MathLib.Q.Negation(bool)
+  fullName.vb: MathLib.Q.Negation(Boolean)
+  nameWithType: Q.Negation(bool)
+  nameWithType.vb: Q.Negation(Boolean)
+- uid: MathLib.Q.Negation*
+  name: Negation
+  href: MathLib.Q.html#MathLib_Q_Negation_
+  commentId: Overload:MathLib.Q.Negation
+  isSpec: "True"
+  fullName: MathLib.Q.Negation
+  nameWithType: Q.Negation
+- uid: MathLib.Q.Numerator
+  name: Numerator
+  href: MathLib.Q.html#MathLib_Q_Numerator
+  commentId: P:MathLib.Q.Numerator
+  fullName: MathLib.Q.Numerator
+  nameWithType: Q.Numerator
+- uid: MathLib.Q.Numerator*
+  name: Numerator
+  href: MathLib.Q.html#MathLib_Q_Numerator_
+  commentId: Overload:MathLib.Q.Numerator
+  isSpec: "True"
+  fullName: MathLib.Q.Numerator
+  nameWithType: Q.Numerator
+- uid: MathLib.Q.One
+  name: One
+  href: MathLib.Q.html#MathLib_Q_One
+  commentId: P:MathLib.Q.One
+  fullName: MathLib.Q.One
+  nameWithType: Q.One
+- uid: MathLib.Q.One*
+  name: One
+  href: MathLib.Q.html#MathLib_Q_One_
+  commentId: Overload:MathLib.Q.One
+  isSpec: "True"
+  fullName: MathLib.Q.One
+  nameWithType: Q.One
+- uid: MathLib.Q.PAdicInterpretation(MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name: PAdicInterpretation(BaseInt, BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAdicInterpretation_MathLib_BaseInt_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAdicInterpretation(MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name.vb: PAdicInterpretation(BaseInt, BaseInt, Integer)
+  fullName: MathLib.Q.PAdicInterpretation(MathLib.BaseInt, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAdicInterpretation(MathLib.BaseInt, MathLib.BaseInt, Integer)
+  nameWithType: Q.PAdicInterpretation(BaseInt, BaseInt, int)
+  nameWithType.vb: Q.PAdicInterpretation(BaseInt, BaseInt, Integer)
+- uid: MathLib.Q.PAdicInterpretation*
+  name: PAdicInterpretation
+  href: MathLib.Q.html#MathLib_Q_PAdicInterpretation_
+  commentId: Overload:MathLib.Q.PAdicInterpretation
+  isSpec: "True"
+  fullName: MathLib.Q.PAdicInterpretation
+  nameWithType: Q.PAdicInterpretation
+- uid: MathLib.Q.PAdicPeriodic(MathLib.BaseInt,System.Int32)
+  name: PAdicPeriodic(BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAdicPeriodic_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAdicPeriodic(MathLib.BaseInt,System.Int32)
+  name.vb: PAdicPeriodic(BaseInt, Integer)
+  fullName: MathLib.Q.PAdicPeriodic(MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAdicPeriodic(MathLib.BaseInt, Integer)
+  nameWithType: Q.PAdicPeriodic(BaseInt, int)
+  nameWithType.vb: Q.PAdicPeriodic(BaseInt, Integer)
+- uid: MathLib.Q.PAdicPeriodic*
+  name: PAdicPeriodic
+  href: MathLib.Q.html#MathLib_Q_PAdicPeriodic_
+  commentId: Overload:MathLib.Q.PAdicPeriodic
+  isSpec: "True"
+  fullName: MathLib.Q.PAdicPeriodic
+  nameWithType: Q.PAdicPeriodic
+- uid: MathLib.Q.PAdicPreperiodic(MathLib.BaseInt,System.Int32)
+  name: PAdicPreperiodic(BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAdicPreperiodic_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAdicPreperiodic(MathLib.BaseInt,System.Int32)
+  name.vb: PAdicPreperiodic(BaseInt, Integer)
+  fullName: MathLib.Q.PAdicPreperiodic(MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAdicPreperiodic(MathLib.BaseInt, Integer)
+  nameWithType: Q.PAdicPreperiodic(BaseInt, int)
+  nameWithType.vb: Q.PAdicPreperiodic(BaseInt, Integer)
+- uid: MathLib.Q.PAdicPreperiodic*
+  name: PAdicPreperiodic
+  href: MathLib.Q.html#MathLib_Q_PAdicPreperiodic_
+  commentId: Overload:MathLib.Q.PAdicPreperiodic
+  isSpec: "True"
+  fullName: MathLib.Q.PAdicPreperiodic
+  nameWithType: Q.PAdicPreperiodic
+- uid: MathLib.Q.PAryInterpretation(System.Boolean,MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name: PAryInterpretation(bool, BaseInt, BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAryInterpretation_System_Boolean_MathLib_BaseInt_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAryInterpretation(System.Boolean,MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name.vb: PAryInterpretation(Boolean, BaseInt, BaseInt, Integer)
+  fullName: MathLib.Q.PAryInterpretation(bool, MathLib.BaseInt, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAryInterpretation(Boolean, MathLib.BaseInt, MathLib.BaseInt, Integer)
+  nameWithType: Q.PAryInterpretation(bool, BaseInt, BaseInt, int)
+  nameWithType.vb: Q.PAryInterpretation(Boolean, BaseInt, BaseInt, Integer)
+- uid: MathLib.Q.PAryInterpretation*
+  name: PAryInterpretation
+  href: MathLib.Q.html#MathLib_Q_PAryInterpretation_
+  commentId: Overload:MathLib.Q.PAryInterpretation
+  isSpec: "True"
+  fullName: MathLib.Q.PAryInterpretation
+  nameWithType: Q.PAryInterpretation
+- uid: MathLib.Q.PAryPeriodic(System.Boolean,MathLib.BaseInt,System.Int32)
+  name: PAryPeriodic(bool, BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAryPeriodic_System_Boolean_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAryPeriodic(System.Boolean,MathLib.BaseInt,System.Int32)
+  name.vb: PAryPeriodic(Boolean, BaseInt, Integer)
+  fullName: MathLib.Q.PAryPeriodic(bool, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAryPeriodic(Boolean, MathLib.BaseInt, Integer)
+  nameWithType: Q.PAryPeriodic(bool, BaseInt, int)
+  nameWithType.vb: Q.PAryPeriodic(Boolean, BaseInt, Integer)
+- uid: MathLib.Q.PAryPeriodic*
+  name: PAryPeriodic
+  href: MathLib.Q.html#MathLib_Q_PAryPeriodic_
+  commentId: Overload:MathLib.Q.PAryPeriodic
+  isSpec: "True"
+  fullName: MathLib.Q.PAryPeriodic
+  nameWithType: Q.PAryPeriodic
+- uid: MathLib.Q.PAryPreperiodic(System.Boolean,MathLib.BaseInt,System.Int32)
+  name: PAryPreperiodic(bool, BaseInt, int)
+  href: MathLib.Q.html#MathLib_Q_PAryPreperiodic_System_Boolean_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Q.PAryPreperiodic(System.Boolean,MathLib.BaseInt,System.Int32)
+  name.vb: PAryPreperiodic(Boolean, BaseInt, Integer)
+  fullName: MathLib.Q.PAryPreperiodic(bool, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Q.PAryPreperiodic(Boolean, MathLib.BaseInt, Integer)
+  nameWithType: Q.PAryPreperiodic(bool, BaseInt, int)
+  nameWithType.vb: Q.PAryPreperiodic(Boolean, BaseInt, Integer)
+- uid: MathLib.Q.PAryPreperiodic*
+  name: PAryPreperiodic
+  href: MathLib.Q.html#MathLib_Q_PAryPreperiodic_
+  commentId: Overload:MathLib.Q.PAryPreperiodic
+  isSpec: "True"
+  fullName: MathLib.Q.PAryPreperiodic
+  nameWithType: Q.PAryPreperiodic
+- uid: MathLib.Q.Pow(MathLib.Q)
+  name: Pow(Q)
+  href: MathLib.Q.html#MathLib_Q_Pow_MathLib_Q_
+  commentId: M:MathLib.Q.Pow(MathLib.Q)
+  fullName: MathLib.Q.Pow(MathLib.Q)
+  nameWithType: Q.Pow(Q)
+- uid: MathLib.Q.Pow(System.Int32)
+  name: Pow(int)
+  href: MathLib.Q.html#MathLib_Q_Pow_System_Int32_
+  commentId: M:MathLib.Q.Pow(System.Int32)
+  name.vb: Pow(Integer)
+  fullName: MathLib.Q.Pow(int)
+  fullName.vb: MathLib.Q.Pow(Integer)
+  nameWithType: Q.Pow(int)
+  nameWithType.vb: Q.Pow(Integer)
+- uid: MathLib.Q.Pow*
+  name: Pow
+  href: MathLib.Q.html#MathLib_Q_Pow_
+  commentId: Overload:MathLib.Q.Pow
+  isSpec: "True"
+  fullName: MathLib.Q.Pow
+  nameWithType: Q.Pow
+- uid: MathLib.Q.Reciprocal
+  name: Reciprocal
+  href: MathLib.Q.html#MathLib_Q_Reciprocal
+  commentId: P:MathLib.Q.Reciprocal
+  fullName: MathLib.Q.Reciprocal
+  nameWithType: Q.Reciprocal
+- uid: MathLib.Q.Reciprocal*
+  name: Reciprocal
+  href: MathLib.Q.html#MathLib_Q_Reciprocal_
+  commentId: Overload:MathLib.Q.Reciprocal
+  isSpec: "True"
+  fullName: MathLib.Q.Reciprocal
+  nameWithType: Q.Reciprocal
+- uid: MathLib.Q.ShiftedFractions(System.Int32)
+  name: ShiftedFractions(int)
+  href: MathLib.Q.html#MathLib_Q_ShiftedFractions_System_Int32_
+  commentId: M:MathLib.Q.ShiftedFractions(System.Int32)
+  name.vb: ShiftedFractions(Integer)
+  fullName: MathLib.Q.ShiftedFractions(int)
+  fullName.vb: MathLib.Q.ShiftedFractions(Integer)
+  nameWithType: Q.ShiftedFractions(int)
+  nameWithType.vb: Q.ShiftedFractions(Integer)
+- uid: MathLib.Q.ShiftedFractions*
+  name: ShiftedFractions
+  href: MathLib.Q.html#MathLib_Q_ShiftedFractions_
+  commentId: Overload:MathLib.Q.ShiftedFractions
+  isSpec: "True"
+  fullName: MathLib.Q.ShiftedFractions
+  nameWithType: Q.ShiftedFractions
+- uid: MathLib.Q.Sign
+  name: Sign
+  href: MathLib.Q.html#MathLib_Q_Sign
+  commentId: P:MathLib.Q.Sign
+  fullName: MathLib.Q.Sign
+  nameWithType: Q.Sign
+- uid: MathLib.Q.Sign*
+  name: Sign
+  href: MathLib.Q.html#MathLib_Q_Sign_
+  commentId: Overload:MathLib.Q.Sign
+  isSpec: "True"
+  fullName: MathLib.Q.Sign
+  nameWithType: Q.Sign
+- uid: MathLib.Q.Square
+  name: Square()
+  href: MathLib.Q.html#MathLib_Q_Square
+  commentId: M:MathLib.Q.Square
+  fullName: MathLib.Q.Square()
+  nameWithType: Q.Square()
+- uid: MathLib.Q.Square*
+  name: Square
+  href: MathLib.Q.html#MathLib_Q_Square_
+  commentId: Overload:MathLib.Q.Square
+  isSpec: "True"
+  fullName: MathLib.Q.Square
+  nameWithType: Q.Square
+- uid: MathLib.Q.ToString
+  name: ToString()
+  href: MathLib.Q.html#MathLib_Q_ToString
+  commentId: M:MathLib.Q.ToString
+  fullName: MathLib.Q.ToString()
+  nameWithType: Q.ToString()
+- uid: MathLib.Q.ToString*
+  name: ToString
+  href: MathLib.Q.html#MathLib_Q_ToString_
+  commentId: Overload:MathLib.Q.ToString
+  isSpec: "True"
+  fullName: MathLib.Q.ToString
+  nameWithType: Q.ToString
+- uid: MathLib.Q.ToStringCanonical
+  name: ToStringCanonical()
+  href: MathLib.Q.html#MathLib_Q_ToStringCanonical
+  commentId: M:MathLib.Q.ToStringCanonical
+  fullName: MathLib.Q.ToStringCanonical()
+  nameWithType: Q.ToStringCanonical()
+- uid: MathLib.Q.ToStringCanonical*
+  name: ToStringCanonical
+  href: MathLib.Q.html#MathLib_Q_ToStringCanonical_
+  commentId: Overload:MathLib.Q.ToStringCanonical
+  isSpec: "True"
+  fullName: MathLib.Q.ToStringCanonical
+  nameWithType: Q.ToStringCanonical
+- uid: MathLib.Q.ToStringFactorization
+  name: ToStringFactorization()
+  href: MathLib.Q.html#MathLib_Q_ToStringFactorization
+  commentId: M:MathLib.Q.ToStringFactorization
+  fullName: MathLib.Q.ToStringFactorization()
+  nameWithType: Q.ToStringFactorization()
+- uid: MathLib.Q.ToStringFactorization*
+  name: ToStringFactorization
+  href: MathLib.Q.html#MathLib_Q_ToStringFactorization_
+  commentId: Overload:MathLib.Q.ToStringFactorization
+  isSpec: "True"
+  fullName: MathLib.Q.ToStringFactorization
+  nameWithType: Q.ToStringFactorization
+- uid: MathLib.Q.ToStringFinite(System.Int32)
+  name: ToStringFinite(int)
+  href: MathLib.Q.html#MathLib_Q_ToStringFinite_System_Int32_
+  commentId: M:MathLib.Q.ToStringFinite(System.Int32)
+  name.vb: ToStringFinite(Integer)
+  fullName: MathLib.Q.ToStringFinite(int)
+  fullName.vb: MathLib.Q.ToStringFinite(Integer)
+  nameWithType: Q.ToStringFinite(int)
+  nameWithType.vb: Q.ToStringFinite(Integer)
+- uid: MathLib.Q.ToStringFinite*
+  name: ToStringFinite
+  href: MathLib.Q.html#MathLib_Q_ToStringFinite_
+  commentId: Overload:MathLib.Q.ToStringFinite
+  isSpec: "True"
+  fullName: MathLib.Q.ToStringFinite
+  nameWithType: Q.ToStringFinite
+- uid: MathLib.Q.TryCastToInt32(System.Int32@)
+  name: TryCastToInt32(out int)
+  href: MathLib.Q.html#MathLib_Q_TryCastToInt32_System_Int32__
+  commentId: M:MathLib.Q.TryCastToInt32(System.Int32@)
+  name.vb: TryCastToInt32(Integer)
+  fullName: MathLib.Q.TryCastToInt32(out int)
+  fullName.vb: MathLib.Q.TryCastToInt32(Integer)
+  nameWithType: Q.TryCastToInt32(out int)
+  nameWithType.vb: Q.TryCastToInt32(Integer)
+- uid: MathLib.Q.TryCastToInt32*
+  name: TryCastToInt32
+  href: MathLib.Q.html#MathLib_Q_TryCastToInt32_
+  commentId: Overload:MathLib.Q.TryCastToInt32
+  isSpec: "True"
+  fullName: MathLib.Q.TryCastToInt32
+  nameWithType: Q.TryCastToInt32
+- uid: MathLib.Q.Zero
+  name: Zero
+  href: MathLib.Q.html#MathLib_Q_Zero
+  commentId: P:MathLib.Q.Zero
+  fullName: MathLib.Q.Zero
+  nameWithType: Q.Zero
+- uid: MathLib.Q.Zero*
+  name: Zero
+  href: MathLib.Q.html#MathLib_Q_Zero_
+  commentId: Overload:MathLib.Q.Zero
+  isSpec: "True"
+  fullName: MathLib.Q.Zero
+  nameWithType: Q.Zero
+- uid: MathLib.Q.op_Addition(MathLib.Q,MathLib.Q)
+  name: operator +(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Addition_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Addition(MathLib.Q,MathLib.Q)
+  name.vb: +(Q, Q)
+  fullName: MathLib.Q.operator +(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.+(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator +(Q, Q)
+  nameWithType.vb: Q.+(Q, Q)
+- uid: MathLib.Q.op_Addition(MathLib.Q,System.Numerics.BigInteger)
+  name: operator +(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Addition_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Addition(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: +(Q, BigInteger)
+  fullName: MathLib.Q.operator +(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.+(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator +(Q, BigInteger)
+  nameWithType.vb: Q.+(Q, BigInteger)
+- uid: MathLib.Q.op_Addition(System.Numerics.BigInteger,MathLib.Q)
+  name: operator +(BigInteger, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Addition_System_Numerics_BigInteger_MathLib_Q_
+  commentId: M:MathLib.Q.op_Addition(System.Numerics.BigInteger,MathLib.Q)
+  name.vb: +(BigInteger, Q)
+  fullName: MathLib.Q.operator +(System.Numerics.BigInteger, MathLib.Q)
+  fullName.vb: MathLib.Q.+(System.Numerics.BigInteger, MathLib.Q)
+  nameWithType: Q.operator +(BigInteger, Q)
+  nameWithType.vb: Q.+(BigInteger, Q)
+- uid: MathLib.Q.op_Addition*
+  name: operator +
+  href: MathLib.Q.html#MathLib_Q_op_Addition_
+  commentId: Overload:MathLib.Q.op_Addition
+  isSpec: "True"
+  name.vb: +
+  fullName: MathLib.Q.operator +
+  fullName.vb: MathLib.Q.+
+  nameWithType: Q.operator +
+  nameWithType.vb: Q.+
+- uid: MathLib.Q.op_Decrement(MathLib.Q)
+  name: operator --(Q)
+  href: MathLib.Q.html#MathLib_Q_op_Decrement_MathLib_Q_
+  commentId: M:MathLib.Q.op_Decrement(MathLib.Q)
+  name.vb: op_Decrement(Q)
+  fullName: MathLib.Q.operator --(MathLib.Q)
+  fullName.vb: MathLib.Q.op_Decrement(MathLib.Q)
+  nameWithType: Q.operator --(Q)
+  nameWithType.vb: Q.op_Decrement(Q)
+- uid: MathLib.Q.op_Decrement*
+  name: operator --
+  href: MathLib.Q.html#MathLib_Q_op_Decrement_
+  commentId: Overload:MathLib.Q.op_Decrement
+  isSpec: "True"
+  name.vb: op_Decrement
+  fullName: MathLib.Q.operator --
+  fullName.vb: MathLib.Q.op_Decrement
+  nameWithType: Q.operator --
+  nameWithType.vb: Q.op_Decrement
+- uid: MathLib.Q.op_Division(MathLib.Q,MathLib.Q)
+  name: operator /(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Division_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Division(MathLib.Q,MathLib.Q)
+  name.vb: /(Q, Q)
+  fullName: MathLib.Q.operator /(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q./(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator /(Q, Q)
+  nameWithType.vb: Q./(Q, Q)
+- uid: MathLib.Q.op_Division(MathLib.Q,System.Numerics.BigInteger)
+  name: operator /(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Division_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Division(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: /(Q, BigInteger)
+  fullName: MathLib.Q.operator /(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q./(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator /(Q, BigInteger)
+  nameWithType.vb: Q./(Q, BigInteger)
+- uid: MathLib.Q.op_Division(System.Numerics.BigInteger,MathLib.Q)
+  name: operator /(BigInteger, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Division_System_Numerics_BigInteger_MathLib_Q_
+  commentId: M:MathLib.Q.op_Division(System.Numerics.BigInteger,MathLib.Q)
+  name.vb: /(BigInteger, Q)
+  fullName: MathLib.Q.operator /(System.Numerics.BigInteger, MathLib.Q)
+  fullName.vb: MathLib.Q./(System.Numerics.BigInteger, MathLib.Q)
+  nameWithType: Q.operator /(BigInteger, Q)
+  nameWithType.vb: Q./(BigInteger, Q)
+- uid: MathLib.Q.op_Division*
+  name: operator /
+  href: MathLib.Q.html#MathLib_Q_op_Division_
+  commentId: Overload:MathLib.Q.op_Division
+  isSpec: "True"
+  name.vb: /
+  fullName: MathLib.Q.operator /
+  fullName.vb: MathLib.Q./
+  nameWithType: Q.operator /
+  nameWithType.vb: Q./
+- uid: MathLib.Q.op_Equality(MathLib.Q,MathLib.Q)
+  name: operator ==(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Equality_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Equality(MathLib.Q,MathLib.Q)
+  name.vb: =(Q, Q)
+  fullName: MathLib.Q.operator ==(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.=(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator ==(Q, Q)
+  nameWithType.vb: Q.=(Q, Q)
+- uid: MathLib.Q.op_Equality(MathLib.Q,System.Int32)
+  name: operator ==(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_Equality_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_Equality(MathLib.Q,System.Int32)
+  name.vb: =(Q, Integer)
+  fullName: MathLib.Q.operator ==(MathLib.Q, int)
+  fullName.vb: MathLib.Q.=(MathLib.Q, Integer)
+  nameWithType: Q.operator ==(Q, int)
+  nameWithType.vb: Q.=(Q, Integer)
+- uid: MathLib.Q.op_Equality(MathLib.Q,System.Numerics.BigInteger)
+  name: operator ==(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Equality_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Equality(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: =(Q, BigInteger)
+  fullName: MathLib.Q.operator ==(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.=(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator ==(Q, BigInteger)
+  nameWithType.vb: Q.=(Q, BigInteger)
+- uid: MathLib.Q.op_Equality*
+  name: operator ==
+  href: MathLib.Q.html#MathLib_Q_op_Equality_
+  commentId: Overload:MathLib.Q.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: MathLib.Q.operator ==
+  fullName.vb: MathLib.Q.=
+  nameWithType: Q.operator ==
+  nameWithType.vb: Q.=
+- uid: MathLib.Q.op_GreaterThan(MathLib.Q,MathLib.Q)
+  name: operator >(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThan_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_GreaterThan(MathLib.Q,MathLib.Q)
+  name.vb: '>(Q, Q)'
+  fullName: MathLib.Q.operator >(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.>(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator >(Q, Q)
+  nameWithType.vb: Q.>(Q, Q)
+- uid: MathLib.Q.op_GreaterThan(MathLib.Q,System.Int32)
+  name: operator >(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThan_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_GreaterThan(MathLib.Q,System.Int32)
+  name.vb: '>(Q, Integer)'
+  fullName: MathLib.Q.operator >(MathLib.Q, int)
+  fullName.vb: MathLib.Q.>(MathLib.Q, Integer)
+  nameWithType: Q.operator >(Q, int)
+  nameWithType.vb: Q.>(Q, Integer)
+- uid: MathLib.Q.op_GreaterThan(MathLib.Q,System.Numerics.BigInteger)
+  name: operator >(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThan_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_GreaterThan(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: '>(Q, BigInteger)'
+  fullName: MathLib.Q.operator >(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.>(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator >(Q, BigInteger)
+  nameWithType.vb: Q.>(Q, BigInteger)
+- uid: MathLib.Q.op_GreaterThan*
+  name: operator >
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThan_
+  commentId: Overload:MathLib.Q.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: MathLib.Q.operator >
+  fullName.vb: MathLib.Q.>
+  nameWithType: Q.operator >
+  nameWithType.vb: Q.>
+- uid: MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,MathLib.Q)
+  name: operator >=(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThanOrEqual_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,MathLib.Q)
+  name.vb: '>=(Q, Q)'
+  fullName: MathLib.Q.operator >=(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.>=(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator >=(Q, Q)
+  nameWithType.vb: Q.>=(Q, Q)
+- uid: MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,System.Int32)
+  name: operator >=(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThanOrEqual_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,System.Int32)
+  name.vb: '>=(Q, Integer)'
+  fullName: MathLib.Q.operator >=(MathLib.Q, int)
+  fullName.vb: MathLib.Q.>=(MathLib.Q, Integer)
+  nameWithType: Q.operator >=(Q, int)
+  nameWithType.vb: Q.>=(Q, Integer)
+- uid: MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,System.Numerics.BigInteger)
+  name: operator >=(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThanOrEqual_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_GreaterThanOrEqual(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: '>=(Q, BigInteger)'
+  fullName: MathLib.Q.operator >=(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.>=(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator >=(Q, BigInteger)
+  nameWithType.vb: Q.>=(Q, BigInteger)
+- uid: MathLib.Q.op_GreaterThanOrEqual*
+  name: operator >=
+  href: MathLib.Q.html#MathLib_Q_op_GreaterThanOrEqual_
+  commentId: Overload:MathLib.Q.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: MathLib.Q.operator >=
+  fullName.vb: MathLib.Q.>=
+  nameWithType: Q.operator >=
+  nameWithType.vb: Q.>=
+- uid: MathLib.Q.op_Increment(MathLib.Q)
+  name: operator ++(Q)
+  href: MathLib.Q.html#MathLib_Q_op_Increment_MathLib_Q_
+  commentId: M:MathLib.Q.op_Increment(MathLib.Q)
+  name.vb: op_Increment(Q)
+  fullName: MathLib.Q.operator ++(MathLib.Q)
+  fullName.vb: MathLib.Q.op_Increment(MathLib.Q)
+  nameWithType: Q.operator ++(Q)
+  nameWithType.vb: Q.op_Increment(Q)
+- uid: MathLib.Q.op_Increment*
+  name: operator ++
+  href: MathLib.Q.html#MathLib_Q_op_Increment_
+  commentId: Overload:MathLib.Q.op_Increment
+  isSpec: "True"
+  name.vb: op_Increment
+  fullName: MathLib.Q.operator ++
+  fullName.vb: MathLib.Q.op_Increment
+  nameWithType: Q.operator ++
+  nameWithType.vb: Q.op_Increment
+- uid: MathLib.Q.op_Inequality(MathLib.Q,MathLib.Q)
+  name: operator !=(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Inequality_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Inequality(MathLib.Q,MathLib.Q)
+  name.vb: <>(Q, Q)
+  fullName: MathLib.Q.operator !=(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.<>(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator !=(Q, Q)
+  nameWithType.vb: Q.<>(Q, Q)
+- uid: MathLib.Q.op_Inequality(MathLib.Q,System.Int32)
+  name: operator !=(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_Inequality_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_Inequality(MathLib.Q,System.Int32)
+  name.vb: <>(Q, Integer)
+  fullName: MathLib.Q.operator !=(MathLib.Q, int)
+  fullName.vb: MathLib.Q.<>(MathLib.Q, Integer)
+  nameWithType: Q.operator !=(Q, int)
+  nameWithType.vb: Q.<>(Q, Integer)
+- uid: MathLib.Q.op_Inequality(MathLib.Q,System.Numerics.BigInteger)
+  name: operator !=(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Inequality_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Inequality(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: <>(Q, BigInteger)
+  fullName: MathLib.Q.operator !=(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.<>(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator !=(Q, BigInteger)
+  nameWithType.vb: Q.<>(Q, BigInteger)
+- uid: MathLib.Q.op_Inequality*
+  name: operator !=
+  href: MathLib.Q.html#MathLib_Q_op_Inequality_
+  commentId: Overload:MathLib.Q.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: MathLib.Q.operator !=
+  fullName.vb: MathLib.Q.<>
+  nameWithType: Q.operator !=
+  nameWithType.vb: Q.<>
+- uid: MathLib.Q.op_LeftShift(MathLib.Q,System.Int32)
+  name: operator <<(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_LeftShift_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_LeftShift(MathLib.Q,System.Int32)
+  name.vb: <<(Q, Integer)
+  fullName: MathLib.Q.operator <<(MathLib.Q, int)
+  fullName.vb: MathLib.Q.<<(MathLib.Q, Integer)
+  nameWithType: Q.operator <<(Q, int)
+  nameWithType.vb: Q.<<(Q, Integer)
+- uid: MathLib.Q.op_LeftShift*
+  name: operator <<
+  href: MathLib.Q.html#MathLib_Q_op_LeftShift_
+  commentId: Overload:MathLib.Q.op_LeftShift
+  isSpec: "True"
+  name.vb: <<
+  fullName: MathLib.Q.operator <<
+  fullName.vb: MathLib.Q.<<
+  nameWithType: Q.operator <<
+  nameWithType.vb: Q.<<
+- uid: MathLib.Q.op_LessThan(MathLib.Q,MathLib.Q)
+  name: operator <(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_LessThan_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_LessThan(MathLib.Q,MathLib.Q)
+  name.vb: <(Q, Q)
+  fullName: MathLib.Q.operator <(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.<(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator <(Q, Q)
+  nameWithType.vb: Q.<(Q, Q)
+- uid: MathLib.Q.op_LessThan(MathLib.Q,System.Int32)
+  name: operator <(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_LessThan_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_LessThan(MathLib.Q,System.Int32)
+  name.vb: <(Q, Integer)
+  fullName: MathLib.Q.operator <(MathLib.Q, int)
+  fullName.vb: MathLib.Q.<(MathLib.Q, Integer)
+  nameWithType: Q.operator <(Q, int)
+  nameWithType.vb: Q.<(Q, Integer)
+- uid: MathLib.Q.op_LessThan(MathLib.Q,System.Numerics.BigInteger)
+  name: operator <(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_LessThan_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_LessThan(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: <(Q, BigInteger)
+  fullName: MathLib.Q.operator <(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.<(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator <(Q, BigInteger)
+  nameWithType.vb: Q.<(Q, BigInteger)
+- uid: MathLib.Q.op_LessThan*
+  name: operator <
+  href: MathLib.Q.html#MathLib_Q_op_LessThan_
+  commentId: Overload:MathLib.Q.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: MathLib.Q.operator <
+  fullName.vb: MathLib.Q.<
+  nameWithType: Q.operator <
+  nameWithType.vb: Q.<
+- uid: MathLib.Q.op_LessThanOrEqual(MathLib.Q,MathLib.Q)
+  name: operator <=(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_LessThanOrEqual_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_LessThanOrEqual(MathLib.Q,MathLib.Q)
+  name.vb: <=(Q, Q)
+  fullName: MathLib.Q.operator <=(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.<=(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator <=(Q, Q)
+  nameWithType.vb: Q.<=(Q, Q)
+- uid: MathLib.Q.op_LessThanOrEqual(MathLib.Q,System.Int32)
+  name: operator <=(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_LessThanOrEqual_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_LessThanOrEqual(MathLib.Q,System.Int32)
+  name.vb: <=(Q, Integer)
+  fullName: MathLib.Q.operator <=(MathLib.Q, int)
+  fullName.vb: MathLib.Q.<=(MathLib.Q, Integer)
+  nameWithType: Q.operator <=(Q, int)
+  nameWithType.vb: Q.<=(Q, Integer)
+- uid: MathLib.Q.op_LessThanOrEqual(MathLib.Q,System.Numerics.BigInteger)
+  name: operator <=(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_LessThanOrEqual_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_LessThanOrEqual(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: <=(Q, BigInteger)
+  fullName: MathLib.Q.operator <=(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.<=(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator <=(Q, BigInteger)
+  nameWithType.vb: Q.<=(Q, BigInteger)
+- uid: MathLib.Q.op_LessThanOrEqual*
+  name: operator <=
+  href: MathLib.Q.html#MathLib_Q_op_LessThanOrEqual_
+  commentId: Overload:MathLib.Q.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: MathLib.Q.operator <=
+  fullName.vb: MathLib.Q.<=
+  nameWithType: Q.operator <=
+  nameWithType.vb: Q.<=
+- uid: MathLib.Q.op_Modulus(MathLib.Q,MathLib.Q)
+  name: operator %(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Modulus_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Modulus(MathLib.Q,MathLib.Q)
+  name.vb: Mod(Q, Q)
+  fullName: MathLib.Q.operator %(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.Mod(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator %(Q, Q)
+  nameWithType.vb: Q.Mod(Q, Q)
+- uid: MathLib.Q.op_Modulus*
+  name: operator %
+  href: MathLib.Q.html#MathLib_Q_op_Modulus_
+  commentId: Overload:MathLib.Q.op_Modulus
+  isSpec: "True"
+  name.vb: Mod
+  fullName: MathLib.Q.operator %
+  fullName.vb: MathLib.Q.Mod
+  nameWithType: Q.operator %
+  nameWithType.vb: Q.Mod
+- uid: MathLib.Q.op_Multiply(MathLib.Q,MathLib.Q)
+  name: operator *(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Multiply_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Multiply(MathLib.Q,MathLib.Q)
+  name.vb: '*(Q, Q)'
+  fullName: MathLib.Q.operator *(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.*(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator *(Q, Q)
+  nameWithType.vb: Q.*(Q, Q)
+- uid: MathLib.Q.op_Multiply(MathLib.Q,System.Numerics.BigInteger)
+  name: operator *(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Multiply_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Multiply(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: '*(Q, BigInteger)'
+  fullName: MathLib.Q.operator *(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.*(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator *(Q, BigInteger)
+  nameWithType.vb: Q.*(Q, BigInteger)
+- uid: MathLib.Q.op_Multiply(System.Numerics.BigInteger,MathLib.Q)
+  name: operator *(BigInteger, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Multiply_System_Numerics_BigInteger_MathLib_Q_
+  commentId: M:MathLib.Q.op_Multiply(System.Numerics.BigInteger,MathLib.Q)
+  name.vb: '*(BigInteger, Q)'
+  fullName: MathLib.Q.operator *(System.Numerics.BigInteger, MathLib.Q)
+  fullName.vb: MathLib.Q.*(System.Numerics.BigInteger, MathLib.Q)
+  nameWithType: Q.operator *(BigInteger, Q)
+  nameWithType.vb: Q.*(BigInteger, Q)
+- uid: MathLib.Q.op_Multiply*
+  name: operator *
+  href: MathLib.Q.html#MathLib_Q_op_Multiply_
+  commentId: Overload:MathLib.Q.op_Multiply
+  isSpec: "True"
+  name.vb: '*'
+  fullName: MathLib.Q.operator *
+  fullName.vb: MathLib.Q.*
+  nameWithType: Q.operator *
+  nameWithType.vb: Q.*
+- uid: MathLib.Q.op_RightShift(MathLib.Q,System.Int32)
+  name: operator >>(Q, int)
+  href: MathLib.Q.html#MathLib_Q_op_RightShift_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Q.op_RightShift(MathLib.Q,System.Int32)
+  name.vb: '>>(Q, Integer)'
+  fullName: MathLib.Q.operator >>(MathLib.Q, int)
+  fullName.vb: MathLib.Q.>>(MathLib.Q, Integer)
+  nameWithType: Q.operator >>(Q, int)
+  nameWithType.vb: Q.>>(Q, Integer)
+- uid: MathLib.Q.op_RightShift*
+  name: operator >>
+  href: MathLib.Q.html#MathLib_Q_op_RightShift_
+  commentId: Overload:MathLib.Q.op_RightShift
+  isSpec: "True"
+  name.vb: '>>'
+  fullName: MathLib.Q.operator >>
+  fullName.vb: MathLib.Q.>>
+  nameWithType: Q.operator >>
+  nameWithType.vb: Q.>>
+- uid: MathLib.Q.op_Subtraction(MathLib.Q,MathLib.Q)
+  name: operator -(Q, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Subtraction_MathLib_Q_MathLib_Q_
+  commentId: M:MathLib.Q.op_Subtraction(MathLib.Q,MathLib.Q)
+  name.vb: -(Q, Q)
+  fullName: MathLib.Q.operator -(MathLib.Q, MathLib.Q)
+  fullName.vb: MathLib.Q.-(MathLib.Q, MathLib.Q)
+  nameWithType: Q.operator -(Q, Q)
+  nameWithType.vb: Q.-(Q, Q)
+- uid: MathLib.Q.op_Subtraction(MathLib.Q,System.Numerics.BigInteger)
+  name: operator -(Q, BigInteger)
+  href: MathLib.Q.html#MathLib_Q_op_Subtraction_MathLib_Q_System_Numerics_BigInteger_
+  commentId: M:MathLib.Q.op_Subtraction(MathLib.Q,System.Numerics.BigInteger)
+  name.vb: -(Q, BigInteger)
+  fullName: MathLib.Q.operator -(MathLib.Q, System.Numerics.BigInteger)
+  fullName.vb: MathLib.Q.-(MathLib.Q, System.Numerics.BigInteger)
+  nameWithType: Q.operator -(Q, BigInteger)
+  nameWithType.vb: Q.-(Q, BigInteger)
+- uid: MathLib.Q.op_Subtraction(System.Numerics.BigInteger,MathLib.Q)
+  name: operator -(BigInteger, Q)
+  href: MathLib.Q.html#MathLib_Q_op_Subtraction_System_Numerics_BigInteger_MathLib_Q_
+  commentId: M:MathLib.Q.op_Subtraction(System.Numerics.BigInteger,MathLib.Q)
+  name.vb: -(BigInteger, Q)
+  fullName: MathLib.Q.operator -(System.Numerics.BigInteger, MathLib.Q)
+  fullName.vb: MathLib.Q.-(System.Numerics.BigInteger, MathLib.Q)
+  nameWithType: Q.operator -(BigInteger, Q)
+  nameWithType.vb: Q.-(BigInteger, Q)
+- uid: MathLib.Q.op_Subtraction*
+  name: operator -
+  href: MathLib.Q.html#MathLib_Q_op_Subtraction_
+  commentId: Overload:MathLib.Q.op_Subtraction
+  isSpec: "True"
+  name.vb: '-'
+  fullName: MathLib.Q.operator -
+  fullName.vb: MathLib.Q.-
+  nameWithType: Q.operator -
+  nameWithType.vb: Q.-
+- uid: MathLib.Q.op_UnaryNegation(MathLib.Q)
+  name: operator -(Q)
+  href: MathLib.Q.html#MathLib_Q_op_UnaryNegation_MathLib_Q_
+  commentId: M:MathLib.Q.op_UnaryNegation(MathLib.Q)
+  name.vb: -(Q)
+  fullName: MathLib.Q.operator -(MathLib.Q)
+  fullName.vb: MathLib.Q.-(MathLib.Q)
+  nameWithType: Q.operator -(Q)
+  nameWithType.vb: Q.-(Q)
+- uid: MathLib.Q.op_UnaryNegation*
+  name: operator -
+  href: MathLib.Q.html#MathLib_Q_op_UnaryNegation_
+  commentId: Overload:MathLib.Q.op_UnaryNegation
+  isSpec: "True"
+  name.vb: '-'
+  fullName: MathLib.Q.operator -
+  fullName.vb: MathLib.Q.-
+  nameWithType: Q.operator -
+  nameWithType.vb: Q.-
+- uid: MathLib.QTuple
+  name: QTuple
+  href: MathLib.QTuple.html
+  commentId: T:MathLib.QTuple
+  fullName: MathLib.QTuple
+  nameWithType: QTuple
+- uid: MathLib.QTuple.#ctor(MathLib.Q,System.Int32)
+  name: QTuple(Q, int)
+  href: MathLib.QTuple.html#MathLib_QTuple__ctor_MathLib_Q_System_Int32_
+  commentId: M:MathLib.QTuple.#ctor(MathLib.Q,System.Int32)
+  name.vb: New(Q, Integer)
+  fullName: MathLib.QTuple.QTuple(MathLib.Q, int)
+  fullName.vb: MathLib.QTuple.New(MathLib.Q, Integer)
+  nameWithType: QTuple.QTuple(Q, int)
+  nameWithType.vb: QTuple.New(Q, Integer)
+- uid: MathLib.QTuple.#ctor*
+  name: QTuple
+  href: MathLib.QTuple.html#MathLib_QTuple__ctor_
+  commentId: Overload:MathLib.QTuple.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.QTuple.QTuple
+  fullName.vb: MathLib.QTuple.New
+  nameWithType: QTuple.QTuple
+  nameWithType.vb: QTuple.New
+- uid: MathLib.QTuple.A
+  name: A
+  href: MathLib.QTuple.html#MathLib_QTuple_A
+  commentId: P:MathLib.QTuple.A
+  fullName: MathLib.QTuple.A
+  nameWithType: QTuple.A
+- uid: MathLib.QTuple.A*
+  name: A
+  href: MathLib.QTuple.html#MathLib_QTuple_A_
+  commentId: Overload:MathLib.QTuple.A
+  isSpec: "True"
+  fullName: MathLib.QTuple.A
+  nameWithType: QTuple.A
+- uid: MathLib.QTuple.B
+  name: B
+  href: MathLib.QTuple.html#MathLib_QTuple_B
+  commentId: P:MathLib.QTuple.B
+  fullName: MathLib.QTuple.B
+  nameWithType: QTuple.B
+- uid: MathLib.QTuple.B*
+  name: B
+  href: MathLib.QTuple.html#MathLib_QTuple_B_
+  commentId: Overload:MathLib.QTuple.B
+  isSpec: "True"
+  fullName: MathLib.QTuple.B
+  nameWithType: QTuple.B
+- uid: MathLib.QTuple.Base
+  name: Base
+  href: MathLib.QTuple.html#MathLib_QTuple_Base
+  commentId: P:MathLib.QTuple.Base
+  fullName: MathLib.QTuple.Base
+  nameWithType: QTuple.Base
+- uid: MathLib.QTuple.Base*
+  name: Base
+  href: MathLib.QTuple.html#MathLib_QTuple_Base_
+  commentId: Overload:MathLib.QTuple.Base
+  isSpec: "True"
+  fullName: MathLib.QTuple.Base
+  nameWithType: QTuple.Base
+- uid: MathLib.Qb
+  name: Qb
+  href: MathLib.Qb.html
+  commentId: T:MathLib.Qb
+  fullName: MathLib.Qb
+  nameWithType: Qb
+- uid: MathLib.Qb.#ctor(MathLib.Q,System.Int32)
+  name: Qb(Q, int)
+  href: MathLib.Qb.html#MathLib_Qb__ctor_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Qb.#ctor(MathLib.Q,System.Int32)
+  name.vb: New(Q, Integer)
+  fullName: MathLib.Qb.Qb(MathLib.Q, int)
+  fullName.vb: MathLib.Qb.New(MathLib.Q, Integer)
+  nameWithType: Qb.Qb(Q, int)
+  nameWithType.vb: Qb.New(Q, Integer)
+- uid: MathLib.Qb.#ctor(System.Boolean,MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name: Qb(bool, BaseInt, BaseInt, int)
+  href: MathLib.Qb.html#MathLib_Qb__ctor_System_Boolean_MathLib_BaseInt_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Qb.#ctor(System.Boolean,MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name.vb: New(Boolean, BaseInt, BaseInt, Integer)
+  fullName: MathLib.Qb.Qb(bool, MathLib.BaseInt, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Qb.New(Boolean, MathLib.BaseInt, MathLib.BaseInt, Integer)
+  nameWithType: Qb.Qb(bool, BaseInt, BaseInt, int)
+  nameWithType.vb: Qb.New(Boolean, BaseInt, BaseInt, Integer)
+- uid: MathLib.Qb.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Int32)
+  name: Qb(BigInteger, BigInteger, int)
+  href: MathLib.Qb.html#MathLib_Qb__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.Qb.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Int32)
+  name.vb: New(BigInteger, BigInteger, Integer)
+  fullName: MathLib.Qb.Qb(System.Numerics.BigInteger, System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.Qb.New(System.Numerics.BigInteger, System.Numerics.BigInteger, Integer)
+  nameWithType: Qb.Qb(BigInteger, BigInteger, int)
+  nameWithType.vb: Qb.New(BigInteger, BigInteger, Integer)
+- uid: MathLib.Qb.#ctor*
+  name: Qb
+  href: MathLib.Qb.html#MathLib_Qb__ctor_
+  commentId: Overload:MathLib.Qb.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.Qb.Qb
+  fullName.vb: MathLib.Qb.New
+  nameWithType: Qb.Qb
+  nameWithType.vb: Qb.New
+- uid: MathLib.Qb.Base
+  name: Base
+  href: MathLib.Qb.html#MathLib_Qb_Base
+  commentId: P:MathLib.Qb.Base
+  fullName: MathLib.Qb.Base
+  nameWithType: Qb.Base
+- uid: MathLib.Qb.Base*
+  name: Base
+  href: MathLib.Qb.html#MathLib_Qb_Base_
+  commentId: Overload:MathLib.Qb.Base
+  isSpec: "True"
+  fullName: MathLib.Qb.Base
+  nameWithType: Qb.Base
+- uid: MathLib.Qb.Coefficients
+  name: Coefficients()
+  href: MathLib.Qb.html#MathLib_Qb_Coefficients
+  commentId: M:MathLib.Qb.Coefficients
+  fullName: MathLib.Qb.Coefficients()
+  nameWithType: Qb.Coefficients()
+- uid: MathLib.Qb.Coefficients*
+  name: Coefficients
+  href: MathLib.Qb.html#MathLib_Qb_Coefficients_
+  commentId: Overload:MathLib.Qb.Coefficients
+  isSpec: "True"
+  fullName: MathLib.Qb.Coefficients
+  nameWithType: Qb.Coefficients
+- uid: MathLib.Qb.Equals(MathLib.Qb)
+  name: Equals(Qb?)
+  href: MathLib.Qb.html#MathLib_Qb_Equals_MathLib_Qb_
+  commentId: M:MathLib.Qb.Equals(MathLib.Qb)
+  name.vb: Equals(Qb)
+  fullName: MathLib.Qb.Equals(MathLib.Qb?)
+  fullName.vb: MathLib.Qb.Equals(MathLib.Qb)
+  nameWithType: Qb.Equals(Qb?)
+  nameWithType.vb: Qb.Equals(Qb)
+- uid: MathLib.Qb.Equals*
+  name: Equals
+  href: MathLib.Qb.html#MathLib_Qb_Equals_
+  commentId: Overload:MathLib.Qb.Equals
+  isSpec: "True"
+  fullName: MathLib.Qb.Equals
+  nameWithType: Qb.Equals
+- uid: MathLib.Qb.FirstExponent
+  name: FirstExponent
+  href: MathLib.Qb.html#MathLib_Qb_FirstExponent
+  commentId: P:MathLib.Qb.FirstExponent
+  fullName: MathLib.Qb.FirstExponent
+  nameWithType: Qb.FirstExponent
+- uid: MathLib.Qb.FirstExponent*
+  name: FirstExponent
+  href: MathLib.Qb.html#MathLib_Qb_FirstExponent_
+  commentId: Overload:MathLib.Qb.FirstExponent
+  isSpec: "True"
+  fullName: MathLib.Qb.FirstExponent
+  nameWithType: Qb.FirstExponent
+- uid: MathLib.Qb.FirstPeriodicExponent
+  name: FirstPeriodicExponent
+  href: MathLib.Qb.html#MathLib_Qb_FirstPeriodicExponent
+  commentId: P:MathLib.Qb.FirstPeriodicExponent
+  fullName: MathLib.Qb.FirstPeriodicExponent
+  nameWithType: Qb.FirstPeriodicExponent
+- uid: MathLib.Qb.FirstPeriodicExponent*
+  name: FirstPeriodicExponent
+  href: MathLib.Qb.html#MathLib_Qb_FirstPeriodicExponent_
+  commentId: Overload:MathLib.Qb.FirstPeriodicExponent
+  isSpec: "True"
+  fullName: MathLib.Qb.FirstPeriodicExponent
+  nameWithType: Qb.FirstPeriodicExponent
+- uid: MathLib.Qb.FractionalLength
+  name: FractionalLength
+  href: MathLib.Qb.html#MathLib_Qb_FractionalLength
+  commentId: P:MathLib.Qb.FractionalLength
+  fullName: MathLib.Qb.FractionalLength
+  nameWithType: Qb.FractionalLength
+- uid: MathLib.Qb.FractionalLength*
+  name: FractionalLength
+  href: MathLib.Qb.html#MathLib_Qb_FractionalLength_
+  commentId: Overload:MathLib.Qb.FractionalLength
+  isSpec: "True"
+  fullName: MathLib.Qb.FractionalLength
+  nameWithType: Qb.FractionalLength
+- uid: MathLib.Qb.FullInteger
+  name: FullInteger
+  href: MathLib.Qb.html#MathLib_Qb_FullInteger
+  commentId: P:MathLib.Qb.FullInteger
+  fullName: MathLib.Qb.FullInteger
+  nameWithType: Qb.FullInteger
+- uid: MathLib.Qb.FullInteger*
+  name: FullInteger
+  href: MathLib.Qb.html#MathLib_Qb_FullInteger_
+  commentId: Overload:MathLib.Qb.FullInteger
+  isSpec: "True"
+  fullName: MathLib.Qb.FullInteger
+  nameWithType: Qb.FullInteger
+- uid: MathLib.Qb.IntegralLength
+  name: IntegralLength
+  href: MathLib.Qb.html#MathLib_Qb_IntegralLength
+  commentId: P:MathLib.Qb.IntegralLength
+  fullName: MathLib.Qb.IntegralLength
+  nameWithType: Qb.IntegralLength
+- uid: MathLib.Qb.IntegralLength*
+  name: IntegralLength
+  href: MathLib.Qb.html#MathLib_Qb_IntegralLength_
+  commentId: Overload:MathLib.Qb.IntegralLength
+  isSpec: "True"
+  fullName: MathLib.Qb.IntegralLength
+  nameWithType: Qb.IntegralLength
+- uid: MathLib.Qb.Length
+  name: Length
+  href: MathLib.Qb.html#MathLib_Qb_Length
+  commentId: P:MathLib.Qb.Length
+  fullName: MathLib.Qb.Length
+  nameWithType: Qb.Length
+- uid: MathLib.Qb.Length*
+  name: Length
+  href: MathLib.Qb.html#MathLib_Qb_Length_
+  commentId: Overload:MathLib.Qb.Length
+  isSpec: "True"
+  fullName: MathLib.Qb.Length
+  nameWithType: Qb.Length
+- uid: MathLib.Qb.NaN
+  name: NaN
+  href: MathLib.Qb.html#MathLib_Qb_NaN
+  commentId: P:MathLib.Qb.NaN
+  fullName: MathLib.Qb.NaN
+  nameWithType: Qb.NaN
+- uid: MathLib.Qb.NaN*
+  name: NaN
+  href: MathLib.Qb.html#MathLib_Qb_NaN_
+  commentId: Overload:MathLib.Qb.NaN
+  isSpec: "True"
+  fullName: MathLib.Qb.NaN
+  nameWithType: Qb.NaN
+- uid: MathLib.Qb.Period
+  name: Period
+  href: MathLib.Qb.html#MathLib_Qb_Period
+  commentId: P:MathLib.Qb.Period
+  fullName: MathLib.Qb.Period
+  nameWithType: Qb.Period
+- uid: MathLib.Qb.Period*
+  name: Period
+  href: MathLib.Qb.html#MathLib_Qb_Period_
+  commentId: Overload:MathLib.Qb.Period
+  isSpec: "True"
+  fullName: MathLib.Qb.Period
+  nameWithType: Qb.Period
+- uid: MathLib.Qb.PeriodicPart
+  name: PeriodicPart
+  href: MathLib.Qb.html#MathLib_Qb_PeriodicPart
+  commentId: P:MathLib.Qb.PeriodicPart
+  fullName: MathLib.Qb.PeriodicPart
+  nameWithType: Qb.PeriodicPart
+- uid: MathLib.Qb.PeriodicPart*
+  name: PeriodicPart
+  href: MathLib.Qb.html#MathLib_Qb_PeriodicPart_
+  commentId: Overload:MathLib.Qb.PeriodicPart
+  isSpec: "True"
+  fullName: MathLib.Qb.PeriodicPart
+  nameWithType: Qb.PeriodicPart
+- uid: MathLib.Qb.PreperiodicLength
+  name: PreperiodicLength
+  href: MathLib.Qb.html#MathLib_Qb_PreperiodicLength
+  commentId: P:MathLib.Qb.PreperiodicLength
+  fullName: MathLib.Qb.PreperiodicLength
+  nameWithType: Qb.PreperiodicLength
+- uid: MathLib.Qb.PreperiodicLength*
+  name: PreperiodicLength
+  href: MathLib.Qb.html#MathLib_Qb_PreperiodicLength_
+  commentId: Overload:MathLib.Qb.PreperiodicLength
+  isSpec: "True"
+  fullName: MathLib.Qb.PreperiodicLength
+  nameWithType: Qb.PreperiodicLength
+- uid: MathLib.Qb.PreperiodicPart
+  name: PreperiodicPart
+  href: MathLib.Qb.html#MathLib_Qb_PreperiodicPart
+  commentId: P:MathLib.Qb.PreperiodicPart
+  fullName: MathLib.Qb.PreperiodicPart
+  nameWithType: Qb.PreperiodicPart
+- uid: MathLib.Qb.PreperiodicPart*
+  name: PreperiodicPart
+  href: MathLib.Qb.html#MathLib_Qb_PreperiodicPart_
+  commentId: Overload:MathLib.Qb.PreperiodicPart
+  isSpec: "True"
+  fullName: MathLib.Qb.PreperiodicPart
+  nameWithType: Qb.PreperiodicPart
+- uid: MathLib.Qb.RepetendShiftLeft
+  name: RepetendShiftLeft()
+  href: MathLib.Qb.html#MathLib_Qb_RepetendShiftLeft
+  commentId: M:MathLib.Qb.RepetendShiftLeft
+  fullName: MathLib.Qb.RepetendShiftLeft()
+  nameWithType: Qb.RepetendShiftLeft()
+- uid: MathLib.Qb.RepetendShiftLeft*
+  name: RepetendShiftLeft
+  href: MathLib.Qb.html#MathLib_Qb_RepetendShiftLeft_
+  commentId: Overload:MathLib.Qb.RepetendShiftLeft
+  isSpec: "True"
+  fullName: MathLib.Qb.RepetendShiftLeft
+  nameWithType: Qb.RepetendShiftLeft
+- uid: MathLib.Qb.RepetendShiftRight
+  name: RepetendShiftRight()
+  href: MathLib.Qb.html#MathLib_Qb_RepetendShiftRight
+  commentId: M:MathLib.Qb.RepetendShiftRight
+  fullName: MathLib.Qb.RepetendShiftRight()
+  nameWithType: Qb.RepetendShiftRight()
+- uid: MathLib.Qb.RepetendShiftRight*
+  name: RepetendShiftRight
+  href: MathLib.Qb.html#MathLib_Qb_RepetendShiftRight_
+  commentId: Overload:MathLib.Qb.RepetendShiftRight
+  isSpec: "True"
+  fullName: MathLib.Qb.RepetendShiftRight
+  nameWithType: Qb.RepetendShiftRight
+- uid: MathLib.Qb.ShiftedFractions
+  name: ShiftedFractions()
+  href: MathLib.Qb.html#MathLib_Qb_ShiftedFractions
+  commentId: M:MathLib.Qb.ShiftedFractions
+  fullName: MathLib.Qb.ShiftedFractions()
+  nameWithType: Qb.ShiftedFractions()
+- uid: MathLib.Qb.ShiftedFractions*
+  name: ShiftedFractions
+  href: MathLib.Qb.html#MathLib_Qb_ShiftedFractions_
+  commentId: Overload:MathLib.Qb.ShiftedFractions
+  isSpec: "True"
+  fullName: MathLib.Qb.ShiftedFractions
+  nameWithType: Qb.ShiftedFractions
+- uid: MathLib.Qb.ToString
+  name: ToString()
+  href: MathLib.Qb.html#MathLib_Qb_ToString
+  commentId: M:MathLib.Qb.ToString
+  fullName: MathLib.Qb.ToString()
+  nameWithType: Qb.ToString()
+- uid: MathLib.Qb.ToString*
+  name: ToString
+  href: MathLib.Qb.html#MathLib_Qb_ToString_
+  commentId: Overload:MathLib.Qb.ToString
+  isSpec: "True"
+  fullName: MathLib.Qb.ToString
+  nameWithType: Qb.ToString
+- uid: MathLib.Qb.ToStringExpanded(System.Int32)
+  name: ToStringExpanded(int)
+  href: MathLib.Qb.html#MathLib_Qb_ToStringExpanded_System_Int32_
+  commentId: M:MathLib.Qb.ToStringExpanded(System.Int32)
+  name.vb: ToStringExpanded(Integer)
+  fullName: MathLib.Qb.ToStringExpanded(int)
+  fullName.vb: MathLib.Qb.ToStringExpanded(Integer)
+  nameWithType: Qb.ToStringExpanded(int)
+  nameWithType.vb: Qb.ToStringExpanded(Integer)
+- uid: MathLib.Qb.ToStringExpanded*
+  name: ToStringExpanded
+  href: MathLib.Qb.html#MathLib_Qb_ToStringExpanded_
+  commentId: Overload:MathLib.Qb.ToStringExpanded
+  isSpec: "True"
+  fullName: MathLib.Qb.ToStringExpanded
+  nameWithType: Qb.ToStringExpanded
+- uid: MathLib.Qb.ToStringExpandedSigned(System.Int32)
+  name: ToStringExpandedSigned(int)
+  href: MathLib.Qb.html#MathLib_Qb_ToStringExpandedSigned_System_Int32_
+  commentId: M:MathLib.Qb.ToStringExpandedSigned(System.Int32)
+  name.vb: ToStringExpandedSigned(Integer)
+  fullName: MathLib.Qb.ToStringExpandedSigned(int)
+  fullName.vb: MathLib.Qb.ToStringExpandedSigned(Integer)
+  nameWithType: Qb.ToStringExpandedSigned(int)
+  nameWithType.vb: Qb.ToStringExpandedSigned(Integer)
+- uid: MathLib.Qb.ToStringExpandedSigned*
+  name: ToStringExpandedSigned
+  href: MathLib.Qb.html#MathLib_Qb_ToStringExpandedSigned_
+  commentId: Overload:MathLib.Qb.ToStringExpandedSigned
+  isSpec: "True"
+  fullName: MathLib.Qb.ToStringExpandedSigned
+  nameWithType: Qb.ToStringExpandedSigned
+- uid: MathLib.Qb.ToStringPeriodic
+  name: ToStringPeriodic()
+  href: MathLib.Qb.html#MathLib_Qb_ToStringPeriodic
+  commentId: M:MathLib.Qb.ToStringPeriodic
+  fullName: MathLib.Qb.ToStringPeriodic()
+  nameWithType: Qb.ToStringPeriodic()
+- uid: MathLib.Qb.ToStringPeriodic*
+  name: ToStringPeriodic
+  href: MathLib.Qb.html#MathLib_Qb_ToStringPeriodic_
+  commentId: Overload:MathLib.Qb.ToStringPeriodic
+  isSpec: "True"
+  fullName: MathLib.Qb.ToStringPeriodic
+  nameWithType: Qb.ToStringPeriodic
+- uid: MathLib.Qb.ToStringRepetend
+  name: ToStringRepetend()
+  href: MathLib.Qb.html#MathLib_Qb_ToStringRepetend
+  commentId: M:MathLib.Qb.ToStringRepetend
+  fullName: MathLib.Qb.ToStringRepetend()
+  nameWithType: Qb.ToStringRepetend()
+- uid: MathLib.Qb.ToStringRepetend*
+  name: ToStringRepetend
+  href: MathLib.Qb.html#MathLib_Qb_ToStringRepetend_
+  commentId: Overload:MathLib.Qb.ToStringRepetend
+  isSpec: "True"
+  fullName: MathLib.Qb.ToStringRepetend
+  nameWithType: Qb.ToStringRepetend
+- uid: MathLib.Qb.ToStringRotations
+  name: ToStringRotations()
+  href: MathLib.Qb.html#MathLib_Qb_ToStringRotations
+  commentId: M:MathLib.Qb.ToStringRotations
+  fullName: MathLib.Qb.ToStringRotations()
+  nameWithType: Qb.ToStringRotations()
+- uid: MathLib.Qb.ToStringRotations*
+  name: ToStringRotations
+  href: MathLib.Qb.html#MathLib_Qb_ToStringRotations_
+  commentId: Overload:MathLib.Qb.ToStringRotations
+  isSpec: "True"
+  fullName: MathLib.Qb.ToStringRotations
+  nameWithType: Qb.ToStringRotations
+- uid: MathLib.Qp
+  name: Qp
+  href: MathLib.Qp.html
+  commentId: T:MathLib.Qp
+  fullName: MathLib.Qp
+  nameWithType: Qp
+- uid: MathLib.Qp.#ctor(MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name: Qp(BaseInt, BaseInt, int)
+  href: MathLib.Qp.html#MathLib_Qp__ctor_MathLib_BaseInt_MathLib_BaseInt_System_Int32_
+  commentId: M:MathLib.Qp.#ctor(MathLib.BaseInt,MathLib.BaseInt,System.Int32)
+  name.vb: New(BaseInt, BaseInt, Integer)
+  fullName: MathLib.Qp.Qp(MathLib.BaseInt, MathLib.BaseInt, int)
+  fullName.vb: MathLib.Qp.New(MathLib.BaseInt, MathLib.BaseInt, Integer)
+  nameWithType: Qp.Qp(BaseInt, BaseInt, int)
+  nameWithType.vb: Qp.New(BaseInt, BaseInt, Integer)
+- uid: MathLib.Qp.#ctor(MathLib.Q,System.Int32)
+  name: Qp(Q, int)
+  href: MathLib.Qp.html#MathLib_Qp__ctor_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Qp.#ctor(MathLib.Q,System.Int32)
+  name.vb: New(Q, Integer)
+  fullName: MathLib.Qp.Qp(MathLib.Q, int)
+  fullName.vb: MathLib.Qp.New(MathLib.Q, Integer)
+  nameWithType: Qp.Qp(Q, int)
+  nameWithType.vb: Qp.New(Q, Integer)
+- uid: MathLib.Qp.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Int32)
+  name: Qp(BigInteger, BigInteger, int)
+  href: MathLib.Qp.html#MathLib_Qp__ctor_System_Numerics_BigInteger_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.Qp.#ctor(System.Numerics.BigInteger,System.Numerics.BigInteger,System.Int32)
+  name.vb: New(BigInteger, BigInteger, Integer)
+  fullName: MathLib.Qp.Qp(System.Numerics.BigInteger, System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.Qp.New(System.Numerics.BigInteger, System.Numerics.BigInteger, Integer)
+  nameWithType: Qp.Qp(BigInteger, BigInteger, int)
+  nameWithType.vb: Qp.New(BigInteger, BigInteger, Integer)
+- uid: MathLib.Qp.#ctor*
+  name: Qp
+  href: MathLib.Qp.html#MathLib_Qp__ctor_
+  commentId: Overload:MathLib.Qp.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: MathLib.Qp.Qp
+  fullName.vb: MathLib.Qp.New
+  nameWithType: Qp.Qp
+  nameWithType.vb: Qp.New
+- uid: MathLib.Qp.Base
+  name: Base
+  href: MathLib.Qp.html#MathLib_Qp_Base
+  commentId: P:MathLib.Qp.Base
+  fullName: MathLib.Qp.Base
+  nameWithType: Qp.Base
+- uid: MathLib.Qp.Base*
+  name: Base
+  href: MathLib.Qp.html#MathLib_Qp_Base_
+  commentId: Overload:MathLib.Qp.Base
+  isSpec: "True"
+  fullName: MathLib.Qp.Base
+  nameWithType: Qp.Base
+- uid: MathLib.Qp.Coefficients
+  name: Coefficients()
+  href: MathLib.Qp.html#MathLib_Qp_Coefficients
+  commentId: M:MathLib.Qp.Coefficients
+  fullName: MathLib.Qp.Coefficients()
+  nameWithType: Qp.Coefficients()
+- uid: MathLib.Qp.Coefficients*
+  name: Coefficients
+  href: MathLib.Qp.html#MathLib_Qp_Coefficients_
+  commentId: Overload:MathLib.Qp.Coefficients
+  isSpec: "True"
+  fullName: MathLib.Qp.Coefficients
+  nameWithType: Qp.Coefficients
+- uid: MathLib.Qp.FindKQ(MathLib.Q,System.Int32)
+  name: FindKQ(Q, int)
+  href: MathLib.Qp.html#MathLib_Qp_FindKQ_MathLib_Q_System_Int32_
+  commentId: M:MathLib.Qp.FindKQ(MathLib.Q,System.Int32)
+  name.vb: FindKQ(Q, Integer)
+  fullName: MathLib.Qp.FindKQ(MathLib.Q, int)
+  fullName.vb: MathLib.Qp.FindKQ(MathLib.Q, Integer)
+  nameWithType: Qp.FindKQ(Q, int)
+  nameWithType.vb: Qp.FindKQ(Q, Integer)
+- uid: MathLib.Qp.FindKQ*
+  name: FindKQ
+  href: MathLib.Qp.html#MathLib_Qp_FindKQ_
+  commentId: Overload:MathLib.Qp.FindKQ
+  isSpec: "True"
+  fullName: MathLib.Qp.FindKQ
+  nameWithType: Qp.FindKQ
+- uid: MathLib.Qp.FirstExponent
+  name: FirstExponent
+  href: MathLib.Qp.html#MathLib_Qp_FirstExponent
+  commentId: P:MathLib.Qp.FirstExponent
+  fullName: MathLib.Qp.FirstExponent
+  nameWithType: Qp.FirstExponent
+- uid: MathLib.Qp.FirstExponent*
+  name: FirstExponent
+  href: MathLib.Qp.html#MathLib_Qp_FirstExponent_
+  commentId: Overload:MathLib.Qp.FirstExponent
+  isSpec: "True"
+  fullName: MathLib.Qp.FirstExponent
+  nameWithType: Qp.FirstExponent
+- uid: MathLib.Qp.Generator
+  name: Generator
+  href: MathLib.Qp.html#MathLib_Qp_Generator
+  commentId: P:MathLib.Qp.Generator
+  fullName: MathLib.Qp.Generator
+  nameWithType: Qp.Generator
+- uid: MathLib.Qp.Generator*
+  name: Generator
+  href: MathLib.Qp.html#MathLib_Qp_Generator_
+  commentId: Overload:MathLib.Qp.Generator
+  isSpec: "True"
+  fullName: MathLib.Qp.Generator
+  nameWithType: Qp.Generator
+- uid: MathLib.Qp.NaN
+  name: NaN
+  href: MathLib.Qp.html#MathLib_Qp_NaN
+  commentId: P:MathLib.Qp.NaN
+  fullName: MathLib.Qp.NaN
+  nameWithType: Qp.NaN
+- uid: MathLib.Qp.NaN*
+  name: NaN
+  href: MathLib.Qp.html#MathLib_Qp_NaN_
+  commentId: Overload:MathLib.Qp.NaN
+  isSpec: "True"
+  fullName: MathLib.Qp.NaN
+  nameWithType: Qp.NaN
+- uid: MathLib.Qp.PadicCoeffs(MathLib.Q,System.Int32,System.Boolean)
+  name: PadicCoeffs(Q, int, bool)
+  href: MathLib.Qp.html#MathLib_Qp_PadicCoeffs_MathLib_Q_System_Int32_System_Boolean_
+  commentId: M:MathLib.Qp.PadicCoeffs(MathLib.Q,System.Int32,System.Boolean)
+  name.vb: PadicCoeffs(Q, Integer, Boolean)
+  fullName: MathLib.Qp.PadicCoeffs(MathLib.Q, int, bool)
+  fullName.vb: MathLib.Qp.PadicCoeffs(MathLib.Q, Integer, Boolean)
+  nameWithType: Qp.PadicCoeffs(Q, int, bool)
+  nameWithType.vb: Qp.PadicCoeffs(Q, Integer, Boolean)
+- uid: MathLib.Qp.PadicCoeffs*
+  name: PadicCoeffs
+  href: MathLib.Qp.html#MathLib_Qp_PadicCoeffs_
+  commentId: Overload:MathLib.Qp.PadicCoeffs
+  isSpec: "True"
+  fullName: MathLib.Qp.PadicCoeffs
+  nameWithType: Qp.PadicCoeffs
+- uid: MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger,System.Int32)
+  name: ReciprocalCoefficients(BigInteger, int)
+  href: MathLib.Qp.html#MathLib_Qp_ReciprocalCoefficients_System_Numerics_BigInteger_System_Int32_
+  commentId: M:MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger,System.Int32)
+  name.vb: ReciprocalCoefficients(BigInteger, Integer)
+  fullName: MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger, int)
+  fullName.vb: MathLib.Qp.ReciprocalCoefficients(System.Numerics.BigInteger, Integer)
+  nameWithType: Qp.ReciprocalCoefficients(BigInteger, int)
+  nameWithType.vb: Qp.ReciprocalCoefficients(BigInteger, Integer)
+- uid: MathLib.Qp.ReciprocalCoefficients*
+  name: ReciprocalCoefficients
+  href: MathLib.Qp.html#MathLib_Qp_ReciprocalCoefficients_
+  commentId: Overload:MathLib.Qp.ReciprocalCoefficients
+  isSpec: "True"
+  fullName: MathLib.Qp.ReciprocalCoefficients
+  nameWithType: Qp.ReciprocalCoefficients
+- uid: MathLib.Qp.ToString
+  name: ToString()
+  href: MathLib.Qp.html#MathLib_Qp_ToString
+  commentId: M:MathLib.Qp.ToString
+  fullName: MathLib.Qp.ToString()
+  nameWithType: Qp.ToString()
+- uid: MathLib.Qp.ToString*
+  name: ToString
+  href: MathLib.Qp.html#MathLib_Qp_ToString_
+  commentId: Overload:MathLib.Qp.ToString
+  isSpec: "True"
+  fullName: MathLib.Qp.ToString
+  nameWithType: Qp.ToString
+- uid: MathLib.Qp.ToStringExpanded(System.Int32)
+  name: ToStringExpanded(int)
+  href: MathLib.Qp.html#MathLib_Qp_ToStringExpanded_System_Int32_
+  commentId: M:MathLib.Qp.ToStringExpanded(System.Int32)
+  name.vb: ToStringExpanded(Integer)
+  fullName: MathLib.Qp.ToStringExpanded(int)
+  fullName.vb: MathLib.Qp.ToStringExpanded(Integer)
+  nameWithType: Qp.ToStringExpanded(int)
+  nameWithType.vb: Qp.ToStringExpanded(Integer)
+- uid: MathLib.Qp.ToStringExpanded*
+  name: ToStringExpanded
+  href: MathLib.Qp.html#MathLib_Qp_ToStringExpanded_
+  commentId: Overload:MathLib.Qp.ToStringExpanded
+  isSpec: "True"
+  fullName: MathLib.Qp.ToStringExpanded
+  nameWithType: Qp.ToStringExpanded
+- uid: MathLib.Qp.ToStringPeriodic
+  name: ToStringPeriodic()
+  href: MathLib.Qp.html#MathLib_Qp_ToStringPeriodic
+  commentId: M:MathLib.Qp.ToStringPeriodic
+  fullName: MathLib.Qp.ToStringPeriodic()
+  nameWithType: Qp.ToStringPeriodic()
+- uid: MathLib.Qp.ToStringPeriodic*
+  name: ToStringPeriodic
+  href: MathLib.Qp.html#MathLib_Qp_ToStringPeriodic_
+  commentId: Overload:MathLib.Qp.ToStringPeriodic
+  isSpec: "True"
+  fullName: MathLib.Qp.ToStringPeriodic
+  nameWithType: Qp.ToStringPeriodic
+- uid: MathLib.Qp.Valuation
+  name: Valuation()
+  href: MathLib.Qp.html#MathLib_Qp_Valuation
+  commentId: M:MathLib.Qp.Valuation
+  fullName: MathLib.Qp.Valuation()
+  nameWithType: Qp.Valuation()
+- uid: MathLib.Qp.Valuation*
+  name: Valuation
+  href: MathLib.Qp.html#MathLib_Qp_Valuation_
+  commentId: Overload:MathLib.Qp.Valuation
+  isSpec: "True"
+  fullName: MathLib.Qp.Valuation
+  nameWithType: Qp.Valuation
