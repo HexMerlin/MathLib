@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace MathLib;
 
@@ -19,9 +20,8 @@ public partial class Q
     /// Light version of <see cref="Qb.ShiftedFractions()"/> that takes a rational number and a base.
     /// </summary>
     /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
-    /// <param name="q">A rational number</param>
-    /// <param name="base_">The base</param>
-    /// <returns>An enumerable sequence of rational numbers representing the shifted fractional parts in base <paramref name="base_"/>.</returns>
+    /// <param name="base_">The base to convert to.</param>
+    /// <returns>An enumerable sequence of tuples, where each tuple contains the integer part and the fractional part of the rational number in the specified base.</returns>
     /// <seealso cref="Qb.ShiftedFractions()"/>
     public IEnumerable<(BigInteger Integer, Q Fraction)> ShiftedFractions(int base_)
     {
@@ -33,7 +33,6 @@ public partial class Q
 
             q = q.FractionalPart * base_;
             yield return (q.IntegralPart.Abs(), f);
-
         }
     }
 
@@ -41,22 +40,35 @@ public partial class Q
     /// Light version of <see cref="Qb.Coefficients()"/> that takes a rational number and a base.
     /// </summary>
     /// <remarks>This method does not require the costly creation of a <see cref="Qb"/>.</remarks>
-    /// <param name="q">A rational number</param>
-    /// <param name="base_">The base</param>
-    /// <returns>An enumerable sequence of integers representing the coefficients of <paramref name="q"/> in base <paramref name="base_"/>.</returns>
-    /// <seealso cref = "Qb.Coefficients()" />
+    /// <param name="base_">The base to convert to.</param>
+    /// <returns>An enumerable sequence of integers representing the coefficients of the rational number in the specified base.</returns>
+    /// <seealso cref="Qb.Coefficients()"/>
     /// <seealso cref="Qb.ShiftedFractions()"/>
     public IEnumerable<int> Coefficients(int base_) => ShiftedFractions(base_).Select(c => (int)c.Integer);
 
 
+    /// <summary>
+    /// The value of the rational number in the specified base.
+    /// </summary>
+    /// <param name="base_">The base to convert to.</param>
+    /// <returns>The coefficient of the rational number in the specified base.</returns>
     public BigInteger Coeff(int base_) => ((Numerator * base_) / Denominator);
 
+    /// <summary> 
+    /// Obsolete: This method is obsolete and will be removed.
+    /// </summary>
+    [Obsolete("This method is obsolete and will be removed")] 
     public Q Backward(int base_)
         => base_.IsPurelyPeriodic(this)
             ? Numerator.IsDivisibleBy(base_)
                 ? new Q(Numerator / base_, Denominator)
                 : new Q((Numerator + Denominator) / base_, Denominator)
             : new Q(Numerator + Denominator, Denominator / base_);
+
+    /// <summary> 
+    /// Obsolete: This method is obsolete and will be removed.
+    /// </summary>
+    [Obsolete("This method is obsolete and will be removed")]
     public Q Forward(int base_)
     {
         BigInteger n = Numerator;
@@ -66,27 +78,6 @@ public partial class Q
         return new Q(n, d);
     }
 
-
-    //TODO :Make Forwards and Backwards work correctly
-    public IEnumerable<Q> Forwards(int base_)
-    {
-        Q q = this;
-        while (true)
-        {
-            q = q.Forward(base_);
-            yield return q;
-        }
-    }
-
-    public IEnumerable<Q> Backwards(int base_)
-    {
-        Q q = this;
-        while (true)
-        {
-            q = q.Backward(base_);
-            yield return q;
-        }
-    }
 
     /// <summary>
     /// Sign of the current rational number.
@@ -297,59 +288,6 @@ public partial class Q
             < 0 => a << -shift,
             _ => a  // shift == 0
         };
-
-    /// <summary>
-    /// Left-shifts the rational number (single step) by a specified base.
-    /// </summary>
-    /// <param name="base_">The base to shift by.</param>
-    /// <returns>The left-shifted rational number.</returns>
-    //public Q BaseShiftLeftSingle(Base base_) => this * base_.IntValue;
-
-    /// <summary>
-    /// Right-shifts the rational number (single step) by a specified base.
-    /// </summary>
-    /// <param name="base_">The base to shift by.</param>
-    /// <returns>The left-shifted rational number.</returns>
-    //public Q BaseShiftRightSingle(Base base_) => this / base_.IntValue;
-
-    /// <summary>
-    /// Left-shifts the rational number by a specified base and given number of shifting steps.
-    /// </summary>
-    /// <remarks>
-    /// If <paramref name="shift"/> is negative, the shift direction will be reversed,
-    /// making this operation equivalent to a right shift in the specified base. 
-    /// When <paramref name="base_"/> is 2, this method is equivalent to the binary left shift (`&lt;&lt;`) operator.
-    /// </remarks>
-    /// <param name="base_">The base to shift by.</param>
-    /// <param name="shift">The number of steps to shift. A positive value shifts left, a negative value shifts right.</param>
-    /// <returns>The left-shifted rational number.</returns>
-    //public Q BaseShiftLeft(Base base_, int shift)
-    //    => shift switch
-    //    {
-    //        > 0 => this * base_.Pow(shift),
-    //        < 0 => this / base_.Pow(-shift),
-    //        _ => this  // shift == 0
-    //    };
-
-    /// <summary>
-    /// Right-shifts the rational number by a specified base and given number of shifting steps.
-    /// </summary>
-    /// <remarks>
-    /// If <paramref name="shift"/> is negative, the shift direction will be reversed,
-    /// making this operation equivalent to a left shift in the specified base.
-    /// When <paramref name="base_"/> is 2, this method is equivalent to the binary right shift (`&gt;&gt;`) operator.
-    /// </remarks>
-    /// <param name="base_">The base to shift by.</param>
-    /// <param name="shift">The number of steps to shift. A positive value shifts right, a negative value shifts left.</param>
-    /// <returns>The right-shifted rational number.</returns>
-    //public Q BaseShiftRight(Base base_, int shift)
-    //    => shift switch
-    //    {
-    //        > 0 => this / base_.Pow(shift),
-    //        < 0 => this * base_.Pow(-shift),
-    //        _ => this  // shift == 0
-    //    };
-
 
     /// <summary>
     /// Returns the square of the current rational number.

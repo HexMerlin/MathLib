@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Configurations>Debug;Release;Release + Docs</Configurations>
+    <Configurations>Debug;Release;Release + Docs;Docs Release</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

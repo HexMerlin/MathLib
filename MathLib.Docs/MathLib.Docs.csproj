@@ -1,26 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.Build.NoTargets/3.7.56">
 
 	<PropertyGroup>
-		<TargetFramework>net9.0</TargetFramework>
-		<OutputType>Library</OutputType>
-		<!-- Define the output directory for docfx -->
 		<DocsOutputDir>$(SolutionDir)\docs</DocsOutputDir>
-		<Configurations>Debug;Release;Release + Docs</Configurations>
-		<!-- Disable NuGet package restore -->
+		<TargetFramework>net45</TargetFramework>
+		<Configurations>Debug;Release;Release + Docs;Docs Release</Configurations>
 	</PropertyGroup>
 
-	<!-- Target to run docfx during the build process -->
-	<Target Name="BuildDocs" AfterTargets="Build">
-		<Exec Command="docfx docfx.json" WorkingDirectory="$(MSBuildProjectDirectory)" Condition="Exists('$(MSBuildProjectDirectory)\docfx.json')" StandardOutputImportance="High" StandardErrorImportance="High" />
+	<Target Name="BuildDocs" BeforeTargets="Build">
+		<Exec Command="docfx docfx.json" WorkingDirectory="$(MSBuildProjectDirectory)" Condition="Exists('$(MSBuildProjectDirectory)\\docfx.json')" />
 	</Target>
 
-	<!-- Target to clean the docs output directory and intermediate output folders during the clean process -->
 	<Target Name="CleanDocs" BeforeTargets="Clean">
-		<!-- Remove the docs output directory if it exists -->
 		<RemoveDir Directories="$(DocsOutputDir)" Condition="Exists('$(DocsOutputDir)')" />
 		<RemoveDir Directories="obj" Condition="Exists('obj')" />
 		<RemoveDir Directories="bin" Condition="Exists('bin')" />
 	</Target>
 
-</Project>
 
+</Project>

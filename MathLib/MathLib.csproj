@@ -4,7 +4,7 @@
 		<Nullable>enable</Nullable>
 		<GenerateAssemblyConfigurationAttribute>true</GenerateAssemblyConfigurationAttribute>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Configurations>Debug;Release;Legacy;Release + Docs</Configurations>
+		<Configurations>Debug;Release;Legacy;Release + Docs;Docs Release</Configurations>
     </PropertyGroup>
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->
@@ -18,6 +18,10 @@
 	    <TargetFramework>net9.0</TargetFramework>
 		<LangVersion>preview</LangVersion>
 	</PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)'=='Docs Release'">
+      <TargetFramework>net9.0</TargetFramework>
+      <LangVersion>preview</LangVersion>
+    </PropertyGroup>
     <PropertyGroup Condition="'$(Configuration)'=='Release + Docs'">
       <TargetFramework>net9.0</TargetFramework>
       <LangVersion>preview</LangVersion>
@@ -33,6 +37,10 @@
     </PropertyGroup>
 	
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <IsPublishable>False</IsPublishable>
+    </PropertyGroup>
+	
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Docs Release|AnyCPU'">
       <IsPublishable>False</IsPublishable>
     </PropertyGroup>
 	

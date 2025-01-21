@@ -4,6 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 
+using MathLib;
+using MathLib.Misc;
+
 namespace MathLib.Experimental.BalMult;
 
 public enum MinFluctuation

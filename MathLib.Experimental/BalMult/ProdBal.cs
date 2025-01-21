@@ -1,5 +1,6 @@
 ﻿using System.Text;
-
+using MathLib;
+using MathLib.Misc;
 
 namespace MathLib.Experimental.BalMult;
 

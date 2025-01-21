@@ -247,8 +247,6 @@ public partial class Qb : Q, IEquatable<Qb>
     /// </para>
     /// </remarks>
     /// <returns>An enumerable sequence of rational numbers representing the shifted fractional parts in base <see cref="Base"/>.</returns>
-    /// <seealse cref="Q.BaseShiftRight(int, int)"/>
-    /// <seealso cref="Q.BaseShiftLeftSingle(int)"/>
     public IEnumerable<(BigInteger Integer, Q Fraction)> ShiftedFractions()
     {
         Q q = this / Base.Pow(IntegralLength); 

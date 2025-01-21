@@ -5,20 +5,23 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-		<Configurations>Debug;Release;Legacy;Release + Docs</Configurations>
+		<Configurations>Debug;Release;Legacy;Release + Docs;Docs Release</Configurations>
 	</PropertyGroup>
 
 	<!-- Debug configuration for .NET 9, using the latest C# version -->
 	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
-		<TargetFramework>net9.0-windows</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
 	<!-- Release configuration for .NET 9, using the latest C# version -->
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
-		<TargetFramework>net9.0-windows</TargetFramework>
+		<TargetFramework>net9.0</TargetFramework>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Docs Release'">
+	  <TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)'=='Release + Docs'">
-	  <TargetFramework>net9.0-windows</TargetFramework>
+	  <TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)'=='Legacy'">
@@ -26,11 +29,6 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-	  <PackageReference Include="Automata.Visualization" Version="1.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\MathLib.Experimental\MathLib.Experimental.csproj" />
 	  <ProjectReference Include="..\MathLib\MathLib.csproj" />
 	</ItemGroup>
 

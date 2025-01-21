@@ -1,1 +1,1 @@
-﻿global using MathLib.Misc;
+﻿global using MathLib.Experimental.BalMult;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using MathLib;
+using MathLib.Misc;
 
 namespace MathLib.Experimental.BalMult;
 

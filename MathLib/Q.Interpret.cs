@@ -16,7 +16,6 @@ public partial class Q
     /// <param name="pAryPreperiodic">The preperiodic part as an integer.</param>
     /// <param name="pAryPeriodic">The periodic part as an integer.</param>
     /// <param name="firstExponent">The exponent index of the first coefficient of the number.</param>
-    /// <exception cref="ArgumentException">Thrown when the bases of <paramref name="pAryPreperiodic"/> and <paramref name="pAryPeriodic"/> are not equal.</exception>
     /// <returns>A new <see cref="Q"/> representing the rational number derived from the given parts.</returns>
     public static Q PAryInterpretation(bool negative, BaseInt pAryPreperiodic, BaseInt pAryPeriodic, int firstExponent = -1)
     {

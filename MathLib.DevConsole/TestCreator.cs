@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using MathLib;
 
 namespace MathLib.DevConsole;
 

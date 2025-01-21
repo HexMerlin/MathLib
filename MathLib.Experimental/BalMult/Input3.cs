@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS0162 // Unreachable code detected
 using System.Runtime.CompilerServices;
 using System.Text;
+using MathLib;
 using MathLib.Misc;
 
 namespace MathLib.Experimental.BalMult;
