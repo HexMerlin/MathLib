@@ -66,7 +66,7 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// Hence, we do not need to manage modes anywhere in the code base.
     /// </para>
     /// <para>
-    /// To instead swap behavior (postive numbers = FIO and negative numbers = FEO) we can change <see cref="IntegralPart"/> to the following:
+    /// To instead swap behavior (positive numbers = FIO and negative numbers = FEO) we can change <see cref="IntegralPart"/> to the following:
     /// </para>
     /// 
     /// <code>

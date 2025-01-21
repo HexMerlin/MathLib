@@ -26,10 +26,10 @@ namespace MathLib;
 /// <c>q = Σ (c_i * <see cref="Base"/>^i)</c>
 /// where the index <c>i</c> decreases from <see cref="FirstExponent"/> to negative values as the expansion proceeds.
 /// </para>
-/// <para>Overview of concepts and properties, for a full (ultimately periodic) expansion:</para>
 /// 
 /// <code>
-/// <![CDATA[
+/// Overview of concepts and properties, for a full (ultimately periodic) expansion:
+///                      |--------------------------------------------------------|
 /// Indexes (example):   |-- 7   6   5   4   3   2   1   0  -1  -2  -3  -4  -5  --|  
 /// Numeric parts:       |-- IntegralPart    --|-- FractionalPart               --|
 /// Length properties:   |-- IntegralLength  --|-- FractionalLength             --|
@@ -38,7 +38,6 @@ namespace MathLib;
 ///                      |-- Length                                             --|
 /// Indexes (Exponents): • (FirstExponent=8)                     • (FirstPeriodicExponent=-2)
 ///                                                        • (Radix point, after c_0)
-/// ]]>
 /// </code>
 /// <para>The class methods must never throw exceptions for arithmetic operations. Instead, they return <see cref="Q.NaN"/> for undefined results (such as from divide by zero).</para>
 /// </remarks>
