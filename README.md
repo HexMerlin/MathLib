@@ -1,4 +1,5 @@
 # MathLib
 
-MathLib is an experimanental math library
+MathLib is an unsupported experimental math library.
+
 
