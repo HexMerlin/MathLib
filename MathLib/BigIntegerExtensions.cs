@@ -68,6 +68,7 @@ public static class BigIntegerExtensions
     /// </returns>
     /// <example>
     /// <para>Examples:</para>
+    /// 
     /// <code>
     /// BigInteger result1 = new BigInteger(10).Mod(3);  // 1
     /// BigInteger result2 = new BigInteger(-10).Mod(3); // 2
@@ -197,6 +198,7 @@ public static class BigIntegerExtensions
     /// </summary>
     /// <remarks>
     /// The modular inverse of <paramref name="integer"/> modulo <paramref name="modulus"/> is a number <c>x</c> such that:
+    /// 
     /// <code>
     /// integer ⋅ x ≡ 1 (mod modulus)
     /// </code>
@@ -210,6 +212,7 @@ public static class BigIntegerExtensions
     /// The result is normalized to be within the range [0, <paramref name="modulus"/>).
     /// </returns>
     /// <example>
+    /// 
     /// <code>
     /// BigInteger result1 = new BigInteger(3).ModularInverse(7);  // 5
     /// BigInteger result2 = new BigInteger(2).ModularInverse(11); // 6
@@ -248,6 +251,7 @@ public static class BigIntegerExtensions
     /// <remarks>
     /// For two integers <paramref name="a"/> and <paramref name="b"/>, this method computes the GCD, denoted as gcd(a, b),
     /// and finds integers 'x' and 'y' such that Bézout's identity is satisfied:
+    /// 
     /// <code>
     /// a·x + b· y = gcd(a, b)
     /// </code>

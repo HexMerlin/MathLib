@@ -22,6 +22,7 @@
 /// <example>
 /// The square root of -1 does not exist in ℚₚ but exists in ℂₚ, yielding the imaginary unit i.
 /// <para>A 5-adic expansion for the rational number i (√-1) is:</para>
+/// 
 /// <code>
 /// √(-1) = i = "…04240422331102414131141421404340423140223032431212"₅ (no repeating pattern)
 /// </code>

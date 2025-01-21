@@ -49,6 +49,7 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// These interpretations are defined by whether we regard the set of all pure fractions to include the number 1 or not.
     /// We denote these interpretations (modes) as FEO (Fractions Exclude One) and FIO (Fractions Include One), respectively.
     /// <para>For instance, in decimal, the number 1 could have the following two interpretations:</para>
+    ///
     /// <code> 
     /// 1 = 1.000000... (FEO)
     /// 1 = 0.999999... (FIO)
@@ -66,13 +67,14 @@ public partial class Q : IEquatable<Q>, IComparable<Q>
     /// </para>
     /// <para>
     /// To instead swap behavior (postive numbers = FIO and negative numbers = FEO) we can change <see cref="IntegralPart"/> to the following:
+    /// </para>
+    /// 
     /// <code>
     /// public BigInteger IntegralPart =>
     ///     IsPositiveInteger
     ///         ? (Numerator / Denominator) - 1
     ///         : (Numerator / Denominator);
     /// </code>
-    /// </para>
     /// </remarks>
     /// <example>
     /// <list type="table">

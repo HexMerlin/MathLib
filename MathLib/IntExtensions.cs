@@ -27,6 +27,7 @@ public static class IntExtensions
     /// </returns>
     /// <example>
     /// <para>Examples:</para>
+    /// 
     /// <code>
     /// int result1 = 10.Mod(3);  // 1
     /// int result2 = (-10).Mod(3); // 2

@@ -27,6 +27,7 @@ namespace MathLib;
 /// where the index <c>i</c> decreases from <see cref="FirstExponent"/> to negative values as the expansion proceeds.
 /// </para>
 /// <para>Overview of concepts and properties, for a full (ultimately periodic) expansion:</para>
+/// 
 /// <code>
 /// <![CDATA[
 /// Indexes (example):   |-- 7   6   5   4   3   2   1   0  -1  -2  -3  -4  -5  --|  
