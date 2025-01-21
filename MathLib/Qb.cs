@@ -28,14 +28,16 @@ namespace MathLib;
 /// </para>
 /// <para>Overview of concepts and properties, for a full (ultimately periodic) expansion:</para>
 /// <code>
+/// <![CDATA[
 /// Indexes (example):   |-- 7   6   5   4   3   2   1   0  -1  -2  -3  -4  -5  --|  
 /// Numeric parts:       |-- IntegralPart    --|-- FractionalPart               --|
-/// Length  properties:  |-- IntegralLength  --|-- FractionalLength             --|
+/// Length properties:   |-- IntegralLength  --|-- FractionalLength             --|
 /// Numeric parts:       |-- PreperiodicPart               --|-- PeriodicPart   --|         
-/// Length  properties:  |-- PreperiodicLength             --|-- Period         --|                  
+/// Length properties:   |-- PreperiodicLength             --|-- Period         --|                  
 ///                      |-- Length                                             --|
 /// Indexes (Exponents): • (FirstExponent=8)                     • (FirstPeriodicExponent=-2)
 ///                                                        • (Radix point, after c_0)
+/// ]]>
 /// </code>
 /// <para>The class methods must never throw exceptions for arithmetic operations. Instead, they return <see cref="Q.NaN"/> for undefined results (such as from divide by zero).</para>
 /// </remarks>
