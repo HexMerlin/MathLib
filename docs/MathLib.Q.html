@@ -462,7 +462,7 @@ We denote these interpretations (modes) as FEO (Fractions Exclude One) and FIO (
 we assign FEO to all positive numbers, and FIO to all negative numbers and zero. This will make all members of Q have only one correct expansion.</p><p>This whole logic is completely governed by the implementation of <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPart">IntegralPart</a>.
 Hence, we do not need to manage modes anywhere in the code base.
 </p><p>
-To instead swap behavior (postive numbers = FIO and negative numbers = FEO) we can change <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPart">IntegralPart</a> to the following:
+To instead swap behavior (positive numbers = FIO and negative numbers = FEO) we can change <a class="xref" href="MathLib.Q.html#MathLib_Q_IntegralPart">IntegralPart</a> to the following:
 </p><pre><code class="lang-csharp">public BigInteger IntegralPart =&gt;
         IsPositiveInteger
             ? (Numerator / Denominator) - 1
