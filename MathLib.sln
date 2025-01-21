@@ -8,8 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C34C2F1-566E-43F2-91BC-E62B05E323F4}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		CalcuilatePeriod.pdf = CalcuilatePeriod.pdf
 		DeployToRpn42.bat = DeployToRpn42.bat
+		CalculatePeriod.pdf = CalculatePeriod.pdf
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib", "MathLib\MathLib.csproj", "{9CB75787-2355-4201-90FF-09DCFDA8004B}"
