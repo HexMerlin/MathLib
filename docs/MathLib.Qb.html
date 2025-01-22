@@ -280,13 +280,13 @@ of the rational number, with a preperiodic and a periodic part. These types of e
 like p-ary expansions (e.g. decimal or binary) or in p-adic systems.</p>
 <p>Each number is expressed in terms of a base, denoted by <a class="xref" href="MathLib.Qb.html#MathLib_Qb_Base">Base</a>, with a preperiodic part (initial terminating sequence) 
 and a periodic part (repeating sequence).</p><p>Each coefficient is indexed according to the exponent of the base <a class="xref" href="MathLib.Qb.html#MathLib_Qb_Base">Base</a>. The index <code>i</code> corresponds to the 
-coefficient <code>c_i</code> associated with the term <code>c_i * Base^i</code>, where the value of <code>i</code> decreases as we move from 
+coefficient <code>c_i</code> associated with the term <code>c_i · Base^i</code>, where the value of <code>i</code> decreases as we move from 
 left to right in the expansion.</p><p>The first (leftmost) coefficient has index <a class="xref" href="MathLib.Qb.html#MathLib_Qb_FirstExponent">FirstExponent</a>, which corresponds to the largest 
 exponent. The index decreases through the expansion, reflecting the successive exponents of the base, including negative 
 exponents for terms after the radix point (radix point occurs between <code>c_0</code> and <code>c_-1</code>).
 </p><p>
 This consistent indexing system aligns with the mathematical representation of the number as a series in base <a class="xref" href="MathLib.Qb.html#MathLib_Qb_Base">Base</a>:
-<code>q = Σ (c_i * <a class="xref" href="MathLib.Qb.html#MathLib_Qb_Base">Base</a>^i)</code>
+<code>q = Σ (c_i · <a class="xref" href="MathLib.Qb.html#MathLib_Qb_Base">Base</a>^i)</code>
 where the index <code>i</code> decreases from <a class="xref" href="MathLib.Qb.html#MathLib_Qb_FirstExponent">FirstExponent</a> to negative values as the expansion proceeds.
 </p><pre><code class="lang-csharp">Overview of concepts and properties, for a full (ultimately periodic) expansion:
                          |--------------------------------------------------------|
