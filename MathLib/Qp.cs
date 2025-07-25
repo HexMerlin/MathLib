@@ -147,11 +147,10 @@ public class Qp : Q
 
         List<(int k, Q q)> list = new List<(int, Q)>();
 
-        int prefixLength = -1;
-
+        int prefixLength;
         while (true)
         {
-            var tuple = FindKQ(current, base_);
+            (int k, Q q) tuple = FindKQ(current, base_);
             current = tuple.q;
 
             int index = list.IndexOf(tuple);
@@ -205,7 +204,54 @@ public class Qp : Q
     }
 
 
-    //https://math.stackexchange.com/questions/1186967/method-of-finding-a-p-adic-expansion-to-a-rational-number#:~:text=You%20can%20calculate%20the%20p,b%2Fp)%20...
+    /// <summary>
+    /// Generates the p-adic coefficient expansion of a rational number <paramref name="q"/> in the specified base <paramref name="base_"/>.
+    /// </summary>
+    /// <param name="q">The rational number whose p-adic expansion coefficients are computed.</param>
+    /// <param name="base_">The prime base of the p-adic expansion, which must be a positive integer greater than 1.</param>
+    /// <param name="yieldDelimiters">
+    /// <see langword="true"/> <c>iff</c> delimiter values should be yielded to mark the transition between preperiodic and periodic parts.
+    /// When <see langword="true"/>, yields <c>-8</c> after the first coefficient to mark the start of the periodic part detection,
+    /// and <c>-9</c> when the periodic cycle is detected.
+    /// </param>
+    /// <returns>
+    /// An infinite enumerable sequence of integers representing the p-adic coefficients in ascending order of significance (least significant digit first).
+    /// Each coefficient is in the range [0, <paramref name="base_"/> - 1].
+    /// <c>Iff</c> <paramref name="yieldDelimiters"/> is <see langword="true"/>, special delimiter values <c>-8</c> and <c>-9</c> are interspersed to mark structural boundaries.
+    /// </returns>
+    /// <remarks>
+    /// This method implements the standard algorithm for computing p-adic expansions of rational numbers by iteratively applying 
+    /// the decomposition formula <see cref="FindKQ(Q, int)"/> to generate coefficients in reverse order (least significant first).
+    /// <para>
+    /// The algorithm first normalizes the denominator by removing all factors of <paramref name="base_"/> to ensure the denominator 
+    /// is coprime to the base, which is a prerequisite for the p-adic expansion to be well-defined.
+    /// </para>
+    /// <para>
+    /// The expansion is ultimately periodic for any rational number, meaning it consists of a finite preperiodic part 
+    /// followed by an infinitely repeating periodic part. The method detects this periodicity by tracking when 
+    /// the same fractional remainder <c>q</c> is encountered twice in the iteration sequence.
+    /// </para>
+    /// <para>
+    /// When <paramref name="yieldDelimiters"/> is <see langword="true"/>, the method provides structural information:
+    /// <list type="bullet">
+    /// <item><description><c>-8</c>: Marks the beginning of periodic part detection (yielded after the first coefficient)</description></item>
+    /// <item><description><c>-9</c>: Marks the detection of the periodic cycle (yielded when repetition is found)</description></item>
+    /// </list>
+    /// </para>
+    /// </remarks>
+    /// <example>
+    /// Computing the 5-adic expansion of -4/3:
+    /// <code>
+    /// Q q = new Q(-4, 3);
+    /// var coeffs = PadicCoeffs(q, 5).Take(8).ToArray();
+    /// // Results in: [2, 2, 2, 2, 2, 2, 1, 2] representing ...2222222₅
+    /// </code>
+    /// </example>
+    /// <exception cref="ArgumentException">
+    /// Thrown <c>iff</c> <paramref name="q"/>'s normalized denominator and <paramref name="base_"/> are not coprime after factoring out all powers of <paramref name="base_"/> from the denominator.
+    /// </exception>
+    /// <seealso cref="FindKQ(Q, int)"/>
+    /// <seealso cref="Coefficients()"/>
     public static IEnumerable<int> PadicCoeffs(Q q, int base_, bool yieldDelimiters = false)
     {
         int firstExponent = -1;
