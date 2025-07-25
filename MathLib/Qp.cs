@@ -239,14 +239,6 @@ public class Qp : Q
     /// </list>
     /// </para>
     /// </remarks>
-    /// <example>
-    /// Computing the 5-adic expansion of -4/3:
-    /// <code>
-    /// Q q = new Q(-4, 3);
-    /// var coeffs = PadicCoeffs(q, 5).Take(8).ToArray();
-    /// // Results in: [2, 2, 2, 2, 2, 2, 1, 2] representing ...2222222₅
-    /// </code>
-    /// </example>
     /// <exception cref="ArgumentException">
     /// Thrown <c>iff</c> <paramref name="q"/>'s normalized denominator and <paramref name="base_"/> are not coprime after factoring out all powers of <paramref name="base_"/> from the denominator.
     /// </exception>
